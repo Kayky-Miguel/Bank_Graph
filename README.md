@@ -15,7 +15,7 @@ Assistente para análise de relacionamentos e conhecimento bancário com **Graph
 | 5 | Recuperação híbrida GraphRAG/KAG + algoritmos de grafo | Concluída (`graphrag_pipeline.py`, `graph_algorithms.py`) |
 | 6 | Interface Streamlit e visualização do subgrafo | Concluída (usa a Etapa 5 via `retrieval.py`) |
 | 7 | Avaliação e testes | Concluída; falta registrar a rodada final com a Etapa 5 corrigida |
-| 8 | Documentação, artigo e apresentação | Documentação técnica pronta; faltam artigo e apresentação |
+| 8 | Documentação, artigo e apresentação | Documentação técnica e artigo prontos (artigo fora do repositório); falta a apresentação |
 
 ## Estrutura do repositório
 
