@@ -79,6 +79,8 @@ def to_contract(out, records=None):
     answer_text = out.get("answer") or ""
     evidence = evidence_ids(out)
     notes = [f"Etapa 5 (graphrag_pipeline), LLM: {PROVIDER}" + (" - respostas SIMULADAS" if PROVIDER == "mock" else "")]
+    notes.append(f"Plano: {out.get('query_origin') or '-'}"
+                 + (f" (planos do LLM: {json.dumps(out['plans'], ensure_ascii=False)})" if out.get("plans") else ""))
     notes += [str(e) for e in out.get("errors") or []]
     queries = []
     if out.get("cypher"):

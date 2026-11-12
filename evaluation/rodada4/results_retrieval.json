@@ -1,0 +1,1964 @@
+{
+ "summary": {
+  "perguntas": 25,
+  "acuracia": 0.8,
+  "acuracia_respondiveis": 0.722,
+  "precisao_ids": 0.607,
+  "recall_ids": 0.722,
+  "f1_ids": 0.644,
+  "topico_hit@3": 1.0,
+  "abstencao_correta": 1.0,
+  "abstencao_indevida": 0.278,
+  "respostas_com_evidencia": 1.0,
+  "respostas_com_id_sem_suporte": 0.08,
+  "erros": 0,
+  "latencia_media_ms": 3253,
+  "latencia_p95_ms": 5791
+ },
+ "scores": [
+  {
+   "id": "B01",
+   "kind": "answerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 8744.02770000006,
+   "abstained": true,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 2,
+   "n_pred": 0,
+   "missing": [
+    "A0525",
+    "A0689"
+   ],
+   "extra": [],
+   "correct": false
+  },
+  {
+   "id": "B02",
+   "kind": "answerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 2339.3169000000853,
+   "abstained": true,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 1,
+   "n_pred": 0,
+   "missing": [
+    "L0041"
+   ],
+   "extra": [],
+   "correct": false
+  },
+  {
+   "id": "B03",
+   "kind": "answerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 3751.6295000000355,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n_gold": 1,
+   "n_pred": 1,
+   "missing": [],
+   "extra": [],
+   "correct": true
+  },
+  {
+   "id": "B04",
+   "kind": "answerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 2424.5672999995804,
+   "abstained": true,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 3,
+   "n_pred": 0,
+   "missing": [
+    "CC0001",
+    "CC0015",
+    "CC0234"
+   ],
+   "extra": [],
+   "correct": false
+  },
+  {
+   "id": "B05",
+   "kind": "answerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 2406.488399999944,
+   "abstained": true,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 1,
+   "n_pred": 0,
+   "missing": [
+    "AL00001"
+   ],
+   "extra": [],
+   "correct": false
+  },
+  {
+   "id": "I01",
+   "kind": "answerable",
+   "difficulty": "intermediaria",
+   "error": null,
+   "latency_ms": 5791.431900000134,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n_gold": 43,
+   "n_pred": 43,
+   "missing": [],
+   "extra": [],
+   "correct": true
+  },
+  {
+   "id": "I02",
+   "kind": "answerable",
+   "difficulty": "intermediaria",
+   "error": null,
+   "latency_ms": 4198.239299999841,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n_gold": 9,
+   "n_pred": 9,
+   "missing": [],
+   "extra": [],
+   "correct": true
+  },
+  {
+   "id": "I03",
+   "kind": "answerable",
+   "difficulty": "intermediaria",
+   "error": null,
+   "latency_ms": 3851.2104000001273,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.5,
+   "recall": 1.0,
+   "f1": 0.667,
+   "n_gold": 5,
+   "n_pred": 10,
+   "missing": [],
+   "extra": [
+    "M0025",
+    "M0043",
+    "M0056",
+    "M0131",
+    "M0150"
+   ],
+   "correct": true
+  },
+  {
+   "id": "I04",
+   "kind": "answerable",
+   "difficulty": "intermediaria",
+   "error": null,
+   "latency_ms": 4007.8088999998727,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.429,
+   "recall": 1.0,
+   "f1": 0.6,
+   "n_gold": 3,
+   "n_pred": 7,
+   "missing": [],
+   "extra": [
+    "C0159",
+    "C0326",
+    "C0369",
+    "C0443"
+   ],
+   "correct": true
+  },
+  {
+   "id": "I05",
+   "kind": "answerable",
+   "difficulty": "intermediaria",
+   "error": null,
+   "latency_ms": 8044.354499999827,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n_gold": 63,
+   "n_pred": 63,
+   "missing": [],
+   "extra": [],
+   "correct": true
+  },
+  {
+   "id": "A01",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 5778.4248999996635,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n_gold": 10,
+   "n_pred": 10,
+   "missing": [],
+   "extra": [],
+   "correct": true
+  },
+  {
+   "id": "A02",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 4534.01840000015,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.5,
+   "recall": 1.0,
+   "f1": 0.667,
+   "n_gold": 4,
+   "n_pred": 8,
+   "missing": [],
+   "extra": [
+    "C0132",
+    "C0266",
+    "C0422",
+    "C0438"
+   ],
+   "correct": true
+  },
+  {
+   "id": "A03",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 3026.373700000022,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n_gold": 1,
+   "n_pred": 1,
+   "missing": [],
+   "extra": [],
+   "topic_hit@3": true,
+   "correct": true
+  },
+  {
+   "id": "A04",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 3213.651200000186,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n_gold": 1,
+   "n_pred": 1,
+   "missing": [],
+   "extra": [],
+   "topic_hit@3": true,
+   "correct": true
+  },
+  {
+   "id": "A05",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 2449.229699999705,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n_gold": 1,
+   "n_pred": 1,
+   "missing": [],
+   "extra": [],
+   "topic_hit@3": true,
+   "must_say_ok": true,
+   "correct": true
+  },
+  {
+   "id": "A06",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 2706.110499999795,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n_gold": 1,
+   "n_pred": 1,
+   "missing": [],
+   "extra": [],
+   "topic_hit@3": true,
+   "correct": true
+  },
+  {
+   "id": "A07",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 2297.593400000096,
+   "abstained": true,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 1,
+   "n_pred": 0,
+   "missing": [
+    "A0305"
+   ],
+   "extra": [],
+   "correct": false
+  },
+  {
+   "id": "A08",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 4857.0144000000255,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.5,
+   "recall": 1.0,
+   "f1": 0.667,
+   "n_gold": 5,
+   "n_pred": 10,
+   "missing": [],
+   "extra": [
+    "M0003",
+    "M0025",
+    "M0048",
+    "M0056",
+    "M0131"
+   ],
+   "correct": true
+  },
+  {
+   "id": "U01",
+   "kind": "unanswerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 2389.1687000000275,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "abstention_ok": true,
+   "must_say_ok": true,
+   "correct": true
+  },
+  {
+   "id": "U02",
+   "kind": "unanswerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 2334.418700000242,
+   "abstained": true,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "abstention_ok": true,
+   "correct": true
+  },
+  {
+   "id": "U03",
+   "kind": "unanswerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 0.3822000003310677,
+   "abstained": true,
+   "has_evidence": false,
+   "unsupported_ids": [],
+   "abstention_ok": true,
+   "must_not_ok": true,
+   "correct": true
+  },
+  {
+   "id": "M01",
+   "kind": "ambiguous",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 0.5524000002878893,
+   "abstained": true,
+   "has_evidence": false,
+   "unsupported_ids": [
+    "C0208"
+   ],
+   "abstention_ok": true,
+   "correct": true
+  },
+  {
+   "id": "M02",
+   "kind": "ambiguous",
+   "difficulty": "intermediaria",
+   "error": null,
+   "latency_ms": 0.330500000018219,
+   "abstained": true,
+   "has_evidence": false,
+   "unsupported_ids": [
+    "C0208"
+   ],
+   "abstention_ok": true,
+   "correct": true
+  },
+  {
+   "id": "O01",
+   "kind": "out_of_domain",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 1165.0651999998445,
+   "abstained": true,
+   "has_evidence": false,
+   "unsupported_ids": [],
+   "abstention_ok": true,
+   "correct": true
+  },
+  {
+   "id": "O02",
+   "kind": "out_of_domain",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 1004.9791999999798,
+   "abstained": true,
+   "has_evidence": false,
+   "unsupported_ids": [],
+   "abstention_ok": true,
+   "correct": true
+  }
+ ],
+ "answers": {
+  "B01": {
+   "question": "Quais contas pertencem ao cliente C0208?",
+   "answer": "Não há evidência suficiente no grafo/documentos para identificar quais contas pertencem ao cliente C0208.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [],
+   "error": null,
+   "n_nodes": 8,
+   "sources": [
+    "DOC005",
+    "DOC025",
+    "DOC030",
+    "DOC015"
+   ],
+   "rows_sample": [
+    {
+     "documento": "DOC005",
+     "titulo": "Conta Compartilhada - Documento 05",
+     "secao": "1.6",
+     "pagina": 11,
+     "regra": "R005",
+     "descricao": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "tema": "Conta Compartilhada"
+    },
+    {
+     "documento": "DOC015",
+     "titulo": "Conta Compartilhada - Documento 15",
+     "secao": "3.2",
+     "pagina": 12,
+     "regra": "R015",
+     "descricao": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "tema": "Conta Compartilhada"
+    },
+    {
+     "documento": "DOC025",
+     "titulo": "Conta Compartilhada - Documento 25",
+     "secao": "1.5",
+     "pagina": 1,
+     "regra": "R025",
+     "descricao": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "tema": "Conta Compartilhada"
+    },
+    {
+     "documento": "DOC030",
+     "titulo": "Privacidade e Acesso - Documento 30",
+     "secao": "2.3",
+     "pagina": 7,
+     "regra": "R030",
+     "descricao": "Dados de clientes devem ser acessados apenas por perfis autorizados e finalidade legítima.",
+     "tema": "Privacidade e Acesso"
+    }
+   ],
+   "notes": [
+    "Etapa 5 (graphrag_pipeline), LLM: openai"
+   ]
+  },
+  "B02": {
+   "question": "Quais empréstimos do cliente C0208 estão ativos?",
+   "answer": "Não há evidência suficiente no grafo/documentos para determinar se o cliente C0208 possui empréstimos ativos. A lista de empréstimos ativos está vazia.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [],
+   "error": null,
+   "n_nodes": 4,
+   "sources": [
+    "R003",
+    "R013",
+    "R023",
+    "DOC013"
+   ],
+   "rows_sample": [
+    {
+     "documento": "DOC013",
+     "titulo": "Empréstimo Pessoal - Documento 13",
+     "secao": "1.7",
+     "pagina": 3,
+     "regra": "R013",
+     "descricao": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "tema": "Empréstimo Pessoal"
+    }
+   ],
+   "notes": [
+    "Etapa 5 (graphrag_pipeline), LLM: openai"
+   ]
+  },
+  "B03": {
+   "question": "Quais contas pertencem ao cliente C0001?",
+   "answer": "O cliente C0001 possui uma conta ativa. \n\n- **Conta**: A0309\n- **Tipo**: PAYMENT\n- **Status**: ACTIVE\n- **Saldo Simulado**: 39,737.81\n\nTotal de contas: 1. \n\nIDs relevantes: Cliente C0001, Conta A0309.\n\nDados recuperados do grafo (1 linhas):\n- cliente: C0001 | conta: A0309",
+   "abstained": false,
+   "entity_ids": [
+    "A0309",
+    "C0001"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer {customer_id:$customer_id})-[o:OWNS]->(a:Account)\nRETURN c.customer_id AS cliente, a.account_id AS conta, a.account_type AS tipo, a.status AS status,\n       o.ownership_type AS titularidade, a.simulated_balance_brl AS saldo_simulado LIMIT 50",
+     "params": {
+      "customer_id": "C0001",
+      "ref": "2026-11-10"
+     },
+     "rows": 1,
+     "purpose": "template:customer_accounts"
+    }
+   ],
+   "error": null,
+   "n_nodes": 6,
+   "sources": [
+    "R005",
+    "R015",
+    "R025",
+    "DOC015"
+   ],
+   "rows_sample": [
+    {
+     "cliente": "C0001",
+     "conta": "A0309",
+     "tipo": "PAYMENT",
+     "status": "ACTIVE",
+     "titularidade": "PRIMARY",
+     "saldo_simulado": 39737.81
+    },
+    {
+     "documento": "DOC015",
+     "titulo": "Conta Compartilhada - Documento 15",
+     "secao": "3.2",
+     "pagina": 12,
+     "regra": "R015",
+     "descricao": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "tema": "Conta Compartilhada"
+    }
+   ],
+   "notes": [
+    "Etapa 5 (graphrag_pipeline), LLM: openai"
+   ]
+  },
+  "B04": {
+   "question": "Quais cartões o cliente C0352 possui?",
+   "answer": "Não há evidência suficiente no grafo/documentos para determinar quais cartões o cliente C0352 possui.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [],
+   "error": null,
+   "n_nodes": 5,
+   "sources": [
+    "DOC030",
+    "R003",
+    "R013",
+    "R023"
+   ],
+   "rows_sample": [
+    {
+     "documento": "DOC030",
+     "titulo": "Privacidade e Acesso - Documento 30",
+     "secao": "2.3",
+     "pagina": 7,
+     "regra": "R030",
+     "descricao": "Dados de clientes devem ser acessados apenas por perfis autorizados e finalidade legítima.",
+     "tema": "Privacidade e Acesso"
+    }
+   ],
+   "notes": [
+    "Etapa 5 (graphrag_pipeline), LLM: openai"
+   ]
+  },
+  "B05": {
+   "question": "Por quais evidências a transação T0001050 foi sinalizada?",
+   "answer": "Não há evidência suficiente no grafo/documentos para determinar as razões específicas pelas quais a transação T0001050 foi sinalizada.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [],
+   "error": null,
+   "n_nodes": 8,
+   "sources": [
+    "DOC022",
+    "DOC012",
+    "DOC002",
+    "DOC006"
+   ],
+   "rows_sample": [
+    {
+     "documento": "DOC002",
+     "titulo": "Transações Atípicas - Documento 02",
+     "secao": "2.3",
+     "pagina": 9,
+     "regra": "R002",
+     "descricao": "Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.",
+     "tema": "Transações Atípicas"
+    },
+    {
+     "documento": "DOC006",
+     "titulo": "Frequência de Transferências - Documento 06",
+     "secao": "2.7",
+     "pagina": 10,
+     "regra": "R006",
+     "descricao": "Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.",
+     "tema": "Frequência de Transferências"
+    },
+    {
+     "documento": "DOC012",
+     "titulo": "Transações Atípicas - Documento 12",
+     "secao": "4.6",
+     "pagina": 9,
+     "regra": "R012",
+     "descricao": "Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.",
+     "tema": "Transações Atípicas"
+    },
+    {
+     "documento": "DOC022",
+     "titulo": "Transações Atípicas - Documento 22",
+     "secao": "2.2",
+     "pagina": 11,
+     "regra": "R022",
+     "descricao": "Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.",
+     "tema": "Transações Atípicas"
+    }
+   ],
+   "notes": [
+    "Etapa 5 (graphrag_pipeline), LLM: openai"
+   ]
+  },
+  "I01": {
+   "question": "Quais clientes possuem contas conjuntas?",
+   "answer": "Existem 45 clientes que possuem contas conjuntas. Os principais clientes são:\n\n1. C0002\n2. C0015\n3. C0018\n4. C0027\n5. C0034\n\nOs IDs dos clientes com contas conjuntas são: C0002, C0015, C0018, C0027, C0034, C0058, C0070, C0081, C0083, C0103, C0108, C0129, C0142, C0161, C0169, C0172, C0182, C0213, C0218, C0226, C0243, C0253, C0260, C0266, C0306, C0329, C0330, C0334, C0361, C0375, C0384, C0392, C0402, C0422, C0436, C0438, C0442, C0446, C0466.\n\nDados recuperados do grafo (45 linhas):\n- cliente: C0002 | conta_conjunta: A0702 | emprestimos_ativos: nenhum\n- cliente: C0015 | conta_conjunta: A0688 | emprestimos_ativos: nenhum\n- cliente: C0018 | conta_conjunta: A0253 | emprestimos_ativos: L0083\n- cliente: C0027 | conta_conjunta: A0246 | emprestimos_ativos: nenhum\n- cliente: C0034 | conta_conjunta: A0758 | emprestimos_ativos: nenhum\n- cliente: C0058 | conta_conjunta: A0403 | emprestimos_ativos: nenhum\n- cliente: C0070 | conta_conjunta: A0718 | emprestimos_ativos: nenhum\n- cliente: C0081 | conta_conjunta: A0262 | emprestimos_ativos: nenhum\n- cliente: C0083 | conta_conjunta: A0661 | emprestimos_ativos: nenhum\n- cliente: C0103 | conta_conjunta: A0548 | emprestimos_ativos: L0141\n- cliente: C0108 | conta_conjunta: A0325 | emprestimos_ativos: nenhum\n- cliente: C0129 | conta_conjunta: A0309 | emprestimos_ativos: nenhum\n- cliente: C0142 | conta_conjunta: A0285 | emprestimos_ativos: nenhum\n- cliente: C0161 | conta_conjunta: A0454 | emprestimos_ativos: nenhum\n- cliente: C0169 | conta_conjunta: A0708 | emprestimos_ativos: L0086\n- cliente: C0172 | conta_conjunta: A0377 | emprestimos_ativos: nenhum\n- cliente: C0182 | conta_conjunta: A0679 | emprestimos_ativos: nenhum\n- cliente: C0213 | conta_conjunta: A0733 | emprestimos_ativos: nenhum\n- cliente: C0218 | conta_conjunta: A0316 | emprestimos_ativos: nenhum\n- cliente: C0226 | conta_conjunta: A0434 | emprestimos_ativos: nenhum\n- cliente: C0243 | conta_conjunta: A0372 | emprestimos_ativos: nenhum\n- cliente: C0253 | conta_conjunta: A0149 | emprestimos_ativos: nenhum\n- cliente: C0260 | conta_conjunta: A0036 | emprestimos_ativos: L0184\n- cliente: C0266 | conta_conjunta: A0093 | emprestimos_ativos: L0114\n- cliente: C0306 | conta_conjunta: A0305 | emprestimos_ativos: nenhum\n- cliente: C0329 | conta_conjunta: A0260 | emprestimos_ativos: nenhum\n- cliente: C0330 | conta_conjunta: A0566 | emprestimos_ativos: nenhum\n- cliente: C0330 | conta_conjunta: A0655 | emprestimos_ativos: nenhum\n- cliente: C0334 | conta_conjunta: A0775 | emprestimos_ativos: nenhum\n- cliente: C0361 | conta_conjunta: A0804 | emprestimos_ativos: L0004\n- cliente: C0375 | conta_conjunta: A0394 | emprestimos_ativos: nenhum\n- cliente: C0384 | conta_conjunta: A0621 | emprestimos_ativos: L0168\n- cliente: C0392 | conta_conjunta: A0487 | emprestimos_ativos: nenhum\n- cliente: C0402 | conta_conjunta: A0125 | emprestimos_ativos: nenhum\n- cliente: C0422 | conta_conjunta: A0056 | emprestimos_ativos: nenhum\n- cliente: C0436 | conta_conjunta: A0009 | emprestimos_ativos: nenhum\n- cliente: C0438 | conta_conjunta: A0022 | emprestimos_ativos: L0034\n- cliente: C0442 | conta_conjunta: A0242 | emprestimos_ativos: nenhum\n- cliente: C0446 | conta_conjunta: A0559 | emprestimos_ativos: nenhum\n- cliente: C0466 | conta_conjunta: A0243 | emprestimos_ativos: L0060\n- cliente: C0479 | conta_conjunta: A0700 | emprestimos_ativos: nenhum\n- cliente: C0479 | conta_conjunta: A0819 | emprestimos_ativos: nenhum\n- cliente: C0483 | conta_conjunta: A0317 | emprestimos_ativos: nenhum\n- cliente: C0485 | conta_conjunta: A0808 | emprestimos_ativos: nenhum\n- cliente: C0500 | conta_conjunta: A0398 | emprestimos_ativos: nenhum",
+   "abstained": false,
+   "entity_ids": [
+    "A0009",
+    "A0022",
+    "A0036",
+    "A0056",
+    "A0093",
+    "A0125",
+    "A0149",
+    "A0242",
+    "A0243",
+    "A0246",
+    "A0253",
+    "A0260",
+    "A0262",
+    "A0285",
+    "A0305",
+    "A0309",
+    "A0316",
+    "A0317",
+    "A0325",
+    "A0372",
+    "A0377",
+    "A0394",
+    "A0398",
+    "A0403",
+    "A0434",
+    "A0454",
+    "A0487",
+    "A0548",
+    "A0559",
+    "A0566",
+    "A0621",
+    "A0655",
+    "A0661",
+    "A0679",
+    "A0688",
+    "A0700",
+    "A0702",
+    "A0708",
+    "A0718",
+    "A0733",
+    "A0758",
+    "A0775",
+    "A0804",
+    "A0808",
+    "A0819",
+    "C0002",
+    "C0015",
+    "C0018",
+    "C0027",
+    "C0034",
+    "C0058",
+    "C0070",
+    "C0081",
+    "C0083",
+    "C0103",
+    "C0108",
+    "C0129",
+    "C0142",
+    "C0161",
+    "C0169",
+    "C0172",
+    "C0182",
+    "C0213",
+    "C0218",
+    "C0226",
+    "C0243",
+    "C0253",
+    "C0260",
+    "C0266",
+    "C0306",
+    "C0329",
+    "C0330",
+    "C0334",
+    "C0361",
+    "C0375",
+    "C0384",
+    "C0392",
+    "C0402",
+    "C0422",
+    "C0436",
+    "C0438",
+    "C0442",
+    "C0446",
+    "C0466",
+    "C0479",
+    "C0483",
+    "C0485",
+    "C0500",
+    "L0004",
+    "L0034",
+    "L0060",
+    "L0083",
+    "L0086",
+    "L0114",
+    "L0141",
+    "L0168",
+    "L0184"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer)-[:OWNS {ownership_type:'JOINT'}]->(a:Account)\nOPTIONAL MATCH (c)-[:HAS_LOAN]->(l:Loan {status:'ACTIVE'})\nRETURN c.customer_id AS cliente, a.account_id AS conta_conjunta, collect(DISTINCT l.loan_id) AS emprestimos_ativos\nORDER BY cliente LIMIT 100",
+     "params": {
+      "ref": "2026-11-10"
+     },
+     "rows": 45,
+     "purpose": "template:joint_accounts"
+    }
+   ],
+   "error": null,
+   "n_nodes": 101,
+   "sources": [
+    "R005",
+    "R015",
+    "R025",
+    "DOC005"
+   ],
+   "rows_sample": [
+    {
+     "cliente": "C0002",
+     "conta_conjunta": "A0702",
+     "emprestimos_ativos": []
+    },
+    {
+     "cliente": "C0015",
+     "conta_conjunta": "A0688",
+     "emprestimos_ativos": []
+    },
+    {
+     "cliente": "C0018",
+     "conta_conjunta": "A0253",
+     "emprestimos_ativos": [
+      "L0083"
+     ]
+    },
+    {
+     "cliente": "C0027",
+     "conta_conjunta": "A0246",
+     "emprestimos_ativos": []
+    },
+    {
+     "cliente": "C0034",
+     "conta_conjunta": "A0758",
+     "emprestimos_ativos": []
+    },
+    {
+     "cliente": "C0058",
+     "conta_conjunta": "A0403",
+     "emprestimos_ativos": []
+    },
+    {
+     "cliente": "C0070",
+     "conta_conjunta": "A0718",
+     "emprestimos_ativos": []
+    },
+    {
+     "cliente": "C0081",
+     "conta_conjunta": "A0262",
+     "emprestimos_ativos": []
+    }
+   ],
+   "notes": [
+    "Etapa 5 (graphrag_pipeline), LLM: openai"
+   ]
+  },
+  "I02": {
+   "question": "Quais clientes têm conta conjunta e empréstimo ativo?",
+   "answer": "Existem 6 clientes que têm conta conjunta e empréstimo ativo. Os principais são:\n\n1. Cliente C0018\n2. Cliente C0103\n3. Cliente C0169\n4. Cliente C0260\n5. Cliente C0266\n6. Cliente C0361\n\nIDs dos clientes: C0018, C0103, C0169, C0260, C0266, C0361.\n\nDados recuperados do grafo (9 linhas):\n- cliente: C0018 | contas_conjuntas: A0253 | emprestimos_ativos: L0083\n- cliente: C0103 | contas_conjuntas: A0548 | emprestimos_ativos: L0141\n- cliente: C0169 | contas_conjuntas: A0708 | emprestimos_ativos: L0086\n- cliente: C0260 | contas_conjuntas: A0036 | emprestimos_ativos: L0184\n- cliente: C0266 | contas_conjuntas: A0093 | emprestimos_ativos: L0114\n- cliente: C0361 | contas_conjuntas: A0804 | emprestimos_ativos: L0004\n- cliente: C0384 | contas_conjuntas: A0621 | emprestimos_ativos: L0168\n- cliente: C0438 | contas_conjuntas: A0022 | emprestimos_ativos: L0034\n- cliente: C0466 | contas_conjuntas: A0243 | emprestimos_ativos: L0060",
+   "abstained": false,
+   "entity_ids": [
+    "A0022",
+    "A0036",
+    "A0093",
+    "A0243",
+    "A0253",
+    "A0548",
+    "A0621",
+    "A0708",
+    "A0804",
+    "C0018",
+    "C0103",
+    "C0169",
+    "C0260",
+    "C0266",
+    "C0361",
+    "C0384",
+    "C0438",
+    "C0466",
+    "L0004",
+    "L0034",
+    "L0060",
+    "L0083",
+    "L0086",
+    "L0114",
+    "L0141",
+    "L0168",
+    "L0184"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer)-[:OWNS {ownership_type:'JOINT'}]->(a:Account)\nMATCH (c)-[:HAS_LOAN]->(l:Loan {status:'ACTIVE'})\nRETURN c.customer_id AS cliente, collect(DISTINCT a.account_id) AS contas_conjuntas, collect(DISTINCT l.loan_id) AS emprestimos_ativos\nORDER BY cliente LIMIT 100",
+     "params": {
+      "ref": "2026-11-10"
+     },
+     "rows": 9,
+     "purpose": "template:joint_accounts_active_loan"
+    }
+   ],
+   "error": null,
+   "n_nodes": 31,
+   "sources": [
+    "R005",
+    "R015",
+    "R025",
+    "R003"
+   ],
+   "rows_sample": [
+    {
+     "cliente": "C0018",
+     "contas_conjuntas": [
+      "A0253"
+     ],
+     "emprestimos_ativos": [
+      "L0083"
+     ]
+    },
+    {
+     "cliente": "C0103",
+     "contas_conjuntas": [
+      "A0548"
+     ],
+     "emprestimos_ativos": [
+      "L0141"
+     ]
+    },
+    {
+     "cliente": "C0169",
+     "contas_conjuntas": [
+      "A0708"
+     ],
+     "emprestimos_ativos": [
+      "L0086"
+     ]
+    },
+    {
+     "cliente": "C0260",
+     "contas_conjuntas": [
+      "A0036"
+     ],
+     "emprestimos_ativos": [
+      "L0184"
+     ]
+    },
+    {
+     "cliente": "C0266",
+     "contas_conjuntas": [
+      "A0093"
+     ],
+     "emprestimos_ativos": [
+      "L0114"
+     ]
+    },
+    {
+     "cliente": "C0361",
+     "contas_conjuntas": [
+      "A0804"
+     ],
+     "emprestimos_ativos": [
+      "L0004"
+     ]
+    },
+    {
+     "cliente": "C0384",
+     "contas_conjuntas": [
+      "A0621"
+     ],
+     "emprestimos_ativos": [
+      "L0168"
+     ]
+    },
+    {
+     "cliente": "C0438",
+     "contas_conjuntas": [
+      "A0022"
+     ],
+     "emprestimos_ativos": [
+      "L0034"
+     ]
+    }
+   ],
+   "notes": [
+    "Etapa 5 (graphrag_pipeline), LLM: openai"
+   ]
+  },
+  "I03": {
+   "question": "Quais estabelecimentos concentram pagamentos de vários clientes?",
+   "answer": "Os estabelecimentos que concentram pagamentos de vários clientes são:\n\n1. **Mercado Nordeste** - 103 clientes\n2. **Loja Nordeste** - 79 clientes\n3. **Loja Vida** - 77 clientes\n4. **Loja Digital** - 76 clientes\n5. **Mercado Vida** - 75 clientes\n\nNo total, há 10 estabelecimentos listados. Os principais são os cinco destacados acima.\n\nIDs dos estabelecimentos: M0001, M0037, M0045, M0023, M0048.\n\nDados recuperados do grafo (10 linhas):\n- estabelecimento: M0001\n- estabelecimento: M0037\n- estabelecimento: M0045\n- estabelecimento: M0023\n- estabelecimento: M0048\n- estabelecimento: M0056\n- estabelecimento: M0025\n- estabelecimento: M0043\n- estabelecimento: M0131\n- estabelecimento: M0150",
+   "abstained": false,
+   "entity_ids": [
+    "M0001",
+    "M0023",
+    "M0025",
+    "M0037",
+    "M0043",
+    "M0045",
+    "M0048",
+    "M0056",
+    "M0131",
+    "M0150"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer)-[:OWNS]->(:Account)-[:SENT]->(:Transaction)-[:PAID_TO]->(m:Merchant)\nRETURN m.merchant_id AS estabelecimento, m.merchant_name AS nome, count(DISTINCT c) AS clientes\nORDER BY clientes DESC LIMIT 10",
+     "params": {
+      "ref": "2026-11-10"
+     },
+     "rows": 10,
+     "purpose": "template:merchant_concentration"
+    }
+   ],
+   "error": null,
+   "n_nodes": 14,
+   "sources": [
+    "R007",
+    "R017",
+    "R027",
+    "DOC017"
+   ],
+   "rows_sample": [
+    {
+     "estabelecimento": "M0001",
+     "nome": "Mercado Nordeste",
+     "clientes": 103
+    },
+    {
+     "estabelecimento": "M0037",
+     "nome": "Loja Nordeste",
+     "clientes": 79
+    },
+    {
+     "estabelecimento": "M0045",
+     "nome": "Loja Vida",
+     "clientes": 77
+    },
+    {
+     "estabelecimento": "M0023",
+     "nome": "Loja Digital",
+     "clientes": 76
+    },
+    {
+     "estabelecimento": "M0048",
+     "nome": "Mercado Vida",
+     "clientes": 75
+    },
+    {
+     "estabelecimento": "M0056",
+     "nome": "Central Horizonte",
+     "clientes": 75
+    },
+    {
+     "estabelecimento": "M0025",
+     "nome": "Rede Digital",
+     "clientes": 74
+    },
+    {
+     "estabelecimento": "M0043",
+     "nome": "Central Horizonte",
+     "clientes": 73
+    }
+   ],
+   "notes": [
+    "Etapa 5 (graphrag_pipeline), LLM: openai"
+   ]
+  },
+  "I04": {
+   "question": "Quais clientes têm empréstimos ativos e alertas simulados nos últimos 30 dias?",
+   "answer": "Há 2 clientes que têm empréstimos ativos e alertas simulados nos últimos 30 dias:\n\n1. Cliente C0208 - Empréstimo ativo L0041, alerta UNUSUAL_AMOUNT.\n2. Cliente C0410 - Empréstimo ativo L0157, alerta UNUSUAL_HOUR.\n\nIDs dos clientes: C0208, C0410.\n\nDados recuperados do grafo (7 linhas):\n- cliente: C0159 | conta: A0276 | transacao: T0002991 | emprestimos_ativos: nenhum\n- cliente: C0208 | conta: A0525 | transacao: T0003863 | emprestimos_ativos: L0041\n- cliente: C0234 | conta: A0529 | transacao: T0004372 | emprestimos_ativos: L0120\n- cliente: C0326 | conta: A0786 | transacao: T0006076 | emprestimos_ativos: nenhum\n- cliente: C0369 | conta: A0383 | transacao: T0006875 | emprestimos_ativos: nenhum\n- cliente: C0410 | conta: A0245 | transacao: T0007630 | emprestimos_ativos: L0157\n- cliente: C0443 | conta: A0129 | transacao: T0008254 | emprestimos_ativos: nenhum",
+   "abstained": false,
+   "entity_ids": [
+    "A0129",
+    "A0245",
+    "A0276",
+    "A0383",
+    "A0525",
+    "A0529",
+    "A0786",
+    "C0159",
+    "C0208",
+    "C0234",
+    "C0326",
+    "C0369",
+    "C0410",
+    "C0443",
+    "L0041",
+    "L0120",
+    "L0157",
+    "T0002991",
+    "T0003863",
+    "T0004372",
+    "T0006076",
+    "T0006875",
+    "T0007630",
+    "T0008254"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer)-[:OWNS]->(a:Account)-[:SENT]->(t:Transaction {flagged:true})\nWHERE t.date >= $ref - duration({days: $dias})\nOPTIONAL MATCH (t)<-[:RAISED_ON]-(al:Alert)\nOPTIONAL MATCH (c)-[:HAS_LOAN]->(l:Loan {status:'ACTIVE'})\nRETURN c.customer_id AS cliente, a.account_id AS conta, t.transaction_id AS transacao, t.amount_brl AS valor,\n       collect(DISTINCT al.alert_type) AS alertas, collect(DISTINCT l.loan_id) AS emprestimos_ativos\nORDER BY cliente LIMIT 50",
+     "params": {
+      "dias": "30",
+      "ref": "2026-11-10"
+     },
+     "rows": 7,
+     "purpose": "template:flagged_with_loan"
+    }
+   ],
+   "error": null,
+   "n_nodes": 28,
+   "sources": [
+    "R003",
+    "R013",
+    "R023",
+    "DOC023"
+   ],
+   "rows_sample": [
+    {
+     "cliente": "C0159",
+     "conta": "A0276",
+     "transacao": "T0002991",
+     "valor": 228.68,
+     "alertas": [
+      "RISKY_MERCHANT"
+     ],
+     "emprestimos_ativos": []
+    },
+    {
+     "cliente": "C0208",
+     "conta": "A0525",
+     "transacao": "T0003863",
+     "valor": 697.9,
+     "alertas": [
+      "UNUSUAL_AMOUNT"
+     ],
+     "emprestimos_ativos": [
+      "L0041"
+     ]
+    },
+    {
+     "cliente": "C0234",
+     "conta": "A0529",
+     "transacao": "T0004372",
+     "valor": 560.1,
+     "alertas": [
+      "UNUSUAL_HOUR"
+     ],
+     "emprestimos_ativos": [
+      "L0120"
+     ]
+    },
+    {
+     "cliente": "C0326",
+     "conta": "A0786",
+     "transacao": "T0006076",
+     "valor": 893.3,
+     "alertas": [
+      "RISKY_MERCHANT"
+     ],
+     "emprestimos_ativos": []
+    },
+    {
+     "cliente": "C0369",
+     "conta": "A0383",
+     "transacao": "T0006875",
+     "valor": 2105.83,
+     "alertas": [
+      "UNUSUAL_HOUR"
+     ],
+     "emprestimos_ativos": []
+    },
+    {
+     "cliente": "C0410",
+     "conta": "A0245",
+     "transacao": "T0007630",
+     "valor": 978.01,
+     "alertas": [
+      "UNUSUAL_HOUR"
+     ],
+     "emprestimos_ativos": [
+      "L0157"
+     ]
+    },
+    {
+     "cliente": "C0443",
+     "conta": "A0129",
+     "transacao": "T0008254",
+     "valor": 698.03,
+     "alertas": [
+      "UNUSUAL_HOUR"
+     ],
+     "emprestimos_ativos": []
+    },
+    {
+     "documento": "DOC023",
+     "titulo": "Empréstimo Pessoal - Documento 23",
+     "secao": "3.3",
+     "pagina": 8,
+     "regra": "R023",
+     "descricao": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "tema": "Empréstimo Pessoal"
+    }
+   ],
+   "notes": [
+    "Etapa 5 (graphrag_pipeline), LLM: openai"
+   ]
+  },
+  "I05": {
+   "question": "Quais clientes pagaram ao estabelecimento M0007?",
+   "answer": "Um total de 50 clientes pagaram ao estabelecimento M0007. Os principais clientes incluem:\n\n1. C0001 - R$ 2002.84\n2. C0051 - R$ 4067.58 (2 transações)\n3. C0147 - R$ 2155.11\n4. C0226 - R$ 1966.79\n5. C0244 - R$ 1958.56\n\nOs IDs dos clientes que pagaram são: C0001, C0007, C0015, C0024, C0041, C0042, C0048, C0051, C0052, C0068, C0081, C0088, C0089, C0097, C0099, C0111, C0122, C0127, C0129, C0142, C0145, C0146, C0147, C0151, C0182, C0203, C0208, C0209, C0210, C0226, C0231, C0242, C0243, C0244, C0248, C0249, C0255, C0272, C0293, C0294.\n\nDados recuperados do grafo (63 linhas):\n- cliente: C0001 | estabelecimento: M0007\n- cliente: C0007 | estabelecimento: M0007\n- cliente: C0015 | estabelecimento: M0007\n- cliente: C0024 | estabelecimento: M0007\n- cliente: C0041 | estabelecimento: M0007\n- cliente: C0042 | estabelecimento: M0007\n- cliente: C0048 | estabelecimento: M0007\n- cliente: C0051 | estabelecimento: M0007\n- cliente: C0052 | estabelecimento: M0007\n- cliente: C0068 | estabelecimento: M0007\n- cliente: C0081 | estabelecimento: M0007\n- cliente: C0088 | estabelecimento: M0007\n- cliente: C0089 | estabelecimento: M0007\n- cliente: C0097 | estabelecimento: M0007\n- cliente: C0099 | estabelecimento: M0007\n- cliente: C0111 | estabelecimento: M0007\n- cliente: C0122 | estabelecimento: M0007\n- cliente: C0127 | estabelecimento: M0007\n- cliente: C0129 | estabelecimento: M0007\n- cliente: C0142 | estabelecimento: M0007\n- cliente: C0145 | estabelecimento: M0007\n- cliente: C0146 | estabelecimento: M0007\n- cliente: C0147 | estabelecimento: M0007\n- cliente: C0151 | estabelecimento: M0007\n- cliente: C0182 | estabelecimento: M0007\n- cliente: C0203 | estabelecimento: M0007\n- cliente: C0208 | estabelecimento: M0007\n- cliente: C0209 | estabelecimento: M0007\n- cliente: C0210 | estabelecimento: M0007\n- cliente: C0226 | estabelecimento: M0007\n- cliente: C0231 | estabelecimento: M0007\n- cliente: C0242 | estabelecimento: M0007\n- cliente: C0243 | estabelecimento: M0007\n- cliente: C0244 | estabelecimento: M0007\n- cliente: C0248 | estabelecimento: M0007\n- cliente: C0249 | estabelecimento: M0007\n- cliente: C0255 | estabelecimento: M0007\n- cliente: C0272 | estabelecimento: M0007\n- cliente: C0293 | estabelecimento: M0007\n- cliente: C0294 | estabelecimento: M0007\n- cliente: C0297 | estabelecimento: M0007\n- cliente: C0306 | estabelecimento: M0007\n- cliente: C0318 | estabelecimento: M0007\n- cliente: C0322 | estabelecimento: M0007\n- cliente: C0334 | estabelecimento: M0007\n- cliente: C0336 | estabelecimento: M0007\n- cliente: C0344 | estabelecimento: M0007\n- cliente: C0361 | estabelecimento: M0007\n- cliente: C0376 | estabelecimento: M0007\n- cliente: C0388 | estabelecimento: M0007\n- cliente: C0419 | estabelecimento: M0007\n- cliente: C0428 | estabelecimento: M0007\n- cliente: C0433 | estabelecimento: M0007\n- cliente: C0436 | estabelecimento: M0007\n- cliente: C0445 | estabelecimento: M0007\n- cliente: C0450 | estabelecimento: M0007\n- cliente: C0451 | estabelecimento: M0007\n- cliente: C0453 | estabelecimento: M0007\n- cliente: C0454 | estabelecimento: M0007\n- cliente: C0461 | estabelecimento: M0007\n- cliente: C0477 | estabelecimento: M0007\n- cliente: C0483 | estabelecimento: M0007\n- cliente: C0497 | estabelecimento: M0007",
+   "abstained": false,
+   "entity_ids": [
+    "C0001",
+    "C0007",
+    "C0015",
+    "C0024",
+    "C0041",
+    "C0042",
+    "C0048",
+    "C0051",
+    "C0052",
+    "C0068",
+    "C0081",
+    "C0088",
+    "C0089",
+    "C0097",
+    "C0099",
+    "C0111",
+    "C0122",
+    "C0127",
+    "C0129",
+    "C0142",
+    "C0145",
+    "C0146",
+    "C0147",
+    "C0151",
+    "C0182",
+    "C0203",
+    "C0208",
+    "C0209",
+    "C0210",
+    "C0226",
+    "C0231",
+    "C0242",
+    "C0243",
+    "C0244",
+    "C0248",
+    "C0249",
+    "C0255",
+    "C0272",
+    "C0293",
+    "C0294",
+    "C0297",
+    "C0306",
+    "C0318",
+    "C0322",
+    "C0334",
+    "C0336",
+    "C0344",
+    "C0361",
+    "C0376",
+    "C0388",
+    "C0419",
+    "C0428",
+    "C0433",
+    "C0436",
+    "C0445",
+    "C0450",
+    "C0451",
+    "C0453",
+    "C0454",
+    "C0461",
+    "C0477",
+    "C0483",
+    "C0497",
+    "M0007"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer)-[:OWNS]->(:Account)-[:SENT]->(t:Transaction)-[:PAID_TO]->(m:Merchant {merchant_id:$merchant_id})\nRETURN c.customer_id AS cliente, m.merchant_id AS estabelecimento, count(t) AS transacoes, round(sum(t.amount_brl), 2) AS total_brl\nORDER BY cliente LIMIT 100",
+     "params": {
+      "merchant_id": "M0007",
+      "ref": "2026-11-10"
+     },
+     "rows": 63,
+     "purpose": "template:merchant_customers"
+    }
+   ],
+   "error": null,
+   "n_nodes": 68,
+   "sources": [
+    "R007",
+    "R017",
+    "R027",
+    "R001"
+   ],
+   "rows_sample": [
+    {
+     "cliente": "C0001",
+     "estabelecimento": "M0007",
+     "transacoes": 1,
+     "total_brl": 2002.84
+    },
+    {
+     "cliente": "C0007",
+     "estabelecimento": "M0007",
+     "transacoes": 1,
+     "total_brl": 1197.7
+    },
+    {
+     "cliente": "C0015",
+     "estabelecimento": "M0007",
+     "transacoes": 1,
+     "total_brl": 1091.93
+    },
+    {
+     "cliente": "C0024",
+     "estabelecimento": "M0007",
+     "transacoes": 1,
+     "total_brl": 363.09
+    },
+    {
+     "cliente": "C0041",
+     "estabelecimento": "M0007",
+     "transacoes": 1,
+     "total_brl": 576.51
+    },
+    {
+     "cliente": "C0042",
+     "estabelecimento": "M0007",
+     "transacoes": 1,
+     "total_brl": 1663.17
+    },
+    {
+     "cliente": "C0048",
+     "estabelecimento": "M0007",
+     "transacoes": 1,
+     "total_brl": 898.22
+    },
+    {
+     "cliente": "C0051",
+     "estabelecimento": "M0007",
+     "transacoes": 2,
+     "total_brl": 4067.58
+    }
+   ],
+   "notes": [
+    "Etapa 5 (graphrag_pipeline), LLM: openai"
+   ]
+  },
+  "A01": {
+   "question": "Quais clientes possuem relacionamento com contas que realizaram transações sinalizadas nos últimos 30 dias e, entre eles, quais possuem empréstimos ativos?",
+   "answer": "Dos clientes que possuem relacionamento com contas que realizaram transações sinalizadas nos últimos 30 dias, dois possuem empréstimos ativos:\n\n1. Cliente C0208 (Conta A0525) - Empréstimo ativo L0041\n2. Cliente C0234 (Conta A0529) - Empréstimo ativo L0120\n3. Cliente C0410 (Conta A0245) - Empréstimo ativo L0157\n\nTotal: 3 clientes com empréstimos ativos. \n\nIDs dos clientes: C0208, C0234, C0410.\n\nDados recuperados do grafo (7 linhas):\n- cliente: C0159 | conta: A0276 | transacao: T0002991 | emprestimos_ativos: nenhum\n- cliente: C0208 | conta: A0525 | transacao: T0003863 | emprestimos_ativos: L0041\n- cliente: C0234 | conta: A0529 | transacao: T0004372 | emprestimos_ativos: L0120\n- cliente: C0326 | conta: A0786 | transacao: T0006076 | emprestimos_ativos: nenhum\n- cliente: C0369 | conta: A0383 | transacao: T0006875 | emprestimos_ativos: nenhum\n- cliente: C0410 | conta: A0245 | transacao: T0007630 | emprestimos_ativos: L0157\n- cliente: C0443 | conta: A0129 | transacao: T0008254 | emprestimos_ativos: nenhum",
+   "abstained": false,
+   "entity_ids": [
+    "A0129",
+    "A0245",
+    "A0276",
+    "A0383",
+    "A0525",
+    "A0529",
+    "A0786",
+    "C0159",
+    "C0208",
+    "C0234",
+    "C0326",
+    "C0369",
+    "C0410",
+    "C0443",
+    "L0041",
+    "L0120",
+    "L0157",
+    "T0002991",
+    "T0003863",
+    "T0004372",
+    "T0006076",
+    "T0006875",
+    "T0007630",
+    "T0008254"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer)-[:OWNS]->(a:Account)-[:SENT]->(t:Transaction {flagged:true})\nWHERE t.date >= $ref - duration({days: $dias})\nOPTIONAL MATCH (t)<-[:RAISED_ON]-(al:Alert)\nOPTIONAL MATCH (c)-[:HAS_LOAN]->(l:Loan {status:'ACTIVE'})\nRETURN c.customer_id AS cliente, a.account_id AS conta, t.transaction_id AS transacao, t.amount_brl AS valor,\n       collect(DISTINCT al.alert_type) AS alertas, collect(DISTINCT l.loan_id) AS emprestimos_ativos\nORDER BY cliente LIMIT 50",
+     "params": {
+      "dias": "30",
+      "ref": "2026-11-10"
+     },
+     "rows": 7,
+     "purpose": "template:flagged_with_loan"
+    }
+   ],
+   "error": null,
+   "n_nodes": 28,
+   "sources": [
+    "R003",
+    "R013",
+    "R023",
+    "DOC023"
+   ],
+   "rows_sample": [
+    {
+     "cliente": "C0159",
+     "conta": "A0276",
+     "transacao": "T0002991",
+     "valor": 228.68,
+     "alertas": [
+      "RISKY_MERCHANT"
+     ],
+     "emprestimos_ativos": []
+    },
+    {
+     "cliente": "C0208",
+     "conta": "A0525",
+     "transacao": "T0003863",
+     "valor": 697.9,
+     "alertas": [
+      "UNUSUAL_AMOUNT"
+     ],
+     "emprestimos_ativos": [
+      "L0041"
+     ]
+    },
+    {
+     "cliente": "C0234",
+     "conta": "A0529",
+     "transacao": "T0004372",
+     "valor": 560.1,
+     "alertas": [
+      "UNUSUAL_HOUR"
+     ],
+     "emprestimos_ativos": [
+      "L0120"
+     ]
+    },
+    {
+     "cliente": "C0326",
+     "conta": "A0786",
+     "transacao": "T0006076",
+     "valor": 893.3,
+     "alertas": [
+      "RISKY_MERCHANT"
+     ],
+     "emprestimos_ativos": []
+    },
+    {
+     "cliente": "C0369",
+     "conta": "A0383",
+     "transacao": "T0006875",
+     "valor": 2105.83,
+     "alertas": [
+      "UNUSUAL_HOUR"
+     ],
+     "emprestimos_ativos": []
+    },
+    {
+     "cliente": "C0410",
+     "conta": "A0245",
+     "transacao": "T0007630",
+     "valor": 978.01,
+     "alertas": [
+      "UNUSUAL_HOUR"
+     ],
+     "emprestimos_ativos": [
+      "L0157"
+     ]
+    },
+    {
+     "cliente": "C0443",
+     "conta": "A0129",
+     "transacao": "T0008254",
+     "valor": 698.03,
+     "alertas": [
+      "UNUSUAL_HOUR"
+     ],
+     "emprestimos_ativos": []
+    },
+    {
+     "documento": "DOC023",
+     "titulo": "Empréstimo Pessoal - Documento 23",
+     "secao": "3.3",
+     "pagina": 8,
+     "regra": "R023",
+     "descricao": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "tema": "Empréstimo Pessoal"
+    }
+   ],
+   "notes": [
+    "Etapa 5 (graphrag_pipeline), LLM: openai"
+   ]
+  },
+  "A02": {
+   "question": "Quais clientes têm relação indireta, por conta conjunta, com contas que tiveram transações sinalizadas nos últimos 365 dias?",
+   "answer": "Os clientes que têm relação indireta, por conta conjunta, com contas que tiveram transações sinalizadas nos últimos 365 dias são:\n\n1. Cliente Indireto: C0218 (via cliente: C0132, transação: T0002510)\n2. Cliente Indireto: C0248 (via cliente: C0266, transação: T0004970)\n3. Cliente Indireto: C0382 (via cliente: C0422, transação: T0007853)\n4. Cliente Indireto: C0474 (via cliente: C0438, transações: T0008152, T0008161)\n\nTotal de clientes: 4.\n\nDados recuperados do grafo (5 linhas):\n- cliente_indireto: C0218 | via_cliente: C0132 | transacao: T0002510\n- cliente_indireto: C0248 | via_cliente: C0266 | transacao: T0004970\n- cliente_indireto: C0382 | via_cliente: C0422 | transacao: T0007853\n- cliente_indireto: C0474 | via_cliente: C0438 | transacao: T0008152\n- cliente_indireto: C0474 | via_cliente: C0438 | transacao: T0008161",
+   "abstained": false,
+   "entity_ids": [
+    "C0132",
+    "C0218",
+    "C0248",
+    "C0266",
+    "C0382",
+    "C0422",
+    "C0438",
+    "C0474",
+    "T0002510",
+    "T0004970",
+    "T0007853",
+    "T0008152",
+    "T0008161"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (x:Customer)-[:OWNS]->(:Account)<-[:OWNS]-(y:Customer)-[:OWNS]->(:Account)-[:SENT]->(t:Transaction {flagged:true})\nWHERE x <> y AND t.date >= $ref - duration({days: $dias})\nOPTIONAL MATCH (x)-[:HAS_LOAN]->(l:Loan {status:'ACTIVE'})\nRETURN x.customer_id AS cliente_indireto, y.customer_id AS via_cliente, t.transaction_id AS transacao,\n       collect(DISTINCT l.loan_id) AS emprestimos_ativos\nLIMIT 50",
+     "params": {
+      "dias": "365",
+      "ref": "2026-11-10"
+     },
+     "rows": 5,
+     "purpose": "template:indirect_joint"
+    }
+   ],
+   "error": null,
+   "n_nodes": 17,
+   "sources": [
+    "R005",
+    "R015",
+    "R025",
+    "R006"
+   ],
+   "rows_sample": [
+    {
+     "cliente_indireto": "C0218",
+     "via_cliente": "C0132",
+     "transacao": "T0002510"
+    },
+    {
+     "cliente_indireto": "C0248",
+     "via_cliente": "C0266",
+     "transacao": "T0004970"
+    },
+    {
+     "cliente_indireto": "C0382",
+     "via_cliente": "C0422",
+     "transacao": "T0007853"
+    },
+    {
+     "cliente_indireto": "C0474",
+     "via_cliente": "C0438",
+     "transacao": "T0008152"
+    },
+    {
+     "cliente_indireto": "C0474",
+     "via_cliente": "C0438",
+     "transacao": "T0008161"
+    }
+   ],
+   "notes": [
+    "Etapa 5 (graphrag_pipeline), LLM: openai"
+   ]
+  },
+  "A03": {
+   "question": "Quais regras documentadas se aplicam ao empréstimo do cliente C0208?",
+   "answer": "O cliente C0208 está sujeito à seguinte regra documentada sobre empréstimos:\n\n- **Regra R013**: \"Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.\" (Documento DOC013, seção 1.7, página 3).\n\nEssa é a única regra relevante encontrada.",
+   "abstained": false,
+   "entity_ids": [
+    "DOC013",
+    "R013"
+   ],
+   "queries": [],
+   "error": null,
+   "n_nodes": 4,
+   "sources": [
+    "R003",
+    "R013",
+    "R023",
+    "DOC013"
+   ],
+   "rows_sample": [
+    {
+     "documento": "DOC013",
+     "titulo": "Empréstimo Pessoal - Documento 13",
+     "secao": "1.7",
+     "pagina": 3,
+     "regra": "R013",
+     "descricao": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "tema": "Empréstimo Pessoal"
+    }
+   ],
+   "notes": [
+    "Etapa 5 (graphrag_pipeline), LLM: openai"
+   ]
+  },
+  "A04": {
+   "question": "Quais regras orientam a revisão de transferências recorrentes?",
+   "answer": "As regras que orientam a revisão de transferências recorrentes são:\n\n1. Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão. (ID: R026, DOC026)\n\nEssa regra é repetida em outros trechos semânticos (ID: R006, R016).",
+   "abstained": false,
+   "entity_ids": [
+    "DOC026",
+    "R006",
+    "R016",
+    "R026"
+   ],
+   "queries": [],
+   "error": null,
+   "n_nodes": 4,
+   "sources": [
+    "R006",
+    "R016",
+    "R026",
+    "DOC026"
+   ],
+   "rows_sample": [
+    {
+     "documento": "DOC026",
+     "titulo": "Frequência de Transferências - Documento 26",
+     "secao": "2.6",
+     "pagina": 12,
+     "regra": "R026",
+     "descricao": "Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.",
+     "tema": "Frequência de Transferências"
+    }
+   ],
+   "notes": [
+    "Etapa 5 (graphrag_pipeline), LLM: openai"
+   ]
+  },
+  "A05": {
+   "question": "Qual é o limite do PIX para o segmento BASIC?",
+   "answer": "O limite diário padrão simulado para o segmento BASIC é de R$ 2.000. Aumento exige validação cadastral (DOC001, DOC011, DOC021, R001).",
+   "abstained": false,
+   "entity_ids": [
+    "DOC001",
+    "DOC011",
+    "DOC021",
+    "R001"
+   ],
+   "queries": [],
+   "error": null,
+   "n_nodes": 6,
+   "sources": [
+    "DOC011",
+    "DOC001",
+    "DOC021",
+    "R001"
+   ],
+   "rows_sample": [
+    {
+     "documento": "DOC001",
+     "titulo": "Limite de Transferência PIX - Documento 01",
+     "secao": "1.2",
+     "pagina": 5,
+     "regra": "R001",
+     "descricao": "O limite diário padrão simulado para o segmento BASIC é de R$ 2.000. Aumento exige validação cadastral.",
+     "tema": "Limite de Transferência PIX"
+    },
+    {
+     "documento": "DOC011",
+     "titulo": "Limite de Transferência PIX - Documento 11",
+     "secao": "3.5",
+     "pagina": 1,
+     "regra": "R011",
+     "descricao": "O limite diário padrão simulado para o segmento BASIC é de R$ 2.000. Aumento exige validação cadastral.",
+     "tema": "Limite de Transferência PIX"
+    },
+    {
+     "documento": "DOC021",
+     "titulo": "Limite de Transferência PIX - Documento 21",
+     "secao": "1.1",
+     "pagina": 12,
+     "regra": "R021",
+     "descricao": "O limite diário padrão simulado para o segmento BASIC é de R$ 2.000. Aumento exige validação cadastral.",
+     "tema": "Limite de Transferência PIX"
+    }
+   ],
+   "notes": [
+    "Etapa 5 (graphrag_pipeline), LLM: openai"
+   ]
+  },
+  "A06": {
+   "question": "O que acontece quando há concentração de pagamentos em um estabelecimento?",
+   "answer": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual (R007). \n\nIDs relevantes: R007, DOC007.",
+   "abstained": false,
+   "entity_ids": [
+    "DOC007",
+    "R007"
+   ],
+   "queries": [],
+   "error": null,
+   "n_nodes": 4,
+   "sources": [
+    "R007",
+    "R017",
+    "R027",
+    "DOC007"
+   ],
+   "rows_sample": [
+    {
+     "documento": "DOC007",
+     "titulo": "Concentração de Pagamentos - Documento 07",
+     "secao": "3.1",
+     "pagina": 11,
+     "regra": "R007",
+     "descricao": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+     "tema": "Concentração de Pagamentos"
+    }
+   ],
+   "notes": [
+    "Etapa 5 (graphrag_pipeline), LLM: openai"
+   ]
+  },
+  "A07": {
+   "question": "Como o cliente C0249 se conecta ao cliente C0306 no grafo?",
+   "answer": "Não há evidência suficiente no grafo/documentos para determinar como o cliente C0249 se conecta ao cliente C0306.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [],
+   "error": null,
+   "n_nodes": 4,
+   "sources": [
+    "R005",
+    "R015",
+    "R025",
+    "DOC025"
+   ],
+   "rows_sample": [
+    {
+     "documento": "DOC025",
+     "titulo": "Conta Compartilhada - Documento 25",
+     "secao": "1.5",
+     "pagina": 1,
+     "regra": "R025",
+     "descricao": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "tema": "Conta Compartilhada"
+    }
+   ],
+   "notes": [
+    "Etapa 5 (graphrag_pipeline), LLM: openai"
+   ]
+  },
+  "A08": {
+   "question": "Quais estabelecimentos são mais centrais na rede de pagamentos (PageRank)?",
+   "answer": "Os estabelecimentos mais centrais na rede de pagamentos, com base no PageRank, são:\n\n1. **Mercado Nordeste** (ID: M0001) - PageRank: 0.00487\n2. **Loja Nordeste** (ID: M0037) - PageRank: 0.00423\n3. **Loja Digital** (ID: M0023) - PageRank: 0.00423\n\nNo total, há 10 estabelecimentos listados. Os principais são destacados acima.\n\nDados recuperados do grafo (10 linhas):\n- estabelecimento: M0001\n- estabelecimento: M0037\n- estabelecimento: M0023\n- estabelecimento: M0119\n- estabelecimento: M0005\n- estabelecimento: M0048\n- estabelecimento: M0025\n- estabelecimento: M0003\n- estabelecimento: M0131\n- estabelecimento: M0056",
+   "abstained": false,
+   "entity_ids": [
+    "M0001",
+    "M0003",
+    "M0005",
+    "M0023",
+    "M0025",
+    "M0037",
+    "M0048",
+    "M0056",
+    "M0119",
+    "M0131"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (m:Merchant) WHERE m.pagerank IS NOT NULL\nRETURN m.merchant_id AS estabelecimento, m.merchant_name AS nome, round(m.pagerank, 5) AS pagerank, m.community AS comunidade\nORDER BY pagerank DESC LIMIT 10",
+     "params": {
+      "ref": "2026-11-10"
+     },
+     "rows": 10,
+     "purpose": "template:central_merchants"
+    }
+   ],
+   "error": null,
+   "n_nodes": 14,
+   "sources": [
+    "R007",
+    "R017",
+    "R027",
+    "DOC017"
+   ],
+   "rows_sample": [
+    {
+     "estabelecimento": "M0001",
+     "nome": "Mercado Nordeste",
+     "pagerank": 0.00487,
+     "comunidade": 0
+    },
+    {
+     "estabelecimento": "M0037",
+     "nome": "Loja Nordeste",
+     "pagerank": 0.00423,
+     "comunidade": 10
+    },
+    {
+     "estabelecimento": "M0023",
+     "nome": "Loja Digital",
+     "pagerank": 0.00423,
+     "comunidade": 0
+    },
+    {
+     "estabelecimento": "M0119",
+     "nome": "Rede Nordeste",
+     "pagerank": 0.00401,
+     "comunidade": 3
+    },
+    {
+     "estabelecimento": "M0005",
+     "nome": "Loja Vida",
+     "pagerank": 0.00386,
+     "comunidade": 7
+    },
+    {
+     "estabelecimento": "M0048",
+     "nome": "Mercado Vida",
+     "pagerank": 0.00384,
+     "comunidade": 3
+    },
+    {
+     "estabelecimento": "M0025",
+     "nome": "Rede Digital",
+     "pagerank": 0.00383,
+     "comunidade": 2
+    },
+    {
+     "estabelecimento": "M0003",
+     "nome": "Central Popular",
+     "pagerank": 0.00381,
+     "comunidade": 9
+    }
+   ],
+   "notes": [
+    "Etapa 5 (graphrag_pipeline), LLM: openai"
+   ]
+  },
+  "U01": {
+   "question": "Um alerta permite afirmar que houve fraude?",
+   "answer": "Alerta não comprova fraude. Essa informação está contida na regra \"R002\" e no documento \"DOC002\".",
+   "abstained": false,
+   "entity_ids": [
+    "DOC002",
+    "R002"
+   ],
+   "queries": [],
+   "error": null,
+   "n_nodes": 4,
+   "sources": [
+    "R002",
+    "R012",
+    "R022",
+    "DOC002"
+   ],
+   "rows_sample": [
+    {
+     "documento": "DOC002",
+     "titulo": "Transações Atípicas - Documento 02",
+     "secao": "2.3",
+     "pagina": 9,
+     "regra": "R002",
+     "descricao": "Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.",
+     "tema": "Transações Atípicas"
+    }
+   ],
+   "notes": [
+    "Etapa 5 (graphrag_pipeline), LLM: openai"
+   ]
+  },
+  "U02": {
+   "question": "Quais contas pertencem ao cliente C9999?",
+   "answer": "Não há evidência suficiente no grafo/documentos para responder a pergunta sobre quais contas pertencem ao cliente C9999.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [],
+   "error": null,
+   "n_nodes": 5,
+   "sources": [
+    "DOC010",
+    "R005",
+    "R015",
+    "R025"
+   ],
+   "rows_sample": [
+    {
+     "documento": "DOC010",
+     "titulo": "Privacidade e Acesso - Documento 10",
+     "secao": "2.4",
+     "pagina": 5,
+     "regra": "R010",
+     "descricao": "Dados de clientes devem ser acessados apenas por perfis autorizados e finalidade legítima.",
+     "tema": "Privacidade e Acesso"
+    }
+   ],
+   "notes": [
+    "Etapa 5 (graphrag_pipeline), LLM: openai"
+   ]
+  },
+  "U03": {
+   "question": "Qual é o CPF do cliente C0001?",
+   "answer": "Não há evidência suficiente no grafo/documentos: o sistema não armazena dados pessoais sensíveis (CPF, RG, senhas, número de cartão). Os dados são sintéticos e só têm IDs fictícios.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [],
+   "rows_sample": [],
+   "notes": [
+    "Etapa 5 (graphrag_pipeline), LLM: openai"
+   ]
+  },
+  "M01": {
+   "question": "Quais contas pertencem ao cliente?",
+   "answer": "Não há evidência suficiente no grafo/documentos: a pergunta se refere a um cliente sem informar qual. Informe o ID do cliente (ex.: C0208).",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [],
+   "rows_sample": [],
+   "notes": [
+    "Etapa 5 (graphrag_pipeline), LLM: openai"
+   ]
+  },
+  "M02": {
+   "question": "E os empréstimos dele, estão ativos?",
+   "answer": "Não há evidência suficiente no grafo/documentos: a pergunta se refere a um cliente sem informar qual. Informe o ID do cliente (ex.: C0208).",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [],
+   "rows_sample": [],
+   "notes": [
+    "Etapa 5 (graphrag_pipeline), LLM: openai"
+   ]
+  },
+  "O01": {
+   "question": "Qual a previsão do tempo para amanhã em Maceió?",
+   "answer": "Não há evidência suficiente no grafo/documentos para responder a esta pergunta.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [],
+   "rows_sample": [],
+   "notes": [
+    "Etapa 5 (graphrag_pipeline), LLM: openai"
+   ]
+  },
+  "O02": {
+   "question": "Qual é a capital da França?",
+   "answer": "Não há evidência suficiente no grafo/documentos para responder a esta pergunta.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [],
+   "rows_sample": [],
+   "notes": [
+    "Etapa 5 (graphrag_pipeline), LLM: openai"
+   ]
+  }
+ }
+}

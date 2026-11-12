@@ -402,7 +402,7 @@ def guard(question):
                 "(CPF, RG, senhas, número de cartão). Os dados são sintéticos e só têm IDs fictícios.")
     if _REFERENCE.search(q) and not _ANY_ID.search(question.upper()):
         return ("Não há evidência suficiente no grafo/documentos: a pergunta se refere a um cliente sem informar qual. "
-                "Informe o ID do cliente (ex.: C0208).")
+                "Informe o ID do cliente (a letra C seguida de 4 dígitos).")
     return None
 
 
@@ -456,9 +456,18 @@ def query_graph(s, question, provider, out, attempts=2):
     """Planeja, valida e executa. Se a consulta for rejeitada, falhar ou so devolver nulos, o LLM recebe o
     motivo e tenta mais uma vez. Retorna as linhas (possivelmente vazias)."""
     feedback = ""
+    # IDs de DADOS citados na pergunta (regras R/DOC nao contam: perguntas sobre regras vao para os documentos)
+    data_ids = [i for i in dict.fromkeys(_ANY_ID.findall(question.upper())) if not i.startswith(("R", "DOC"))]
     for attempt in range(attempts):
         plan = plan_query(question + feedback, provider)
+        out.setdefault("plans", []).append(plan)
+        last = attempt + 1 == attempts
         if plan.get("mode") == "none":
+            if data_ids and not last:          # contradicao: a pergunta cita um cliente/conta/transacao
+                out["query_origin"] = "none (replanejando)"
+                feedback = (f"\n\n(A pergunta cita o(s) ID(s) {', '.join(data_ids)}: e uma pergunta sobre DADOS do grafo. "
+                            "Escolha a consulta pronta que usa esse(s) ID(s).)")
+                continue
             out["query_origin"] = "none (so documentos/regras)"
             return []
         try:
@@ -470,9 +479,10 @@ def query_graph(s, question, provider, out, attempts=2):
             return rows
         except Exception as e:
             out["errors"].append(f"consulta ao grafo (tentativa {attempt + 1}): {e}")
-            if "nao estao na pergunta" in str(e) or "precisa informar o ID" in str(e):
-                return []                                   # faltou informacao na pergunta: nao insistir
-            feedback = (f"\n\n(A tentativa anterior falhou: {e}. Use uma consulta pronta se alguma servir; "
+            if not data_ids and ("nao estao na pergunta" in str(e) or "precisa informar o ID" in str(e)):
+                return []                       # a pergunta nao tem ID: faltou informacao, nao insistir
+            hint = f" Use exatamente o(s) ID(s) da pergunta: {', '.join(data_ids)}." if data_ids else ""
+            feedback = (f"\n\n(A tentativa anterior falhou: {e}.{hint} Use uma consulta pronta se alguma servir; "
                         "senao use SOMENTE as propriedades listadas no schema.)")
     return []
 
