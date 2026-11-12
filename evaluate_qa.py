@@ -303,6 +303,9 @@ def make_backends(names):
             spec, fn = load_external()
             if spec is None:
                 raise SystemExit(f"Etapa 5 indisponivel: {fn}")
+            import retrieval
+            print(f"Etapa 5: LLM = {retrieval.PROVIDER}" + ("  (ATENCAO: respostas simuladas, sem valor de avaliacao; "
+                  "defina OPENAI_API_KEY)" if retrieval.PROVIDER == "mock" else f", modelo {retrieval.G.LLM_MODEL}"))
             out[n] = fn
         else:
             raise SystemExit(f"backend desconhecido: {n}")
