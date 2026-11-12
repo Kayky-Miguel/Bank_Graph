@@ -12,9 +12,9 @@ Assistente para análise de relacionamentos e conhecimento bancário com **Graph
 | 2 | Dados sintéticos e documentos | Concluída |
 | 3 | Modelagem LPG no Neo4j (schema + ingestão) | Concluída |
 | 4 | Pipeline Text-to-Graph (NER/RE) | Concluída |
-| 5 | Recuperação híbrida GraphRAG/KAG | A fazer |
-| 6 | Interface Streamlit e visualização do subgrafo | Concluída (usa baseline até a Etapa 5 ser integrada) |
-| 7 | Avaliação e testes | Concluída para o baseline (resultados em `evaluation/README.md`); falta incluir a Etapa 5 |
+| 5 | Recuperação híbrida GraphRAG/KAG | Concluída (`graphrag_pipeline.py`) |
+| 6 | Interface Streamlit e visualização do subgrafo | Concluída (usa a Etapa 5 via `retrieval.py`) |
+| 7 | Avaliação e testes | Concluída para o baseline (resultados em `evaluation/README.md`); falta rodar com a Etapa 5 |
 | 8 | Documentação, artigo e apresentação | A fazer |
 
 ## Estrutura do repositório
@@ -130,6 +130,8 @@ Atenção: o `extraction_cache.json` atual **não corresponde ao prompt atual** 
 ```bash
 # Windows: $env:OPENAI_API_KEY="..."      Mac/Linux: export OPENAI_API_KEY="..."
 ```
+> **Atenção:** ao rodar do zero, o `extraction_cache.json` pode não bater com o prompt atual (o script então tenta chamar a API e falha com `401` se não houver chave). Alternativa sem chave e sem LLM (equivalente ao `--from-results` acima): `python load_extraction_results.py` grava o `extraction_results.json` (saída já validada) direto no Neo4j; use `--dry-run` para só conferir as contagens (esperado: 30 documentos, 34 entidades, 23 relações).
+
 Use `--dry-run` para extrair sem gravar no Neo4j e `--limit N` para testar em poucos documentos. Para testar o fluxo sem LLM, use `--provider mock`.
 
 **4. Avaliação da extração.**
@@ -153,6 +155,26 @@ python evaluate_qa.py --backends baseline vector retrieval   # inclui a Etapa 5,
 python -m pytest tests -q                            # testes automatizados (sem Neo4j)
 ```
 São 23 perguntas: básicas, intermediárias e avançadas respondíveis, além de perguntas sem resposta, ambíguas e fora do domínio. O gabarito de cada uma é **calculado direto dos CSVs com pandas**, sem passar pelo Neo4j nem pelo código avaliado: um erro de ingestão ou de consulta aparece como erro na avaliação. Métricas: precisão, recall e F1 dos IDs esperados; tema correto nas 3 primeiras fontes; abstenção correta e indevida; respostas com evidência rastreável; IDs citados sem suporte nas evidências (indício de alucinação); erros; latência média e p95. O resultado vai para `evaluation/report.md`.
+
+## Etapa 5: recuperação híbrida (GraphRAG/KAG)
+
+Responde perguntas em linguagem natural combinando busca vetorial, consulta Cypher validada e regras explícitas (KAG), e devolve a resposta com evidências.
+
+Pré-requisitos: etapas 1 a 4 rodadas (ingestão, embeddings e extração gravada no grafo) e `OPENAI_API_KEY` definida (ou `--provider mock` para testar o fluxo sem chave). Opcionais: `LLM_MODEL` (padrão `gpt-4o-mini`) e `OPENAI_BASE_URL` (outros provedores compatíveis).
+
+```bash
+python test_etapa5.py            # testes offline (validador de Cypher, abstenção, IDs sem evidência)
+python graphrag_pipeline.py "Quais clientes têm transação sinalizada nos últimos 30 dias e empréstimo ativo?"
+python graphrag_pipeline.py "Qual a capital da França?"        # deve se abster
+```
+
+Fluxo: embedding da pergunta, busca vetorial, o LLM escolhe uma consulta pronta ou propõe um Cypher, validador (só leitura, labels e relações permitidos, profundidade <= 4, LIMIT <= 100), execução em transação de leitura com timeout, regras do documento de origem (KAG) e resposta somente com o contexto recuperado.
+
+Saída (JSON): resposta, `abstained`, `cypher`, `params`, `graph_rows`, `documents`, `rules`, `entity_ids`, `unsupported_ids` (IDs citados sem evidência), `confidence` (heurística, não probabilidade), `errors` e `latency_s`.
+
+Resultado esperado da pergunta central (ref. 2026-11-10): 7 clientes com transação sinalizada; 3 com empréstimo ativo (C0208, C0234, C0410).
+
+Limitações conhecidas: o LLM não é determinístico e pode omitir itens de uma lista; o limiar de similaridade (`MIN_VECTOR_SCORE = 0.60`) foi calibrado com poucas perguntas e trechos pouco relacionados podem aparecer logo acima dele; a função `db.index.vector.queryNodes` está obsoleta no Neo4j novo (continua funcionando; migrar para `SEARCH` é um próximo passo).
 
 ## Conferindo o resultado
 
@@ -201,9 +223,7 @@ Boa parte da diferença vem de convenção de granularidade (enumerações agrup
 
 ## Próximos passos
 
-1. **Etapa 5:** recuperação híbrida (embedding da pergunta + Cypher parametrizado e limitado + resposta fundamentada com IDs de nós e fontes). A função vetorial `db.index.vector.queryNodes` aparece como obsoleta nas versões novas do Neo4j; confira a sintaxe substituta (`SEARCH`) na documentação antes de usá-la.
-2. **Etapa 6:** concluída; falta trocar o baseline pela `answer` da Etapa 5 (`retrieval.py`).
-3. **Etapa 7:** perguntas de teste (respondíveis, não respondíveis e ambíguas), comparação entre busca vetorial isolada e híbrida, e avaliação final nos documentos do split `test`.
+Lista atualizada do que falta em `evaluation/README.md` e na seção de pendências abaixo.
 
 ## Dataset
 
