@@ -133,3 +133,12 @@ def test_load_results_rebuilds_full_extraction():
         assert len(got[doc]["entities"]) == len(src[doc]["entities"])
         assert len(got[doc]["relations"]) == len(src[doc]["relations"])
         assert all(":" in r["source"] and ":" in r["target"] for r in got[doc]["relations"])
+
+
+def test_rule_questions_are_scored_by_topic(gold):
+    # R021 e copia identica de R001 (mesmo tema): citar so uma copia e acerto completo
+    s = score(gold["A05"], _res(answer="Limite de R$ 2.000 (R021).", entity_ids=["R021"], rows=[{"r": "R021"}]))
+    assert s["recall"] == 1.0 and s["precision"] == 1.0 and s["correct"]
+    # regra de outro tema derruba a precisao
+    s = score(gold["A05"], _res(answer="R001 e R003", entity_ids=["R001", "R003"], rows=[{"r": "R001 R003"}]))
+    assert s["recall"] == 1.0 and s["precision"] == 0.5

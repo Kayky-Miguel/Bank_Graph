@@ -172,11 +172,17 @@ QUESTIONS = [
 
 
 def build_gold(d):
+    # cada regra existe em 3 copias identicas (uma por versao do documento): R001 = R011 = R021.
+    # Perguntas sobre regras sao avaliadas por TEMA; citar qualquer copia do tema certo conta como acerto.
+    r = d["banking_rules"]
+    rule_topic = dict(zip(r.rule_id, r.rule_name.map(norm)))
     out = {}
     for q in QUESTIONS:
         g = dict(q)
         g["gold_ids"] = sorted(q["gold"](d)) if "gold" in q else []
         g.pop("gold", None)
+        if "rule" in _types(q.get("expect")):
+            g["rule_topic"] = rule_topic
         out[q["id"]] = g
     return out
 
@@ -211,6 +217,10 @@ def score(q, res, rules_topic=None):
         types = _types(q.get("expect"))
         gold = set(q["gold_ids"])
         pred = _of_types(set(res.get("entity_ids") or []) | answer_ids, types)
+        if q.get("rule_topic"):                       # regras: compara temas, nao copias
+            rt = q["rule_topic"]
+            gold = {rt.get(i, i) for i in gold}
+            pred = {rt.get(i, i) for i in pred}
         tp = len(gold & pred)
         p = tp / len(pred) if pred else 0.0
         r = tp / len(gold) if gold else (1.0 if not pred else 0.0)
@@ -337,7 +347,8 @@ def run_backend(fn, gold, ref_date="2026-11-10", limit=100):
         scores.append(s)
         raw[qid] = {"question": q["question"], "answer": res["answer"], "abstained": res.get("insufficient_evidence"),
                     "entity_ids": res.get("entity_ids"), "queries": res.get("queries"), "error": res.get("error"),
-                    "n_nodes": len(res["graph"]["nodes"]), "sources": [s_.get("document_id") for s_ in res["sources"]]}
+                    "n_nodes": len(res["graph"]["nodes"]), "sources": [s_.get("document_id") for s_ in res["sources"]],
+                    "rows_sample": res["rows"][:8], "notes": res.get("notes")}
         flag = "OK  " if s["correct"] else ("ERRO" if s["error"] else "FALHA")
         print(f"  {flag} {qid} {q['question'][:70]}")
         if s["error"]:

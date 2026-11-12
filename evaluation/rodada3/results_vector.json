@@ -1,0 +1,1109 @@
+{
+ "summary": {
+  "perguntas": 23,
+  "acuracia": 0.391,
+  "acuracia_respondiveis": 0.25,
+  "precisao_ids": 0.15,
+  "recall_ids": 0.25,
+  "f1_ids": 0.188,
+  "topico_hit@3": 1.0,
+  "abstencao_correta": 0.714,
+  "abstencao_indevida": 0.125,
+  "respostas_com_evidencia": 1.0,
+  "respostas_com_id_sem_suporte": 0.0,
+  "erros": 0,
+  "latencia_media_ms": 79,
+  "latencia_p95_ms": 87
+ },
+ "scores": [
+  {
+   "id": "B01",
+   "kind": "answerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 269.0823000000364,
+   "abstained": true,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 2,
+   "n_pred": 0,
+   "missing": [
+    "A0525",
+    "A0689"
+   ],
+   "extra": [],
+   "correct": false
+  },
+  {
+   "id": "B02",
+   "kind": "answerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 82.81020000003991,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 1,
+   "n_pred": 0,
+   "missing": [
+    "L0041"
+   ],
+   "extra": [],
+   "correct": false
+  },
+  {
+   "id": "B03",
+   "kind": "answerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 81.64469999996982,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 1,
+   "n_pred": 0,
+   "missing": [
+    "A0309"
+   ],
+   "extra": [],
+   "correct": false
+  },
+  {
+   "id": "B04",
+   "kind": "answerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 72.11480000000847,
+   "abstained": true,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 3,
+   "n_pred": 0,
+   "missing": [
+    "CC0001",
+    "CC0015",
+    "CC0234"
+   ],
+   "extra": [],
+   "correct": false
+  },
+  {
+   "id": "B05",
+   "kind": "answerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 69.60160000016913,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 1,
+   "n_pred": 0,
+   "missing": [
+    "AL00001"
+   ],
+   "extra": [],
+   "correct": false
+  },
+  {
+   "id": "I01",
+   "kind": "answerable",
+   "difficulty": "intermediaria",
+   "error": null,
+   "latency_ms": 61.615800000026866,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 43,
+   "n_pred": 0,
+   "missing": [
+    "C0002",
+    "C0015",
+    "C0018",
+    "C0027",
+    "C0034",
+    "C0058",
+    "C0070",
+    "C0081",
+    "C0083",
+    "C0103",
+    "C0108",
+    "C0129",
+    "C0142",
+    "C0161",
+    "C0169"
+   ],
+   "extra": [],
+   "correct": false
+  },
+  {
+   "id": "I02",
+   "kind": "answerable",
+   "difficulty": "intermediaria",
+   "error": null,
+   "latency_ms": 67.90010000008806,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 9,
+   "n_pred": 0,
+   "missing": [
+    "C0018",
+    "C0103",
+    "C0169",
+    "C0260",
+    "C0266",
+    "C0361",
+    "C0384",
+    "C0438",
+    "C0466"
+   ],
+   "extra": [],
+   "correct": false
+  },
+  {
+   "id": "I03",
+   "kind": "answerable",
+   "difficulty": "intermediaria",
+   "error": null,
+   "latency_ms": 65.98780000012994,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 5,
+   "n_pred": 0,
+   "missing": [
+    "M0001",
+    "M0023",
+    "M0037",
+    "M0045",
+    "M0048"
+   ],
+   "extra": [],
+   "correct": false
+  },
+  {
+   "id": "I04",
+   "kind": "answerable",
+   "difficulty": "intermediaria",
+   "error": null,
+   "latency_ms": 67.30440000001181,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 3,
+   "n_pred": 0,
+   "missing": [
+    "C0208",
+    "C0234",
+    "C0410"
+   ],
+   "extra": [],
+   "correct": false
+  },
+  {
+   "id": "I05",
+   "kind": "answerable",
+   "difficulty": "intermediaria",
+   "error": null,
+   "latency_ms": 58.82400000018606,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 63,
+   "n_pred": 0,
+   "missing": [
+    "C0001",
+    "C0007",
+    "C0015",
+    "C0024",
+    "C0041",
+    "C0042",
+    "C0048",
+    "C0051",
+    "C0052",
+    "C0068",
+    "C0081",
+    "C0088",
+    "C0089",
+    "C0097",
+    "C0099"
+   ],
+   "extra": [],
+   "correct": false
+  },
+  {
+   "id": "A01",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 130.75370000001385,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 10,
+   "n_pred": 0,
+   "missing": [
+    "C0159",
+    "C0208",
+    "C0234",
+    "C0326",
+    "C0369",
+    "C0410",
+    "C0443",
+    "L0041",
+    "L0120",
+    "L0157"
+   ],
+   "extra": [],
+   "correct": false
+  },
+  {
+   "id": "A02",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 80.52059999999983,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 4,
+   "n_pred": 0,
+   "missing": [
+    "C0218",
+    "C0248",
+    "C0382",
+    "C0474"
+   ],
+   "extra": [],
+   "correct": false
+  },
+  {
+   "id": "A03",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 83.39349999982915,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.6,
+   "recall": 1.0,
+   "f1": 0.75,
+   "n_gold": 3,
+   "n_pred": 5,
+   "missing": [],
+   "extra": [
+    "R007",
+    "R017"
+   ],
+   "topic_hit@3": true,
+   "correct": true
+  },
+  {
+   "id": "A04",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 86.60989999998492,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.6,
+   "recall": 1.0,
+   "f1": 0.75,
+   "n_gold": 3,
+   "n_pred": 5,
+   "missing": [],
+   "extra": [
+    "R004",
+    "R014"
+   ],
+   "topic_hit@3": true,
+   "correct": true
+  },
+  {
+   "id": "A05",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 82.75520000006509,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.6,
+   "recall": 1.0,
+   "f1": 0.75,
+   "n_gold": 3,
+   "n_pred": 5,
+   "missing": [],
+   "extra": [
+    "R003",
+    "R013"
+   ],
+   "topic_hit@3": true,
+   "must_say_ok": true,
+   "correct": true
+  },
+  {
+   "id": "A06",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 79.83420000005026,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.6,
+   "recall": 1.0,
+   "f1": 0.75,
+   "n_gold": 3,
+   "n_pred": 5,
+   "missing": [],
+   "extra": [
+    "R006",
+    "R016"
+   ],
+   "topic_hit@3": true,
+   "correct": true
+  },
+  {
+   "id": "U01",
+   "kind": "unanswerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 51.948799999991024,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "abstention_ok": true,
+   "must_say_ok": true,
+   "correct": true
+  },
+  {
+   "id": "U02",
+   "kind": "unanswerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 60.01240000000507,
+   "abstained": true,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "abstention_ok": true,
+   "correct": true
+  },
+  {
+   "id": "U03",
+   "kind": "unanswerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 57.345100000020466,
+   "abstained": true,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "abstention_ok": true,
+   "must_not_ok": true,
+   "correct": true
+  },
+  {
+   "id": "M01",
+   "kind": "ambiguous",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 51.870999999891865,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "abstention_ok": false,
+   "correct": false
+  },
+  {
+   "id": "M02",
+   "kind": "ambiguous",
+   "difficulty": "intermediaria",
+   "error": null,
+   "latency_ms": 49.77000000008047,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "abstention_ok": false,
+   "correct": false
+  },
+  {
+   "id": "O01",
+   "kind": "out_of_domain",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 52.14750000004642,
+   "abstained": true,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "abstention_ok": true,
+   "correct": true
+  },
+  {
+   "id": "O02",
+   "kind": "out_of_domain",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 45.731400000022404,
+   "abstained": true,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "abstention_ok": true,
+   "correct": true
+  }
+ ],
+ "answers": {
+  "B01": {
+   "question": "Quais contas pertencem ao cliente C0208?",
+   "answer": "Sem evidencia suficiente nos documentos.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC005",
+    "DOC025",
+    "DOC030",
+    "DOC015",
+    "DOC010"
+   ]
+  },
+  "B02": {
+   "question": "Quais empréstimos do cliente C0208 estão ativos?",
+   "answer": "- Empréstimo Pessoal (R023): Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.\n- Empréstimo Pessoal (R013): Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.\n- Empréstimo Pessoal (R003): Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+   "abstained": false,
+   "entity_ids": [
+    "R023",
+    "R013",
+    "R003"
+   ],
+   "queries": [
+    {
+     "cypher": "vector search (document_embedding, rule_embedding)",
+     "params": {
+      "k": 5
+     },
+     "rows": null,
+     "purpose": ""
+    }
+   ],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC013",
+    "DOC023",
+    "DOC003",
+    "DOC027",
+    "DOC007"
+   ]
+  },
+  "B03": {
+   "question": "Quais contas pertencem ao cliente C0001?",
+   "answer": "- Conta Compartilhada (R025): Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.\n- Conta Compartilhada (R015): Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.\n- Conta Compartilhada (R005): Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+   "abstained": false,
+   "entity_ids": [
+    "R025",
+    "R015",
+    "R005"
+   ],
+   "queries": [
+    {
+     "cypher": "vector search (document_embedding, rule_embedding)",
+     "params": {
+      "k": 5
+     },
+     "rows": null,
+     "purpose": ""
+    }
+   ],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC015",
+    "DOC005",
+    "DOC025",
+    "DOC030",
+    "DOC010"
+   ]
+  },
+  "B04": {
+   "question": "Quais cartões o cliente C0352 possui?",
+   "answer": "Sem evidencia suficiente nos documentos.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC030",
+    "DOC003",
+    "DOC023",
+    "DOC010",
+    "DOC004"
+   ]
+  },
+  "B05": {
+   "question": "Por quais evidências a transação T0001050 foi sinalizada?",
+   "answer": "- Transações Atípicas (R022): Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.\n- Transações Atípicas (R012): Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.\n- Transações Atípicas (R002): Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.\n- Frequência de Transferências (R016): Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.\n- Frequência de Transferências (R006): Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.",
+   "abstained": false,
+   "entity_ids": [
+    "R022",
+    "R012",
+    "R002",
+    "R016",
+    "R006"
+   ],
+   "queries": [
+    {
+     "cypher": "vector search (document_embedding, rule_embedding)",
+     "params": {
+      "k": 5
+     },
+     "rows": null,
+     "purpose": ""
+    }
+   ],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC022",
+    "DOC012",
+    "DOC002",
+    "DOC006",
+    "DOC026"
+   ]
+  },
+  "I01": {
+   "question": "Quais clientes possuem contas conjuntas?",
+   "answer": "- Conta Compartilhada (R025): Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.\n- Conta Compartilhada (R015): Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.\n- Conta Compartilhada (R005): Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.\n- Concentração de Pagamentos (R017): Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.\n- Concentração de Pagamentos (R007): Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+   "abstained": false,
+   "entity_ids": [
+    "R025",
+    "R015",
+    "R005",
+    "R017",
+    "R007"
+   ],
+   "queries": [
+    {
+     "cypher": "vector search (document_embedding, rule_embedding)",
+     "params": {
+      "k": 5
+     },
+     "rows": null,
+     "purpose": ""
+    }
+   ],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC005",
+    "DOC015",
+    "DOC025",
+    "DOC020",
+    "DOC016"
+   ]
+  },
+  "I02": {
+   "question": "Quais clientes têm conta conjunta e empréstimo ativo?",
+   "answer": "- Conta Compartilhada (R005): Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.\n- Conta Compartilhada (R025): Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.\n- Conta Compartilhada (R015): Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.\n- Empréstimo Pessoal (R013): Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.\n- Empréstimo Pessoal (R003): Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+   "abstained": false,
+   "entity_ids": [
+    "R005",
+    "R025",
+    "R015",
+    "R013",
+    "R003"
+   ],
+   "queries": [
+    {
+     "cypher": "vector search (document_embedding, rule_embedding)",
+     "params": {
+      "k": 5
+     },
+     "rows": null,
+     "purpose": ""
+    }
+   ],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC005",
+    "DOC025",
+    "DOC015",
+    "DOC023",
+    "DOC013"
+   ]
+  },
+  "I03": {
+   "question": "Quais estabelecimentos concentram pagamentos de vários clientes?",
+   "answer": "- Concentração de Pagamentos (R007): Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.\n- Concentração de Pagamentos (R027): Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.\n- Concentração de Pagamentos (R017): Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.\n- Conta Compartilhada (R015): Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.\n- Conta Compartilhada (R005): Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+   "abstained": false,
+   "entity_ids": [
+    "R007",
+    "R027",
+    "R017",
+    "R015",
+    "R005"
+   ],
+   "queries": [
+    {
+     "cypher": "vector search (document_embedding, rule_embedding)",
+     "params": {
+      "k": 5
+     },
+     "rows": null,
+     "purpose": ""
+    }
+   ],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC017",
+    "DOC007",
+    "DOC027",
+    "DOC005",
+    "DOC025"
+   ]
+  },
+  "I04": {
+   "question": "Quais clientes têm empréstimos ativos e alertas simulados nos últimos 30 dias?",
+   "answer": "- Empréstimo Pessoal (R003): Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.\n- Empréstimo Pessoal (R023): Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.\n- Empréstimo Pessoal (R013): Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.\n- Transações Atípicas (R012): Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.\n- Transações Atípicas (R002): Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.",
+   "abstained": false,
+   "entity_ids": [
+    "R003",
+    "R023",
+    "R013",
+    "R012",
+    "R002"
+   ],
+   "queries": [
+    {
+     "cypher": "vector search (document_embedding, rule_embedding)",
+     "params": {
+      "k": 5
+     },
+     "rows": null,
+     "purpose": ""
+    }
+   ],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC023",
+    "DOC013",
+    "DOC003",
+    "DOC022",
+    "DOC002"
+   ]
+  },
+  "I05": {
+   "question": "Quais clientes pagaram ao estabelecimento M0007?",
+   "answer": "- Concentração de Pagamentos (R007): Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.\n- Concentração de Pagamentos (R027): Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.\n- Concentração de Pagamentos (R017): Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+   "abstained": false,
+   "entity_ids": [
+    "R007",
+    "R027",
+    "R017"
+   ],
+   "queries": [
+    {
+     "cypher": "vector search (document_embedding, rule_embedding)",
+     "params": {
+      "k": 5
+     },
+     "rows": null,
+     "purpose": ""
+    }
+   ],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC011",
+    "DOC021",
+    "DOC001",
+    "DOC027",
+    "DOC007"
+   ]
+  },
+  "A01": {
+   "question": "Quais clientes possuem relacionamento com contas que realizaram transações sinalizadas nos últimos 30 dias e, entre eles, quais possuem empréstimos ativos?",
+   "answer": "- Empréstimo Pessoal (R023): Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.\n- Empréstimo Pessoal (R013): Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.\n- Empréstimo Pessoal (R003): Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.\n- Concentração de Pagamentos (R017): Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.\n- Concentração de Pagamentos (R007): Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+   "abstained": false,
+   "entity_ids": [
+    "R023",
+    "R013",
+    "R003",
+    "R017",
+    "R007"
+   ],
+   "queries": [
+    {
+     "cypher": "vector search (document_embedding, rule_embedding)",
+     "params": {
+      "k": 5
+     },
+     "rows": null,
+     "purpose": ""
+    }
+   ],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC023",
+    "DOC013",
+    "DOC003",
+    "DOC027",
+    "DOC022"
+   ]
+  },
+  "A02": {
+   "question": "Quais clientes têm relação indireta, por conta conjunta, com contas que tiveram transações sinalizadas nos últimos 365 dias?",
+   "answer": "- Conta Compartilhada (R025): Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.\n- Conta Compartilhada (R015): Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.\n- Conta Compartilhada (R005): Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.\n- Frequência de Transferências (R016): Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.\n- Frequência de Transferências (R006): Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.",
+   "abstained": false,
+   "entity_ids": [
+    "R025",
+    "R015",
+    "R005",
+    "R016",
+    "R006"
+   ],
+   "queries": [
+    {
+     "cypher": "vector search (document_embedding, rule_embedding)",
+     "params": {
+      "k": 5
+     },
+     "rows": null,
+     "purpose": ""
+    }
+   ],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC005",
+    "DOC025",
+    "DOC006",
+    "DOC026",
+    "DOC015"
+   ]
+  },
+  "A03": {
+   "question": "Quais regras documentadas se aplicam ao empréstimo do cliente C0208?",
+   "answer": "- Empréstimo Pessoal (R023): Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.\n- Empréstimo Pessoal (R013): Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.\n- Empréstimo Pessoal (R003): Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.\n- Concentração de Pagamentos (R017): Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.\n- Concentração de Pagamentos (R007): Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+   "abstained": false,
+   "entity_ids": [
+    "R023",
+    "R013",
+    "R003",
+    "R017",
+    "R007"
+   ],
+   "queries": [
+    {
+     "cypher": "vector search (document_embedding, rule_embedding)",
+     "params": {
+      "k": 5
+     },
+     "rows": null,
+     "purpose": ""
+    }
+   ],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC013",
+    "DOC003",
+    "DOC023",
+    "DOC027",
+    "DOC007"
+   ]
+  },
+  "A04": {
+   "question": "Quais regras orientam a revisão de transferências recorrentes?",
+   "answer": "- Frequência de Transferências (R006): Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.\n- Frequência de Transferências (R026): Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.\n- Frequência de Transferências (R016): Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.\n- Atualização Cadastral (R014): Dados cadastrais devem ser revisados após alteração relevante de endereço, renda ou contato.\n- Atualização Cadastral (R004): Dados cadastrais devem ser revisados após alteração relevante de endereço, renda ou contato.",
+   "abstained": false,
+   "entity_ids": [
+    "R006",
+    "R026",
+    "R016",
+    "R014",
+    "R004"
+   ],
+   "queries": [
+    {
+     "cypher": "vector search (document_embedding, rule_embedding)",
+     "params": {
+      "k": 5
+     },
+     "rows": null,
+     "purpose": ""
+    }
+   ],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC026",
+    "DOC016",
+    "DOC006",
+    "DOC001",
+    "DOC011"
+   ]
+  },
+  "A05": {
+   "question": "Qual é o limite do PIX para o segmento BASIC?",
+   "answer": "- Limite de Transferência PIX (R021): O limite diário padrão simulado para o segmento BASIC é de R$ 2.000. Aumento exige validação cadastral.\n- Limite de Transferência PIX (R011): O limite diário padrão simulado para o segmento BASIC é de R$ 2.000. Aumento exige validação cadastral.\n- Limite de Transferência PIX (R001): O limite diário padrão simulado para o segmento BASIC é de R$ 2.000. Aumento exige validação cadastral.\n- Empréstimo Pessoal (R013): Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.\n- Empréstimo Pessoal (R003): Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+   "abstained": false,
+   "entity_ids": [
+    "R021",
+    "R011",
+    "R001",
+    "R013",
+    "R003"
+   ],
+   "queries": [
+    {
+     "cypher": "vector search (document_embedding, rule_embedding)",
+     "params": {
+      "k": 5
+     },
+     "rows": null,
+     "purpose": ""
+    }
+   ],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC011",
+    "DOC001",
+    "DOC021",
+    "DOC013",
+    "DOC003"
+   ]
+  },
+  "A06": {
+   "question": "O que acontece quando há concentração de pagamentos em um estabelecimento?",
+   "answer": "- Concentração de Pagamentos (R007): Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.\n- Concentração de Pagamentos (R027): Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.\n- Concentração de Pagamentos (R017): Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.\n- Frequência de Transferências (R016): Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.\n- Frequência de Transferências (R006): Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.",
+   "abstained": false,
+   "entity_ids": [
+    "R007",
+    "R027",
+    "R017",
+    "R016",
+    "R006"
+   ],
+   "queries": [
+    {
+     "cypher": "vector search (document_embedding, rule_embedding)",
+     "params": {
+      "k": 5
+     },
+     "rows": null,
+     "purpose": ""
+    }
+   ],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC007",
+    "DOC017",
+    "DOC027",
+    "DOC026",
+    "DOC006"
+   ]
+  },
+  "U01": {
+   "question": "Um alerta permite afirmar que houve fraude?",
+   "answer": "- Transações Atípicas (R022): Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.\n- Transações Atípicas (R012): Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.\n- Transações Atípicas (R002): Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.\n- Contestação de Compra (R019): Uma contestação deve possuir identificador, transação relacionada, motivo e status.\n- Contestação de Compra (R009): Uma contestação deve possuir identificador, transação relacionada, motivo e status.",
+   "abstained": false,
+   "entity_ids": [
+    "R022",
+    "R012",
+    "R002",
+    "R019",
+    "R009"
+   ],
+   "queries": [
+    {
+     "cypher": "vector search (document_embedding, rule_embedding)",
+     "params": {
+      "k": 5
+     },
+     "rows": null,
+     "purpose": ""
+    }
+   ],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC002",
+    "DOC022",
+    "DOC012",
+    "DOC018",
+    "DOC028"
+   ]
+  },
+  "U02": {
+   "question": "Quais contas pertencem ao cliente C9999?",
+   "answer": "Sem evidencia suficiente nos documentos.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC010",
+    "DOC015",
+    "DOC005",
+    "DOC025",
+    "DOC030"
+   ]
+  },
+  "U03": {
+   "question": "Qual é o CPF do cliente C0001?",
+   "answer": "Sem evidencia suficiente nos documentos.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC011",
+    "DOC010",
+    "DOC001",
+    "DOC005",
+    "DOC030"
+   ]
+  },
+  "M01": {
+   "question": "Quais contas pertencem ao cliente?",
+   "answer": "- Concentração de Pagamentos (R007): Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.\n- Concentração de Pagamentos (R027): Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.\n- Concentração de Pagamentos (R017): Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.\n- Conta Compartilhada (R015): Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.\n- Conta Compartilhada (R005): Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+   "abstained": false,
+   "entity_ids": [
+    "R007",
+    "R027",
+    "R017",
+    "R015",
+    "R005"
+   ],
+   "queries": [
+    {
+     "cypher": "vector search (document_embedding, rule_embedding)",
+     "params": {
+      "k": 5
+     },
+     "rows": null,
+     "purpose": ""
+    }
+   ],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC030",
+    "DOC025",
+    "DOC015",
+    "DOC005",
+    "DOC020"
+   ]
+  },
+  "M02": {
+   "question": "E os empréstimos dele, estão ativos?",
+   "answer": "- Empréstimo Pessoal (R023): Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.\n- Empréstimo Pessoal (R013): Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.\n- Empréstimo Pessoal (R003): Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+   "abstained": false,
+   "entity_ids": [
+    "R023",
+    "R013",
+    "R003"
+   ],
+   "queries": [
+    {
+     "cypher": "vector search (document_embedding, rule_embedding)",
+     "params": {
+      "k": 5
+     },
+     "rows": null,
+     "purpose": ""
+    }
+   ],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC023",
+    "DOC013",
+    "DOC003",
+    "DOC027",
+    "DOC017"
+   ]
+  },
+  "O01": {
+   "question": "Qual a previsão do tempo para amanhã em Maceió?",
+   "answer": "Sem evidencia suficiente nos documentos.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC001",
+    "DOC021",
+    "DOC011",
+    "DOC018",
+    "DOC028"
+   ]
+  },
+  "O02": {
+   "question": "Qual é a capital da França?",
+   "answer": "Sem evidencia suficiente nos documentos.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC027",
+    "DOC007",
+    "DOC017",
+    "DOC009",
+    "DOC024"
+   ]
+  }
+ }
+}

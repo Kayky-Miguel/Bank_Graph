@@ -1,0 +1,1086 @@
+{
+ "summary": {
+  "perguntas": 23,
+  "acuracia": 0.565,
+  "acuracia_respondiveis": 0.438,
+  "precisao_ids": 0.656,
+  "recall_ids": 0.543,
+  "f1_ids": 0.546,
+  "topico_hit@3": 1.0,
+  "abstencao_correta": 0.857,
+  "abstencao_indevida": 0.25,
+  "respostas_com_evidencia": 1.0,
+  "respostas_com_id_sem_suporte": 0.0,
+  "erros": 0,
+  "latencia_media_ms": 3446,
+  "latencia_p95_ms": 4303
+ },
+ "scores": [
+  {
+   "id": "B01",
+   "kind": "answerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 11266.851000000088,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n_gold": 2,
+   "n_pred": 2,
+   "missing": [],
+   "extra": [],
+   "correct": true
+  },
+  {
+   "id": "B02",
+   "kind": "answerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 5705.370100000209,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n_gold": 1,
+   "n_pred": 1,
+   "missing": [],
+   "extra": [],
+   "correct": true
+  },
+  {
+   "id": "B03",
+   "kind": "answerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 3142.4915999998575,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n_gold": 1,
+   "n_pred": 1,
+   "missing": [],
+   "extra": [],
+   "correct": true
+  },
+  {
+   "id": "B04",
+   "kind": "answerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 3703.1372999999803,
+   "abstained": true,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 3,
+   "n_pred": 0,
+   "missing": [
+    "CC0001",
+    "CC0015",
+    "CC0234"
+   ],
+   "extra": [],
+   "correct": false
+  },
+  {
+   "id": "B05",
+   "kind": "answerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 3946.1307999999917,
+   "abstained": true,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 1,
+   "n_pred": 0,
+   "missing": [
+    "AL00001"
+   ],
+   "extra": [],
+   "correct": false
+  },
+  {
+   "id": "I01",
+   "kind": "answerable",
+   "difficulty": "intermediaria",
+   "error": null,
+   "latency_ms": 4084.4499999998334,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.5,
+   "recall": 0.093,
+   "f1": 0.157,
+   "n_gold": 43,
+   "n_pred": 8,
+   "missing": [
+    "C0002",
+    "C0015",
+    "C0018",
+    "C0027",
+    "C0034",
+    "C0058",
+    "C0070",
+    "C0081",
+    "C0083",
+    "C0103",
+    "C0108",
+    "C0129",
+    "C0142",
+    "C0161",
+    "C0169"
+   ],
+   "extra": [
+    "C0132",
+    "C0248",
+    "C0382",
+    "C0474"
+   ],
+   "correct": false
+  },
+  {
+   "id": "I02",
+   "kind": "answerable",
+   "difficulty": "intermediaria",
+   "error": null,
+   "latency_ms": 2738.4091999999782,
+   "abstained": true,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 9,
+   "n_pred": 0,
+   "missing": [
+    "C0018",
+    "C0103",
+    "C0169",
+    "C0260",
+    "C0266",
+    "C0361",
+    "C0384",
+    "C0438",
+    "C0466"
+   ],
+   "extra": [],
+   "correct": false
+  },
+  {
+   "id": "I03",
+   "kind": "answerable",
+   "difficulty": "intermediaria",
+   "error": null,
+   "latency_ms": 3703.7637000000814,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.5,
+   "recall": 1.0,
+   "f1": 0.667,
+   "n_gold": 5,
+   "n_pred": 10,
+   "missing": [],
+   "extra": [
+    "M0025",
+    "M0043",
+    "M0056",
+    "M0131",
+    "M0150"
+   ],
+   "correct": true
+  },
+  {
+   "id": "I04",
+   "kind": "answerable",
+   "difficulty": "intermediaria",
+   "error": null,
+   "latency_ms": 4303.297600000178,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n_gold": 3,
+   "n_pred": 3,
+   "missing": [],
+   "extra": [],
+   "correct": true
+  },
+  {
+   "id": "I05",
+   "kind": "answerable",
+   "difficulty": "intermediaria",
+   "error": null,
+   "latency_ms": 2652.6247000001604,
+   "abstained": true,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 63,
+   "n_pred": 0,
+   "missing": [
+    "C0001",
+    "C0007",
+    "C0015",
+    "C0024",
+    "C0041",
+    "C0042",
+    "C0048",
+    "C0051",
+    "C0052",
+    "C0068",
+    "C0081",
+    "C0088",
+    "C0089",
+    "C0097",
+    "C0099"
+   ],
+   "extra": [],
+   "correct": false
+  },
+  {
+   "id": "A01",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 4032.3106000000735,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 0.6,
+   "f1": 0.75,
+   "n_gold": 10,
+   "n_pred": 6,
+   "missing": [
+    "C0159",
+    "C0326",
+    "C0369",
+    "C0443"
+   ],
+   "extra": [],
+   "correct": false
+  },
+  {
+   "id": "A02",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 3651.2047999999595,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.5,
+   "recall": 1.0,
+   "f1": 0.667,
+   "n_gold": 4,
+   "n_pred": 8,
+   "missing": [],
+   "extra": [
+    "C0132",
+    "C0266",
+    "C0422",
+    "C0438"
+   ],
+   "correct": true
+  },
+  {
+   "id": "A03",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 4110.58109999999,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n_gold": 3,
+   "n_pred": 3,
+   "missing": [],
+   "extra": [],
+   "topic_hit@3": true,
+   "correct": true
+  },
+  {
+   "id": "A04",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 2542.8669000000355,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 0.333,
+   "f1": 0.5,
+   "n_gold": 3,
+   "n_pred": 1,
+   "missing": [
+    "R006",
+    "R016"
+   ],
+   "extra": [],
+   "topic_hit@3": true,
+   "correct": false
+  },
+  {
+   "id": "A05",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 2183.652400000028,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 0.333,
+   "f1": 0.5,
+   "n_gold": 3,
+   "n_pred": 1,
+   "missing": [
+    "R011",
+    "R021"
+   ],
+   "extra": [],
+   "topic_hit@3": true,
+   "must_say_ok": true,
+   "correct": false
+  },
+  {
+   "id": "A06",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 2733.5751000000528,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 0.333,
+   "f1": 0.5,
+   "n_gold": 3,
+   "n_pred": 1,
+   "missing": [
+    "R017",
+    "R027"
+   ],
+   "extra": [],
+   "topic_hit@3": true,
+   "correct": false
+  },
+  {
+   "id": "U01",
+   "kind": "unanswerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 2353.6274999999023,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "abstention_ok": true,
+   "must_say_ok": true,
+   "correct": true
+  },
+  {
+   "id": "U02",
+   "kind": "unanswerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 2476.243199999999,
+   "abstained": true,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "abstention_ok": true,
+   "correct": true
+  },
+  {
+   "id": "U03",
+   "kind": "unanswerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 2116.3570000001073,
+   "abstained": true,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "abstention_ok": true,
+   "must_not_ok": true,
+   "correct": true
+  },
+  {
+   "id": "M01",
+   "kind": "ambiguous",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 2413.1605999998555,
+   "abstained": true,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "abstention_ok": true,
+   "correct": true
+  },
+  {
+   "id": "M02",
+   "kind": "ambiguous",
+   "difficulty": "intermediaria",
+   "error": null,
+   "latency_ms": 3327.9331000001093,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "abstention_ok": false,
+   "correct": false
+  },
+  {
+   "id": "O01",
+   "kind": "out_of_domain",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 969.9459999999362,
+   "abstained": true,
+   "has_evidence": false,
+   "unsupported_ids": [],
+   "abstention_ok": true,
+   "correct": true
+  },
+  {
+   "id": "O02",
+   "kind": "out_of_domain",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 1107.70320000006,
+   "abstained": true,
+   "has_evidence": false,
+   "unsupported_ids": [],
+   "abstention_ok": true,
+   "correct": true
+  }
+ ],
+ "answers": {
+  "B01": {
+   "question": "Quais contas pertencem ao cliente C0208?",
+   "answer": "As contas pertencentes ao cliente C0208 são:\n\n1. Conta A0525 - Tipo: CHECKING, Status: ACTIVE, Saldo Simulado: 20653.75\n2. Conta A0689 - Tipo: CHECKING, Status: ACTIVE, Saldo Simulado: 1295.3\n\nTotal: 2 contas.",
+   "abstained": false,
+   "entity_ids": [
+    "A0525",
+    "A0689",
+    "C0208"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer {customer_id:$customer_id})-[o:OWNS]->(a:Account)\nRETURN c.customer_id AS cliente, a.account_id AS conta, a.account_type AS tipo, a.status AS status,\n       o.ownership_type AS titularidade, a.simulated_balance_brl AS saldo_simulado LIMIT 50",
+     "params": {
+      "customer_id": "C0208",
+      "ref": "2026-11-10"
+     },
+     "rows": 2,
+     "purpose": "template:customer_accounts"
+    }
+   ],
+   "error": null,
+   "n_nodes": 11,
+   "sources": [
+    "DOC005",
+    "DOC025",
+    "DOC030",
+    "DOC015"
+   ]
+  },
+  "B02": {
+   "question": "Quais empréstimos do cliente C0208 estão ativos?",
+   "answer": "O cliente C0208 possui os seguintes empréstimos ativos:\n\n1. Empréstimo L0041, status ACTIVE, valor 52615.89, regido pela regra R003 (DOC003).\n2. Empréstimo L0041, status ACTIVE, valor 52615.89, regido pela regra R013 (DOC013).\n3. Empréstimo L0041, status ACTIVE, valor 52615.89, regido pela regra R023 (DOC023).\n\nTotal de empréstimos ativos: 3.",
+   "abstained": false,
+   "entity_ids": [
+    "C0208",
+    "DOC003",
+    "DOC013",
+    "DOC023",
+    "L0041",
+    "R003",
+    "R013",
+    "R023"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer {customer_id:$customer_id})-[:HAS_LOAN]->(l:Loan)\nOPTIONAL MATCH (l)-[:FOLLOWS]->(r:BankingRule)<-[:DESCRIBES]-(d:Document)\nRETURN c.customer_id AS cliente, l.loan_id AS emprestimo, l.status AS status, l.principal_brl AS valor, r.rule_id AS regra,\n       r.rule_name AS nome_regra, r.description AS descricao_regra, d.document_id AS documento,\n       d.title AS titulo, d.section AS secao, d.page AS pagina LIMIT 50",
+     "params": {
+      "customer_id": "C0208",
+      "ref": "2026-11-10"
+     },
+     "rows": 3,
+     "purpose": "template:customer_loans_rules"
+    }
+   ],
+   "error": null,
+   "n_nodes": 8,
+   "sources": [
+    "R003",
+    "R013",
+    "R023",
+    "DOC013",
+    "DOC003",
+    "DOC023"
+   ]
+  },
+  "B03": {
+   "question": "Quais contas pertencem ao cliente C0001?",
+   "answer": "O cliente C0001 possui a conta A0309. Total de contas: 1.",
+   "abstained": false,
+   "entity_ids": [
+    "A0309",
+    "C0001"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer {customer_id:$customer_id})-[o:OWNS]->(a:Account)\nRETURN c.customer_id AS cliente, a.account_id AS conta, a.account_type AS tipo, a.status AS status,\n       o.ownership_type AS titularidade, a.simulated_balance_brl AS saldo_simulado LIMIT 50",
+     "params": {
+      "customer_id": "C0001",
+      "ref": "2026-11-10"
+     },
+     "rows": 1,
+     "purpose": "template:customer_accounts"
+    }
+   ],
+   "error": null,
+   "n_nodes": 6,
+   "sources": [
+    "R005",
+    "R015",
+    "R025",
+    "DOC015"
+   ]
+  },
+  "B04": {
+   "question": "Quais cartões o cliente C0352 possui?",
+   "answer": "Não há evidência suficiente no grafo/documentos para determinar quais cartões o cliente C0352 possui.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer {customer_id: 'C0352'})-[:HAS_CARD]->(card) RETURN card LIMIT 100",
+     "params": {
+      "ref": "2026-11-10"
+     },
+     "rows": 3,
+     "purpose": "cypher_llm"
+    }
+   ],
+   "error": null,
+   "n_nodes": 8,
+   "sources": [
+    "DOC030",
+    "R003",
+    "R013",
+    "R023"
+   ]
+  },
+  "B05": {
+   "question": "Por quais evidências a transação T0001050 foi sinalizada?",
+   "answer": "Não há evidência suficiente no grafo/documentos para determinar por quais evidências a transação T0001050 foi sinalizada, pois essa transação não está presente no contexto fornecido.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [
+    {
+     "cypher": "MATCH (al:Alert)-[:RAISED_ON]->(t:Transaction {flagged:true})<-[:SENT]-(a:Account)<-[:OWNS]-(c:Customer)\nMATCH (t)-[:PAID_TO]->(m:Merchant)\nRETURN t.transaction_id AS transacao, al.alert_id AS alerta, al.alert_type AS tipo_alerta, al.severity AS severidade,\n       al.alert_date AS data_alerta, t.amount_brl AS valor, m.merchant_id AS estabelecimento,\n       a.account_id AS conta, c.customer_id AS cliente\nORDER BY data_alerta DESC LIMIT 10",
+     "params": {
+      "ref": "2026-11-10"
+     },
+     "rows": 10,
+     "purpose": "template:flagged_evidence"
+    }
+   ],
+   "error": null,
+   "n_nodes": 58,
+   "sources": [
+    "DOC022",
+    "DOC012",
+    "DOC002",
+    "DOC006"
+   ]
+  },
+  "I01": {
+   "question": "Quais clientes possuem contas conjuntas?",
+   "answer": "Os clientes que possuem contas conjuntas são:\n\n1. Cliente C0218 (via cliente C0132) - Transação T0002510\n2. Cliente C0248 (via cliente C0266) - Transação T0004970\n3. Cliente C0382 (via cliente C0422) - Transação T0007853\n4. Cliente C0474 (via cliente C0438) - Transação T0008152\n5. Cliente C0474 (via cliente C0438) - Transação T0008161\n\nTotal: 5 clientes. \n\nA regra que sustenta a informação sobre contas conjuntas é a R005, que afirma que \"Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.\"",
+   "abstained": false,
+   "entity_ids": [
+    "C0132",
+    "C0218",
+    "C0248",
+    "C0266",
+    "C0382",
+    "C0422",
+    "C0438",
+    "C0474",
+    "R005",
+    "T0002510",
+    "T0004970",
+    "T0007853",
+    "T0008152",
+    "T0008161"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (x:Customer)-[:OWNS]->(:Account)<-[:OWNS]-(y:Customer)-[:OWNS]->(:Account)-[:SENT]->(t:Transaction {flagged:true})\nWHERE x <> y AND t.date >= $ref - duration({days: $dias})\nOPTIONAL MATCH (x)-[:HAS_LOAN]->(l:Loan {status:'ACTIVE'})\nRETURN x.customer_id AS cliente_indireto, y.customer_id AS via_cliente, t.transaction_id AS transacao,\n       collect(DISTINCT l.loan_id) AS emprestimos_ativos\nLIMIT 50",
+     "params": {
+      "dias": "365",
+      "ref": "2026-11-10"
+     },
+     "rows": 5,
+     "purpose": "template:indirect_joint"
+    }
+   ],
+   "error": null,
+   "n_nodes": 17,
+   "sources": [
+    "R005",
+    "R015",
+    "R025",
+    "DOC005"
+   ]
+  },
+  "I02": {
+   "question": "Quais clientes têm conta conjunta e empréstimo ativo?",
+   "answer": "Não há evidência suficiente no grafo/documentos para identificar quais clientes têm conta conjunta e empréstimo ativo.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer)-[:OWNS {ownership_type: 'JOINT'}]->(a:Account)<-[:ON_ACCOUNT]-(l:Loan {status: 'ACTIVE'}) RETURN c.name, c.customer_id LIMIT 100",
+     "params": {
+      "ref": "2026-11-10"
+     },
+     "rows": 7,
+     "purpose": "cypher_llm"
+    }
+   ],
+   "error": null,
+   "n_nodes": 11,
+   "sources": [
+    "R005",
+    "R015",
+    "R025",
+    "R003"
+   ]
+  },
+  "I03": {
+   "question": "Quais estabelecimentos concentram pagamentos de vários clientes?",
+   "answer": "Os estabelecimentos que concentram pagamentos de vários clientes são:\n\n1. Mercado Nordeste (M0001) - 103 clientes\n2. Loja Nordeste (M0037) - 79 clientes\n3. Loja Vida (M0045) - 77 clientes\n4. Loja Digital (M0023) - 76 clientes\n5. Mercado Vida (M0048) - 75 clientes\n6. Central Horizonte (M0056) - 75 clientes\n7. Rede Digital (M0025) - 74 clientes\n8. Central Horizonte (M0043) - 73 clientes\n9. Loja Nordeste (M0131) - 73 clientes\n10. Loja Vida (M0150) - 73 clientes\n\nTotal: 10 estabelecimentos.",
+   "abstained": false,
+   "entity_ids": [
+    "M0001",
+    "M0023",
+    "M0025",
+    "M0037",
+    "M0043",
+    "M0045",
+    "M0048",
+    "M0056",
+    "M0131",
+    "M0150"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer)-[:OWNS]->(:Account)-[:SENT]->(:Transaction)-[:PAID_TO]->(m:Merchant)\nRETURN m.merchant_id AS estabelecimento, m.merchant_name AS nome, count(DISTINCT c) AS clientes\nORDER BY clientes DESC LIMIT 10",
+     "params": {
+      "ref": "2026-11-10"
+     },
+     "rows": 10,
+     "purpose": "template:merchant_concentration"
+    }
+   ],
+   "error": null,
+   "n_nodes": 14,
+   "sources": [
+    "R007",
+    "R017",
+    "R027",
+    "DOC017"
+   ]
+  },
+  "I04": {
+   "question": "Quais clientes têm empréstimos ativos e alertas simulados nos últimos 30 dias?",
+   "answer": "Os clientes que têm empréstimos ativos e alertas simulados nos últimos 30 dias são:\n\n1. Cliente: C0208, Conta: A0525, Empréstimo Ativo: L0041, Alertas: UNUSUAL_AMOUNT\n2. Cliente: C0234, Conta: A0529, Empréstimo Ativo: L0120, Alertas: UNUSUAL_HOUR\n3. Cliente: C0410, Conta: A0245, Empréstimo Ativo: L0157, Alertas: UNUSUAL_HOUR\n\nTotal: 3 clientes.",
+   "abstained": false,
+   "entity_ids": [
+    "A0245",
+    "A0525",
+    "A0529",
+    "C0208",
+    "C0234",
+    "C0410",
+    "L0041",
+    "L0120",
+    "L0157"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer)-[:OWNS]->(a:Account)-[:SENT]->(t:Transaction {flagged:true})\nWHERE t.date >= $ref - duration({days: $dias})\nOPTIONAL MATCH (t)<-[:RAISED_ON]-(al:Alert)\nOPTIONAL MATCH (c)-[:HAS_LOAN]->(l:Loan {status:'ACTIVE'})\nRETURN c.customer_id AS cliente, a.account_id AS conta, t.transaction_id AS transacao, t.amount_brl AS valor,\n       collect(DISTINCT al.alert_type) AS alertas, collect(DISTINCT l.loan_id) AS emprestimos_ativos\nORDER BY cliente LIMIT 50",
+     "params": {
+      "dias": "30",
+      "ref": "2026-11-10"
+     },
+     "rows": 7,
+     "purpose": "template:flagged_with_loan"
+    }
+   ],
+   "error": null,
+   "n_nodes": 28,
+   "sources": [
+    "R003",
+    "R013",
+    "R023",
+    "DOC023"
+   ]
+  },
+  "I05": {
+   "question": "Quais clientes pagaram ao estabelecimento M0007?",
+   "answer": "Não há evidência suficiente no grafo/documentos para identificar quais clientes pagaram ao estabelecimento M0007.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer)-[:OWNS]->(a:Account)-[:SENT]->(t:Transaction)-[:PAID_TO]->(m:Merchant {merchant_id: 'M0007'}) RETURN c.name LIMIT 100",
+     "params": {
+      "ref": "2026-11-10"
+     },
+     "rows": 70,
+     "purpose": "cypher_llm"
+    }
+   ],
+   "error": null,
+   "n_nodes": 4,
+   "sources": [
+    "R007",
+    "R017",
+    "R027",
+    "R001"
+   ]
+  },
+  "A01": {
+   "question": "Quais clientes possuem relacionamento com contas que realizaram transações sinalizadas nos últimos 30 dias e, entre eles, quais possuem empréstimos ativos?",
+   "answer": "Os clientes que possuem relacionamento com contas que realizaram transações sinalizadas nos últimos 30 dias são:\n\n1. Cliente C0208 - Conta A0525 - Transação T0003863 (alerta: UNUSUAL_AMOUNT) - Empréstimos ativos: L0041\n2. Cliente C0234 - Conta A0529 - Transação T0004372 (alerta: UNUSUAL_HOUR) - Empréstimos ativos: L0120\n3. Cliente C0410 - Conta A0245 - Transação T0007630 (alerta: UNUSUAL_HOUR) - Empréstimos ativos: L0157\n\nDentre esses, os clientes que possuem empréstimos ativos são:\n\n- Cliente C0208 (L0041)\n- Cliente C0234 (L0120)\n- Cliente C0410 (L0157)\n\nTotal de clientes com empréstimos ativos: 3.",
+   "abstained": false,
+   "entity_ids": [
+    "A0245",
+    "A0525",
+    "A0529",
+    "C0208",
+    "C0234",
+    "C0410",
+    "L0041",
+    "L0120",
+    "L0157",
+    "T0003863",
+    "T0004372",
+    "T0007630"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer)-[:OWNS]->(a:Account)-[:SENT]->(t:Transaction {flagged:true})\nWHERE t.date >= $ref - duration({days: $dias})\nOPTIONAL MATCH (t)<-[:RAISED_ON]-(al:Alert)\nOPTIONAL MATCH (c)-[:HAS_LOAN]->(l:Loan {status:'ACTIVE'})\nRETURN c.customer_id AS cliente, a.account_id AS conta, t.transaction_id AS transacao, t.amount_brl AS valor,\n       collect(DISTINCT al.alert_type) AS alertas, collect(DISTINCT l.loan_id) AS emprestimos_ativos\nORDER BY cliente LIMIT 50",
+     "params": {
+      "dias": "30",
+      "ref": "2026-11-10"
+     },
+     "rows": 7,
+     "purpose": "template:flagged_with_loan"
+    }
+   ],
+   "error": null,
+   "n_nodes": 28,
+   "sources": [
+    "R003",
+    "R013",
+    "R023",
+    "DOC023"
+   ]
+  },
+  "A02": {
+   "question": "Quais clientes têm relação indireta, por conta conjunta, com contas que tiveram transações sinalizadas nos últimos 365 dias?",
+   "answer": "Os clientes que têm relação indireta, por conta conjunta, com contas que tiveram transações sinalizadas nos últimos 365 dias são:\n\n1. Cliente Indireto: C0218 (via cliente: C0132, transação: T0002510)\n2. Cliente Indireto: C0248 (via cliente: C0266, transação: T0004970)\n3. Cliente Indireto: C0382 (via cliente: C0422, transação: T0007853)\n4. Cliente Indireto: C0474 (via cliente: C0438, transações: T0008152 e T0008161)\n\nTotal: 4 clientes. \n\nAs transações sinalizadas são T0002510, T0004970, T0007853, T0008152 e T0008161 (IDs das transações).",
+   "abstained": false,
+   "entity_ids": [
+    "C0132",
+    "C0218",
+    "C0248",
+    "C0266",
+    "C0382",
+    "C0422",
+    "C0438",
+    "C0474",
+    "T0002510",
+    "T0004970",
+    "T0007853",
+    "T0008152",
+    "T0008161"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (x:Customer)-[:OWNS]->(:Account)<-[:OWNS]-(y:Customer)-[:OWNS]->(:Account)-[:SENT]->(t:Transaction {flagged:true})\nWHERE x <> y AND t.date >= $ref - duration({days: $dias})\nOPTIONAL MATCH (x)-[:HAS_LOAN]->(l:Loan {status:'ACTIVE'})\nRETURN x.customer_id AS cliente_indireto, y.customer_id AS via_cliente, t.transaction_id AS transacao,\n       collect(DISTINCT l.loan_id) AS emprestimos_ativos\nLIMIT 50",
+     "params": {
+      "dias": "365",
+      "ref": "2026-11-10"
+     },
+     "rows": 5,
+     "purpose": "template:indirect_joint"
+    }
+   ],
+   "error": null,
+   "n_nodes": 17,
+   "sources": [
+    "R005",
+    "R015",
+    "R025",
+    "R006"
+   ]
+  },
+  "A03": {
+   "question": "Quais regras documentadas se aplicam ao empréstimo do cliente C0208?",
+   "answer": "As regras documentadas que se aplicam ao empréstimo do cliente C0208 são:\n\n1. **Regra R003**: Empréstimo Pessoal - \"Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.\" (Documento: DOC003, Seção: 3.4, Página: 12)\n2. **Regra R013**: Empréstimo Pessoal - \"Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.\" (Documento: DOC013, Seção: 1.7, Página: 3)\n3. **Regra R023**: Empréstimo Pessoal - \"Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.\" (Documento: DOC023, Seção: 3.3, Página: 8)\n\nTotal de regras: 3.",
+   "abstained": false,
+   "entity_ids": [
+    "C0208",
+    "DOC003",
+    "DOC013",
+    "DOC023",
+    "R003",
+    "R013",
+    "R023"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer {customer_id:$customer_id})-[:HAS_LOAN]->(l:Loan)\nOPTIONAL MATCH (l)-[:FOLLOWS]->(r:BankingRule)<-[:DESCRIBES]-(d:Document)\nRETURN c.customer_id AS cliente, l.loan_id AS emprestimo, l.status AS status, l.principal_brl AS valor, r.rule_id AS regra,\n       r.rule_name AS nome_regra, r.description AS descricao_regra, d.document_id AS documento,\n       d.title AS titulo, d.section AS secao, d.page AS pagina LIMIT 50",
+     "params": {
+      "customer_id": "C0208",
+      "ref": "2026-11-10"
+     },
+     "rows": 3,
+     "purpose": "template:customer_loans_rules"
+    }
+   ],
+   "error": null,
+   "n_nodes": 8,
+   "sources": [
+    "R003",
+    "R013",
+    "R023",
+    "DOC013",
+    "DOC003",
+    "DOC023"
+   ]
+  },
+  "A04": {
+   "question": "Quais regras orientam a revisão de transferências recorrentes?",
+   "answer": "As regras que orientam a revisão de transferências recorrentes são:\n\n1. Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão. (ID: R026, DOC026)\n\nEssa regra se aplica a transferências que atendem a essa condição.",
+   "abstained": false,
+   "entity_ids": [
+    "DOC026",
+    "R026"
+   ],
+   "queries": [],
+   "error": null,
+   "n_nodes": 4,
+   "sources": [
+    "R006",
+    "R016",
+    "R026",
+    "DOC026"
+   ]
+  },
+  "A05": {
+   "question": "Qual é o limite do PIX para o segmento BASIC?",
+   "answer": "O limite diário padrão simulado para o segmento BASIC é de R$ 2.000. Aumento exige validação cadastral (R001, DOC001, DOC011, DOC021).",
+   "abstained": false,
+   "entity_ids": [
+    "DOC001",
+    "DOC011",
+    "DOC021",
+    "R001"
+   ],
+   "queries": [],
+   "error": null,
+   "n_nodes": 6,
+   "sources": [
+    "DOC011",
+    "DOC001",
+    "DOC021",
+    "R001"
+   ]
+  },
+  "A06": {
+   "question": "O que acontece quando há concentração de pagamentos em um estabelecimento?",
+   "answer": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual (R007, DOC007).",
+   "abstained": false,
+   "entity_ids": [
+    "DOC007",
+    "R007"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer)-[:OWNS]->(:Account)-[:SENT]->(:Transaction)-[:PAID_TO]->(m:Merchant)\nRETURN m.merchant_id AS estabelecimento, m.merchant_name AS nome, count(DISTINCT c) AS clientes\nORDER BY clientes DESC LIMIT 10",
+     "params": {
+      "ref": "2026-11-10"
+     },
+     "rows": 10,
+     "purpose": "template:merchant_concentration"
+    }
+   ],
+   "error": null,
+   "n_nodes": 14,
+   "sources": [
+    "R007",
+    "R017",
+    "R027",
+    "DOC007"
+   ]
+  },
+  "U01": {
+   "question": "Um alerta permite afirmar que houve fraude?",
+   "answer": "Alerta não comprova fraude. (R002, R012, R022, DOC002)",
+   "abstained": false,
+   "entity_ids": [
+    "DOC002",
+    "R002",
+    "R012",
+    "R022"
+   ],
+   "queries": [],
+   "error": null,
+   "n_nodes": 4,
+   "sources": [
+    "R002",
+    "R012",
+    "R022",
+    "DOC002"
+   ]
+  },
+  "U02": {
+   "question": "Quais contas pertencem ao cliente C9999?",
+   "answer": "Não há evidência suficiente no grafo/documentos para determinar quais contas pertencem ao cliente C9999.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer {customer_id:$customer_id})-[o:OWNS]->(a:Account)\nRETURN c.customer_id AS cliente, a.account_id AS conta, a.account_type AS tipo, a.status AS status,\n       o.ownership_type AS titularidade, a.simulated_balance_brl AS saldo_simulado LIMIT 50",
+     "params": {
+      "customer_id": "C9999",
+      "ref": "2026-11-10"
+     },
+     "rows": 0,
+     "purpose": "template:customer_accounts"
+    }
+   ],
+   "error": null,
+   "n_nodes": 5,
+   "sources": [
+    "DOC010",
+    "R005",
+    "R015",
+    "R025"
+   ]
+  },
+  "U03": {
+   "question": "Qual é o CPF do cliente C0001?",
+   "answer": "Não há evidência suficiente no grafo/documentos para fornecer o CPF do cliente C0001.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [],
+   "error": null,
+   "n_nodes": 4,
+   "sources": [
+    "R005",
+    "R015",
+    "R025",
+    "R008"
+   ]
+  },
+  "M01": {
+   "question": "Quais contas pertencem ao cliente?",
+   "answer": "Não há evidência suficiente no grafo/documentos para identificar quais contas pertencem ao cliente, pois não há informações sobre contas ou clientes no contexto fornecido.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer {customer_id:$customer_id})-[o:OWNS]->(a:Account)\nRETURN c.customer_id AS cliente, a.account_id AS conta, a.account_type AS tipo, a.status AS status,\n       o.ownership_type AS titularidade, a.simulated_balance_brl AS saldo_simulado LIMIT 50",
+     "params": {
+      "customer_id": "NONE",
+      "ref": "2026-11-10"
+     },
+     "rows": 0,
+     "purpose": "template:customer_accounts"
+    }
+   ],
+   "error": null,
+   "n_nodes": 8,
+   "sources": [
+    "DOC030",
+    "DOC025",
+    "DOC015",
+    "DOC005"
+   ]
+  },
+  "M02": {
+   "question": "E os empréstimos dele, estão ativos?",
+   "answer": "Sim, o cliente possui um empréstimo ativo. O empréstimo tem o ID \"L0001\", com status \"ACTIVE\", e possui um total de 24 parcelas, das quais 11 já foram pagas. \n\nIDs relevantes: \n- Empréstimo: L0001",
+   "abstained": false,
+   "entity_ids": [
+    "L0001"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer)-[:HAS_LOAN]->(l:Loan) WHERE l.status = 'ACTIVE' RETURN l LIMIT 1",
+     "params": {
+      "ref": "2026-11-10"
+     },
+     "rows": 1,
+     "purpose": "cypher_llm"
+    }
+   ],
+   "error": null,
+   "n_nodes": 5,
+   "sources": [
+    "R003",
+    "R013",
+    "R023",
+    "DOC023"
+   ]
+  },
+  "O01": {
+   "question": "Qual a previsão do tempo para amanhã em Maceió?",
+   "answer": "Não há evidência suficiente no grafo/documentos para responder a esta pergunta.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [],
+   "error": null,
+   "n_nodes": 0,
+   "sources": []
+  },
+  "O02": {
+   "question": "Qual é a capital da França?",
+   "answer": "Não há evidência suficiente no grafo/documentos para responder a esta pergunta.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [],
+   "error": null,
+   "n_nodes": 0,
+   "sources": []
+  }
+ }
+}
