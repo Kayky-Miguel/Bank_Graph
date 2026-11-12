@@ -213,6 +213,23 @@ def write_graph(results, entities, relations):
                  MERGE (r)-[:INSTANCE_OF]->(t)""")
     drv.close()
 
+def load_results(path):
+    """Reconstroi a extracao validada a partir de extraction_results.json (sem LLM, sem chave de API).
+    Mesmo formato que o laco de extracao produz: {doc: {topic, entities:[(key, v)], relations:[{source,type,target}]}}."""
+    data = json.loads(Path(path).read_text(encoding="utf-8"))
+    per_doc = {}
+    for doc_id, r in data.items():
+        ents = [(key_of(e["type"], e["name"]), {"name": e["name"], "type": e["type"]}) for e in r["entities"]]
+        by_name = {normalize(v["name"]): k for k, v in ents}
+        rels = []
+        for x in r["relations"]:
+            src, dst = by_name.get(normalize(x["source"])), by_name.get(normalize(x["target"]))
+            if src and dst:
+                rels.append({"source": src, "type": x["type"], "target": dst})
+        per_doc[doc_id] = {"topic": r["topic"], "entities": ents, "relations": rels, "dropped": r.get("dropped", [])}
+    return per_doc
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", required=True)
@@ -221,6 +238,8 @@ def main():
     ap.add_argument("--limit", type=int, help="processa so os N primeiros documentos (teste)")
     ap.add_argument("--semantic-merge", type=float, metavar="LIMIAR", help="ex.: 0.9 (usa sentence-transformers)")
     ap.add_argument("--dry-run", action="store_true", help="nao grava no Neo4j")
+    ap.add_argument("--from-results", metavar="JSON", nargs="?", const="extraction_results.json",
+                    help="grava no Neo4j a extracao ja validada (extraction_results.json), sem chamar o LLM")
     a = ap.parse_args()
 
     import pandas as pd
@@ -231,7 +250,16 @@ def main():
     cache = json.loads(cache_path.read_text(encoding="utf-8")) if cache_path.exists() else {}
 
     per_doc, all_ents, dropped_total = {}, {}, 0
-    for _, d in docs.iterrows():
+    if a.from_results:
+        per_doc = load_results(a.from_results)
+        if a.limit:
+            per_doc = dict(list(per_doc.items())[:a.limit])
+        for doc_id, r in per_doc.items():
+            dropped_total += len(r["dropped"])
+            for k, v in r["entities"]:
+                all_ents.setdefault(k, v)
+        print(f"{len(per_doc)} documentos lidos de {a.from_results} (sem chamar o LLM)")
+    for _, d in ([] if a.from_results else docs.iterrows()):
         topic, text = clean_topic(d["title"]), clean_text(d["text"])
         data = extract(a.provider, a.model, topic, text, cache)
         ents, rels, dropped = validate(data, topic, text)
@@ -240,7 +268,8 @@ def main():
         for k, v in ents:
             all_ents.setdefault(k, v)
         print(f"{d['document_id']}: {len(ents)} entidades, {len(rels)} relacoes, {len(dropped)} descartados")
-    cache_path.write_text(json.dumps(cache, ensure_ascii=False, indent=1), encoding="utf-8")
+    if not a.from_results:
+        cache_path.write_text(json.dumps(cache, ensure_ascii=False, indent=1), encoding="utf-8")
 
     n_before = len(all_ents)
     alias = {}
@@ -264,7 +293,8 @@ def main():
     print("Por tipo:", dict(Counter(v["type"] for v in entities.values())))
     print(f"Relacoes distintas: {len(relations)} | itens descartados na validacao: {dropped_total}")
 
-    Path("extraction_results.json").write_text(json.dumps(
+    if not a.from_results:   # no modo --from-results o arquivo e a entrada: nao reescrever
+      Path("extraction_results.json").write_text(json.dumps(
         {d: {"topic": r["topic"], "entities": [v for _, v in r["entities"]],
              "relations": [{"source": all_ents[x["source"]]["name"], "type": x["type"], "target": all_ents[x["target"]]["name"]} for x in r["relations"]],
              "dropped": r["dropped"]} for d, r in per_doc.items()}, ensure_ascii=False, indent=1), encoding="utf-8")

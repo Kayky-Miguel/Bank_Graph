@@ -13,8 +13,8 @@ Assistente para análise de relacionamentos e conhecimento bancário com **Graph
 | 3 | Modelagem LPG no Neo4j (schema + ingestão) | Concluída |
 | 4 | Pipeline Text-to-Graph (NER/RE) | Concluída |
 | 5 | Recuperação híbrida GraphRAG/KAG | A fazer |
-| 6 | Interface Streamlit e visualização do subgrafo | A fazer |
-| 7 | Avaliação e testes | A fazer |
+| 6 | Interface Streamlit e visualização do subgrafo | Concluída (usa baseline até a Etapa 5 ser integrada) |
+| 7 | Avaliação e testes | Concluída para o baseline (resultados em `evaluation/README.md`); falta incluir a Etapa 5 |
 | 8 | Documentação, artigo e apresentação | A fazer |
 
 ## Estrutura do repositório
@@ -30,6 +30,12 @@ evaluate_extraction.py    precisão, recall e F1 da extração contra o gabarito
 gold_annotations.json     gabarito anotado à mão (DOC001–DOC010, um por tema)
 extraction_cache.json     respostas do LLM em cache (permite reproduzir sem chave de API)
 extraction_results.json   saída validada da extração
+app.py                    interface Streamlit (Etapa 6)
+ui_backend.py             contrato com a Etapa 5 + baseline (templates Cypher + busca vetorial, sem LLM)
+graph_view.py             resultado do Neo4j -> subgrafo -> visualização PyVis
+evaluate_qa.py            avaliação das respostas: 23 perguntas, gabarito calculado dos CSVs, métricas e relatório (Etapa 7)
+evaluation/               saída da avaliação (results_<backend>.json e report.md)
+tests/                    testes automatizados sem Neo4j (python -m pytest tests -q)
 requirements.txt          dependências Python
 ```
 
@@ -112,11 +118,15 @@ python embed_docs.py
 python embed_docs.py --query "limite do PIX"     # teste da busca vetorial
 ```
 
-**3. Extração de entidades e relações (Text-to-Graph).**
+**3. Extração de entidades e relações (Text-to-Graph).** Para montar o grafo **sem chave de API**, grave a extração já validada que está no repositório (`extraction_results.json`, a mesma usada nas métricas):
+```bash
+python extract_entities.py --data ./BankGraph_AI_Dataset --from-results
+```
+Para refazer a extração com o LLM, defina a chave e rode:
 ```bash
 python extract_entities.py --data ./BankGraph_AI_Dataset --provider openai --model gpt-4o-mini
 ```
-O repositório inclui o `extraction_cache.json`. Usando **o mesmo provedor e o mesmo modelo** com que o cache foi gerado, o script lê as respostas guardadas e **não chama a API**, então não é preciso chave. Se mudar o modelo ou o prompt, o cache não vale e será preciso definir `OPENAI_API_KEY`:
+Atenção: o `extraction_cache.json` atual **não corresponde ao prompt atual** (o prompt mudou depois que o cache foi gerado), então essa execução chama a API de verdade. Defina `OPENAI_API_KEY`:
 ```bash
 # Windows: $env:OPENAI_API_KEY="..."      Mac/Linux: export OPENAI_API_KEY="..."
 ```
@@ -126,6 +136,23 @@ Use `--dry-run` para extrair sem gravar no Neo4j e `--limit N` para testar em po
 ```bash
 python evaluate_extraction.py
 ```
+
+**5. Interface (Etapa 6).** Com as variáveis do Neo4j definidas na mesma janela:
+```bash
+python -m streamlit run app.py
+```
+Abre no navegador (http://localhost:8501). A tela tem campo de pergunta, perguntas de demonstração, histórico, resposta com nível de confiança, entidades citadas e abas com o subgrafo interativo, os fatos recuperados, as fontes documentais, as consultas Cypher executadas (com parâmetros) e o JSON completo.
+
+**Integração com a Etapa 5.** A interface procura a função `answer` em `retrieval.py` (ou no módulo indicado em `BANKGRAPH_RETRIEVER="modulo:funcao"`). Se ela não existir, usa o **baseline** de `ui_backend.py`: templates Cypher fixos (os de `queries.cypher`), somente leitura, com `LIMIT` e timeout, mais busca vetorial nos documentos. O formato de retorno esperado está documentado no topo de `ui_backend.py`. O mínimo é `{"answer": ...}`. Para o subgrafo, basta devolver em `records` os `Path`/`Node` do driver: a interface monta o grafo sozinha.
+
+**6. Avaliação das respostas (Etapa 7).**
+```bash
+python evaluate_qa.py --gold-only                    # mostra o gabarito; não precisa de Neo4j
+python evaluate_qa.py                                # baseline híbrido x busca vetorial isolada
+python evaluate_qa.py --backends baseline vector retrieval   # inclui a Etapa 5, quando existir
+python -m pytest tests -q                            # testes automatizados (sem Neo4j)
+```
+São 23 perguntas: básicas, intermediárias e avançadas respondíveis, além de perguntas sem resposta, ambíguas e fora do domínio. O gabarito de cada uma é **calculado direto dos CSVs com pandas**, sem passar pelo Neo4j nem pelo código avaliado: um erro de ingestão ou de consulta aparece como erro na avaliação. Métricas: precisão, recall e F1 dos IDs esperados; tema correto nas 3 primeiras fontes; abstenção correta e indevida; respostas com evidência rastreável; IDs citados sem suporte nas evidências (indício de alucinação); erros; latência média e p95. O resultado vai para `evaluation/report.md`.
 
 ## Conferindo o resultado
 
@@ -151,7 +178,7 @@ Primeira rodada, comparação estrita (nome normalizado igual), 10 documentos an
 | Entidades (NER) | 0,62 | 0,75 | 0,68 |
 | Relações (RE) | 0,43 | 0,56 | 0,49 |
 
-Boa parte da diferença vem de convenção de granularidade (enumerações agrupadas no gabarito e separadas pelo LLM) e de variação de nome, não de alucinação. A análise de erros completa faz parte da Etapa 7. **Limitação:** os 30 documentos são 10 textos repetidos em 3 versões, então os splits `train`/`dev`/`test` não são independentes entre si.
+Boa parte da diferença vem de convenção de granularidade (enumerações agrupadas no gabarito e separadas pelo LLM) e de variação de nome, não de alucinação. Com comparação relaxada, que aceita essas duas divergências de forma, o F1 sobe para 0,90 (entidades) e 0,82 (relações). Análise de erros completa: `python evaluate_extraction.py --analysis` → `evaluation/extraction_errors.md`; resumo da Etapa 7 em `evaluation/README.md`. **Limitação:** os 30 documentos são 10 textos repetidos em 3 versões, então os splits `train`/`dev`/`test` não são independentes entre si.
 
 ## Problemas comuns
 
@@ -175,7 +202,7 @@ Boa parte da diferença vem de convenção de granularidade (enumerações agrup
 ## Próximos passos
 
 1. **Etapa 5:** recuperação híbrida (embedding da pergunta + Cypher parametrizado e limitado + resposta fundamentada com IDs de nós e fontes). A função vetorial `db.index.vector.queryNodes` aparece como obsoleta nas versões novas do Neo4j; confira a sintaxe substituta (`SEARCH`) na documentação antes de usá-la.
-2. **Etapa 6:** interface Streamlit com a pergunta, a resposta, as evidências, a consulta Cypher executada e o subgrafo.
+2. **Etapa 6:** concluída; falta trocar o baseline pela `answer` da Etapa 5 (`retrieval.py`).
 3. **Etapa 7:** perguntas de teste (respondíveis, não respondíveis e ambíguas), comparação entre busca vetorial isolada e híbrida, e avaliação final nos documentos do split `test`.
 
 ## Dataset
