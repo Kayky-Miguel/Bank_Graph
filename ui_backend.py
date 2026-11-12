@@ -52,8 +52,8 @@ def neo4j_score(cos):
 MIN_VECTOR_SCORE = neo4j_score(0.30)   # 0,65: abaixo disso a busca vetorial nao conta como evidencia
 HIGH_VECTOR_SCORE = neo4j_score(0.55)  # 0,775
 QUERY_TIMEOUT_S = 15
-DISCLAIMER = ("Dados 100% sinteticos. Alertas e transacoes sinalizadas sao sinais simulados "
-              "que merecem analise e nao comprovam fraude.")
+DISCLAIMER = ("Dados 100% sintéticos. Alertas e transações sinalizadas são sinais simulados "
+              "que merecem análise e não comprovam fraude.")
 
 
 # ------------------------------------------------------------------ resultado padrao
@@ -300,7 +300,7 @@ class BaselineRetriever:
         res = handler(question, dict(p, ref=ref_date, limit=int(limit), k=int(k)))
         res.setdefault("notes", []).append(f"Intencao detectada pelo baseline: {intent}.")
         if "fraude" in _norm(question):
-            res["notes"].insert(0, "Os dados nao permitem afirmar fraude: " + DISCLAIMER)
+            res["notes"].insert(0, "Os dados não permitem afirmar fraude: " + DISCLAIMER)
         return res
 
     # -------- handlers

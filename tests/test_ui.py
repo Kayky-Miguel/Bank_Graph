@@ -140,7 +140,7 @@ def test_fraud_question_gets_disclaimer():
            "text": "t", "score": 0.7, "regras": [{"rule_id": "R004", "rule_name": "Transacoes Atipicas",
                                                     "description": "gera alerta"}], "caminhos": []}
     res = normalize_result(StubRetriever([[rec]]).answer("Um alerta permite afirmar que houve fraude?"), "q")
-    assert res["notes"][0].startswith("Os dados nao permitem afirmar fraude")
+    assert res["notes"][0].startswith("Os dados não permitem afirmar fraude")
 
 
 # ---------------- a interface de ponta a ponta, com uma Etapa 5 falsa
