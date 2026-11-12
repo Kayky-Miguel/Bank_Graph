@@ -31,18 +31,25 @@ ALLOWED_RELS = {"OWNS", "SENT", "PAID_TO", "RAISED_ON", "HAS_LOAN", "ON_ACCOUNT"
                 "BELONGS_TO", "WORKS_AT", "FILED", "ABOUT", "DESCRIBES", "FOLLOWS", "MENTIONS", "INSTANCE_OF",
                 "APPLIES_TO", "HAS_LIMIT", "HAS_TERM", "REQUIRES", "MAY_TRIGGER", "MUST_RECORD"}
 
-SCHEMA_TEXT = """Grafo Neo4j (dados sinteticos). Use SOMENTE estes elementos.
-(Customer {customer_id,name,segment,city,state,monthly_income_brl})-[:OWNS {ownership_type: 'JOINT'|'SOLE'...}]->(Account {account_id,account_type,status,simulated_balance_brl})
-(Account)-[:SENT]->(Transaction {transaction_id,amount_brl,transaction_type,date,flagged,status,channel})-[:PAID_TO]->(Merchant {merchant_id,merchant_name,category,risk_profile})
-(Alert {alert_id,alert_type,severity,alert_date,status,note})-[:RAISED_ON]->(Transaction)
-(Customer)-[:HAS_LOAN]->(Loan {loan_id,principal_brl,status:'ACTIVE'|...})-[:ON_ACCOUNT]->(Account)
-(Customer)-[:HAS_CARD]->(Card)-[:LINKED_TO]->(Account)
-(Account)-[:BELONGS_TO]->(Branch)<-[:WORKS_AT]-(Employee)
-(Customer)-[:FILED]->(Complaint)-[:ABOUT]->(Transaction)
-(Document {document_id,title,section,page,text})-[:DESCRIBES]->(BankingRule {rule_id,rule_name,description})
+# Conferido contra os CSVs e o ingest.py: nomes de propriedade e valores EXATOS (o LLM nao deve adivinhar).
+SCHEMA_TEXT = """Grafo Neo4j (dados sinteticos). Use SOMENTE estes labels, relacoes e propriedades (nomes exatos).
+(Customer {customer_id,name,birth_year,city,state,segment:'BASIC'|'STANDARD'|'PREMIUM',monthly_income_brl,registration_date})
+  -[:OWNS {ownership_type:'PRIMARY'|'JOINT'}]->
+(Account {account_id,account_type:'CHECKING'|'SAVINGS'|'PAYMENT',status:'ACTIVE'|'BLOCKED'|'CLOSED',opened_date,simulated_balance_brl})
+(Account)-[:SENT]->(Transaction {transaction_id,amount_brl,transaction_type:'PIX_TRANSFER'|'TED_TRANSFER'|'CARD_PURCHASE'|'BILL_PAYMENT'|'WITHDRAWAL',
+  date,timestamp,status:'COMPLETED'|'PENDING'|'REVERSED',channel:'APP'|'WEB'|'ATM'|'POS',flagged:true|false,scenario})
+(Transaction)-[:PAID_TO]->(Merchant {merchant_id,merchant_name,category,city,state,risk_profile:'LOW'|'MEDIUM'|'HIGH',active})
+(Alert {alert_id,alert_type:'UNUSUAL_AMOUNT'|'UNUSUAL_HOUR'|'RISKY_MERCHANT'|'HIGH_FREQUENCY',severity:'LOW'|'MEDIUM'|'HIGH',alert_date,status,note})-[:RAISED_ON]->(Transaction)
+(Customer)-[:HAS_LOAN]->(Loan {loan_id,principal_brl,annual_interest_rate_pct,installments_total,installments_paid,status:'ACTIVE'|'LATE'|'PAID'|'CANCELLED',start_date})-[:ON_ACCOUNT]->(Account)
+(Customer)-[:HAS_CARD]->(Card {card_id,brand:'VISA'|'MASTERCARD'|'ELO',card_type:'CREDIT'|'DEBIT',credit_limit_brl,status:'ACTIVE'|'BLOCKED'})-[:LINKED_TO]->(Account)
+(Account)-[:BELONGS_TO]->(Branch {branch_id,branch_name,city,state})<-[:WORKS_AT]-(Employee {employee_id,employee_name,role})
+(Customer)-[:FILED]->(Complaint {complaint_id,category,description,status,created_date})-[:ABOUT]->(Transaction)
+(Document {document_id,title,section,page,version,text})-[:DESCRIBES]->(BankingRule {rule_id,rule_name,description,applies_to,severity,is_active})
 (Loan)-[:FOLLOWS]->(BankingRule)
-(BankingRule)-[:INSTANCE_OF]->(RuleTopic)-[:APPLIES_TO|HAS_LIMIT|HAS_TERM|REQUIRES|MAY_TRIGGER|MUST_RECORD]->(Entity)
-Datas sao tipo date do Cypher. Parametros disponiveis: $ref (data de referencia). Nunca use datetime()/date() sem argumento."""
+(BankingRule)-[:INSTANCE_OF]->(RuleTopic {name})-[:APPLIES_TO|HAS_LIMIT|HAS_TERM|REQUIRES|MAY_TRIGGER|MUST_RECORD]->(Entity {name,type})
+IDs: Customer C0001, Account A0001, Transaction T0000001, Loan L0001, Card CC0001, Merchant M0001, Alert AL00001, Document DOC001, BankingRule R001.
+Datas (date, opened_date, alert_date, start_date...) sao tipo date do Cypher. Parametros disponiveis: $ref (data de referencia).
+Nunca use datetime()/date() sem argumento. Prefira retornar propriedades (c.customer_id AS cliente) em vez de nos inteiros."""
 
 # ---------------------------------------------------------------- consultas prontas (plano B e base do KAG)
 TEMPLATES = {
@@ -94,6 +101,46 @@ RETURN t.transaction_id AS transacao, al.alert_id AS alerta, al.alert_type AS ti
        al.alert_date AS data_alerta, t.amount_brl AS valor, m.merchant_id AS estabelecimento,
        a.account_id AS conta, c.customer_id AS cliente
 ORDER BY data_alerta DESC LIMIT 10"""},
+    "transaction_evidence": {
+        "descricao": "Evidencias de UMA transacao especifica (pelo ID T...): valores, cenario, alertas, estabelecimento, conta e cliente.",
+        "params": {"transaction_id": "T0000001"},
+        "cypher": """MATCH (t:Transaction {transaction_id:$transaction_id})
+OPTIONAL MATCH (a:Account)-[:SENT]->(t)
+OPTIONAL MATCH (c:Customer)-[:OWNS]->(a)
+OPTIONAL MATCH (t)-[:PAID_TO]->(m:Merchant)
+OPTIONAL MATCH (al:Alert)-[:RAISED_ON]->(t)
+RETURN t.transaction_id AS transacao, t.amount_brl AS valor, t.transaction_type AS tipo, t.date AS data,
+       t.flagged AS sinalizada, t.scenario AS cenario_simulado, al.alert_id AS alerta, al.alert_type AS tipo_alerta,
+       al.severity AS severidade, al.note AS nota, m.merchant_id AS estabelecimento, m.risk_profile AS risco_estabelecimento,
+       a.account_id AS conta, collect(DISTINCT c.customer_id) AS clientes LIMIT 10"""},
+    "customer_cards": {
+        "descricao": "Cartoes de um cliente (bandeira, tipo, limite, status, conta vinculada).",
+        "params": {"customer_id": "C0001"},
+        "cypher": """MATCH (c:Customer {customer_id:$customer_id})-[:HAS_CARD]->(k:Card)
+OPTIONAL MATCH (k)-[:LINKED_TO]->(a:Account)
+RETURN c.customer_id AS cliente, k.card_id AS cartao, k.brand AS bandeira, k.card_type AS tipo,
+       k.credit_limit_brl AS limite, k.status AS status, a.account_id AS conta LIMIT 50"""},
+    "joint_accounts": {
+        "descricao": "LISTA de clientes que possuem conta conjunta (ownership_type JOINT), com os emprestimos ativos de cada um. "
+                     "Para 'conta conjunta E emprestimo ativo', use este e filtre os que tem emprestimos_ativos nao vazio.",
+        "params": {},
+        "cypher": """MATCH (c:Customer)-[:OWNS {ownership_type:'JOINT'}]->(a:Account)
+OPTIONAL MATCH (c)-[:HAS_LOAN]->(l:Loan {status:'ACTIVE'})
+RETURN c.customer_id AS cliente, a.account_id AS conta_conjunta, collect(DISTINCT l.loan_id) AS emprestimos_ativos
+ORDER BY cliente LIMIT 100"""},
+    "joint_accounts_active_loan": {
+        "descricao": "Clientes que tem conta conjunta E emprestimo ativo ao mesmo tempo.",
+        "params": {},
+        "cypher": """MATCH (c:Customer)-[:OWNS {ownership_type:'JOINT'}]->(a:Account)
+MATCH (c)-[:HAS_LOAN]->(l:Loan {status:'ACTIVE'})
+RETURN c.customer_id AS cliente, collect(DISTINCT a.account_id) AS contas_conjuntas, collect(DISTINCT l.loan_id) AS emprestimos_ativos
+ORDER BY cliente LIMIT 100"""},
+    "merchant_customers": {
+        "descricao": "Clientes que pagaram a UM estabelecimento especifico (pelo ID M...), com quantidade e total pago.",
+        "params": {"merchant_id": "M0001"},
+        "cypher": """MATCH (c:Customer)-[:OWNS]->(:Account)-[:SENT]->(t:Transaction)-[:PAID_TO]->(m:Merchant {merchant_id:$merchant_id})
+RETURN c.customer_id AS cliente, m.merchant_id AS estabelecimento, count(t) AS transacoes, round(sum(t.amount_brl), 2) AS total_brl
+ORDER BY cliente LIMIT 100"""},
 }
 
 # ---------------------------------------------------------------- 3. guarda-corpo
@@ -164,10 +211,17 @@ def _mock_llm(system, user, want_json):
         pergunta = user.split("Pergunta:", 1)[-1].split("\n", 1)[0]      # so a pergunta, sem o catalogo
         q = unicodedata.normalize("NFKD", pergunta.lower()).encode("ascii", "ignore").decode()
         m = re.search(r"\bC\d{4}\b", pergunta.upper())
-        if "conjunta" in q or "indiret" in q: t, p = "indirect_joint", {"dias": 365}
+        tx = re.search(r"\bT\d{7}\b", pergunta.upper())
+        mer = re.search(r"\bM\d{4}\b", pergunta.upper())
+        if "indiret" in q: t, p = "indirect_joint", {"dias": 365}
+        elif "conjunta" in q and "emprest" in q: t, p = "joint_accounts_active_loan", {}
+        elif "conjunta" in q: t, p = "joint_accounts", {}
+        elif tx: t, p = "transaction_evidence", {"transaction_id": tx.group()}
+        elif mer: t, p = "merchant_customers", {"merchant_id": mer.group()}
+        elif m and "cart" in q: t, p = "customer_cards", {"customer_id": m.group()}
         elif m and ("emprest" in q or "regra" in q): t, p = "customer_loans_rules", {"customer_id": m.group()}
         elif m and "conta" in q: t, p = "customer_accounts", {"customer_id": m.group()}
-        elif "estabelec" in q or "concentr" in q: t, p = "merchant_concentration", {}
+        elif "estabelec" in q and "concentr" in q and "o que" not in q: t, p = "merchant_concentration", {}
         elif "evid" in q or "por que" in q: t, p = "flagged_evidence", {}
         elif "sinaliz" in q or "alerta" in q: t, p = "flagged_with_loan", {"dias": 30}
         else: return json.dumps({"mode": "none"})
@@ -196,8 +250,13 @@ def vector_search(session, question, k=4):
 # ---------------------------------------------------------------- 2. planejamento
 def plan_query(question, provider):
     cat = "\n".join(f'- {n}: {t["descricao"]} params={t["params"]}' for n, t in TEMPLATES.items())
-    system = ("Voce converte perguntas sobre um grafo bancario SINTETICO em consultas de LEITURA. "
-              "Responda SOMENTE JSON. Nunca invente IDs: se a pergunta pedir um cliente/conta sem ID, use mode 'none'.\n" + SCHEMA_TEXT)
+    system = ("Voce converte perguntas sobre um grafo bancario SINTETICO em consultas de LEITURA. Responda SOMENTE JSON.\n"
+              "- Prefira SEMPRE uma consulta pronta quando alguma servir; escreva Cypher so se nenhuma servir.\n"
+              "- IDs (C0208, M0007, T0001050...) devem ser copiados EXATAMENTE da pergunta. Nunca invente IDs: "
+              "se a pergunta se refere a um cliente/conta/transacao sem dar o ID, use mode 'none'.\n"
+              "- Perguntas sobre o que uma REGRA diz ou o que acontece em uma situacao ('o que acontece quando...', "
+              "'quais regras orientam...') sao respondidas pelos documentos: use mode 'none', a menos que citem um ID.\n"
+              + SCHEMA_TEXT)
     user = f"""Pergunta: {question}
 
 Opcoes de resposta (JSON):
@@ -209,8 +268,13 @@ Consultas prontas:
 {cat}"""
     return llm_json(system, user, provider)
 
-def resolve_plan(plan):
-    """Transforma o plano do LLM em (cypher, params, origem) ja validado. Levanta ValueError se nao der."""
+_ANY_ID = re.compile(r"\b(?:DOC\d{3}|CC\d{4}|CP\d{5}|AL\d{5}|C\d{4}|A\d{4}|T\d{7}|L\d{4}|M\d{4}|B\d{3}|E\d{4}|R\d{3})\b")
+
+
+def resolve_plan(plan, question=None):
+    """Transforma o plano do LLM em (cypher, params, origem) ja validado. Levanta ValueError se nao der.
+    Com `question`, todo ID usado na consulta precisa estar escrito na pergunta (o LLM nao pode inventar
+    nem herdar o ID de exemplo do template)."""
     mode = plan.get("mode")
     params = dict(plan.get("params") or {})
     if mode == "template":
@@ -219,6 +283,9 @@ def resolve_plan(plan):
             raise ValueError("template desconhecido")
         cypher, origem = t["cypher"], f"template:{plan['template']}"
         defaults = dict(t["params"])
+        for k, v in defaults.items():
+            if isinstance(v, str) and k not in params:     # ID de exemplo NUNCA vira parametro real
+                raise ValueError(f"parametro '{k}' ausente: a pergunta precisa informar o ID")
         params = {k: params.get(k, v) for k, v in defaults.items()}
         for k, v in defaults.items():                      # forca o tipo certo (LLM as vezes devolve texto)
             if isinstance(v, int): params[k] = max(1, min(int(params[k]), 3650))
@@ -231,6 +298,13 @@ def resolve_plan(plan):
     ok, res = validate_cypher(cypher)
     if not ok:
         raise ValueError(f"Cypher rejeitado: {res}")
+    if question is not None:
+        asked = set(_ANY_ID.findall(question.upper()))
+        used = set(_ANY_ID.findall(_strip_strings(res).upper() + " " + res.upper())) | \
+               {str(v).upper() for v in params.values() if isinstance(v, str) and _ANY_ID.fullmatch(str(v).upper())}
+        invented = sorted(used - asked)
+        if invented:
+            raise ValueError(f"a consulta usa IDs que nao estao na pergunta: {invented}")
     params["ref"] = REF_DATE
     return res, params, origem
 
@@ -259,28 +333,107 @@ def kag_rules(session, doc_ids):
 ANSWER_SYSTEM = """Voce responde perguntas sobre um sistema bancario SINTETICO usando EXCLUSIVAMENTE o CONTEXTO fornecido.
 Regras: (1) nao use conhecimento externo; (2) abstenha-se, comecando EXATAMENTE por 'Não há evidência suficiente no grafo/documentos', SOMENTE se o contexto nao contiver informacao que responda a pergunta;
 se o contexto tiver uma regra ou fato que responde (ex.: uma regra dizendo que 'alerta nao comprova fraude'), responda DIRETAMENTE com ele e cite o ID, sem usar a frase de abstencao;
+se 'fatos_do_grafo' tiver linhas, elas SAO o resultado da consulta feita para esta pergunta: use-as, nao se abstenha;
 (3) cite os IDs (clientes, contas, transacoes, regras, documentos) que sustentam cada afirmacao; (4) alertas e transacoes sinalizadas
 sao sinais simulados e NAO comprovam fraude: nunca afirme fraude; (5) nao tome nem recomende decisoes financeiras; (6) responda em portugues, de forma curta.
-(7) COMPLETUDE: se a pergunta pede uma lista, percorra TODAS as linhas de 'fatos_do_grafo', inclua TODAS as que atendem a pergunta (nao omita nenhuma) e diga quantas sao;
+(7) LISTAS: diga quantos itens atendem a pergunta e destaque os principais. A lista COMPLETA de IDs e anexada automaticamente pelo sistema logo abaixo da sua resposta, entao nao precisa repetir todos;
 (8) use as colunas como estao: uma lista vazia em 'emprestimos_ativos' significa que o cliente NAO tem emprestimo ativo."""
 
-_ID = re.compile(r"\b(?:DOC\d{3}|AL\d{3,6}|[CALTMR]\d{3,8})\b")
+_ID = _ANY_ID      # mesmo padrao em todo o pipeline (inclui cartoes CC e reclamacoes CP)
+
+# Protecoes que NAO dependem do LLM (rodam antes dele)
+_SENSITIVE = re.compile(r"\b(cpf|rg|senha|cvv|numero do cartao|pin)\b")
+_REFERENCE = re.compile(r"\b(dele|dela|deles|delas|deste cliente|desse cliente|este cliente|esse cliente|"
+                        r"(?:o|ao|do|pelo|para o) cliente)\b")
+
 
 def _plain(t):
     import unicodedata
     return unicodedata.normalize("NFKD", t).encode("ascii", "ignore").decode().lower().strip()
 
+
+def guard(question):
+    """Resposta de abstencao pronta, ou None se a pergunta pode seguir para o pipeline."""
+    q = _plain(question)
+    if _SENSITIVE.search(q):
+        return ("Não há evidência suficiente no grafo/documentos: o sistema não armazena dados pessoais sensíveis "
+                "(CPF, RG, senhas, número de cartão). Os dados são sintéticos e só têm IDs fictícios.")
+    if _REFERENCE.search(q) and not _ANY_ID.search(question.upper()):
+        return ("Não há evidência suficiente no grafo/documentos: a pergunta se refere a um cliente sem informar qual. "
+                "Informe o ID do cliente (ex.: C0208).")
+    return None
+
+
 def is_abstention(text):
     return _plain(text).startswith(("nao ha evidencia", "nao ha dados", "nao ha informac"))
+
 
 def unsupported_ids(answer_text, evidence_ids):
     """IDs que o LLM citou na resposta mas que NAO estao nas evidencias recuperadas (sinal de alucinacao)."""
     return sorted(set(_ID.findall(answer_text)) - set(evidence_ids))
 
+
+def clean_rows(rows):
+    """Remove colunas sempre nulas. Se TODAS forem nulas, a consulta usou propriedade inexistente."""
+    if not rows:
+        return rows, False
+    cols = [k for k in rows[0] if any(r.get(k) not in (None, [], "") for r in rows)]
+    return [{k: r.get(k) for k in cols} for r in rows], not cols
+
+
+def facts_list(rows, limit=100):
+    """Lista completa e deterministica dos IDs de cada linha (o LLM pode omitir itens; o codigo nao)."""
+    lines, seen = [], set()
+    for r in rows[:limit]:
+        parts = []
+        for k, v in r.items():
+            vals = v if isinstance(v, list) else [v]
+            ids = [str(x) for x in vals if isinstance(x, str) and _ANY_ID.fullmatch(x)]
+            if ids:
+                parts.append(f"{k}: {', '.join(ids)}")
+            elif isinstance(v, list) and not v and k.startswith(("emprestimo", "alerta")):
+                parts.append(f"{k}: nenhum")
+        line = " | ".join(parts)
+        if line and line not in seen:
+            seen.add(line)
+            lines.append("- " + line)
+    if not lines:
+        return ""
+    extra = f" (primeiras {limit} de {len(rows)})" if len(rows) > limit else ""
+    return f"\n\nDados recuperados do grafo ({len(lines)} linhas{extra}):\n" + "\n".join(lines)
+
+
 def generate_answer(question, graph_rows, rules, hits, provider):
-    ctx = {"total_de_linhas_do_grafo": len(graph_rows), "fatos_do_grafo": graph_rows[:30], "regras_e_documentos": rules, "trechos_semanticos": hits}
-    user = f"PERGUNTA: {question}\n\nCONTEXTO (JSON):\n{json.dumps(ctx, ensure_ascii=False, default=str)[:12000]}"
+    ctx = {"total_de_linhas_do_grafo": len(graph_rows), "fatos_do_grafo": graph_rows[:40],
+           "regras_e_documentos": rules, "trechos_semanticos": hits}
+    user = f"PERGUNTA: {question}\n\nCONTEXTO (JSON):\n{json.dumps(ctx, ensure_ascii=False, default=str)[:16000]}"
     return _llm(ANSWER_SYSTEM, user, provider)
+
+
+def query_graph(s, question, provider, out, attempts=2):
+    """Planeja, valida e executa. Se a consulta for rejeitada, falhar ou so devolver nulos, o LLM recebe o
+    motivo e tenta mais uma vez. Retorna as linhas (possivelmente vazias)."""
+    feedback = ""
+    for attempt in range(attempts):
+        plan = plan_query(question + feedback, provider)
+        if plan.get("mode") == "none":
+            out["query_origin"] = "none (so documentos/regras)"
+            return []
+        try:
+            cypher, params, origem = resolve_plan(plan, question)
+            out.update(cypher=cypher, params={k: str(v) for k, v in params.items()}, query_origin=origem)
+            rows, all_null = clean_rows(run_graph_query(s, cypher, params))
+            if all_null:
+                raise ValueError("a consulta so devolveu valores nulos (propriedade inexistente?)")
+            return rows
+        except Exception as e:
+            out["errors"].append(f"consulta ao grafo (tentativa {attempt + 1}): {e}")
+            if "nao estao na pergunta" in str(e) or "precisa informar o ID" in str(e):
+                return []                                   # faltou informacao na pergunta: nao insistir
+            feedback = (f"\n\n(A tentativa anterior falhou: {e}. Use uma consulta pronta se alguma servir; "
+                        "senao use SOMENTE as propriedades listadas no schema.)")
+    return []
+
 
 def answer(question, driver, provider="openai"):
     """Pipeline completo. Devolve um dicionario: e o 'contrato' com a interface (Etapa 6) e a avaliacao (Etapa 7)."""
@@ -288,21 +441,19 @@ def answer(question, driver, provider="openai"):
     out = {"question": question, "answer": None, "abstained": False, "cypher": None, "params": None,
            "query_origin": None, "graph_rows": [], "documents": [], "rules": [], "entity_ids": [],
            "confidence": "baixa", "unsupported_ids": [], "errors": [], "latency_s": None}
+    blocked = guard(question)
+    if blocked:                                          # protecao deterministica: nem consulta nem LLM
+        out.update(answer=blocked, abstained=True, query_origin="guarda (pergunta sem ID ou dado sensivel)",
+                   latency_s=round(time.time() - t0, 2))
+        return out
+    hits = []
     with driver.session() as s:
         try:
             hits = vector_search(s, question)
         except Exception as e:                           # ex.: indice sem embeddings
-            hits = []; out["errors"].append(f"busca vetorial falhou: {e}")
+            out["errors"].append(f"busca vetorial falhou: {e}")
         try:
-            plan = plan_query(question, provider)
-            if plan.get("mode") == "none":
-                out["query_origin"] = "none (so documentos/regras)"
-                raise StopIteration
-            cypher, params, origem = resolve_plan(plan)
-            out.update(cypher=cypher, params={k: str(v) for k, v in params.items()}, query_origin=origem)
-            out["graph_rows"] = run_graph_query(s, cypher, params)
-        except StopIteration:
-            pass
+            out["graph_rows"] = query_graph(s, question, provider, out)
         except Exception as e:
             out["errors"].append(f"consulta ao grafo: {e}")
         doc_ids = sorted({h["id"] for h in hits if h["label"] == "Document"} |
@@ -318,14 +469,18 @@ def answer(question, driver, provider="openai"):
     else:
         out["answer"] = generate_answer(question, out["graph_rows"], out["rules"], hits, provider)
         out["abstained"] = is_abstention(out["answer"])
+        if not out["abstained"]:
+            out["answer"] += facts_list(out["graph_rows"])
         out["confidence"] = ("alta" if out["graph_rows"] and (out["rules"] or hits)
                              else "media" if (out["graph_rows"] or out["rules"]) else "baixa")   # heuristica, NAO e probabilidade
     out["entity_ids"] = sorted(set(_ID.findall(json.dumps([out["graph_rows"], out["rules"], hits], default=str))))
     out["unsupported_ids"] = unsupported_ids(out["answer"] or "", out["entity_ids"] + _ID.findall(question.upper()))
     if out["unsupported_ids"]:
-        out["confidence"] = "baixa"; out["errors"].append(f"IDs citados sem evidencia: {out['unsupported_ids']}")
+        out["confidence"] = "baixa"
+        out["errors"].append(f"IDs citados sem evidencia: {out['unsupported_ids']}")
     out["latency_s"] = round(time.time() - t0, 2)
     return out
+
 
 def get_driver():
     from neo4j import GraphDatabase
