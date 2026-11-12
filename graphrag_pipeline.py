@@ -33,12 +33,12 @@ ALLOWED_RELS = {"OWNS", "SENT", "PAID_TO", "RAISED_ON", "HAS_LOAN", "ON_ACCOUNT"
 
 # Conferido contra os CSVs e o ingest.py: nomes de propriedade e valores EXATOS (o LLM nao deve adivinhar).
 SCHEMA_TEXT = """Grafo Neo4j (dados sinteticos). Use SOMENTE estes labels, relacoes e propriedades (nomes exatos).
-(Customer {customer_id,name,birth_year,city,state,segment:'BASIC'|'STANDARD'|'PREMIUM',monthly_income_brl,registration_date})
+(Customer {customer_id,name,birth_year,city,state,segment:'BASIC'|'STANDARD'|'PREMIUM',monthly_income_brl,registration_date,pagerank,community})
   -[:OWNS {ownership_type:'PRIMARY'|'JOINT'}]->
 (Account {account_id,account_type:'CHECKING'|'SAVINGS'|'PAYMENT',status:'ACTIVE'|'BLOCKED'|'CLOSED',opened_date,simulated_balance_brl})
 (Account)-[:SENT]->(Transaction {transaction_id,amount_brl,transaction_type:'PIX_TRANSFER'|'TED_TRANSFER'|'CARD_PURCHASE'|'BILL_PAYMENT'|'WITHDRAWAL',
   date,timestamp,status:'COMPLETED'|'PENDING'|'REVERSED',channel:'APP'|'WEB'|'ATM'|'POS',flagged:true|false,scenario})
-(Transaction)-[:PAID_TO]->(Merchant {merchant_id,merchant_name,category,city,state,risk_profile:'LOW'|'MEDIUM'|'HIGH',active})
+(Transaction)-[:PAID_TO]->(Merchant {merchant_id,merchant_name,category,city,state,risk_profile:'LOW'|'MEDIUM'|'HIGH',active,pagerank,community})
 (Alert {alert_id,alert_type:'UNUSUAL_AMOUNT'|'UNUSUAL_HOUR'|'RISKY_MERCHANT'|'HIGH_FREQUENCY',severity:'LOW'|'MEDIUM'|'HIGH',alert_date,status,note})-[:RAISED_ON]->(Transaction)
 (Customer)-[:HAS_LOAN]->(Loan {loan_id,principal_brl,annual_interest_rate_pct,installments_total,installments_paid,status:'ACTIVE'|'LATE'|'PAID'|'CANCELLED',start_date})-[:ON_ACCOUNT]->(Account)
 (Customer)-[:HAS_CARD]->(Card {card_id,brand:'VISA'|'MASTERCARD'|'ELO',card_type:'CREDIT'|'DEBIT',credit_limit_brl,status:'ACTIVE'|'BLOCKED'})-[:LINKED_TO]->(Account)
@@ -47,6 +47,7 @@ SCHEMA_TEXT = """Grafo Neo4j (dados sinteticos). Use SOMENTE estes labels, relac
 (Document {document_id,title,section,page,version,text})-[:DESCRIBES]->(BankingRule {rule_id,rule_name,description,applies_to,severity,is_active})
 (Loan)-[:FOLLOWS]->(BankingRule)
 (BankingRule)-[:INSTANCE_OF]->(RuleTopic {name})-[:APPLIES_TO|HAS_LIMIT|HAS_TERM|REQUIRES|MAY_TRIGGER|MUST_RECORD]->(Entity {name,type})
+pagerank e community vem de graph_algorithms.py (PageRank e comunidades Louvain da rede cliente-estabelecimento).
 IDs: Customer C0001, Account A0001, Transaction T0000001, Loan L0001, Card CC0001, Merchant M0001, Alert AL00001, Document DOC001, BankingRule R001.
 Datas (date, opened_date, alert_date, start_date...) sao tipo date do Cypher. Parametros disponiveis: $ref (data de referencia).
 Nunca use datetime()/date() sem argumento. Prefira retornar propriedades (c.customer_id AS cliente) em vez de nos inteiros."""
@@ -141,6 +142,39 @@ ORDER BY cliente LIMIT 100"""},
         "cypher": """MATCH (c:Customer)-[:OWNS]->(:Account)-[:SENT]->(t:Transaction)-[:PAID_TO]->(m:Merchant {merchant_id:$merchant_id})
 RETURN c.customer_id AS cliente, m.merchant_id AS estabelecimento, count(t) AS transacoes, round(sum(t.amount_brl), 2) AS total_brl
 ORDER BY cliente LIMIT 100"""},
+    # ---- algoritmos de grafo (graph_algorithms.py grava pagerank/community; shortestPath e nativo do Cypher)
+    "path_between_customers": {
+        "descricao": "Caminho MINIMO (shortestPath) que liga dois clientes (dois IDs C...): contas, transacoes e estabelecimentos no meio.",
+        "params": {"customer_id": "C0001", "other_customer_id": "C0002"},
+        "max_depth": 6,
+        "cypher": """MATCH (a:Customer {customer_id:$customer_id}), (b:Customer {customer_id:$other_customer_id})
+MATCH p = shortestPath((a)-[:OWNS|SENT|PAID_TO*..6]-(b))
+RETURN [n IN nodes(p) | coalesce(n.customer_id, n.account_id, n.transaction_id, n.merchant_id)] AS caminho,
+       length(p) AS saltos LIMIT 1"""},
+    "central_merchants": {
+        "descricao": "Estabelecimentos mais CENTRAIS da rede de pagamentos (PageRank), com a comunidade de cada um.",
+        "params": {},
+        "cypher": """MATCH (m:Merchant) WHERE m.pagerank IS NOT NULL
+RETURN m.merchant_id AS estabelecimento, m.merchant_name AS nome, round(m.pagerank, 5) AS pagerank, m.community AS comunidade
+ORDER BY pagerank DESC LIMIT 10"""},
+    "communities_flagged": {
+        "descricao": "COMUNIDADES (grupos detectados por Louvain) ordenadas por transacoes sinalizadas; indica grupos que merecem analise.",
+        "params": {},
+        "cypher": """MATCH (c:Customer) WHERE c.community IS NOT NULL
+OPTIONAL MATCH (c)-[:OWNS]->(:Account)-[:SENT]->(t:Transaction {flagged:true})
+WITH c.community AS comunidade, count(DISTINCT c) AS clientes, count(t) AS sinalizadas,
+     collect(DISTINCT CASE WHEN t IS NOT NULL THEN c.customer_id END) AS clientes_com_sinal
+RETURN comunidade, clientes, sinalizadas, round(1.0 * sinalizadas / clientes, 3) AS sinalizadas_por_cliente,
+       clientes_com_sinal[..10] AS exemplos
+ORDER BY sinalizadas DESC LIMIT 10"""},
+    "customer_community": {
+        "descricao": "Comunidade (Louvain) de UM cliente e os clientes mais centrais (PageRank) da mesma comunidade.",
+        "params": {"customer_id": "C0001"},
+        "cypher": """MATCH (c:Customer {customer_id:$customer_id})
+MATCH (o:Customer) WHERE o.community = c.community AND o <> c
+RETURN c.customer_id AS cliente, c.community AS comunidade, round(c.pagerank, 5) AS pagerank_cliente,
+       o.customer_id AS outro_cliente, round(o.pagerank, 5) AS pagerank_outro
+ORDER BY pagerank_outro DESC LIMIT 15"""},
 }
 
 # ---------------------------------------------------------------- 3. guarda-corpo
@@ -151,7 +185,7 @@ _REL = re.compile(r"\[\s*\w*\s*:\s*([A-Za-z_|:\s]+)")
 def _strip_strings(q):
     return re.sub(r"'[^']*'|\"[^\"]*\"", "''", q)
 
-def validate_cypher(cypher):
+def validate_cypher(cypher, max_depth=MAX_DEPTH):
     """Retorna (ok, cypher_final_ou_motivo). So aceita UMA consulta de leitura dentro das listas permitidas."""
     q = cypher.strip().rstrip(";").strip()
     s = _strip_strings(q)
@@ -178,8 +212,8 @@ def validate_cypher(cypher):
                 return False, f"relacao nao permitida: {rel}"
     for m in re.finditer(r"\[[^\]]*?\*\s*(\d*)\s*(\.\.)?\s*(\d*)", s):   # caminhos de tamanho variavel dentro de [...]
         hi = m.group(3) if m.group(2) else m.group(1)
-        if not hi or int(hi) > MAX_DEPTH:
-            return False, f"profundidade maxima e {MAX_DEPTH}"
+        if not hi or int(hi) > max_depth:
+            return False, f"profundidade maxima e {max_depth}"
     lim = re.findall(r"\bLIMIT\s+(\d+)\s*$", s, re.I)
     if lim:
         if int(lim[-1]) > MAX_LIMIT:
@@ -213,7 +247,13 @@ def _mock_llm(system, user, want_json):
         m = re.search(r"\bC\d{4}\b", pergunta.upper())
         tx = re.search(r"\bT\d{7}\b", pergunta.upper())
         mer = re.search(r"\bM\d{4}\b", pergunta.upper())
-        if "indiret" in q: t, p = "indirect_joint", {"dias": 365}
+        ids_c = re.findall(r"\bC\d{4}\b", pergunta.upper())
+        if len(ids_c) >= 2 and ("conect" in q or "caminho" in q or "lig" in q):
+            t, p = "path_between_customers", {"customer_id": ids_c[0], "other_customer_id": ids_c[1]}
+        elif "comunidade" in q and m: t, p = "customer_community", {"customer_id": m.group()}
+        elif "comunidade" in q: t, p = "communities_flagged", {}
+        elif "central" in q or "pagerank" in q: t, p = "central_merchants", {}
+        elif "indiret" in q: t, p = "indirect_joint", {"dias": 365}
         elif "conjunta" in q and "emprest" in q: t, p = "joint_accounts_active_loan", {}
         elif "conjunta" in q: t, p = "joint_accounts", {}
         elif tx: t, p = "transaction_evidence", {"transaction_id": tx.group()}
@@ -282,6 +322,7 @@ def resolve_plan(plan, question=None):
         if not t:
             raise ValueError("template desconhecido")
         cypher, origem = t["cypher"], f"template:{plan['template']}"
+        max_depth = t.get("max_depth", MAX_DEPTH)          # so templates revisados podem passar de MAX_DEPTH
         defaults = dict(t["params"])
         for k, v in defaults.items():
             if isinstance(v, str) and k not in params:     # ID de exemplo NUNCA vira parametro real
@@ -292,10 +333,11 @@ def resolve_plan(plan, question=None):
             else: params[k] = str(params[k]).strip().upper()
     elif mode == "cypher":
         cypher, origem = plan.get("cypher", ""), "cypher_llm"
+        max_depth = MAX_DEPTH
         params = {k: v for k, v in params.items() if isinstance(v, (str, int, float))}
     else:
         raise ValueError("sem consulta")
-    ok, res = validate_cypher(cypher)
+    ok, res = validate_cypher(cypher, max_depth)
     if not ok:
         raise ValueError(f"Cypher rejeitado: {res}")
     if question is not None:

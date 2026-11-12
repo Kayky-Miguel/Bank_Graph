@@ -107,6 +107,24 @@ def gold_loan_rules(d, cid):
     return set(r[(r.rule_name.map(norm) == norm("Empréstimo Pessoal")) & (r.is_active == "True")].rule_id)
 
 
+def gold_shortest_path_accounts(d, a, b):
+    """Contas no(s) caminho(s) minimo(s) entre dois clientes na rede Cliente-Conta-Transacao-Estabelecimento."""
+    import networkx as nx
+    g = nx.Graph()
+    g.add_edges_from(zip(d["account_owners"].customer_id, d["account_owners"].account_id))
+    t = d["transactions"]
+    g.add_edges_from(zip(t.account_id, t.transaction_id))
+    g.add_edges_from(zip(t.transaction_id, t.merchant_id))
+    return {n for p in nx.all_shortest_paths(g, a, b) for n in p if re.fullmatch(r"A\d{4}", n)}
+
+
+def gold_pagerank_top(d, k=5):
+    from graph_algorithms import compute, load_from_csv
+    res = compute(*load_from_csv(DATA))
+    g, pr = res["graph"], res["pagerank"]
+    return set(sorted((n for n in g if g.nodes[n]["kind"] == "merchant"), key=lambda n: -pr[n])[:k])
+
+
 def _own(d, cid):
     return set(d["account_owners"][d["account_owners"].customer_id == cid].account_id)
 
@@ -156,6 +174,15 @@ QUESTIONS = [
          must_say=r"2\.?000"),
     dict(id="A06", difficulty="avancada", kind="answerable", question="O que acontece quando há concentração de pagamentos em um estabelecimento?",
          expect="rule", gold=lambda d: topic_rules(d, "Concentração de Pagamentos"), topic="Concentração de Pagamentos"),
+    # ---- algoritmos de grafo
+    dict(id="A07", difficulty="avancada", kind="answerable",
+         question="Como o cliente C0249 se conecta ao cliente C0306 no grafo?",
+         expect="account", gold=lambda d: gold_shortest_path_accounts(d, "C0249", "C0306"),
+         note="caminho minimo (shortestPath); gabarito por busca em largura nos CSVs"),
+    dict(id="A08", difficulty="avancada", kind="answerable",
+         question="Quais estabelecimentos são mais centrais na rede de pagamentos (PageRank)?",
+         expect="merchant", gold=lambda d: gold_pagerank_top(d, 5),
+         note="gabarito = top 5 do PageRank calculado a partir dos CSVs (requer graph_algorithms.py gravado no grafo)"),
     # ---- sem resposta
     dict(id="U01", difficulty="avancada", kind="unanswerable", question="Um alerta permite afirmar que houve fraude?",
          must_say=r"nao (comprova|permite|permitem)", case="Q005"),

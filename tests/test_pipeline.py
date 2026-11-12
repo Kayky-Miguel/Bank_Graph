@@ -17,7 +17,7 @@ from evaluate_qa import QUESTIONS  # noqa: E402
 
 def test_all_templates_pass_validator():
     for name, t in G.TEMPLATES.items():
-        ok, res = G.validate_cypher(t["cypher"])
+        ok, res = G.validate_cypher(t["cypher"], t.get("max_depth", G.MAX_DEPTH))
         assert ok, (name, res)
 
 
@@ -110,7 +110,8 @@ def test_guard_answers_without_llm(monkeypatch):
 @pytest.mark.parametrize("qid,template", [
     ("B04", "customer_cards"), ("B05", "transaction_evidence"), ("I01", "joint_accounts"),
     ("I02", "joint_accounts_active_loan"), ("I05", "merchant_customers"), ("A02", "indirect_joint"),
-    ("A01", "flagged_with_loan"), ("I03", "merchant_concentration")])
+    ("A01", "flagged_with_loan"), ("I03", "merchant_concentration"), ("A07", "path_between_customers"),
+    ("A08", "central_merchants")])
 def test_mock_planner_routes_to_new_templates(qid, template):
     q = next(x["question"] for x in QUESTIONS if x["id"] == qid)
     plan = json.loads(G._mock_llm("", f"Pergunta: {q}\nresto", want_json=True))

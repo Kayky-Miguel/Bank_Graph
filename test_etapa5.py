@@ -3,7 +3,7 @@ from graphrag_pipeline import validate_cypher, resolve_plan, TEMPLATES
 
 # 1) todas as consultas prontas passam no proprio validador
 for n, t in TEMPLATES.items():
-    ok, r = validate_cypher(t["cypher"]); assert ok, (n, r)
+    ok, r = validate_cypher(t["cypher"], t.get("max_depth", 4)); assert ok, (n, r)
 
 # 2) consultas perigosas ou fora do schema precisam ser rejeitadas
 bad = {
