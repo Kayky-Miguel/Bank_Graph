@@ -1,0 +1,5 @@
+neo4j
+pandas
+sentence-transformers
+# LLM (instale so o que for usar):
+openai         

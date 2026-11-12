@@ -1,0 +1,265 @@
+{
+  "_instrucoes": "Gabarito dos 10 textos distintos (DOC001-DOC010; DOC011-DOC030 repetem esses textos). Convencoes: RuleTopic = titulo sem ' - Documento NN'; frases de aviso sem entidade clara (ex.: 'Alerta nao comprova fraude', 'criterios internos ficticios') ficam de fora; padrao Condition -MAY_TRIGGER-> Action; um unico Obligation por frase de obrigacao. Revise e ajuste conforme o seu criterio. Chaves iniciadas por _ sao ignoradas.",
+  "DOC001": {
+    "entities": [
+      {
+        "name": "Limite de Transferência PIX",
+        "type": "RuleTopic"
+      },
+      {
+        "name": "BASIC",
+        "type": "Segment"
+      },
+      {
+        "name": "R$ 2.000 por dia",
+        "type": "Limit"
+      },
+      {
+        "name": "validação cadastral",
+        "type": "Condition"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Limite de Transferência PIX",
+        "type": "APPLIES_TO",
+        "target": "BASIC"
+      },
+      {
+        "source": "Limite de Transferência PIX",
+        "type": "HAS_LIMIT",
+        "target": "R$ 2.000 por dia"
+      },
+      {
+        "source": "Limite de Transferência PIX",
+        "type": "REQUIRES",
+        "target": "validação cadastral"
+      }
+    ]
+  },
+  "DOC002": {
+    "entities": [
+      {
+        "name": "Transações Atípicas",
+        "type": "RuleTopic"
+      },
+      {
+        "name": "valores muito superiores ao padrão histórico",
+        "type": "Condition"
+      },
+      {
+        "name": "alerta",
+        "type": "Action"
+      },
+      {
+        "name": "análise manual",
+        "type": "Action"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Transações Atípicas",
+        "type": "REQUIRES",
+        "target": "valores muito superiores ao padrão histórico"
+      },
+      {
+        "source": "valores muito superiores ao padrão histórico",
+        "type": "MAY_TRIGGER",
+        "target": "alerta"
+      },
+      {
+        "source": "valores muito superiores ao padrão histórico",
+        "type": "MAY_TRIGGER",
+        "target": "análise manual"
+      }
+    ]
+  },
+  "DOC003": {
+    "entities": [
+      {
+        "name": "Empréstimo Pessoal",
+        "type": "RuleTopic"
+      },
+      {
+        "name": "6 a 60 parcelas",
+        "type": "Term"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Empréstimo Pessoal",
+        "type": "HAS_TERM",
+        "target": "6 a 60 parcelas"
+      }
+    ]
+  },
+  "DOC004": {
+    "entities": [
+      {
+        "name": "Atualização Cadastral",
+        "type": "RuleTopic"
+      },
+      {
+        "name": "alteração relevante de endereço, renda ou contato",
+        "type": "Condition"
+      },
+      {
+        "name": "revisão dos dados cadastrais",
+        "type": "Action"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Atualização Cadastral",
+        "type": "REQUIRES",
+        "target": "alteração relevante de endereço, renda ou contato"
+      },
+      {
+        "source": "alteração relevante de endereço, renda ou contato",
+        "type": "MAY_TRIGGER",
+        "target": "revisão dos dados cadastrais"
+      }
+    ]
+  },
+  "DOC005": {
+    "entities": [
+      {
+        "name": "Conta Compartilhada",
+        "type": "RuleTopic"
+      },
+      {
+        "name": "mais de um titular",
+        "type": "Condition"
+      },
+      {
+        "name": "considerar todos os vínculos",
+        "type": "Obligation"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Conta Compartilhada",
+        "type": "REQUIRES",
+        "target": "mais de um titular"
+      },
+      {
+        "source": "Conta Compartilhada",
+        "type": "MUST_RECORD",
+        "target": "considerar todos os vínculos"
+      }
+    ]
+  },
+  "DOC006": {
+    "entities": [
+      {
+        "name": "Frequência de Transferências",
+        "type": "RuleTopic"
+      },
+      {
+        "name": "múltiplas transferências em curto intervalo ao mesmo destinatário",
+        "type": "Condition"
+      },
+      {
+        "name": "revisão",
+        "type": "Action"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Frequência de Transferências",
+        "type": "REQUIRES",
+        "target": "múltiplas transferências em curto intervalo ao mesmo destinatário"
+      },
+      {
+        "source": "múltiplas transferências em curto intervalo ao mesmo destinatário",
+        "type": "MAY_TRIGGER",
+        "target": "revisão"
+      }
+    ]
+  },
+  "DOC007": {
+    "entities": [
+      {
+        "name": "Concentração de Pagamentos",
+        "type": "RuleTopic"
+      },
+      {
+        "name": "concentração incomum de pagamentos em um estabelecimento",
+        "type": "Condition"
+      },
+      {
+        "name": "análise contextual",
+        "type": "Action"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Concentração de Pagamentos",
+        "type": "REQUIRES",
+        "target": "concentração incomum de pagamentos em um estabelecimento"
+      },
+      {
+        "source": "concentração incomum de pagamentos em um estabelecimento",
+        "type": "MAY_TRIGGER",
+        "target": "análise contextual"
+      }
+    ]
+  },
+  "DOC008": {
+    "entities": [
+      {
+        "name": "Bloqueio Preventivo",
+        "type": "RuleTopic"
+      },
+      {
+        "name": "registrar justificativa, data e responsável",
+        "type": "Obligation"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Bloqueio Preventivo",
+        "type": "MUST_RECORD",
+        "target": "registrar justificativa, data e responsável"
+      }
+    ]
+  },
+  "DOC009": {
+    "entities": [
+      {
+        "name": "Contestação de Compra",
+        "type": "RuleTopic"
+      },
+      {
+        "name": "identificador, transação relacionada, motivo e status",
+        "type": "Obligation"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Contestação de Compra",
+        "type": "MUST_RECORD",
+        "target": "identificador, transação relacionada, motivo e status"
+      }
+    ]
+  },
+  "DOC010": {
+    "entities": [
+      {
+        "name": "Privacidade e Acesso",
+        "type": "RuleTopic"
+      },
+      {
+        "name": "perfis autorizados e finalidade legítima",
+        "type": "Condition"
+      }
+    ],
+    "relations": [
+      {
+        "source": "Privacidade e Acesso",
+        "type": "REQUIRES",
+        "target": "perfis autorizados e finalidade legítima"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1070 @@
+{
+ "DOC001": {
+  "topic": "Limite de Transferência PIX",
+  "entities": [
+   {
+    "name": "Limite de Transferência PIX",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "BASIC",
+    "type": "Segment"
+   },
+   {
+    "name": "R$ 2.000",
+    "type": "Limit"
+   },
+   {
+    "name": "validacao cadastral",
+    "type": "Condition"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Limite de Transferência PIX",
+    "type": "APPLIES_TO",
+    "target": "BASIC"
+   },
+   {
+    "source": "Limite de Transferência PIX",
+    "type": "HAS_LIMIT",
+    "target": "R$ 2.000"
+   },
+   {
+    "source": "Limite de Transferência PIX",
+    "type": "REQUIRES",
+    "target": "validacao cadastral"
+   }
+  ],
+  "dropped": []
+ },
+ "DOC002": {
+  "topic": "Transações Atípicas",
+  "entities": [
+   {
+    "name": "Transações Atípicas",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "valores muito superiores ao padrão histórico",
+    "type": "Condition"
+   },
+   {
+    "name": "alerta",
+    "type": "Action"
+   },
+   {
+    "name": "análise manual",
+    "type": "Action"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Transações Atípicas",
+    "type": "REQUIRES",
+    "target": "valores muito superiores ao padrão histórico"
+   },
+   {
+    "source": "valores muito superiores ao padrão histórico",
+    "type": "MAY_TRIGGER",
+    "target": "alerta"
+   }
+  ],
+  "dropped": [
+   {
+    "item": {
+     "origem": "alerta",
+     "tipo": "MAY_TRIGGER",
+     "destino": "análise manual"
+    },
+    "motivo": "tipos incompativeis com a relacao"
+   }
+  ]
+ },
+ "DOC003": {
+  "topic": "Empréstimo Pessoal",
+  "entities": [
+   {
+    "name": "Empréstimo Pessoal",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "6 a 60 parcelas",
+    "type": "Term"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Empréstimo Pessoal",
+    "type": "HAS_TERM",
+    "target": "6 a 60 parcelas"
+   }
+  ],
+  "dropped": []
+ },
+ "DOC004": {
+  "topic": "Atualização Cadastral",
+  "entities": [
+   {
+    "name": "Atualização Cadastral",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "alteração relevante de endereço, renda ou contato",
+    "type": "Condition"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Atualização Cadastral",
+    "type": "REQUIRES",
+    "target": "alteração relevante de endereço, renda ou contato"
+   }
+  ],
+  "dropped": [
+   {
+    "item": {
+     "nome": "revisao",
+     "tipo": "Action"
+    },
+    "motivo": "nao esta no texto"
+   },
+   {
+    "item": {
+     "origem": "alteração relevante de endereço, renda ou contato",
+     "tipo": "MAY_TRIGGER",
+     "destino": "revisao"
+    },
+    "motivo": "relacao invalida ou entidade inexistente"
+   }
+  ]
+ },
+ "DOC005": {
+  "topic": "Conta Compartilhada",
+  "entities": [
+   {
+    "name": "Conta Compartilhada",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "contas conjuntas",
+    "type": "Condition"
+   },
+   {
+    "name": "consultas devem considerar todos os vínculos",
+    "type": "Action"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Conta Compartilhada",
+    "type": "REQUIRES",
+    "target": "contas conjuntas"
+   },
+   {
+    "source": "contas conjuntas",
+    "type": "MAY_TRIGGER",
+    "target": "consultas devem considerar todos os vínculos"
+   }
+  ],
+  "dropped": []
+ },
+ "DOC006": {
+  "topic": "Frequência de Transferências",
+  "entities": [
+   {
+    "name": "Frequência de Transferências",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "múltiplas transferências em curto intervalo ao mesmo destinatário",
+    "type": "Condition"
+   },
+   {
+    "name": "revisao",
+    "type": "Action"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Frequência de Transferências",
+    "type": "REQUIRES",
+    "target": "múltiplas transferências em curto intervalo ao mesmo destinatário"
+   },
+   {
+    "source": "múltiplas transferências em curto intervalo ao mesmo destinatário",
+    "type": "MAY_TRIGGER",
+    "target": "revisao"
+   }
+  ],
+  "dropped": []
+ },
+ "DOC007": {
+  "topic": "Concentração de Pagamentos",
+  "entities": [
+   {
+    "name": "Concentração de Pagamentos",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "concentração incomum de pagamentos em um estabelecimento",
+    "type": "Condition"
+   },
+   {
+    "name": "análise contextual",
+    "type": "Action"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Concentração de Pagamentos",
+    "type": "REQUIRES",
+    "target": "concentração incomum de pagamentos em um estabelecimento"
+   },
+   {
+    "source": "concentração incomum de pagamentos em um estabelecimento",
+    "type": "MAY_TRIGGER",
+    "target": "análise contextual"
+   }
+  ],
+  "dropped": []
+ },
+ "DOC008": {
+  "topic": "Bloqueio Preventivo",
+  "entities": [
+   {
+    "name": "Bloqueio Preventivo",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "justificativa",
+    "type": "Obligation"
+   },
+   {
+    "name": "data",
+    "type": "Obligation"
+   },
+   {
+    "name": "responsável",
+    "type": "Obligation"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Bloqueio Preventivo",
+    "type": "MUST_RECORD",
+    "target": "justificativa"
+   },
+   {
+    "source": "Bloqueio Preventivo",
+    "type": "MUST_RECORD",
+    "target": "data"
+   },
+   {
+    "source": "Bloqueio Preventivo",
+    "type": "MUST_RECORD",
+    "target": "responsável"
+   }
+  ],
+  "dropped": []
+ },
+ "DOC009": {
+  "topic": "Contestação de Compra",
+  "entities": [
+   {
+    "name": "Contestação de Compra",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "identificador",
+    "type": "Obligation"
+   },
+   {
+    "name": "transação relacionada",
+    "type": "Obligation"
+   },
+   {
+    "name": "motivo",
+    "type": "Obligation"
+   },
+   {
+    "name": "status",
+    "type": "Obligation"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Contestação de Compra",
+    "type": "MUST_RECORD",
+    "target": "identificador"
+   },
+   {
+    "source": "Contestação de Compra",
+    "type": "MUST_RECORD",
+    "target": "transação relacionada"
+   },
+   {
+    "source": "Contestação de Compra",
+    "type": "MUST_RECORD",
+    "target": "motivo"
+   },
+   {
+    "source": "Contestação de Compra",
+    "type": "MUST_RECORD",
+    "target": "status"
+   }
+  ],
+  "dropped": []
+ },
+ "DOC010": {
+  "topic": "Privacidade e Acesso",
+  "entities": [
+   {
+    "name": "Privacidade e Acesso",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "dados de clientes",
+    "type": "Obligation"
+   },
+   {
+    "name": "perfis autorizados",
+    "type": "Condition"
+   },
+   {
+    "name": "finalidade legítima",
+    "type": "Condition"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Privacidade e Acesso",
+    "type": "MUST_RECORD",
+    "target": "dados de clientes"
+   },
+   {
+    "source": "Privacidade e Acesso",
+    "type": "REQUIRES",
+    "target": "perfis autorizados"
+   },
+   {
+    "source": "Privacidade e Acesso",
+    "type": "REQUIRES",
+    "target": "finalidade legítima"
+   }
+  ],
+  "dropped": []
+ },
+ "DOC011": {
+  "topic": "Limite de Transferência PIX",
+  "entities": [
+   {
+    "name": "Limite de Transferência PIX",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "BASIC",
+    "type": "Segment"
+   },
+   {
+    "name": "R$ 2.000",
+    "type": "Limit"
+   },
+   {
+    "name": "validacao cadastral",
+    "type": "Condition"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Limite de Transferência PIX",
+    "type": "APPLIES_TO",
+    "target": "BASIC"
+   },
+   {
+    "source": "Limite de Transferência PIX",
+    "type": "HAS_LIMIT",
+    "target": "R$ 2.000"
+   },
+   {
+    "source": "Limite de Transferência PIX",
+    "type": "REQUIRES",
+    "target": "validacao cadastral"
+   }
+  ],
+  "dropped": []
+ },
+ "DOC012": {
+  "topic": "Transações Atípicas",
+  "entities": [
+   {
+    "name": "Transações Atípicas",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "valores muito superiores ao padrão histórico",
+    "type": "Condition"
+   },
+   {
+    "name": "alerta",
+    "type": "Action"
+   },
+   {
+    "name": "análise manual",
+    "type": "Action"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Transações Atípicas",
+    "type": "REQUIRES",
+    "target": "valores muito superiores ao padrão histórico"
+   },
+   {
+    "source": "valores muito superiores ao padrão histórico",
+    "type": "MAY_TRIGGER",
+    "target": "alerta"
+   }
+  ],
+  "dropped": [
+   {
+    "item": {
+     "origem": "alerta",
+     "tipo": "MAY_TRIGGER",
+     "destino": "análise manual"
+    },
+    "motivo": "tipos incompativeis com a relacao"
+   }
+  ]
+ },
+ "DOC013": {
+  "topic": "Empréstimo Pessoal",
+  "entities": [
+   {
+    "name": "Empréstimo Pessoal",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "6 a 60 parcelas",
+    "type": "Term"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Empréstimo Pessoal",
+    "type": "HAS_TERM",
+    "target": "6 a 60 parcelas"
+   }
+  ],
+  "dropped": []
+ },
+ "DOC014": {
+  "topic": "Atualização Cadastral",
+  "entities": [
+   {
+    "name": "Atualização Cadastral",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "alteração relevante de endereço, renda ou contato",
+    "type": "Condition"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Atualização Cadastral",
+    "type": "REQUIRES",
+    "target": "alteração relevante de endereço, renda ou contato"
+   }
+  ],
+  "dropped": [
+   {
+    "item": {
+     "nome": "revisao",
+     "tipo": "Action"
+    },
+    "motivo": "nao esta no texto"
+   },
+   {
+    "item": {
+     "origem": "alteração relevante de endereço, renda ou contato",
+     "tipo": "MAY_TRIGGER",
+     "destino": "revisao"
+    },
+    "motivo": "relacao invalida ou entidade inexistente"
+   }
+  ]
+ },
+ "DOC015": {
+  "topic": "Conta Compartilhada",
+  "entities": [
+   {
+    "name": "Conta Compartilhada",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "contas conjuntas",
+    "type": "Condition"
+   },
+   {
+    "name": "consultas devem considerar todos os vínculos",
+    "type": "Action"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Conta Compartilhada",
+    "type": "REQUIRES",
+    "target": "contas conjuntas"
+   },
+   {
+    "source": "contas conjuntas",
+    "type": "MAY_TRIGGER",
+    "target": "consultas devem considerar todos os vínculos"
+   }
+  ],
+  "dropped": []
+ },
+ "DOC016": {
+  "topic": "Frequência de Transferências",
+  "entities": [
+   {
+    "name": "Frequência de Transferências",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "múltiplas transferências em curto intervalo ao mesmo destinatário",
+    "type": "Condition"
+   },
+   {
+    "name": "revisao",
+    "type": "Action"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Frequência de Transferências",
+    "type": "REQUIRES",
+    "target": "múltiplas transferências em curto intervalo ao mesmo destinatário"
+   },
+   {
+    "source": "múltiplas transferências em curto intervalo ao mesmo destinatário",
+    "type": "MAY_TRIGGER",
+    "target": "revisao"
+   }
+  ],
+  "dropped": []
+ },
+ "DOC017": {
+  "topic": "Concentração de Pagamentos",
+  "entities": [
+   {
+    "name": "Concentração de Pagamentos",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "concentração incomum de pagamentos em um estabelecimento",
+    "type": "Condition"
+   },
+   {
+    "name": "análise contextual",
+    "type": "Action"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Concentração de Pagamentos",
+    "type": "REQUIRES",
+    "target": "concentração incomum de pagamentos em um estabelecimento"
+   },
+   {
+    "source": "concentração incomum de pagamentos em um estabelecimento",
+    "type": "MAY_TRIGGER",
+    "target": "análise contextual"
+   }
+  ],
+  "dropped": []
+ },
+ "DOC018": {
+  "topic": "Bloqueio Preventivo",
+  "entities": [
+   {
+    "name": "Bloqueio Preventivo",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "justificativa",
+    "type": "Obligation"
+   },
+   {
+    "name": "data",
+    "type": "Obligation"
+   },
+   {
+    "name": "responsável",
+    "type": "Obligation"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Bloqueio Preventivo",
+    "type": "MUST_RECORD",
+    "target": "justificativa"
+   },
+   {
+    "source": "Bloqueio Preventivo",
+    "type": "MUST_RECORD",
+    "target": "data"
+   },
+   {
+    "source": "Bloqueio Preventivo",
+    "type": "MUST_RECORD",
+    "target": "responsável"
+   }
+  ],
+  "dropped": []
+ },
+ "DOC019": {
+  "topic": "Contestação de Compra",
+  "entities": [
+   {
+    "name": "Contestação de Compra",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "identificador",
+    "type": "Obligation"
+   },
+   {
+    "name": "transação relacionada",
+    "type": "Obligation"
+   },
+   {
+    "name": "motivo",
+    "type": "Obligation"
+   },
+   {
+    "name": "status",
+    "type": "Obligation"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Contestação de Compra",
+    "type": "MUST_RECORD",
+    "target": "identificador"
+   },
+   {
+    "source": "Contestação de Compra",
+    "type": "MUST_RECORD",
+    "target": "transação relacionada"
+   },
+   {
+    "source": "Contestação de Compra",
+    "type": "MUST_RECORD",
+    "target": "motivo"
+   },
+   {
+    "source": "Contestação de Compra",
+    "type": "MUST_RECORD",
+    "target": "status"
+   }
+  ],
+  "dropped": []
+ },
+ "DOC020": {
+  "topic": "Privacidade e Acesso",
+  "entities": [
+   {
+    "name": "Privacidade e Acesso",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "dados de clientes",
+    "type": "Obligation"
+   },
+   {
+    "name": "perfis autorizados",
+    "type": "Condition"
+   },
+   {
+    "name": "finalidade legítima",
+    "type": "Condition"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Privacidade e Acesso",
+    "type": "MUST_RECORD",
+    "target": "dados de clientes"
+   },
+   {
+    "source": "Privacidade e Acesso",
+    "type": "REQUIRES",
+    "target": "perfis autorizados"
+   },
+   {
+    "source": "Privacidade e Acesso",
+    "type": "REQUIRES",
+    "target": "finalidade legítima"
+   }
+  ],
+  "dropped": []
+ },
+ "DOC021": {
+  "topic": "Limite de Transferência PIX",
+  "entities": [
+   {
+    "name": "Limite de Transferência PIX",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "BASIC",
+    "type": "Segment"
+   },
+   {
+    "name": "R$ 2.000",
+    "type": "Limit"
+   },
+   {
+    "name": "validacao cadastral",
+    "type": "Condition"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Limite de Transferência PIX",
+    "type": "APPLIES_TO",
+    "target": "BASIC"
+   },
+   {
+    "source": "Limite de Transferência PIX",
+    "type": "HAS_LIMIT",
+    "target": "R$ 2.000"
+   },
+   {
+    "source": "Limite de Transferência PIX",
+    "type": "REQUIRES",
+    "target": "validacao cadastral"
+   }
+  ],
+  "dropped": []
+ },
+ "DOC022": {
+  "topic": "Transações Atípicas",
+  "entities": [
+   {
+    "name": "Transações Atípicas",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "valores muito superiores ao padrão histórico",
+    "type": "Condition"
+   },
+   {
+    "name": "alerta",
+    "type": "Action"
+   },
+   {
+    "name": "análise manual",
+    "type": "Action"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Transações Atípicas",
+    "type": "REQUIRES",
+    "target": "valores muito superiores ao padrão histórico"
+   },
+   {
+    "source": "valores muito superiores ao padrão histórico",
+    "type": "MAY_TRIGGER",
+    "target": "alerta"
+   }
+  ],
+  "dropped": [
+   {
+    "item": {
+     "origem": "alerta",
+     "tipo": "MAY_TRIGGER",
+     "destino": "análise manual"
+    },
+    "motivo": "tipos incompativeis com a relacao"
+   }
+  ]
+ },
+ "DOC023": {
+  "topic": "Empréstimo Pessoal",
+  "entities": [
+   {
+    "name": "Empréstimo Pessoal",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "6 a 60 parcelas",
+    "type": "Term"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Empréstimo Pessoal",
+    "type": "HAS_TERM",
+    "target": "6 a 60 parcelas"
+   }
+  ],
+  "dropped": []
+ },
+ "DOC024": {
+  "topic": "Atualização Cadastral",
+  "entities": [
+   {
+    "name": "Atualização Cadastral",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "alteração relevante de endereço, renda ou contato",
+    "type": "Condition"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Atualização Cadastral",
+    "type": "REQUIRES",
+    "target": "alteração relevante de endereço, renda ou contato"
+   }
+  ],
+  "dropped": [
+   {
+    "item": {
+     "nome": "revisao",
+     "tipo": "Action"
+    },
+    "motivo": "nao esta no texto"
+   },
+   {
+    "item": {
+     "origem": "alteração relevante de endereço, renda ou contato",
+     "tipo": "MAY_TRIGGER",
+     "destino": "revisao"
+    },
+    "motivo": "relacao invalida ou entidade inexistente"
+   }
+  ]
+ },
+ "DOC025": {
+  "topic": "Conta Compartilhada",
+  "entities": [
+   {
+    "name": "Conta Compartilhada",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "contas conjuntas",
+    "type": "Condition"
+   },
+   {
+    "name": "consultas devem considerar todos os vínculos",
+    "type": "Action"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Conta Compartilhada",
+    "type": "REQUIRES",
+    "target": "contas conjuntas"
+   },
+   {
+    "source": "contas conjuntas",
+    "type": "MAY_TRIGGER",
+    "target": "consultas devem considerar todos os vínculos"
+   }
+  ],
+  "dropped": []
+ },
+ "DOC026": {
+  "topic": "Frequência de Transferências",
+  "entities": [
+   {
+    "name": "Frequência de Transferências",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "múltiplas transferências em curto intervalo ao mesmo destinatário",
+    "type": "Condition"
+   },
+   {
+    "name": "revisao",
+    "type": "Action"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Frequência de Transferências",
+    "type": "REQUIRES",
+    "target": "múltiplas transferências em curto intervalo ao mesmo destinatário"
+   },
+   {
+    "source": "múltiplas transferências em curto intervalo ao mesmo destinatário",
+    "type": "MAY_TRIGGER",
+    "target": "revisao"
+   }
+  ],
+  "dropped": []
+ },
+ "DOC027": {
+  "topic": "Concentração de Pagamentos",
+  "entities": [
+   {
+    "name": "Concentração de Pagamentos",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "concentração incomum de pagamentos em um estabelecimento",
+    "type": "Condition"
+   },
+   {
+    "name": "análise contextual",
+    "type": "Action"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Concentração de Pagamentos",
+    "type": "REQUIRES",
+    "target": "concentração incomum de pagamentos em um estabelecimento"
+   },
+   {
+    "source": "concentração incomum de pagamentos em um estabelecimento",
+    "type": "MAY_TRIGGER",
+    "target": "análise contextual"
+   }
+  ],
+  "dropped": []
+ },
+ "DOC028": {
+  "topic": "Bloqueio Preventivo",
+  "entities": [
+   {
+    "name": "Bloqueio Preventivo",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "justificativa",
+    "type": "Obligation"
+   },
+   {
+    "name": "data",
+    "type": "Obligation"
+   },
+   {
+    "name": "responsável",
+    "type": "Obligation"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Bloqueio Preventivo",
+    "type": "MUST_RECORD",
+    "target": "justificativa"
+   },
+   {
+    "source": "Bloqueio Preventivo",
+    "type": "MUST_RECORD",
+    "target": "data"
+   },
+   {
+    "source": "Bloqueio Preventivo",
+    "type": "MUST_RECORD",
+    "target": "responsável"
+   }
+  ],
+  "dropped": []
+ },
+ "DOC029": {
+  "topic": "Contestação de Compra",
+  "entities": [
+   {
+    "name": "Contestação de Compra",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "identificador",
+    "type": "Obligation"
+   },
+   {
+    "name": "transação relacionada",
+    "type": "Obligation"
+   },
+   {
+    "name": "motivo",
+    "type": "Obligation"
+   },
+   {
+    "name": "status",
+    "type": "Obligation"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Contestação de Compra",
+    "type": "MUST_RECORD",
+    "target": "identificador"
+   },
+   {
+    "source": "Contestação de Compra",
+    "type": "MUST_RECORD",
+    "target": "transação relacionada"
+   },
+   {
+    "source": "Contestação de Compra",
+    "type": "MUST_RECORD",
+    "target": "motivo"
+   },
+   {
+    "source": "Contestação de Compra",
+    "type": "MUST_RECORD",
+    "target": "status"
+   }
+  ],
+  "dropped": []
+ },
+ "DOC030": {
+  "topic": "Privacidade e Acesso",
+  "entities": [
+   {
+    "name": "Privacidade e Acesso",
+    "type": "RuleTopic"
+   },
+   {
+    "name": "dados de clientes",
+    "type": "Obligation"
+   },
+   {
+    "name": "perfis autorizados",
+    "type": "Condition"
+   },
+   {
+    "name": "finalidade legítima",
+    "type": "Condition"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Privacidade e Acesso",
+    "type": "MUST_RECORD",
+    "target": "dados de clientes"
+   },
+   {
+    "source": "Privacidade e Acesso",
+    "type": "REQUIRES",
+    "target": "perfis autorizados"
+   },
+   {
+    "source": "Privacidade e Acesso",
+    "type": "REQUIRES",
+    "target": "finalidade legítima"
+   }
+  ],
+  "dropped": []
+ }
+}

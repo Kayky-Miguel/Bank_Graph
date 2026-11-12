@@ -1,0 +1,6 @@
+﻿case_id,split,question,expected_task,answerable
+Q001,dev,Quais clientes possuem contas conjuntas?,Localizar ownership_type=JOINT em account_owners.csv,True
+Q002,dev,Quais clientes têm empréstimos ativos e alertas simulados nos últimos 30 dias?,Cruzar cliente-conta-transação-alerta e empréstimo ativo,True
+Q003,test,Quais estabelecimentos concentram pagamentos de vários clientes?,Agrupar transações por estabelecimento e contar clientes distintos,True
+Q004,test,Quais regras orientam a revisão de transferências recorrentes?,Recuperar documentos e regras relevantes por busca semântica,True
+Q005,test,Um alerta permite afirmar que houve fraude?,Responder que alerta sintético não comprova fraude,False

@@ -1,0 +1,151 @@
+﻿merchant_id,merchant_name,category,city,state,risk_profile,active
+M0001,Mercado Nordeste,Combustível,Maceió,AL,LOW,True
+M0002,Grupo Nordeste,Supermercado,Salvador,BA,HIGH,True
+M0003,Central Popular,Combustível,Recife,PE,HIGH,True
+M0004,Loja Digital,Varejo,Campina Grande,PB,MEDIUM,True
+M0005,Loja Vida,Restaurante,Fortaleza,CE,LOW,True
+M0006,Mercado Horizonte,Varejo,Salvador,BA,HIGH,True
+M0007,Grupo Nordeste,Transporte,Campina Grande,PB,HIGH,True
+M0008,Grupo Digital,Saúde,Recife,PE,MEDIUM,True
+M0009,Central Digital,Varejo,Campina Grande,PB,HIGH,True
+M0010,Mercado Brasil,Restaurante,Natal,RN,HIGH,True
+M0011,Rede Brasil,Serviços,Salvador,BA,HIGH,True
+M0012,Loja Brasil,Tecnologia,Recife,PE,MEDIUM,True
+M0013,Rede Digital,Restaurante,Fortaleza,CE,HIGH,True
+M0014,Loja Horizonte,Serviços,Natal,RN,MEDIUM,True
+M0015,Mercado Nordeste,Tecnologia,Campina Grande,PB,MEDIUM,True
+M0016,Loja Popular,Serviços,Recife,PE,HIGH,True
+M0017,Central Brasil,Educação,Campina Grande,PB,HIGH,True
+M0018,Rede Horizonte,Restaurante,Salvador,BA,HIGH,True
+M0019,Mercado Horizonte,Restaurante,Salvador,BA,LOW,True
+M0020,Mercado Horizonte,Saúde,Natal,RN,LOW,True
+M0021,Grupo Digital,Varejo,Maceió,AL,LOW,True
+M0022,Loja Horizonte,Educação,Salvador,BA,MEDIUM,True
+M0023,Loja Digital,Transporte,João Pessoa,PB,LOW,True
+M0024,Loja Digital,Farmácia,Natal,RN,MEDIUM,True
+M0025,Rede Digital,Restaurante,Maceió,AL,LOW,True
+M0026,Mercado Horizonte,Transporte,Campina Grande,PB,HIGH,True
+M0027,Central Digital,Tecnologia,Campina Grande,PB,LOW,True
+M0028,Loja Horizonte,Saúde,João Pessoa,PB,HIGH,True
+M0029,Mercado Horizonte,Farmácia,Campina Grande,PB,MEDIUM,True
+M0030,Rede Horizonte,Educação,João Pessoa,PB,MEDIUM,True
+M0031,Grupo Brasil,Transporte,Recife,PE,HIGH,True
+M0032,Grupo Horizonte,Serviços,Maceió,AL,HIGH,True
+M0033,Central Digital,Transporte,João Pessoa,PB,MEDIUM,True
+M0034,Grupo Digital,Transporte,Recife,PE,MEDIUM,True
+M0035,Mercado Nordeste,Restaurante,Fortaleza,CE,LOW,True
+M0036,Rede Vida,Saúde,Campina Grande,PB,MEDIUM,True
+M0037,Loja Nordeste,Farmácia,Natal,RN,MEDIUM,True
+M0038,Rede Nordeste,Serviços,Maceió,AL,HIGH,True
+M0039,Central Popular,Supermercado,Fortaleza,CE,HIGH,True
+M0040,Grupo Vida,Combustível,Recife,PE,HIGH,True
+M0041,Mercado Popular,Supermercado,Campina Grande,PB,LOW,True
+M0042,Mercado Horizonte,Farmácia,Natal,RN,MEDIUM,True
+M0043,Central Horizonte,Serviços,Maceió,AL,LOW,True
+M0044,Loja Nordeste,Saúde,Recife,PE,HIGH,True
+M0045,Loja Vida,Transporte,Natal,RN,MEDIUM,True
+M0046,Rede Horizonte,Combustível,Salvador,BA,LOW,True
+M0047,Loja Nordeste,Supermercado,João Pessoa,PB,LOW,True
+M0048,Mercado Vida,Varejo,Salvador,BA,HIGH,True
+M0049,Central Brasil,Saúde,Maceió,AL,HIGH,True
+M0050,Rede Digital,Serviços,Natal,RN,HIGH,True
+M0051,Grupo Popular,Restaurante,Fortaleza,CE,MEDIUM,True
+M0052,Central Nordeste,Transporte,João Pessoa,PB,HIGH,True
+M0053,Mercado Vida,Restaurante,Recife,PE,MEDIUM,True
+M0054,Mercado Digital,Farmácia,Maceió,AL,LOW,True
+M0055,Rede Brasil,Restaurante,Campina Grande,PB,MEDIUM,True
+M0056,Central Horizonte,Varejo,Fortaleza,CE,HIGH,True
+M0057,Grupo Horizonte,Supermercado,Maceió,AL,HIGH,True
+M0058,Rede Nordeste,Tecnologia,Campina Grande,PB,MEDIUM,True
+M0059,Central Digital,Varejo,Fortaleza,CE,LOW,True
+M0060,Grupo Digital,Varejo,Recife,PE,HIGH,True
+M0061,Rede Popular,Saúde,João Pessoa,PB,MEDIUM,True
+M0062,Rede Popular,Combustível,Fortaleza,CE,HIGH,True
+M0063,Mercado Brasil,Serviços,João Pessoa,PB,MEDIUM,True
+M0064,Mercado Vida,Transporte,João Pessoa,PB,MEDIUM,True
+M0065,Loja Horizonte,Combustível,Campina Grande,PB,HIGH,True
+M0066,Rede Nordeste,Serviços,Maceió,AL,LOW,True
+M0067,Rede Nordeste,Supermercado,João Pessoa,PB,MEDIUM,True
+M0068,Mercado Nordeste,Transporte,Recife,PE,LOW,True
+M0069,Mercado Nordeste,Educação,Fortaleza,CE,LOW,True
+M0070,Loja Popular,Restaurante,Natal,RN,HIGH,True
+M0071,Rede Vida,Supermercado,Recife,PE,LOW,True
+M0072,Central Horizonte,Saúde,Campina Grande,PB,LOW,True
+M0073,Loja Popular,Educação,Natal,RN,LOW,True
+M0074,Mercado Horizonte,Educação,Fortaleza,CE,LOW,True
+M0075,Central Popular,Combustível,Recife,PE,LOW,True
+M0076,Loja Vida,Tecnologia,Natal,RN,LOW,True
+M0077,Central Nordeste,Transporte,Maceió,AL,LOW,True
+M0078,Rede Nordeste,Serviços,Natal,RN,MEDIUM,True
+M0079,Rede Popular,Supermercado,Maceió,AL,HIGH,True
+M0080,Loja Horizonte,Farmácia,Natal,RN,HIGH,True
+M0081,Mercado Brasil,Supermercado,Campina Grande,PB,LOW,True
+M0082,Loja Horizonte,Supermercado,Maceió,AL,LOW,True
+M0083,Central Brasil,Educação,Salvador,BA,MEDIUM,True
+M0084,Rede Vida,Restaurante,Maceió,AL,HIGH,True
+M0085,Mercado Horizonte,Combustível,Campina Grande,PB,HIGH,True
+M0086,Mercado Digital,Transporte,João Pessoa,PB,LOW,True
+M0087,Loja Popular,Saúde,Recife,PE,HIGH,True
+M0088,Loja Popular,Tecnologia,Salvador,BA,MEDIUM,True
+M0089,Rede Nordeste,Transporte,Campina Grande,PB,HIGH,True
+M0090,Grupo Horizonte,Transporte,João Pessoa,PB,MEDIUM,True
+M0091,Loja Brasil,Restaurante,Natal,RN,HIGH,True
+M0092,Grupo Brasil,Varejo,Recife,PE,MEDIUM,True
+M0093,Rede Horizonte,Transporte,Recife,PE,HIGH,True
+M0094,Central Horizonte,Farmácia,Recife,PE,MEDIUM,True
+M0095,Rede Digital,Farmácia,Campina Grande,PB,MEDIUM,True
+M0096,Central Horizonte,Varejo,Natal,RN,MEDIUM,True
+M0097,Grupo Horizonte,Saúde,Salvador,BA,MEDIUM,True
+M0098,Central Nordeste,Restaurante,Fortaleza,CE,MEDIUM,True
+M0099,Grupo Horizonte,Supermercado,João Pessoa,PB,LOW,True
+M0100,Grupo Nordeste,Farmácia,Salvador,BA,MEDIUM,True
+M0101,Rede Vida,Combustível,Recife,PE,MEDIUM,True
+M0102,Rede Horizonte,Restaurante,Salvador,BA,LOW,True
+M0103,Mercado Nordeste,Restaurante,Maceió,AL,MEDIUM,True
+M0104,Rede Brasil,Supermercado,João Pessoa,PB,LOW,True
+M0105,Mercado Digital,Saúde,Fortaleza,CE,MEDIUM,True
+M0106,Mercado Digital,Saúde,João Pessoa,PB,LOW,True
+M0107,Grupo Nordeste,Varejo,Recife,PE,MEDIUM,True
+M0108,Grupo Horizonte,Combustível,Natal,RN,HIGH,True
+M0109,Grupo Digital,Varejo,Fortaleza,CE,MEDIUM,True
+M0110,Central Brasil,Supermercado,Natal,RN,LOW,True
+M0111,Mercado Nordeste,Saúde,Recife,PE,LOW,True
+M0112,Central Nordeste,Serviços,Maceió,AL,LOW,True
+M0113,Loja Brasil,Serviços,Natal,RN,MEDIUM,True
+M0114,Central Vida,Educação,Recife,PE,MEDIUM,True
+M0115,Grupo Horizonte,Educação,Recife,PE,HIGH,True
+M0116,Rede Popular,Supermercado,Campina Grande,PB,MEDIUM,True
+M0117,Loja Vida,Farmácia,Fortaleza,CE,LOW,True
+M0118,Grupo Digital,Farmácia,João Pessoa,PB,MEDIUM,True
+M0119,Rede Nordeste,Combustível,Fortaleza,CE,MEDIUM,True
+M0120,Grupo Nordeste,Farmácia,Recife,PE,HIGH,True
+M0121,Loja Vida,Supermercado,Recife,PE,HIGH,True
+M0122,Loja Vida,Combustível,Maceió,AL,LOW,True
+M0123,Grupo Brasil,Serviços,Fortaleza,CE,MEDIUM,True
+M0124,Mercado Horizonte,Restaurante,Campina Grande,PB,LOW,True
+M0125,Central Nordeste,Supermercado,Campina Grande,PB,HIGH,True
+M0126,Rede Popular,Combustível,Natal,RN,LOW,True
+M0127,Grupo Popular,Transporte,Salvador,BA,MEDIUM,True
+M0128,Rede Nordeste,Combustível,João Pessoa,PB,HIGH,True
+M0129,Rede Vida,Educação,Campina Grande,PB,LOW,True
+M0130,Mercado Vida,Restaurante,Recife,PE,MEDIUM,True
+M0131,Loja Nordeste,Transporte,Recife,PE,HIGH,True
+M0132,Mercado Digital,Educação,Natal,RN,LOW,True
+M0133,Central Digital,Combustível,Maceió,AL,MEDIUM,True
+M0134,Central Nordeste,Saúde,Campina Grande,PB,MEDIUM,True
+M0135,Loja Nordeste,Transporte,Maceió,AL,HIGH,True
+M0136,Central Brasil,Combustível,João Pessoa,PB,LOW,True
+M0137,Central Popular,Combustível,Campina Grande,PB,LOW,True
+M0138,Central Horizonte,Tecnologia,Maceió,AL,LOW,True
+M0139,Rede Nordeste,Educação,Recife,PE,MEDIUM,True
+M0140,Rede Digital,Educação,Campina Grande,PB,MEDIUM,True
+M0141,Loja Nordeste,Farmácia,João Pessoa,PB,HIGH,True
+M0142,Loja Popular,Restaurante,João Pessoa,PB,HIGH,True
+M0143,Rede Brasil,Tecnologia,João Pessoa,PB,HIGH,True
+M0144,Grupo Brasil,Tecnologia,Natal,RN,MEDIUM,True
+M0145,Central Brasil,Restaurante,Recife,PE,MEDIUM,True
+M0146,Central Digital,Farmácia,Salvador,BA,LOW,True
+M0147,Rede Horizonte,Varejo,Natal,RN,LOW,True
+M0148,Loja Horizonte,Restaurante,Recife,PE,MEDIUM,True
+M0149,Mercado Nordeste,Restaurante,Campina Grande,PB,HIGH,True
+M0150,Loja Vida,Combustível,João Pessoa,PB,MEDIUM,True

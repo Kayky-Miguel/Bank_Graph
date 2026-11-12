@@ -1,0 +1,501 @@
+﻿customer_id,name,birth_year,city,state,segment,monthly_income_brl,registration_date,split
+C0001,Diego Silva,1975,Maceió,AL,BASIC,2500,2020-07-25,train
+C0002,Diego Martins,1992,Maceió,AL,BASIC,7000,2023-09-25,train
+C0003,Ana Santos,1971,João Pessoa,PB,BASIC,7000,2025-10-01,train
+C0004,Gabriela Rocha,1999,João Pessoa,PB,PREMIUM,7000,2023-09-15,train
+C0005,Rafaela Gomes,1975,Campina Grande,PB,BASIC,15000,2020-10-15,train
+C0006,Pedro Pereira,1975,Maceió,AL,BASIC,2500,2022-10-10,train
+C0007,Carla Almeida,1964,João Pessoa,PB,STANDARD,15000,2022-11-09,train
+C0008,Isabela Silva,2004,Fortaleza,CE,STANDARD,7000,2020-05-26,train
+C0009,Carla Araújo,1976,Natal,RN,PREMIUM,7000,2023-01-21,train
+C0010,Gabriela Rocha,1962,Fortaleza,CE,BASIC,10000,2021-07-22,train
+C0011,João Santos,1972,Salvador,BA,BASIC,5000,2022-02-12,train
+C0012,Lucas Oliveira,1981,Natal,RN,STANDARD,2500,2021-12-29,train
+C0013,Carla Gomes,1998,Maceió,AL,BASIC,7000,2021-09-29,train
+C0014,Rafaela Almeida,1975,Campina Grande,PB,PREMIUM,10000,2025-03-31,train
+C0015,Karen Silva,1972,Campina Grande,PB,BASIC,15000,2022-07-16,train
+C0016,Isabela Santos,1971,Natal,RN,PREMIUM,10000,2022-07-12,train
+C0017,Samuel Almeida,1999,Campina Grande,PB,STANDARD,2500,2021-12-20,train
+C0018,Heitor Rocha,1993,Campina Grande,PB,PREMIUM,3500,2025-07-22,train
+C0019,Mariana Pereira,1972,Natal,RN,BASIC,7000,2024-07-14,train
+C0020,Bruno Santos,1967,João Pessoa,PB,PREMIUM,2500,2023-09-26,train
+C0021,Carla Almeida,1982,Fortaleza,CE,PREMIUM,5000,2024-12-07,train
+C0022,Ana Martins,2004,Recife,PE,BASIC,10000,2025-01-08,train
+C0023,Isabela Martins,1979,Salvador,BA,BASIC,3500,2023-11-16,train
+C0024,Rafaela Silva,2004,Campina Grande,PB,PREMIUM,3500,2024-08-12,train
+C0025,Felipe Araújo,1964,Salvador,BA,PREMIUM,3500,2024-09-10,train
+C0026,Gabriela Oliveira,1981,Fortaleza,CE,BASIC,7000,2024-12-12,train
+C0027,Karen Lima,1959,João Pessoa,PB,BASIC,3500,2022-06-13,train
+C0028,Bruno Souza,1994,Campina Grande,PB,BASIC,1800,2024-06-13,train
+C0029,Carla Araújo,1966,Salvador,BA,BASIC,10000,2024-04-30,train
+C0030,Felipe Costa,1991,Fortaleza,CE,PREMIUM,5000,2021-05-17,train
+C0031,Gabriela Rocha,1977,Fortaleza,CE,STANDARD,10000,2023-03-10,train
+C0032,Rafaela Santos,1973,Natal,RN,BASIC,1800,2022-10-16,train
+C0033,Heitor Gomes,1972,João Pessoa,PB,BASIC,1800,2019-08-30,train
+C0034,Carla Silva,1979,Campina Grande,PB,BASIC,7000,2021-09-01,train
+C0035,Samuel Souza,1992,Recife,PE,BASIC,10000,2025-05-27,train
+C0036,Samuel Souza,1988,Fortaleza,CE,STANDARD,2500,2020-01-22,train
+C0037,Pedro Pereira,1985,João Pessoa,PB,STANDARD,5000,2019-08-10,train
+C0038,Diego Silva,1983,Maceió,AL,PREMIUM,3500,2020-03-23,train
+C0039,Gabriela Souza,1992,Campina Grande,PB,STANDARD,2500,2023-09-25,train
+C0040,Isabela Lima,1973,Campina Grande,PB,BASIC,5000,2025-03-04,train
+C0041,Bruno Martins,1992,João Pessoa,PB,BASIC,1800,2021-08-26,train
+C0042,Pedro Lima,1988,Campina Grande,PB,BASIC,15000,2023-07-01,train
+C0043,Felipe Almeida,1958,João Pessoa,PB,STANDARD,3500,2024-02-07,train
+C0044,Pedro Rocha,2004,Recife,PE,PREMIUM,10000,2024-06-16,train
+C0045,Gabriela Costa,1971,Campina Grande,PB,BASIC,7000,2025-01-29,train
+C0046,Karen Silva,1961,João Pessoa,PB,PREMIUM,5000,2024-08-21,train
+C0047,Felipe Silva,1990,Salvador,BA,BASIC,15000,2021-01-31,train
+C0048,Carla Martins,1973,João Pessoa,PB,STANDARD,1800,2025-05-22,train
+C0049,Bruno Gomes,1963,Campina Grande,PB,STANDARD,10000,2025-07-18,train
+C0050,Karen Costa,1971,Fortaleza,CE,PREMIUM,10000,2022-07-10,train
+C0051,Isabela Almeida,1966,Campina Grande,PB,PREMIUM,10000,2022-05-13,train
+C0052,Karen Santos,1958,Natal,RN,STANDARD,7000,2025-04-25,train
+C0053,Carla Araújo,1971,João Pessoa,PB,PREMIUM,3500,2020-06-26,train
+C0054,Carla Souza,1981,Recife,PE,STANDARD,2500,2023-11-30,train
+C0055,João Gomes,1999,Salvador,BA,PREMIUM,1800,2025-03-21,train
+C0056,Diego Oliveira,1974,Recife,PE,BASIC,1800,2025-03-16,train
+C0057,Isabela Costa,1996,Campina Grande,PB,BASIC,10000,2022-11-05,train
+C0058,Isabela Araújo,1989,Campina Grande,PB,STANDARD,15000,2019-07-28,train
+C0059,Pedro Costa,1960,João Pessoa,PB,BASIC,3500,2020-06-19,train
+C0060,Isabela Oliveira,1986,Maceió,AL,PREMIUM,10000,2023-10-18,train
+C0061,Ana Santos,1962,Fortaleza,CE,PREMIUM,2500,2025-02-12,train
+C0062,Lucas Gomes,1993,João Pessoa,PB,BASIC,5000,2020-06-06,train
+C0063,João Pereira,1960,João Pessoa,PB,STANDARD,2500,2021-10-19,train
+C0064,Diego Pereira,1993,Maceió,AL,STANDARD,7000,2020-09-25,train
+C0065,Felipe Oliveira,1984,Campina Grande,PB,BASIC,2500,2022-09-22,train
+C0066,Pedro Martins,1973,Salvador,BA,STANDARD,2500,2020-03-18,train
+C0067,Bruno Lima,1972,Natal,RN,BASIC,15000,2024-02-29,train
+C0068,João Souza,1972,Recife,PE,BASIC,10000,2021-03-02,train
+C0069,Karen Costa,1962,Natal,RN,STANDARD,3500,2024-09-17,train
+C0070,Karen Silva,1965,Natal,RN,STANDARD,2500,2025-07-06,train
+C0071,Bruno Santos,1996,Recife,PE,STANDARD,3500,2022-07-08,train
+C0072,Diego Almeida,1994,Natal,RN,BASIC,3500,2019-07-01,train
+C0073,Pedro Silva,1991,Maceió,AL,PREMIUM,10000,2021-03-18,train
+C0074,Pedro Santos,2000,Recife,PE,STANDARD,7000,2022-07-09,train
+C0075,Diego Rocha,1977,Maceió,AL,PREMIUM,3500,2023-07-31,train
+C0076,Mariana Rocha,1976,Recife,PE,PREMIUM,2500,2021-02-24,train
+C0077,Mariana Martins,1969,Natal,RN,PREMIUM,7000,2022-05-17,train
+C0078,Ana Costa,1976,Natal,RN,BASIC,5000,2025-07-03,train
+C0079,Karen Lima,1986,Fortaleza,CE,STANDARD,10000,2021-05-25,train
+C0080,Samuel Rocha,1968,Fortaleza,CE,PREMIUM,1800,2022-03-08,train
+C0081,Karen Santos,1973,Fortaleza,CE,PREMIUM,3500,2021-07-09,train
+C0082,Gabriela Oliveira,1959,Salvador,BA,BASIC,2500,2024-04-30,train
+C0083,Carla Lima,1984,Fortaleza,CE,PREMIUM,7000,2021-03-07,train
+C0084,Mariana Lima,1983,Maceió,AL,BASIC,2500,2019-01-23,train
+C0085,Diego Almeida,1972,Salvador,BA,BASIC,15000,2024-10-22,train
+C0086,Bruno Araújo,1973,Natal,RN,BASIC,5000,2020-06-30,train
+C0087,Rafaela Martins,1991,Salvador,BA,PREMIUM,7000,2022-07-23,train
+C0088,Rafaela Gomes,2004,Salvador,BA,PREMIUM,5000,2025-02-22,train
+C0089,Felipe Rocha,1988,Natal,RN,STANDARD,3500,2021-10-09,train
+C0090,Isabela Araújo,1989,Salvador,BA,PREMIUM,2500,2022-01-29,train
+C0091,Carla Rocha,1976,Natal,RN,BASIC,3500,2022-10-07,train
+C0092,Carla Oliveira,1967,Recife,PE,BASIC,5000,2020-09-17,train
+C0093,Gabriela Santos,1984,Maceió,AL,STANDARD,3500,2025-01-31,train
+C0094,Pedro Silva,1971,Natal,RN,STANDARD,5000,2025-07-20,train
+C0095,Ana Gomes,1982,Maceió,AL,STANDARD,1800,2022-12-11,train
+C0096,Mariana Almeida,1992,Recife,PE,PREMIUM,10000,2025-02-14,train
+C0097,Heitor Lima,1972,Salvador,BA,STANDARD,5000,2024-06-12,train
+C0098,Mariana Pereira,2000,João Pessoa,PB,PREMIUM,15000,2023-07-15,train
+C0099,Felipe Lima,1966,Maceió,AL,PREMIUM,7000,2019-04-21,train
+C0100,Ana Santos,1999,Natal,RN,STANDARD,2500,2024-03-06,train
+C0101,Bruno Costa,1982,Campina Grande,PB,STANDARD,2500,2024-02-06,train
+C0102,Karen Almeida,1975,Recife,PE,STANDARD,3500,2019-12-02,train
+C0103,Ana Rocha,1992,Natal,RN,BASIC,3500,2021-07-07,train
+C0104,Carla Martins,1960,Maceió,AL,BASIC,2500,2021-03-27,train
+C0105,Ana Gomes,1967,Salvador,BA,BASIC,2500,2024-04-23,train
+C0106,Diego Gomes,1971,Maceió,AL,STANDARD,10000,2021-11-15,train
+C0107,Lucas Oliveira,1996,Salvador,BA,PREMIUM,10000,2020-04-14,train
+C0108,Felipe Costa,1964,Salvador,BA,PREMIUM,1800,2022-07-01,train
+C0109,Mariana Almeida,2003,Fortaleza,CE,BASIC,1800,2025-08-22,train
+C0110,Heitor Santos,2002,Maceió,AL,STANDARD,15000,2025-09-25,train
+C0111,Diego Gomes,1960,Salvador,BA,STANDARD,7000,2023-10-21,train
+C0112,Lucas Santos,1990,Maceió,AL,PREMIUM,3500,2019-02-21,train
+C0113,Pedro Lima,1964,Salvador,BA,STANDARD,3500,2024-02-27,train
+C0114,Eduarda Almeida,1969,Maceió,AL,PREMIUM,7000,2022-01-11,train
+C0115,Samuel Lima,1985,Fortaleza,CE,PREMIUM,7000,2022-01-04,train
+C0116,Heitor Santos,1975,Recife,PE,STANDARD,2500,2024-03-18,train
+C0117,Mariana Pereira,1959,Fortaleza,CE,STANDARD,15000,2022-08-24,train
+C0118,Samuel Souza,1980,Campina Grande,PB,STANDARD,3500,2022-02-19,train
+C0119,Isabela Araújo,1958,Fortaleza,CE,PREMIUM,2500,2019-12-17,train
+C0120,Pedro Lima,1993,Campina Grande,PB,BASIC,10000,2024-05-04,train
+C0121,Samuel Lima,1959,Maceió,AL,BASIC,3500,2021-06-26,train
+C0122,Heitor Costa,2000,Natal,RN,PREMIUM,3500,2024-04-22,train
+C0123,Lucas Almeida,1993,Fortaleza,CE,STANDARD,3500,2024-02-02,train
+C0124,João Costa,1972,Recife,PE,BASIC,10000,2021-02-27,train
+C0125,Diego Rocha,1992,Recife,PE,PREMIUM,2500,2021-02-23,train
+C0126,Samuel Costa,2004,Campina Grande,PB,PREMIUM,15000,2024-11-18,train
+C0127,João Santos,1970,Fortaleza,CE,STANDARD,2500,2023-01-18,train
+C0128,João Silva,2003,Campina Grande,PB,PREMIUM,2500,2022-01-28,train
+C0129,Bruno Araújo,1976,João Pessoa,PB,PREMIUM,2500,2024-07-03,train
+C0130,Ana Gomes,1976,João Pessoa,PB,STANDARD,5000,2023-12-10,train
+C0131,Felipe Silva,1974,Recife,PE,STANDARD,1800,2019-09-25,train
+C0132,Samuel Santos,1994,Natal,RN,PREMIUM,10000,2019-08-08,train
+C0133,Eduarda Gomes,1977,Campina Grande,PB,BASIC,2500,2020-04-30,train
+C0134,Pedro Gomes,1996,Fortaleza,CE,PREMIUM,2500,2024-11-10,train
+C0135,Rafaela Lima,1977,Natal,RN,PREMIUM,5000,2022-06-04,train
+C0136,Bruno Gomes,1964,Fortaleza,CE,BASIC,10000,2021-05-14,train
+C0137,Carla Oliveira,1973,Recife,PE,BASIC,7000,2019-11-04,train
+C0138,Ana Almeida,1986,Campina Grande,PB,PREMIUM,7000,2024-04-08,train
+C0139,Bruno Souza,1976,Recife,PE,PREMIUM,3500,2024-02-03,train
+C0140,Heitor Costa,1998,João Pessoa,PB,PREMIUM,10000,2021-03-21,train
+C0141,Diego Araújo,1972,Natal,RN,PREMIUM,2500,2021-12-24,train
+C0142,Eduarda Santos,1961,Salvador,BA,BASIC,15000,2022-06-13,train
+C0143,João Lima,1965,Fortaleza,CE,STANDARD,10000,2022-05-30,train
+C0144,Mariana Costa,1990,Maceió,AL,PREMIUM,5000,2023-11-29,train
+C0145,Bruno Almeida,1978,João Pessoa,PB,PREMIUM,3500,2019-04-16,train
+C0146,Heitor Martins,1994,João Pessoa,PB,PREMIUM,1800,2022-01-08,train
+C0147,Bruno Oliveira,1988,Fortaleza,CE,PREMIUM,10000,2023-12-17,train
+C0148,Felipe Gomes,1985,Recife,PE,PREMIUM,15000,2024-07-07,train
+C0149,Samuel Pereira,1984,João Pessoa,PB,STANDARD,3500,2020-03-04,train
+C0150,Felipe Pereira,1984,Salvador,BA,PREMIUM,5000,2022-03-26,train
+C0151,Mariana Araújo,1960,Maceió,AL,STANDARD,1800,2022-07-12,train
+C0152,Karen Santos,1983,Recife,PE,PREMIUM,15000,2019-01-05,train
+C0153,Rafaela Almeida,1961,Maceió,AL,BASIC,7000,2023-01-21,train
+C0154,Samuel Martins,1986,Fortaleza,CE,BASIC,2500,2021-12-29,train
+C0155,Eduarda Costa,1986,Fortaleza,CE,PREMIUM,5000,2020-05-12,train
+C0156,Heitor Rocha,1968,João Pessoa,PB,STANDARD,7000,2019-02-26,train
+C0157,Pedro Santos,1972,Fortaleza,CE,BASIC,5000,2020-04-26,train
+C0158,Eduarda Lima,2003,Maceió,AL,STANDARD,7000,2022-01-24,train
+C0159,Samuel Lima,1973,Natal,RN,STANDARD,7000,2020-08-15,train
+C0160,Gabriela Gomes,1990,Natal,RN,PREMIUM,2500,2019-10-13,train
+C0161,Pedro Pereira,1990,Recife,PE,STANDARD,15000,2019-01-11,train
+C0162,João Gomes,1995,Recife,PE,PREMIUM,5000,2020-08-31,train
+C0163,Samuel Pereira,1979,Natal,RN,PREMIUM,15000,2025-02-03,train
+C0164,Rafaela Pereira,1970,Natal,RN,PREMIUM,2500,2025-05-31,train
+C0165,Heitor Almeida,1960,Natal,RN,STANDARD,10000,2024-04-21,train
+C0166,Mariana Almeida,2000,Maceió,AL,PREMIUM,2500,2024-07-21,train
+C0167,Eduarda Araújo,1995,João Pessoa,PB,STANDARD,15000,2020-02-16,train
+C0168,Rafaela Santos,1991,Salvador,BA,STANDARD,1800,2020-08-13,train
+C0169,Eduarda Santos,1988,Natal,RN,STANDARD,3500,2023-06-17,train
+C0170,Carla Pereira,2001,Maceió,AL,PREMIUM,5000,2022-07-21,train
+C0171,Samuel Araújo,1960,Maceió,AL,PREMIUM,1800,2021-08-19,train
+C0172,João Souza,1963,Maceió,AL,STANDARD,1800,2020-02-16,train
+C0173,Felipe Rocha,1977,Natal,RN,BASIC,1800,2022-08-21,train
+C0174,Bruno Costa,1980,Salvador,BA,STANDARD,5000,2020-08-19,train
+C0175,Pedro Gomes,2001,Campina Grande,PB,BASIC,2500,2020-12-18,train
+C0176,Mariana Gomes,2001,João Pessoa,PB,BASIC,5000,2025-07-16,train
+C0177,Heitor Lima,1998,Campina Grande,PB,STANDARD,5000,2021-11-11,train
+C0178,Ana Lima,1976,Maceió,AL,PREMIUM,7000,2020-10-09,train
+C0179,Rafaela Pereira,1995,João Pessoa,PB,STANDARD,10000,2023-10-04,train
+C0180,Isabela Lima,1977,Maceió,AL,BASIC,5000,2024-06-02,train
+C0181,Heitor Almeida,1994,João Pessoa,PB,STANDARD,7000,2022-04-26,train
+C0182,João Silva,2000,Maceió,AL,STANDARD,3500,2019-02-03,train
+C0183,Bruno Gomes,1989,Fortaleza,CE,STANDARD,15000,2021-07-31,train
+C0184,Lucas Souza,1998,Fortaleza,CE,BASIC,7000,2021-10-23,train
+C0185,Eduarda Martins,1964,Maceió,AL,PREMIUM,10000,2019-06-11,train
+C0186,Rafaela Silva,1995,Recife,PE,STANDARD,10000,2020-06-22,train
+C0187,João Pereira,1984,João Pessoa,PB,BASIC,2500,2020-06-25,train
+C0188,Lucas Araújo,1990,Salvador,BA,STANDARD,15000,2020-11-04,train
+C0189,Samuel Costa,1979,Recife,PE,BASIC,5000,2019-11-05,train
+C0190,Heitor Martins,2004,Campina Grande,PB,PREMIUM,5000,2025-04-01,train
+C0191,Carla Almeida,1958,Recife,PE,STANDARD,7000,2020-05-21,train
+C0192,Lucas Martins,2001,Natal,RN,STANDARD,7000,2023-04-10,train
+C0193,Lucas Santos,2001,Salvador,BA,BASIC,5000,2019-04-13,train
+C0194,Karen Gomes,1972,Fortaleza,CE,PREMIUM,1800,2024-03-16,train
+C0195,João Martins,1984,Maceió,AL,BASIC,2500,2019-07-05,train
+C0196,João Lima,1965,João Pessoa,PB,BASIC,2500,2025-01-10,train
+C0197,Mariana Lima,1981,Campina Grande,PB,PREMIUM,10000,2025-01-21,train
+C0198,Eduarda Almeida,1999,Natal,RN,BASIC,15000,2024-06-27,train
+C0199,Pedro Costa,1960,Fortaleza,CE,PREMIUM,3500,2021-06-08,train
+C0200,Rafaela Souza,1981,Natal,RN,BASIC,10000,2023-02-13,train
+C0201,Lucas Silva,1983,Fortaleza,CE,STANDARD,2500,2020-05-15,train
+C0202,Rafaela Santos,2000,Salvador,BA,BASIC,10000,2025-09-11,train
+C0203,Bruno Pereira,1973,João Pessoa,PB,BASIC,15000,2025-05-01,train
+C0204,Carla Araújo,1971,Campina Grande,PB,PREMIUM,2500,2021-08-12,train
+C0205,Eduarda Gomes,1958,Recife,PE,STANDARD,15000,2020-08-15,train
+C0206,Isabela Oliveira,1965,Campina Grande,PB,PREMIUM,15000,2019-04-16,train
+C0207,Ana Pereira,1973,Campina Grande,PB,PREMIUM,3500,2019-03-06,train
+C0208,Isabela Silva,1966,Campina Grande,PB,PREMIUM,5000,2024-11-24,train
+C0209,Carla Lima,1986,João Pessoa,PB,STANDARD,7000,2025-08-28,train
+C0210,Rafaela Araújo,1972,João Pessoa,PB,PREMIUM,1800,2024-11-05,train
+C0211,Rafaela Martins,1959,Recife,PE,BASIC,5000,2023-07-04,train
+C0212,Diego Lima,2003,Natal,RN,STANDARD,1800,2019-11-27,train
+C0213,Eduarda Santos,1966,Recife,PE,STANDARD,7000,2025-07-25,train
+C0214,Karen Almeida,1996,Fortaleza,CE,PREMIUM,3500,2024-02-02,train
+C0215,Pedro Santos,2002,Fortaleza,CE,BASIC,15000,2025-03-08,train
+C0216,Gabriela Almeida,1986,Maceió,AL,BASIC,5000,2022-10-20,train
+C0217,Rafaela Almeida,1984,Salvador,BA,PREMIUM,1800,2022-07-04,train
+C0218,Karen Martins,1974,Natal,RN,STANDARD,2500,2024-04-26,train
+C0219,Carla Santos,1963,João Pessoa,PB,STANDARD,1800,2023-03-07,train
+C0220,Eduarda Araújo,1961,Salvador,BA,PREMIUM,7000,2025-04-19,train
+C0221,Diego Almeida,1980,Recife,PE,PREMIUM,15000,2023-09-29,train
+C0222,Bruno Costa,1996,Salvador,BA,STANDARD,3500,2020-02-29,train
+C0223,Gabriela Oliveira,2000,Fortaleza,CE,STANDARD,2500,2020-03-19,train
+C0224,Lucas Santos,1975,Recife,PE,PREMIUM,2500,2023-10-24,train
+C0225,Ana Gomes,2000,Salvador,BA,PREMIUM,3500,2019-04-29,train
+C0226,Isabela Rocha,1977,Campina Grande,PB,STANDARD,3500,2019-01-26,train
+C0227,Eduarda Gomes,2000,Campina Grande,PB,STANDARD,1800,2020-08-04,train
+C0228,Ana Santos,1991,Maceió,AL,BASIC,5000,2023-09-16,train
+C0229,Karen Oliveira,1981,Natal,RN,STANDARD,10000,2022-08-21,train
+C0230,Carla Silva,1967,Salvador,BA,BASIC,15000,2019-07-23,train
+C0231,Carla Costa,1986,Maceió,AL,PREMIUM,5000,2024-06-12,train
+C0232,Rafaela Almeida,1975,Fortaleza,CE,BASIC,15000,2024-09-29,train
+C0233,Lucas Almeida,1965,João Pessoa,PB,STANDARD,10000,2025-08-26,train
+C0234,João Silva,1972,Natal,RN,STANDARD,7000,2019-08-13,train
+C0235,Gabriela Costa,1971,João Pessoa,PB,BASIC,15000,2021-11-12,train
+C0236,Karen Santos,1958,Recife,PE,STANDARD,10000,2023-10-30,train
+C0237,Eduarda Almeida,1992,Campina Grande,PB,PREMIUM,2500,2024-08-11,train
+C0238,Lucas Santos,1983,Fortaleza,CE,PREMIUM,1800,2023-11-22,train
+C0239,Rafaela Santos,1978,João Pessoa,PB,PREMIUM,5000,2025-06-06,train
+C0240,Pedro Costa,1965,Natal,RN,STANDARD,1800,2022-08-23,train
+C0241,Rafaela Rocha,1981,Campina Grande,PB,BASIC,5000,2020-03-09,train
+C0242,Pedro Gomes,1983,Campina Grande,PB,PREMIUM,1800,2023-06-10,train
+C0243,João Rocha,1979,Salvador,BA,BASIC,3500,2020-11-19,train
+C0244,Diego Araújo,1990,João Pessoa,PB,BASIC,15000,2022-12-02,train
+C0245,Eduarda Souza,1964,Recife,PE,BASIC,3500,2021-03-19,train
+C0246,Eduarda Martins,1962,Campina Grande,PB,BASIC,15000,2024-07-16,train
+C0247,Rafaela Martins,1994,Natal,RN,PREMIUM,10000,2022-08-16,train
+C0248,Karen Oliveira,1986,Salvador,BA,BASIC,5000,2023-12-17,train
+C0249,João Costa,1995,Maceió,AL,BASIC,3500,2024-09-09,train
+C0250,João Lima,1986,João Pessoa,PB,BASIC,1800,2023-02-19,train
+C0251,João Santos,1999,Salvador,BA,BASIC,7000,2025-08-30,train
+C0252,Mariana Lima,1995,Fortaleza,CE,PREMIUM,15000,2019-06-18,train
+C0253,Gabriela Pereira,1996,Natal,RN,STANDARD,7000,2020-09-09,train
+C0254,Rafaela Santos,1979,João Pessoa,PB,PREMIUM,1800,2024-08-28,train
+C0255,Felipe Silva,1973,Maceió,AL,PREMIUM,5000,2023-12-05,train
+C0256,Felipe Pereira,1981,Fortaleza,CE,STANDARD,5000,2023-08-02,train
+C0257,Karen Martins,1996,Salvador,BA,BASIC,15000,2022-10-02,train
+C0258,Karen Santos,1993,João Pessoa,PB,PREMIUM,5000,2022-03-09,train
+C0259,Eduarda Pereira,1963,Recife,PE,PREMIUM,10000,2020-08-02,train
+C0260,João Martins,2002,Recife,PE,PREMIUM,5000,2020-06-12,train
+C0261,Carla Costa,1993,Fortaleza,CE,STANDARD,10000,2022-09-07,train
+C0262,Eduarda Martins,2002,Salvador,BA,PREMIUM,10000,2024-11-26,train
+C0263,Pedro Araújo,1981,João Pessoa,PB,BASIC,3500,2022-06-19,train
+C0264,Gabriela Pereira,1989,Campina Grande,PB,BASIC,2500,2020-07-17,train
+C0265,Carla Costa,1964,Campina Grande,PB,PREMIUM,15000,2025-01-19,train
+C0266,Bruno Martins,1979,Salvador,BA,PREMIUM,2500,2025-09-12,train
+C0267,Eduarda Oliveira,1969,Natal,RN,PREMIUM,15000,2020-11-09,train
+C0268,Rafaela Silva,1984,Maceió,AL,STANDARD,10000,2021-08-30,train
+C0269,João Rocha,1986,Natal,RN,BASIC,7000,2021-09-06,train
+C0270,Samuel Souza,1981,Recife,PE,PREMIUM,7000,2023-12-10,train
+C0271,João Almeida,1990,Natal,RN,PREMIUM,5000,2020-10-25,train
+C0272,Gabriela Gomes,1966,Salvador,BA,STANDARD,1800,2024-05-22,train
+C0273,Lucas Araújo,1964,Salvador,BA,PREMIUM,15000,2024-10-14,train
+C0274,Diego Costa,1963,Salvador,BA,BASIC,3500,2024-01-15,train
+C0275,Eduarda Almeida,1963,Fortaleza,CE,BASIC,15000,2024-01-22,train
+C0276,Ana Almeida,1961,Recife,PE,STANDARD,7000,2023-03-12,train
+C0277,Mariana Santos,1981,Campina Grande,PB,BASIC,1800,2022-07-29,train
+C0278,Karen Oliveira,1966,João Pessoa,PB,BASIC,3500,2024-04-19,train
+C0279,Eduarda Rocha,1988,Maceió,AL,STANDARD,7000,2019-01-22,train
+C0280,Ana Costa,1971,João Pessoa,PB,BASIC,7000,2025-10-29,train
+C0281,Pedro Santos,1976,Fortaleza,CE,BASIC,3500,2020-05-14,train
+C0282,Heitor Almeida,1998,João Pessoa,PB,PREMIUM,5000,2019-09-15,train
+C0283,Samuel Gomes,1992,João Pessoa,PB,BASIC,10000,2024-10-11,train
+C0284,Heitor Rocha,1967,Fortaleza,CE,STANDARD,5000,2019-01-07,train
+C0285,Lucas Souza,1994,Fortaleza,CE,STANDARD,2500,2019-12-17,train
+C0286,Lucas Santos,1991,Fortaleza,CE,PREMIUM,7000,2024-09-10,train
+C0287,Ana Almeida,1988,Fortaleza,CE,BASIC,10000,2023-05-04,train
+C0288,Isabela Rocha,1959,Recife,PE,STANDARD,15000,2019-10-04,train
+C0289,Heitor Rocha,2000,Recife,PE,PREMIUM,1800,2025-07-11,train
+C0290,Karen Oliveira,1960,Maceió,AL,STANDARD,7000,2022-10-18,train
+C0291,Felipe Martins,1987,Salvador,BA,PREMIUM,5000,2021-01-16,train
+C0292,Eduarda Santos,2003,Salvador,BA,STANDARD,1800,2022-04-16,train
+C0293,Bruno Souza,1960,Campina Grande,PB,STANDARD,3500,2024-10-12,train
+C0294,Samuel Costa,1960,Natal,RN,PREMIUM,2500,2022-03-17,train
+C0295,Bruno Martins,1979,Recife,PE,STANDARD,1800,2023-02-16,train
+C0296,Mariana Rocha,1986,Natal,RN,STANDARD,3500,2021-02-04,train
+C0297,Samuel Pereira,1991,Natal,RN,STANDARD,15000,2019-12-05,train
+C0298,Pedro Santos,1985,Maceió,AL,PREMIUM,15000,2021-01-09,train
+C0299,João Pereira,1964,Fortaleza,CE,BASIC,3500,2022-04-25,train
+C0300,Rafaela Gomes,2003,Recife,PE,STANDARD,2500,2023-12-24,train
+C0301,Rafaela Silva,2004,Recife,PE,STANDARD,7000,2023-11-17,train
+C0302,Bruno Santos,2000,Recife,PE,PREMIUM,5000,2023-01-28,train
+C0303,Felipe Silva,1967,Fortaleza,CE,PREMIUM,10000,2023-11-30,train
+C0304,Eduarda Santos,1973,João Pessoa,PB,PREMIUM,3500,2023-01-23,train
+C0305,Bruno Gomes,1967,Natal,RN,PREMIUM,5000,2023-02-28,train
+C0306,Rafaela Santos,1994,Recife,PE,BASIC,7000,2023-02-12,train
+C0307,Karen Martins,1975,Natal,RN,BASIC,1800,2019-04-17,train
+C0308,Felipe Lima,1991,Maceió,AL,STANDARD,7000,2020-04-27,train
+C0309,Isabela Rocha,1986,Recife,PE,BASIC,7000,2022-03-15,train
+C0310,Samuel Souza,1965,Maceió,AL,BASIC,15000,2019-10-31,train
+C0311,Felipe Rocha,1986,Natal,RN,BASIC,15000,2022-08-02,train
+C0312,Lucas Rocha,1962,Maceió,AL,PREMIUM,7000,2022-04-04,train
+C0313,Felipe Rocha,2003,Recife,PE,PREMIUM,10000,2020-12-14,train
+C0314,Lucas Araújo,1972,Salvador,BA,BASIC,2500,2020-07-22,train
+C0315,Samuel Silva,1981,Campina Grande,PB,PREMIUM,7000,2023-02-20,train
+C0316,Eduarda Gomes,1963,Natal,RN,BASIC,3500,2023-06-19,train
+C0317,Samuel Araújo,1984,Maceió,AL,STANDARD,15000,2025-06-12,train
+C0318,Eduarda Pereira,1999,João Pessoa,PB,BASIC,5000,2024-03-23,train
+C0319,Lucas Oliveira,1993,Maceió,AL,PREMIUM,7000,2021-01-15,train
+C0320,Eduarda Almeida,1990,Salvador,BA,BASIC,15000,2020-05-23,train
+C0321,Eduarda Costa,1968,Fortaleza,CE,BASIC,3500,2021-07-12,train
+C0322,João Santos,1974,Recife,PE,BASIC,10000,2025-03-06,train
+C0323,Eduarda Martins,1977,Recife,PE,PREMIUM,7000,2020-01-18,train
+C0324,Felipe Gomes,1995,Fortaleza,CE,BASIC,2500,2025-10-14,train
+C0325,Bruno Silva,1963,Recife,PE,BASIC,10000,2025-06-20,train
+C0326,Gabriela Gomes,1984,Recife,PE,PREMIUM,10000,2019-05-05,train
+C0327,João Martins,1977,Natal,RN,STANDARD,2500,2023-07-22,train
+C0328,Rafaela Santos,2002,Recife,PE,BASIC,2500,2023-12-06,train
+C0329,Samuel Lima,1971,Natal,RN,STANDARD,7000,2020-08-11,train
+C0330,Karen Rocha,1980,Recife,PE,STANDARD,2500,2023-02-26,train
+C0331,Diego Pereira,1973,Fortaleza,CE,STANDARD,1800,2021-12-31,train
+C0332,Heitor Oliveira,1964,Natal,RN,BASIC,3500,2023-04-23,train
+C0333,Pedro Souza,1968,Salvador,BA,STANDARD,7000,2022-07-04,train
+C0334,Felipe Lima,1990,Campina Grande,PB,STANDARD,5000,2022-06-17,train
+C0335,Ana Santos,1983,Natal,RN,PREMIUM,5000,2021-09-13,train
+C0336,Lucas Silva,1961,Campina Grande,PB,STANDARD,5000,2025-09-13,train
+C0337,Samuel Costa,1992,Salvador,BA,BASIC,15000,2020-03-16,train
+C0338,Eduarda Costa,2004,Natal,RN,STANDARD,15000,2023-07-10,train
+C0339,Bruno Almeida,1961,Recife,PE,PREMIUM,7000,2021-03-08,train
+C0340,João Santos,1982,Recife,PE,PREMIUM,5000,2025-03-02,train
+C0341,Diego Oliveira,1964,Recife,PE,STANDARD,3500,2022-10-20,train
+C0342,Lucas Oliveira,1970,Fortaleza,CE,PREMIUM,7000,2023-07-03,train
+C0343,Bruno Silva,1960,Fortaleza,CE,BASIC,10000,2022-09-26,train
+C0344,Samuel Araújo,1987,Salvador,BA,BASIC,7000,2024-10-12,train
+C0345,Karen Gomes,1978,Campina Grande,PB,BASIC,5000,2022-05-10,train
+C0346,Karen Araújo,1990,Fortaleza,CE,PREMIUM,5000,2025-04-24,train
+C0347,Samuel Silva,1981,Recife,PE,STANDARD,10000,2020-03-24,train
+C0348,João Rocha,2002,Natal,RN,PREMIUM,1800,2025-09-10,train
+C0349,Isabela Martins,1995,Natal,RN,PREMIUM,2500,2019-07-30,train
+C0350,Samuel Oliveira,1991,Fortaleza,CE,PREMIUM,10000,2023-04-07,train
+C0351,Heitor Silva,1994,Campina Grande,PB,PREMIUM,1800,2021-02-20,dev
+C0352,Rafaela Pereira,1984,João Pessoa,PB,BASIC,5000,2021-04-15,dev
+C0353,Samuel Rocha,2004,Natal,RN,BASIC,10000,2020-07-19,dev
+C0354,Gabriela Araújo,1978,Fortaleza,CE,PREMIUM,5000,2024-11-22,dev
+C0355,Karen Oliveira,1987,Natal,RN,PREMIUM,3500,2025-02-15,dev
+C0356,Isabela Gomes,1988,Recife,PE,BASIC,2500,2022-02-16,dev
+C0357,João Souza,1977,Fortaleza,CE,STANDARD,10000,2021-04-29,dev
+C0358,Samuel Pereira,1988,Maceió,AL,STANDARD,7000,2022-01-25,dev
+C0359,Diego Gomes,2001,Recife,PE,PREMIUM,5000,2023-06-05,dev
+C0360,Lucas Oliveira,1976,Salvador,BA,BASIC,3500,2019-11-20,dev
+C0361,Rafaela Martins,1974,Recife,PE,PREMIUM,5000,2021-05-26,dev
+C0362,Isabela Araújo,2002,Campina Grande,PB,STANDARD,2500,2020-03-23,dev
+C0363,Heitor Souza,1961,Fortaleza,CE,PREMIUM,7000,2021-07-13,dev
+C0364,Heitor Silva,1964,Maceió,AL,STANDARD,3500,2024-04-18,dev
+C0365,Eduarda Silva,1993,João Pessoa,PB,BASIC,5000,2024-05-02,dev
+C0366,Gabriela Costa,1978,Natal,RN,STANDARD,10000,2019-08-31,dev
+C0367,Carla Martins,1994,Salvador,BA,BASIC,7000,2019-06-02,dev
+C0368,Pedro Oliveira,1960,Campina Grande,PB,STANDARD,15000,2024-07-22,dev
+C0369,João Silva,1958,Campina Grande,PB,STANDARD,7000,2025-10-04,dev
+C0370,Karen Costa,1987,João Pessoa,PB,PREMIUM,7000,2024-11-17,dev
+C0371,Eduarda Araújo,1987,Natal,RN,STANDARD,2500,2020-04-06,dev
+C0372,Felipe Rocha,1987,Recife,PE,PREMIUM,3500,2021-02-01,dev
+C0373,Karen Costa,1994,João Pessoa,PB,PREMIUM,15000,2021-03-02,dev
+C0374,Mariana Almeida,1990,Campina Grande,PB,STANDARD,1800,2023-06-30,dev
+C0375,Diego Oliveira,1966,Maceió,AL,STANDARD,3500,2021-10-13,dev
+C0376,Isabela Almeida,1973,João Pessoa,PB,STANDARD,15000,2021-12-29,dev
+C0377,João Gomes,2004,Recife,PE,PREMIUM,1800,2021-12-07,dev
+C0378,Lucas Rocha,1973,Maceió,AL,BASIC,10000,2020-04-29,dev
+C0379,João Oliveira,1983,Natal,RN,PREMIUM,7000,2022-06-27,dev
+C0380,Diego Martins,1976,Maceió,AL,STANDARD,7000,2021-06-23,dev
+C0381,Eduarda Lima,1967,Campina Grande,PB,STANDARD,10000,2025-10-17,dev
+C0382,Pedro Rocha,1993,Recife,PE,STANDARD,15000,2025-01-10,dev
+C0383,Gabriela Souza,2001,Salvador,BA,PREMIUM,15000,2019-12-02,dev
+C0384,Rafaela Araújo,2003,Fortaleza,CE,STANDARD,1800,2025-04-29,dev
+C0385,Bruno Araújo,1990,João Pessoa,PB,BASIC,7000,2025-01-07,dev
+C0386,Felipe Pereira,1991,Campina Grande,PB,STANDARD,1800,2021-04-21,dev
+C0387,Samuel Santos,1990,Maceió,AL,STANDARD,15000,2019-08-16,dev
+C0388,Eduarda Araújo,1984,Natal,RN,STANDARD,7000,2019-08-25,dev
+C0389,Rafaela Martins,1977,Fortaleza,CE,PREMIUM,1800,2023-06-10,dev
+C0390,Ana Rocha,1971,Recife,PE,PREMIUM,1800,2019-07-05,dev
+C0391,Lucas Rocha,1962,Natal,RN,PREMIUM,1800,2019-10-10,dev
+C0392,Bruno Costa,1984,Natal,RN,BASIC,15000,2020-07-08,dev
+C0393,Pedro Pereira,1982,Salvador,BA,STANDARD,15000,2023-03-27,dev
+C0394,Carla Martins,2000,Natal,RN,PREMIUM,2500,2022-11-25,dev
+C0395,Felipe Araújo,1983,João Pessoa,PB,PREMIUM,2500,2021-07-01,dev
+C0396,Ana Silva,1977,Salvador,BA,STANDARD,10000,2025-02-08,dev
+C0397,Mariana Souza,1973,Natal,RN,STANDARD,3500,2020-09-27,dev
+C0398,Gabriela Rocha,1965,Recife,PE,BASIC,15000,2023-09-14,dev
+C0399,Ana Souza,1971,Fortaleza,CE,BASIC,1800,2025-08-29,dev
+C0400,Rafaela Gomes,2001,João Pessoa,PB,PREMIUM,15000,2019-07-19,dev
+C0401,Bruno Almeida,1986,Campina Grande,PB,BASIC,7000,2021-06-08,dev
+C0402,Bruno Oliveira,1990,Salvador,BA,STANDARD,2500,2025-06-17,dev
+C0403,Karen Souza,1977,Recife,PE,BASIC,10000,2024-11-05,dev
+C0404,Pedro Costa,1975,Campina Grande,PB,BASIC,7000,2025-08-20,dev
+C0405,Felipe Martins,2001,Maceió,AL,STANDARD,7000,2024-07-23,dev
+C0406,Lucas Martins,2000,João Pessoa,PB,STANDARD,15000,2024-11-18,dev
+C0407,Pedro Almeida,1967,Recife,PE,STANDARD,5000,2021-01-23,dev
+C0408,Samuel Souza,1972,Salvador,BA,STANDARD,15000,2020-08-14,dev
+C0409,Rafaela Silva,1993,Salvador,BA,STANDARD,5000,2025-04-01,dev
+C0410,Eduarda Almeida,1973,Fortaleza,CE,STANDARD,2500,2022-09-14,dev
+C0411,Carla Lima,1981,Maceió,AL,BASIC,7000,2021-02-19,dev
+C0412,Isabela Almeida,2001,João Pessoa,PB,PREMIUM,7000,2019-06-11,dev
+C0413,Carla Souza,1995,Salvador,BA,PREMIUM,10000,2025-04-08,dev
+C0414,Samuel Souza,1979,Campina Grande,PB,STANDARD,1800,2021-05-17,dev
+C0415,Diego Rocha,1988,Campina Grande,PB,BASIC,10000,2025-10-11,dev
+C0416,Gabriela Almeida,1973,Maceió,AL,PREMIUM,3500,2022-03-05,dev
+C0417,Rafaela Araújo,1999,Natal,RN,STANDARD,3500,2021-12-07,dev
+C0418,Samuel Lima,1964,Recife,PE,PREMIUM,5000,2022-08-04,dev
+C0419,Lucas Pereira,1984,Campina Grande,PB,BASIC,7000,2021-06-25,dev
+C0420,Eduarda Silva,1974,Maceió,AL,PREMIUM,7000,2025-06-30,dev
+C0421,Pedro Costa,1967,Maceió,AL,BASIC,3500,2021-07-31,dev
+C0422,Heitor Lima,1993,Natal,RN,PREMIUM,10000,2022-10-14,dev
+C0423,Samuel Rocha,1999,Recife,PE,PREMIUM,5000,2024-03-02,dev
+C0424,Lucas Oliveira,1966,Campina Grande,PB,PREMIUM,7000,2024-06-23,dev
+C0425,Bruno Araújo,1960,Campina Grande,PB,BASIC,15000,2019-07-18,dev
+C0426,Ana Almeida,1966,Salvador,BA,PREMIUM,2500,2019-10-06,test
+C0427,Eduarda Silva,1971,Maceió,AL,PREMIUM,5000,2023-03-09,test
+C0428,Samuel Martins,1989,João Pessoa,PB,BASIC,1800,2024-12-19,test
+C0429,Pedro Silva,1959,Fortaleza,CE,PREMIUM,10000,2022-01-30,test
+C0430,João Silva,1990,Fortaleza,CE,PREMIUM,10000,2023-10-30,test
+C0431,Felipe Santos,1964,Salvador,BA,PREMIUM,2500,2021-09-14,test
+C0432,Isabela Pereira,1975,Campina Grande,PB,STANDARD,1800,2023-03-09,test
+C0433,Rafaela Gomes,1973,Natal,RN,PREMIUM,2500,2022-05-13,test
+C0434,Carla Martins,1999,Maceió,AL,BASIC,1800,2023-07-19,test
+C0435,Mariana Araújo,1988,Natal,RN,BASIC,10000,2019-02-08,test
+C0436,Felipe Santos,1989,Maceió,AL,STANDARD,10000,2022-09-18,test
+C0437,Diego Araújo,1960,Fortaleza,CE,BASIC,2500,2025-05-10,test
+C0438,Isabela Silva,1962,Natal,RN,PREMIUM,3500,2025-02-02,test
+C0439,Bruno Oliveira,1978,Fortaleza,CE,BASIC,2500,2025-08-01,test
+C0440,Mariana Santos,1977,Campina Grande,PB,BASIC,7000,2021-09-11,test
+C0441,Mariana Martins,1992,Fortaleza,CE,STANDARD,5000,2020-07-27,test
+C0442,Carla Araújo,1980,Salvador,BA,BASIC,1800,2023-11-26,test
+C0443,Carla Pereira,1996,Campina Grande,PB,PREMIUM,7000,2023-06-13,test
+C0444,Karen Silva,1998,Salvador,BA,STANDARD,15000,2024-01-20,test
+C0445,Heitor Pereira,1993,Natal,RN,STANDARD,5000,2021-01-30,test
+C0446,Mariana Santos,1997,Maceió,AL,STANDARD,15000,2021-10-06,test
+C0447,Carla Santos,1975,Maceió,AL,BASIC,5000,2020-09-23,test
+C0448,Mariana Pereira,1981,Maceió,AL,BASIC,1800,2019-01-22,test
+C0449,Rafaela Pereira,1975,Recife,PE,BASIC,2500,2019-12-24,test
+C0450,Pedro Lima,1993,Campina Grande,PB,PREMIUM,7000,2023-07-30,test
+C0451,Ana Santos,1980,João Pessoa,PB,PREMIUM,1800,2025-09-11,test
+C0452,Karen Almeida,1958,Fortaleza,CE,STANDARD,5000,2023-05-08,test
+C0453,Carla Rocha,1993,Salvador,BA,BASIC,7000,2024-11-04,test
+C0454,Mariana Oliveira,1966,Campina Grande,PB,STANDARD,3500,2022-01-04,test
+C0455,Eduarda Santos,1968,Natal,RN,STANDARD,3500,2023-09-21,test
+C0456,Samuel Santos,1981,Recife,PE,STANDARD,2500,2024-07-23,test
+C0457,Gabriela Lima,1964,Fortaleza,CE,BASIC,3500,2019-01-28,test
+C0458,Karen Gomes,1982,Natal,RN,STANDARD,5000,2022-10-03,test
+C0459,Eduarda Costa,1978,Natal,RN,PREMIUM,10000,2021-04-02,test
+C0460,Karen Oliveira,1983,Natal,RN,STANDARD,3500,2024-07-04,test
+C0461,Heitor Pereira,1982,Fortaleza,CE,STANDARD,15000,2023-05-29,test
+C0462,Diego Gomes,1970,Recife,PE,PREMIUM,7000,2021-01-06,test
+C0463,Ana Rocha,1987,Maceió,AL,PREMIUM,2500,2023-12-01,test
+C0464,João Rocha,1962,Salvador,BA,STANDARD,10000,2024-08-07,test
+C0465,João Souza,1974,Campina Grande,PB,PREMIUM,2500,2023-09-30,test
+C0466,Mariana Santos,1986,Salvador,BA,PREMIUM,5000,2025-07-12,test
+C0467,Pedro Araújo,1960,Natal,RN,STANDARD,10000,2025-01-08,test
+C0468,Carla Santos,1973,Fortaleza,CE,PREMIUM,10000,2022-12-25,test
+C0469,Bruno Gomes,1999,Campina Grande,PB,PREMIUM,10000,2023-06-25,test
+C0470,Karen Almeida,1964,Salvador,BA,BASIC,1800,2021-11-25,test
+C0471,Heitor Lima,1981,Campina Grande,PB,STANDARD,5000,2025-08-07,test
+C0472,Eduarda Pereira,1959,Maceió,AL,STANDARD,1800,2022-04-25,test
+C0473,Carla Santos,2004,Natal,RN,BASIC,3500,2022-07-01,test
+C0474,Rafaela Souza,1991,Recife,PE,STANDARD,3500,2024-05-04,test
+C0475,Rafaela Rocha,2002,João Pessoa,PB,STANDARD,3500,2019-10-03,test
+C0476,Bruno Rocha,1965,Recife,PE,BASIC,15000,2022-11-06,test
+C0477,Diego Martins,1968,Maceió,AL,PREMIUM,2500,2024-10-14,test
+C0478,Felipe Pereira,1993,Campina Grande,PB,STANDARD,5000,2021-08-07,test
+C0479,Mariana Martins,1969,Salvador,BA,BASIC,10000,2023-11-06,test
+C0480,Ana Rocha,1997,Natal,RN,BASIC,5000,2025-08-22,test
+C0481,Mariana Silva,2003,Natal,RN,BASIC,2500,2022-02-14,test
+C0482,Carla Gomes,1964,Salvador,BA,PREMIUM,2500,2023-02-07,test
+C0483,Gabriela Lima,1965,Recife,PE,STANDARD,10000,2024-06-27,test
+C0484,Karen Gomes,1982,Fortaleza,CE,PREMIUM,5000,2025-08-01,test
+C0485,Lucas Pereira,1987,João Pessoa,PB,PREMIUM,2500,2022-05-03,test
+C0486,Carla Martins,1966,Fortaleza,CE,STANDARD,1800,2021-09-04,test
+C0487,Diego Oliveira,1981,Recife,PE,PREMIUM,2500,2024-09-23,test
+C0488,Pedro Gomes,1966,Natal,RN,PREMIUM,5000,2023-09-29,test
+C0489,Samuel Martins,1992,Campina Grande,PB,PREMIUM,10000,2020-12-10,test
+C0490,Felipe Lima,1976,Fortaleza,CE,BASIC,2500,2022-07-12,test
+C0491,Rafaela Gomes,1961,Salvador,BA,STANDARD,1800,2024-06-07,test
+C0492,Gabriela Almeida,1993,Campina Grande,PB,PREMIUM,10000,2024-07-20,test
+C0493,Samuel Almeida,2003,Natal,RN,STANDARD,5000,2020-11-16,test
+C0494,Ana Souza,1976,João Pessoa,PB,BASIC,3500,2021-07-09,test
+C0495,João Oliveira,1987,Fortaleza,CE,PREMIUM,10000,2024-07-21,test
+C0496,Diego Gomes,1965,Fortaleza,CE,STANDARD,15000,2025-02-02,test
+C0497,Lucas Araújo,1960,Salvador,BA,PREMIUM,5000,2025-02-15,test
+C0498,Pedro Santos,1999,Campina Grande,PB,BASIC,3500,2019-05-13,test
+C0499,Isabela Pereira,1963,Natal,RN,STANDARD,15000,2020-04-25,test
+C0500,Heitor Souza,1995,Salvador,BA,PREMIUM,3500,2025-11-04,test

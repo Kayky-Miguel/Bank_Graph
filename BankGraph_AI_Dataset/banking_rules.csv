@@ -1,0 +1,31 @@
+﻿rule_id,document_id,rule_name,description,applies_to,severity,is_active,split
+R001,DOC001,Limite de Transferência PIX,O limite diário padrão simulado para o segmento BASIC é de R$ 2.000. Aumento exige validação cadastral.,ACCOUNT,RESTRICTED,True,train
+R002,DOC002,Transações Atípicas,Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.,TRANSACTION,INFO,True,train
+R003,DOC003,Empréstimo Pessoal,Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.,LOAN,RESTRICTED,True,train
+R004,DOC004,Atualização Cadastral,"Dados cadastrais devem ser revisados após alteração relevante de endereço, renda ou contato.",ACCOUNT,INFO,True,train
+R005,DOC005,Conta Compartilhada,Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.,CUSTOMER,INFO,True,train
+R006,DOC006,Frequência de Transferências,Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.,TRANSACTION,REVIEW,True,train
+R007,DOC007,Concentração de Pagamentos,Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.,ACCOUNT,RESTRICTED,True,train
+R008,DOC008,Bloqueio Preventivo,"Bloqueios simulados devem registrar justificativa, data e responsável.",ACCOUNT,INFO,True,train
+R009,DOC009,Contestação de Compra,"Uma contestação deve possuir identificador, transação relacionada, motivo e status.",LOAN,INFO,True,train
+R010,DOC010,Privacidade e Acesso,Dados de clientes devem ser acessados apenas por perfis autorizados e finalidade legítima.,ACCOUNT,RESTRICTED,True,train
+R011,DOC011,Limite de Transferência PIX,O limite diário padrão simulado para o segmento BASIC é de R$ 2.000. Aumento exige validação cadastral.,TRANSACTION,INFO,True,train
+R012,DOC012,Transações Atípicas,Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.,TRANSACTION,RESTRICTED,True,train
+R013,DOC013,Empréstimo Pessoal,Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.,LOAN,REVIEW,True,train
+R014,DOC014,Atualização Cadastral,"Dados cadastrais devem ser revisados após alteração relevante de endereço, renda ou contato.",TRANSACTION,INFO,True,train
+R015,DOC015,Conta Compartilhada,Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.,LOAN,REVIEW,True,train
+R016,DOC016,Frequência de Transferências,Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.,TRANSACTION,REVIEW,True,train
+R017,DOC017,Concentração de Pagamentos,Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.,ACCOUNT,RESTRICTED,True,train
+R018,DOC018,Bloqueio Preventivo,"Bloqueios simulados devem registrar justificativa, data e responsável.",ACCOUNT,INFO,True,train
+R019,DOC019,Contestação de Compra,"Uma contestação deve possuir identificador, transação relacionada, motivo e status.",LOAN,RESTRICTED,True,train
+R020,DOC020,Privacidade e Acesso,Dados de clientes devem ser acessados apenas por perfis autorizados e finalidade legítima.,LOAN,REVIEW,True,train
+R021,DOC021,Limite de Transferência PIX,O limite diário padrão simulado para o segmento BASIC é de R$ 2.000. Aumento exige validação cadastral.,CUSTOMER,REVIEW,True,train
+R022,DOC022,Transações Atípicas,Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.,LOAN,INFO,True,dev
+R023,DOC023,Empréstimo Pessoal,Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.,LOAN,REVIEW,True,dev
+R024,DOC024,Atualização Cadastral,"Dados cadastrais devem ser revisados após alteração relevante de endereço, renda ou contato.",LOAN,INFO,True,dev
+R025,DOC025,Conta Compartilhada,Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.,ACCOUNT,REVIEW,True,dev
+R026,DOC026,Frequência de Transferências,Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.,LOAN,INFO,True,test
+R027,DOC027,Concentração de Pagamentos,Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.,TRANSACTION,REVIEW,True,test
+R028,DOC028,Bloqueio Preventivo,"Bloqueios simulados devem registrar justificativa, data e responsável.",TRANSACTION,REVIEW,True,test
+R029,DOC029,Contestação de Compra,"Uma contestação deve possuir identificador, transação relacionada, motivo e status.",TRANSACTION,REVIEW,True,test
+R030,DOC030,Privacidade e Acesso,Dados de clientes devem ser acessados apenas por perfis autorizados e finalidade legítima.,ACCOUNT,REVIEW,True,test
