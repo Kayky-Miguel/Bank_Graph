@@ -309,6 +309,10 @@ def make_backends(names):
             out[n] = fn
         else:
             raise SystemExit(f"backend desconhecido: {n}")
+    missing = [v for v in ("NEO4J_URI", "NEO4J_USER", "NEO4J_PASSWORD") if not os.environ.get(v)]
+    if missing:
+        raise SystemExit(f"Variaveis nao definidas neste terminal: {', '.join(missing)}.\n"
+                         "Defina-as na MESMA janela (ex.: $env:NEO4J_URI=\"neo4j://127.0.0.1:7687\") e ative o .venv.")
     ok, problems, counts = base.health()
     print(f"Neo4j em {os.environ.get('NEO4J_URI')}: {counts['customers']} clientes, {counts['documents']} documentos "
           f"({counts['embedded']} com embedding), {counts['entities']} entidades extraidas")
