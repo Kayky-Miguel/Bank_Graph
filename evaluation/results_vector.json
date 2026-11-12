@@ -1,19 +1,19 @@
 {
  "summary": {
-  "perguntas": 23,
-  "acuracia": 0.391,
-  "acuracia_respondiveis": 0.25,
-  "precisao_ids": 0.15,
-  "recall_ids": 0.25,
-  "f1_ids": 0.188,
+  "perguntas": 25,
+  "acuracia": 0.36,
+  "acuracia_respondiveis": 0.222,
+  "precisao_ids": 0.111,
+  "recall_ids": 0.222,
+  "f1_ids": 0.148,
   "topico_hit@3": 1.0,
   "abstencao_correta": 0.714,
-  "abstencao_indevida": 0.125,
+  "abstencao_indevida": 0.167,
   "respostas_com_evidencia": 1.0,
   "respostas_com_id_sem_suporte": 0.0,
   "erros": 0,
-  "latencia_media_ms": 107,
-  "latencia_p95_ms": 162
+  "latencia_media_ms": 54,
+  "latencia_p95_ms": 61
  },
  "scores": [
   {
@@ -21,7 +21,7 @@
    "kind": "answerable",
    "difficulty": "basica",
    "error": null,
-   "latency_ms": 71.11140014603734,
+   "latency_ms": 50.39369999940391,
    "abstained": true,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -42,7 +42,7 @@
    "kind": "answerable",
    "difficulty": "basica",
    "error": null,
-   "latency_ms": 62.27290024980903,
+   "latency_ms": 48.49350000040431,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -62,7 +62,7 @@
    "kind": "answerable",
    "difficulty": "basica",
    "error": null,
-   "latency_ms": 45.78470019623637,
+   "latency_ms": 44.05120000046736,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -82,7 +82,7 @@
    "kind": "answerable",
    "difficulty": "basica",
    "error": null,
-   "latency_ms": 59.87480003386736,
+   "latency_ms": 43.65219999999681,
    "abstained": true,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -104,7 +104,7 @@
    "kind": "answerable",
    "difficulty": "basica",
    "error": null,
-   "latency_ms": 56.00930005311966,
+   "latency_ms": 45.82239999945159,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -124,7 +124,7 @@
    "kind": "answerable",
    "difficulty": "intermediaria",
    "error": null,
-   "latency_ms": 53.29470010474324,
+   "latency_ms": 64.96970000080182,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -158,7 +158,7 @@
    "kind": "answerable",
    "difficulty": "intermediaria",
    "error": null,
-   "latency_ms": 54.32170024141669,
+   "latency_ms": 55.99169999914011,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -186,7 +186,7 @@
    "kind": "answerable",
    "difficulty": "intermediaria",
    "error": null,
-   "latency_ms": 48.06340020149946,
+   "latency_ms": 58.4711999999854,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -210,7 +210,7 @@
    "kind": "answerable",
    "difficulty": "intermediaria",
    "error": null,
-   "latency_ms": 50.94420025125146,
+   "latency_ms": 117.76219999956083,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -232,7 +232,7 @@
    "kind": "answerable",
    "difficulty": "intermediaria",
    "error": null,
-   "latency_ms": 45.42180011048913,
+   "latency_ms": 59.20489999880374,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -266,7 +266,7 @@
    "kind": "answerable",
    "difficulty": "avancada",
    "error": null,
-   "latency_ms": 58.48150001838803,
+   "latency_ms": 56.73999999999069,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -295,7 +295,7 @@
    "kind": "answerable",
    "difficulty": "avancada",
    "error": null,
-   "latency_ms": 125.72009954601526,
+   "latency_ms": 59.471700000358396,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -318,19 +318,18 @@
    "kind": "answerable",
    "difficulty": "avancada",
    "error": null,
-   "latency_ms": 62.561700120568275,
+   "latency_ms": 56.74230000113312,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
-   "precision": 0.6,
+   "precision": 0.5,
    "recall": 1.0,
-   "f1": 0.75,
-   "n_gold": 3,
-   "n_pred": 5,
+   "f1": 0.667,
+   "n_gold": 1,
+   "n_pred": 2,
    "missing": [],
    "extra": [
-    "R007",
-    "R017"
+    "concentracao de pagamentos"
    ],
    "topic_hit@3": true,
    "correct": true
@@ -340,19 +339,18 @@
    "kind": "answerable",
    "difficulty": "avancada",
    "error": null,
-   "latency_ms": 54.159400053322315,
+   "latency_ms": 48.70819999996456,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
-   "precision": 0.6,
+   "precision": 0.5,
    "recall": 1.0,
-   "f1": 0.75,
-   "n_gold": 3,
-   "n_pred": 5,
+   "f1": 0.667,
+   "n_gold": 1,
+   "n_pred": 2,
    "missing": [],
    "extra": [
-    "R004",
-    "R014"
+    "atualizacao cadastral"
    ],
    "topic_hit@3": true,
    "correct": true
@@ -362,19 +360,18 @@
    "kind": "answerable",
    "difficulty": "avancada",
    "error": null,
-   "latency_ms": 57.74400010704994,
+   "latency_ms": 46.12819999965723,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
-   "precision": 0.6,
+   "precision": 0.5,
    "recall": 1.0,
-   "f1": 0.75,
-   "n_gold": 3,
-   "n_pred": 5,
+   "f1": 0.667,
+   "n_gold": 1,
+   "n_pred": 2,
    "missing": [],
    "extra": [
-    "R003",
-    "R013"
+    "emprestimo pessoal"
    ],
    "topic_hit@3": true,
    "must_say_ok": true,
@@ -385,29 +382,72 @@
    "kind": "answerable",
    "difficulty": "avancada",
    "error": null,
-   "latency_ms": 161.72009985893965,
+   "latency_ms": 52.74040000040259,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
-   "precision": 0.6,
+   "precision": 0.5,
    "recall": 1.0,
-   "f1": 0.75,
-   "n_gold": 3,
-   "n_pred": 5,
+   "f1": 0.667,
+   "n_gold": 1,
+   "n_pred": 2,
    "missing": [],
    "extra": [
-    "R006",
-    "R016"
+    "frequencia de transferencias"
    ],
    "topic_hit@3": true,
    "correct": true
+  },
+  {
+   "id": "A07",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 44.094199998653494,
+   "abstained": true,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 1,
+   "n_pred": 0,
+   "missing": [
+    "A0305"
+   ],
+   "extra": [],
+   "correct": false
+  },
+  {
+   "id": "A08",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 42.77079999883426,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 5,
+   "n_pred": 0,
+   "missing": [
+    "M0001",
+    "M0005",
+    "M0023",
+    "M0037",
+    "M0119"
+   ],
+   "extra": [],
+   "correct": false
   },
   {
    "id": "U01",
    "kind": "unanswerable",
    "difficulty": "avancada",
    "error": null,
-   "latency_ms": 182.818999979645,
+   "latency_ms": 44.12919999958831,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -420,7 +460,7 @@
    "kind": "unanswerable",
    "difficulty": "basica",
    "error": null,
-   "latency_ms": 902.9469997622073,
+   "latency_ms": 41.945299999497365,
    "abstained": true,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -432,7 +472,7 @@
    "kind": "unanswerable",
    "difficulty": "basica",
    "error": null,
-   "latency_ms": 64.88720001652837,
+   "latency_ms": 50.71069999939937,
    "abstained": true,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -445,7 +485,7 @@
    "kind": "ambiguous",
    "difficulty": "basica",
    "error": null,
-   "latency_ms": 63.97149991244078,
+   "latency_ms": 59.605200000078185,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -457,7 +497,7 @@
    "kind": "ambiguous",
    "difficulty": "intermediaria",
    "error": null,
-   "latency_ms": 59.66750020161271,
+   "latency_ms": 60.510200000862824,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -469,7 +509,7 @@
    "kind": "out_of_domain",
    "difficulty": "basica",
    "error": null,
-   "latency_ms": 56.18529999628663,
+   "latency_ms": 48.818799999935436,
    "abstained": true,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -481,7 +521,7 @@
    "kind": "out_of_domain",
    "difficulty": "basica",
    "error": null,
-   "latency_ms": 52.80630011111498,
+   "latency_ms": 43.348200000764336,
    "abstained": true,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -504,7 +544,9 @@
     "DOC030",
     "DOC015",
     "DOC010"
-   ]
+   ],
+   "rows_sample": [],
+   "notes": []
   },
   "B02": {
    "question": "Quais empréstimos do cliente C0208 estão ativos?",
@@ -533,7 +575,28 @@
     "DOC003",
     "DOC027",
     "DOC007"
-   ]
+   ],
+   "rows_sample": [
+    {
+     "rule_id": "R023",
+     "rule_name": "Empréstimo Pessoal",
+     "description": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "score": 0.7674543261528015
+    },
+    {
+     "rule_id": "R013",
+     "rule_name": "Empréstimo Pessoal",
+     "description": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "score": 0.7674543261528015
+    },
+    {
+     "rule_id": "R003",
+     "rule_name": "Empréstimo Pessoal",
+     "description": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "score": 0.7674543261528015
+    }
+   ],
+   "notes": []
   },
   "B03": {
    "question": "Quais contas pertencem ao cliente C0001?",
@@ -562,7 +625,28 @@
     "DOC025",
     "DOC030",
     "DOC010"
-   ]
+   ],
+   "rows_sample": [
+    {
+     "rule_id": "R025",
+     "rule_name": "Conta Compartilhada",
+     "description": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "score": 0.6678400039672852
+    },
+    {
+     "rule_id": "R015",
+     "rule_name": "Conta Compartilhada",
+     "description": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "score": 0.6678400039672852
+    },
+    {
+     "rule_id": "R005",
+     "rule_name": "Conta Compartilhada",
+     "description": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "score": 0.6678400039672852
+    }
+   ],
+   "notes": []
   },
   "B04": {
    "question": "Quais cartões o cliente C0352 possui?",
@@ -578,7 +662,9 @@
     "DOC023",
     "DOC010",
     "DOC004"
-   ]
+   ],
+   "rows_sample": [],
+   "notes": []
   },
   "B05": {
    "question": "Por quais evidências a transação T0001050 foi sinalizada?",
@@ -609,7 +695,40 @@
     "DOC002",
     "DOC006",
     "DOC026"
-   ]
+   ],
+   "rows_sample": [
+    {
+     "rule_id": "R022",
+     "rule_name": "Transações Atípicas",
+     "description": "Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.",
+     "score": 0.6781388521194458
+    },
+    {
+     "rule_id": "R012",
+     "rule_name": "Transações Atípicas",
+     "description": "Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.",
+     "score": 0.6781388521194458
+    },
+    {
+     "rule_id": "R002",
+     "rule_name": "Transações Atípicas",
+     "description": "Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.",
+     "score": 0.6781388521194458
+    },
+    {
+     "rule_id": "R016",
+     "rule_name": "Frequência de Transferências",
+     "description": "Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.",
+     "score": 0.6547945737838745
+    },
+    {
+     "rule_id": "R006",
+     "rule_name": "Frequência de Transferências",
+     "description": "Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.",
+     "score": 0.6547945737838745
+    }
+   ],
+   "notes": []
   },
   "I01": {
    "question": "Quais clientes possuem contas conjuntas?",
@@ -640,7 +759,40 @@
     "DOC025",
     "DOC020",
     "DOC016"
-   ]
+   ],
+   "rows_sample": [
+    {
+     "rule_id": "R025",
+     "rule_name": "Conta Compartilhada",
+     "description": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "score": 0.8311419486999512
+    },
+    {
+     "rule_id": "R015",
+     "rule_name": "Conta Compartilhada",
+     "description": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "score": 0.8311419486999512
+    },
+    {
+     "rule_id": "R005",
+     "rule_name": "Conta Compartilhada",
+     "description": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "score": 0.8311419486999512
+    },
+    {
+     "rule_id": "R017",
+     "rule_name": "Concentração de Pagamentos",
+     "description": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+     "score": 0.6719990968704224
+    },
+    {
+     "rule_id": "R007",
+     "rule_name": "Concentração de Pagamentos",
+     "description": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+     "score": 0.6719990968704224
+    }
+   ],
+   "notes": []
   },
   "I02": {
    "question": "Quais clientes têm conta conjunta e empréstimo ativo?",
@@ -671,7 +823,40 @@
     "DOC015",
     "DOC023",
     "DOC013"
-   ]
+   ],
+   "rows_sample": [
+    {
+     "rule_id": "R005",
+     "rule_name": "Conta Compartilhada",
+     "description": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "score": 0.775297999382019
+    },
+    {
+     "rule_id": "R025",
+     "rule_name": "Conta Compartilhada",
+     "description": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "score": 0.775297999382019
+    },
+    {
+     "rule_id": "R015",
+     "rule_name": "Conta Compartilhada",
+     "description": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "score": 0.775297999382019
+    },
+    {
+     "rule_id": "R013",
+     "rule_name": "Empréstimo Pessoal",
+     "description": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "score": 0.7572046518325806
+    },
+    {
+     "rule_id": "R003",
+     "rule_name": "Empréstimo Pessoal",
+     "description": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "score": 0.7572046518325806
+    }
+   ],
+   "notes": []
   },
   "I03": {
    "question": "Quais estabelecimentos concentram pagamentos de vários clientes?",
@@ -702,7 +887,40 @@
     "DOC027",
     "DOC005",
     "DOC025"
-   ]
+   ],
+   "rows_sample": [
+    {
+     "rule_id": "R007",
+     "rule_name": "Concentração de Pagamentos",
+     "description": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+     "score": 0.7972432374954224
+    },
+    {
+     "rule_id": "R027",
+     "rule_name": "Concentração de Pagamentos",
+     "description": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+     "score": 0.7972432374954224
+    },
+    {
+     "rule_id": "R017",
+     "rule_name": "Concentração de Pagamentos",
+     "description": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+     "score": 0.7972432374954224
+    },
+    {
+     "rule_id": "R015",
+     "rule_name": "Conta Compartilhada",
+     "description": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "score": 0.6695588827133179
+    },
+    {
+     "rule_id": "R005",
+     "rule_name": "Conta Compartilhada",
+     "description": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "score": 0.6695588827133179
+    }
+   ],
+   "notes": []
   },
   "I04": {
    "question": "Quais clientes têm empréstimos ativos e alertas simulados nos últimos 30 dias?",
@@ -733,7 +951,40 @@
     "DOC003",
     "DOC022",
     "DOC002"
-   ]
+   ],
+   "rows_sample": [
+    {
+     "rule_id": "R003",
+     "rule_name": "Empréstimo Pessoal",
+     "description": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "score": 0.7968554496765137
+    },
+    {
+     "rule_id": "R023",
+     "rule_name": "Empréstimo Pessoal",
+     "description": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "score": 0.7968554496765137
+    },
+    {
+     "rule_id": "R013",
+     "rule_name": "Empréstimo Pessoal",
+     "description": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "score": 0.7968554496765137
+    },
+    {
+     "rule_id": "R012",
+     "rule_name": "Transações Atípicas",
+     "description": "Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.",
+     "score": 0.7129467725753784
+    },
+    {
+     "rule_id": "R002",
+     "rule_name": "Transações Atípicas",
+     "description": "Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.",
+     "score": 0.7129467725753784
+    }
+   ],
+   "notes": []
   },
   "I05": {
    "question": "Quais clientes pagaram ao estabelecimento M0007?",
@@ -762,7 +1013,28 @@
     "DOC001",
     "DOC027",
     "DOC007"
-   ]
+   ],
+   "rows_sample": [
+    {
+     "rule_id": "R007",
+     "rule_name": "Concentração de Pagamentos",
+     "description": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+     "score": 0.6568453311920166
+    },
+    {
+     "rule_id": "R027",
+     "rule_name": "Concentração de Pagamentos",
+     "description": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+     "score": 0.6568453311920166
+    },
+    {
+     "rule_id": "R017",
+     "rule_name": "Concentração de Pagamentos",
+     "description": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+     "score": 0.6568453311920166
+    }
+   ],
+   "notes": []
   },
   "A01": {
    "question": "Quais clientes possuem relacionamento com contas que realizaram transações sinalizadas nos últimos 30 dias e, entre eles, quais possuem empréstimos ativos?",
@@ -793,7 +1065,40 @@
     "DOC003",
     "DOC027",
     "DOC022"
-   ]
+   ],
+   "rows_sample": [
+    {
+     "rule_id": "R023",
+     "rule_name": "Empréstimo Pessoal",
+     "description": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "score": 0.7327873110771179
+    },
+    {
+     "rule_id": "R013",
+     "rule_name": "Empréstimo Pessoal",
+     "description": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "score": 0.7327873110771179
+    },
+    {
+     "rule_id": "R003",
+     "rule_name": "Empréstimo Pessoal",
+     "description": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "score": 0.7327873110771179
+    },
+    {
+     "rule_id": "R017",
+     "rule_name": "Concentração de Pagamentos",
+     "description": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+     "score": 0.7263189554214478
+    },
+    {
+     "rule_id": "R007",
+     "rule_name": "Concentração de Pagamentos",
+     "description": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+     "score": 0.7263189554214478
+    }
+   ],
+   "notes": []
   },
   "A02": {
    "question": "Quais clientes têm relação indireta, por conta conjunta, com contas que tiveram transações sinalizadas nos últimos 365 dias?",
@@ -824,7 +1129,40 @@
     "DOC006",
     "DOC026",
     "DOC015"
-   ]
+   ],
+   "rows_sample": [
+    {
+     "rule_id": "R025",
+     "rule_name": "Conta Compartilhada",
+     "description": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "score": 0.7480047941207886
+    },
+    {
+     "rule_id": "R015",
+     "rule_name": "Conta Compartilhada",
+     "description": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "score": 0.7480047941207886
+    },
+    {
+     "rule_id": "R005",
+     "rule_name": "Conta Compartilhada",
+     "description": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "score": 0.7480047941207886
+    },
+    {
+     "rule_id": "R016",
+     "rule_name": "Frequência de Transferências",
+     "description": "Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.",
+     "score": 0.7321998476982117
+    },
+    {
+     "rule_id": "R006",
+     "rule_name": "Frequência de Transferências",
+     "description": "Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.",
+     "score": 0.7321998476982117
+    }
+   ],
+   "notes": []
   },
   "A03": {
    "question": "Quais regras documentadas se aplicam ao empréstimo do cliente C0208?",
@@ -855,7 +1193,40 @@
     "DOC023",
     "DOC027",
     "DOC007"
-   ]
+   ],
+   "rows_sample": [
+    {
+     "rule_id": "R023",
+     "rule_name": "Empréstimo Pessoal",
+     "description": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "score": 0.7588895559310913
+    },
+    {
+     "rule_id": "R013",
+     "rule_name": "Empréstimo Pessoal",
+     "description": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "score": 0.7588895559310913
+    },
+    {
+     "rule_id": "R003",
+     "rule_name": "Empréstimo Pessoal",
+     "description": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "score": 0.7588895559310913
+    },
+    {
+     "rule_id": "R017",
+     "rule_name": "Concentração de Pagamentos",
+     "description": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+     "score": 0.6699872016906738
+    },
+    {
+     "rule_id": "R007",
+     "rule_name": "Concentração de Pagamentos",
+     "description": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+     "score": 0.6699872016906738
+    }
+   ],
+   "notes": []
   },
   "A04": {
    "question": "Quais regras orientam a revisão de transferências recorrentes?",
@@ -886,7 +1257,40 @@
     "DOC006",
     "DOC001",
     "DOC011"
-   ]
+   ],
+   "rows_sample": [
+    {
+     "rule_id": "R006",
+     "rule_name": "Frequência de Transferências",
+     "description": "Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.",
+     "score": 0.8956946134567261
+    },
+    {
+     "rule_id": "R026",
+     "rule_name": "Frequência de Transferências",
+     "description": "Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.",
+     "score": 0.8956946134567261
+    },
+    {
+     "rule_id": "R016",
+     "rule_name": "Frequência de Transferências",
+     "description": "Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.",
+     "score": 0.8956946134567261
+    },
+    {
+     "rule_id": "R014",
+     "rule_name": "Atualização Cadastral",
+     "description": "Dados cadastrais devem ser revisados após alteração relevante de endereço, renda ou contato.",
+     "score": 0.7742748260498047
+    },
+    {
+     "rule_id": "R004",
+     "rule_name": "Atualização Cadastral",
+     "description": "Dados cadastrais devem ser revisados após alteração relevante de endereço, renda ou contato.",
+     "score": 0.7742748260498047
+    }
+   ],
+   "notes": []
   },
   "A05": {
    "question": "Qual é o limite do PIX para o segmento BASIC?",
@@ -917,7 +1321,40 @@
     "DOC021",
     "DOC013",
     "DOC003"
-   ]
+   ],
+   "rows_sample": [
+    {
+     "rule_id": "R021",
+     "rule_name": "Limite de Transferência PIX",
+     "description": "O limite diário padrão simulado para o segmento BASIC é de R$ 2.000. Aumento exige validação cadastral.",
+     "score": 0.8019454479217529
+    },
+    {
+     "rule_id": "R011",
+     "rule_name": "Limite de Transferência PIX",
+     "description": "O limite diário padrão simulado para o segmento BASIC é de R$ 2.000. Aumento exige validação cadastral.",
+     "score": 0.8019454479217529
+    },
+    {
+     "rule_id": "R001",
+     "rule_name": "Limite de Transferência PIX",
+     "description": "O limite diário padrão simulado para o segmento BASIC é de R$ 2.000. Aumento exige validação cadastral.",
+     "score": 0.8019454479217529
+    },
+    {
+     "rule_id": "R013",
+     "rule_name": "Empréstimo Pessoal",
+     "description": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "score": 0.6757478713989258
+    },
+    {
+     "rule_id": "R003",
+     "rule_name": "Empréstimo Pessoal",
+     "description": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "score": 0.6757478713989258
+    }
+   ],
+   "notes": []
   },
   "A06": {
    "question": "O que acontece quando há concentração de pagamentos em um estabelecimento?",
@@ -948,7 +1385,122 @@
     "DOC027",
     "DOC026",
     "DOC006"
-   ]
+   ],
+   "rows_sample": [
+    {
+     "rule_id": "R007",
+     "rule_name": "Concentração de Pagamentos",
+     "description": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+     "score": 0.8972697257995605
+    },
+    {
+     "rule_id": "R027",
+     "rule_name": "Concentração de Pagamentos",
+     "description": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+     "score": 0.8972697257995605
+    },
+    {
+     "rule_id": "R017",
+     "rule_name": "Concentração de Pagamentos",
+     "description": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+     "score": 0.8972697257995605
+    },
+    {
+     "rule_id": "R016",
+     "rule_name": "Frequência de Transferências",
+     "description": "Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.",
+     "score": 0.7165557146072388
+    },
+    {
+     "rule_id": "R006",
+     "rule_name": "Frequência de Transferências",
+     "description": "Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.",
+     "score": 0.7165557146072388
+    }
+   ],
+   "notes": []
+  },
+  "A07": {
+   "question": "Como o cliente C0249 se conecta ao cliente C0306 no grafo?",
+   "answer": "Sem evidencia suficiente nos documentos.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC025",
+    "DOC005",
+    "DOC006",
+    "DOC015",
+    "DOC004"
+   ],
+   "rows_sample": [],
+   "notes": []
+  },
+  "A08": {
+   "question": "Quais estabelecimentos são mais centrais na rede de pagamentos (PageRank)?",
+   "answer": "- Concentração de Pagamentos (R007): Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.\n- Concentração de Pagamentos (R027): Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.\n- Concentração de Pagamentos (R017): Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.\n- Conta Compartilhada (R015): Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.\n- Conta Compartilhada (R005): Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+   "abstained": false,
+   "entity_ids": [
+    "R007",
+    "R027",
+    "R017",
+    "R015",
+    "R005"
+   ],
+   "queries": [
+    {
+     "cypher": "vector search (document_embedding, rule_embedding)",
+     "params": {
+      "k": 5
+     },
+     "rows": null,
+     "purpose": ""
+    }
+   ],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC017",
+    "DOC027",
+    "DOC007",
+    "DOC022",
+    "DOC012"
+   ],
+   "rows_sample": [
+    {
+     "rule_id": "R007",
+     "rule_name": "Concentração de Pagamentos",
+     "description": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+     "score": 0.7658370733261108
+    },
+    {
+     "rule_id": "R027",
+     "rule_name": "Concentração de Pagamentos",
+     "description": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+     "score": 0.7658370733261108
+    },
+    {
+     "rule_id": "R017",
+     "rule_name": "Concentração de Pagamentos",
+     "description": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+     "score": 0.7658370733261108
+    },
+    {
+     "rule_id": "R015",
+     "rule_name": "Conta Compartilhada",
+     "description": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "score": 0.6653071045875549
+    },
+    {
+     "rule_id": "R005",
+     "rule_name": "Conta Compartilhada",
+     "description": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "score": 0.6653071045875549
+    }
+   ],
+   "notes": []
   },
   "U01": {
    "question": "Um alerta permite afirmar que houve fraude?",
@@ -979,7 +1531,40 @@
     "DOC012",
     "DOC018",
     "DOC028"
-   ]
+   ],
+   "rows_sample": [
+    {
+     "rule_id": "R022",
+     "rule_name": "Transações Atípicas",
+     "description": "Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.",
+     "score": 0.819598913192749
+    },
+    {
+     "rule_id": "R012",
+     "rule_name": "Transações Atípicas",
+     "description": "Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.",
+     "score": 0.819598913192749
+    },
+    {
+     "rule_id": "R002",
+     "rule_name": "Transações Atípicas",
+     "description": "Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.",
+     "score": 0.819598913192749
+    },
+    {
+     "rule_id": "R019",
+     "rule_name": "Contestação de Compra",
+     "description": "Uma contestação deve possuir identificador, transação relacionada, motivo e status.",
+     "score": 0.694095253944397
+    },
+    {
+     "rule_id": "R009",
+     "rule_name": "Contestação de Compra",
+     "description": "Uma contestação deve possuir identificador, transação relacionada, motivo e status.",
+     "score": 0.694095253944397
+    }
+   ],
+   "notes": []
   },
   "U02": {
    "question": "Quais contas pertencem ao cliente C9999?",
@@ -995,7 +1580,9 @@
     "DOC005",
     "DOC025",
     "DOC030"
-   ]
+   ],
+   "rows_sample": [],
+   "notes": []
   },
   "U03": {
    "question": "Qual é o CPF do cliente C0001?",
@@ -1011,7 +1598,9 @@
     "DOC001",
     "DOC005",
     "DOC030"
-   ]
+   ],
+   "rows_sample": [],
+   "notes": []
   },
   "M01": {
    "question": "Quais contas pertencem ao cliente?",
@@ -1042,7 +1631,40 @@
     "DOC015",
     "DOC005",
     "DOC020"
-   ]
+   ],
+   "rows_sample": [
+    {
+     "rule_id": "R007",
+     "rule_name": "Concentração de Pagamentos",
+     "description": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+     "score": 0.7046375274658203
+    },
+    {
+     "rule_id": "R027",
+     "rule_name": "Concentração de Pagamentos",
+     "description": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+     "score": 0.7046375274658203
+    },
+    {
+     "rule_id": "R017",
+     "rule_name": "Concentração de Pagamentos",
+     "description": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+     "score": 0.7046375274658203
+    },
+    {
+     "rule_id": "R015",
+     "rule_name": "Conta Compartilhada",
+     "description": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "score": 0.6961405873298645
+    },
+    {
+     "rule_id": "R005",
+     "rule_name": "Conta Compartilhada",
+     "description": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "score": 0.6961405873298645
+    }
+   ],
+   "notes": []
   },
   "M02": {
    "question": "E os empréstimos dele, estão ativos?",
@@ -1071,7 +1693,28 @@
     "DOC003",
     "DOC027",
     "DOC017"
-   ]
+   ],
+   "rows_sample": [
+    {
+     "rule_id": "R023",
+     "rule_name": "Empréstimo Pessoal",
+     "description": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "score": 0.7078891396522522
+    },
+    {
+     "rule_id": "R013",
+     "rule_name": "Empréstimo Pessoal",
+     "description": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "score": 0.7078891396522522
+    },
+    {
+     "rule_id": "R003",
+     "rule_name": "Empréstimo Pessoal",
+     "description": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "score": 0.7078891396522522
+    }
+   ],
+   "notes": []
   },
   "O01": {
    "question": "Qual a previsão do tempo para amanhã em Maceió?",
@@ -1087,7 +1730,9 @@
     "DOC011",
     "DOC018",
     "DOC028"
-   ]
+   ],
+   "rows_sample": [],
+   "notes": []
   },
   "O02": {
    "question": "Qual é a capital da França?",
@@ -1103,7 +1748,9 @@
     "DOC017",
     "DOC009",
     "DOC024"
-   ]
+   ],
+   "rows_sample": [],
+   "notes": []
   }
  }
 }

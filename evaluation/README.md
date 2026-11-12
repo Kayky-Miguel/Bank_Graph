@@ -1,13 +1,14 @@
 # Etapa 7 — Avaliação e testes
 
-Situação: 3 rodadas registradas (2026-11-12). Falta a **rodada final** com a Etapa 5 corrigida e os algoritmos de grafo: `python graph_algorithms.py` e `python evaluate_qa.py --backends baseline vector retrieval`.
+Situação: **concluída** (2026-11-12). Os resultados finais estão na seção 2 e em `report.md` / `results_*.json` desta pasta; as rodadas anteriores ficam nas subpastas, como histórico.
 
 | Rodada | O que mediu | Onde |
 |---|---|---|
 | 1 | Baseline × vetorial, corte de similaridade com bug de escala | `rodada1/` |
-| 2 | Baseline × vetorial, corte calibrado (resultados abaixo) | `report.md` desta rodada, resumido na seção 2 |
-| 3 | Primeira com a Etapa 5 (23 perguntas, métrica antiga para regras) | `rodada3/` e seção 2.1 |
-| final | Etapa 5 corrigida + algoritmos de grafo (25 perguntas) | a gerar |
+| 2 | Baseline × vetorial, corte calibrado (23 perguntas) | `rodada2/` e seção 2.2 |
+| 3 | Primeira com a Etapa 5 (23 perguntas, métrica antiga para regras) | `rodada3/` e seção 2.4 |
+| 4 | Etapa 5 corrigida + algoritmos de grafo (25 perguntas), antes do replanejamento | `rodada4/` e seção 2.1 |
+| **final** | Rodada 4 + replanejamento quando o LLM não escolhe consulta para pergunta com ID | `report.md` e `results_*.json` (esta pasta), seção 2.1 |
 
 | Arquivo | Conteúdo | Como gerar |
 |---|---|---|
@@ -39,7 +40,7 @@ Nenhum item extraído foi inventado: os "extras" estão presentes no texto, só 
 
 ## 2. Respostas (GraphRAG/KAG)
 
-**Conjunto de perguntas** (`evaluate_qa.py`): 23 perguntas. São 16 respondíveis (5 básicas, 5 intermediárias, 6 avançadas, incluindo a pergunta central e as multi-hop), 3 sem resposta, 2 ambíguas e 2 fora do domínio. Os 5 casos de `evaluation_cases.csv` estão incluídos.
+**Conjunto de perguntas** (`evaluate_qa.py`): 25 perguntas. São 18 respondíveis (5 básicas, 5 intermediárias, 8 avançadas, incluindo a pergunta central, as multi-hop, caminho mínimo e PageRank), 3 sem resposta, 2 ambíguas e 2 fora do domínio. As rodadas 1 a 3 usaram 23 perguntas (sem A07 e A08). Os 5 casos de `evaluation_cases.csv` estão incluídos.
 
 **Gabarito independente**: as respostas esperadas são calculadas **direto dos CSVs com pandas**, sem Neo4j e sem o código avaliado. O gabarito foi conferido contra os valores do README: 7 clientes com transação sinalizada em 30 dias, sendo 3 com empréstimo ativo (C0208, C0234, C0410), e 4 clientes com relação indireta em 365 dias.
 
@@ -57,9 +58,41 @@ Nenhum item extraído foi inventado: os "extras" estão presentes no texto, só 
 | ID sem suporte | ID citado no texto que não aparece nas evidências | Alucinação |
 | Latência média / p95, erros | Desempenho | Latência e erros |
 
-**Comparação** (critério de sucesso do plano): *busca vetorial isolada* (só índices vetoriais, sem travessia) contra o *baseline híbrido* (templates Cypher + vetorial + regras ligadas no grafo) e, quando existir, a *Etapa 5* (`retrieval.py`).
+**Comparação** (critério de sucesso do plano): *busca vetorial isolada* (só índices vetoriais, sem travessia) contra o *baseline híbrido* (templates Cypher + vetorial + regras ligadas no grafo, sem LLM) e a *Etapa 5* (`graphrag_pipeline.py` via `retrieval.py`, com gpt-4o-mini).
 
-### Resultados (rodada 2, 2026-11-12)
+### 2.1 Resultados finais (2026-11-12, 25 perguntas)
+
+| Métrica | Vetorial isolada | Baseline híbrido | Etapa 5 (GraphRAG/KAG + LLM) |
+|---|---|---|---|
+| Acurácia geral (25) | 0,36 | 0,72 | **0,88** |
+| Acurácia nas respondíveis (18) | 0,22 | 0,78 | **0,83** |
+| Precisão / recall / F1 dos IDs | 0,11 / 0,22 / 0,15 | 0,61 / 0,78 / 0,66 | **0,72 / 0,83 / 0,76** |
+| Tema correto nas 3 primeiras fontes | 1,00 | 1,00 | 1,00 |
+| Abstenção correta (7 sem resposta/ambíguas/fora) | 0,71 | 0,57 | **1,00** |
+| Abstenção indevida (respondíveis) | 0,17 | **0,06** | 0,11 |
+| Respostas com evidência rastreável | 1,00 | 1,00 | 1,00 |
+| Respostas com ID sem suporte | 0,00 | 0,00 | 0,00 |
+| Erros de execução | 0 | 0 | 0 |
+| Latência média / p95 | 54 / 61 ms | 59 / 143 ms | 3,4 / 5,5 s |
+
+**Critério de sucesso atendido.** A recuperação híbrida supera a busca vetorial isolada em todas as métricas de fatos: 0,83 contra 0,22 nas respondíveis. A vetorial acerta o tema do documento em 100% dos casos, mas não acerta nenhuma pergunta estruturada, porque os documentos não contêm os fatos dos clientes.
+
+**Etapa 5 contra o baseline.** A Etapa 5 é a melhor no geral (0,88 contra 0,72). Ela resolve o que o baseline, com roteamento fixo, não resolve: I05 (estabelecimento específico), A03 (regras do empréstimo de um cliente, KAG), A06 (pergunta sobre regra e não sobre dados), A08 (PageRank), U03 (recusa do CPF) e M01/M02 (pede o ID em vez de adivinhar). Acertou as 7 perguntas sem resposta, ambíguas e fora do domínio, e nenhuma resposta citou ID sem suporte. O custo é a latência, de cerca de 3,4 s por pergunta (dentro do alvo de 5 s), contra menos de 0,1 s do baseline.
+
+**Evolução da Etapa 5:** rodada 3: 0,56 → rodada 4: 0,80 → final: **0,88**. Da rodada 4 para a final, o replanejamento (quando o LLM não escolhe consulta para uma pergunta com ID) recuperou B05 e A07; a abstenção indevida caiu de 0,28 para 0,11; o falso alarme de ID sem suporte (0,08) sumiu com a nova mensagem de pedido de ID.
+
+**Falhas restantes da Etapa 5** (registradas sem ajuste, para não calibrar o sistema olhando a avaliação):
+
+| Pergunta | O que aconteceu | Causa |
+|---|---|---|
+| B01 contas do C0208, B02 empréstimos ativos do C0208 | Absteve-se | O LLM devolveu "nenhuma consulta" nas duas tentativas, mesmo com o aviso de que a pergunta tem ID. A pergunta equivalente B03 (contas do C0001) acertou: o planejador não é determinístico. |
+| B04 cartões do C0352 | Resposta certa (3 cartões, bandeira, limite, situação), mas sem os IDs | O LLM escreveu o próprio Cypher e não devolveu `card_id`. É uma limitação da métrica, que compara IDs. |
+
+Uma correção possível, sem depender do LLM, é cair para o template do tipo de ID da pergunta (cliente → `customer_accounts`) quando o planejador recusar duas vezes.
+
+Detalhe por pergunta em `report.md`; respostas brutas, Cypher e planos do LLM em `results_*.json`.
+
+### 2.2 Histórico: rodada 2, baseline × vetorial (23 perguntas)
 
 | Métrica | Baseline híbrido | Vetorial isolada |
 |---|---|---|
@@ -74,7 +107,7 @@ Nenhum item extraído foi inventado: os "extras" estão presentes no texto, só 
 | Erros de execução | 0 | 0 |
 | Latência média / p95 | 51 / 77 ms | 107 / 162 ms |
 
-Detalhe por pergunta em `report.md`; respostas brutas em `results_*.json`.
+Detalhe por pergunta em `rodada2/report.md`.
 
 **O grafo agrega valor.** Nas perguntas estruturadas e multi-hop (contas, empréstimos, cartões, transações, contas conjuntas, relação indireta, pergunta central), a busca vetorial isolada **não acerta nenhuma**: ela encontra o documento do tema ("Conta Compartilhada", "Empréstimo Pessoal"), mas os documentos não contêm os fatos dos clientes. O baseline acerta todas essas. Nas perguntas sobre regras, as duas empatam (tema correto em 100%), ou seja, o ganho vem da travessia, não de recuperar documentos melhor.
 
@@ -97,7 +130,7 @@ Detalhe por pergunta em `report.md`; respostas brutas em `results_*.json`.
 
 As falhas não foram corrigidas no baseline de propósito: ajustá-lo olhando as mesmas perguntas da avaliação inflaria a comparação.
 
-### Rodada 1 e correção de calibração
+### 2.3 Histórico: rodada 1 e correção de calibração
 
 A rodada 1 (`rodada1/`) teve a mesma acurácia nas respondíveis (0,81 contra 0,25), mas o baseline **não se absteve** em perguntas fora do domínio ("Qual é a capital da França?" foi respondida com regras de contestação de compra). Causa: o índice vetorial do Neo4j devolve `score = (1 + cosseno) / 2`, então um texto **sem relação** já tem score ≈ 0,5, e o corte de 0,45 nunca bloqueava nada.
 
@@ -105,7 +138,7 @@ Calibração com o mesmo modelo de embeddings: perguntas fora do domínio têm c
 
 Observação: as latências da rodada 1 (média 281 ms) foram maiores por cache frio do Neo4j logo após a carga. Os valores da rodada 2 são os representativos.
 
-### 2.1 Rodada 3: primeira avaliação da Etapa 5 e causas das falhas
+### 2.4 Histórico: rodada 3, primeira avaliação da Etapa 5 e causas das falhas
 
 Etapa 5 (gpt-4o-mini) nas 23 perguntas: acurácia geral 0,56 (baseline 0,74), respondíveis 0,44 (baseline 0,81), **abstenção correta 0,86** (baseline 0,57), nenhum ID sem suporte, latência média 3,4 s. A análise de cada falha encontrou estas causas, todas corrigidas depois:
 
@@ -118,12 +151,12 @@ Etapa 5 (gpt-4o-mini) nas 23 perguntas: acurácia geral 0,56 (baseline 0,74), re
 | A01 omitiu 4 dos 7 clientes | LLM omite itens de listas longas | Lista completa de IDs anexada pelo código |
 | M02 respondeu sobre um cliente qualquer | O LLM ignorou a instrução de não inventar; além disso, um template sem ID usava o ID de exemplo em silêncio | Proteção sem LLM para "o cliente"/"dele" sem ID; todo ID da consulta precisa estar na pergunta |
 
-Depois das correções, a Etapa 5 ganhou também consultas de **algoritmos de grafo** (caminho mínimo, PageRank, comunidades) e a avaliação, as perguntas A07 e A08. A rodada final mede o efeito de tudo isso.
+Depois das correções, a Etapa 5 ganhou também consultas de **algoritmos de grafo** (caminho mínimo, PageRank, comunidades) e a avaliação, as perguntas A07 e A08. O efeito está na seção 2.1.
 
 ## 3. Limitações conhecidas
 
 - Os 30 documentos são 10 textos idênticos em 3 versões. A extração dos splits dev/test é igual à do train, então não há avaliação independente por split.
 - O gabarito NER/RE foi anotado por uma única pessoa, sem medida de concordância entre anotadores.
 - As métricas de resposta comparam IDs, não o texto livre. Uma resposta com os IDs certos e uma explicação errada passaria. A checagem de frases cobre só casos específicos (ex.: "não comprova fraude").
-- O baseline não tem LLM: o roteamento é por palavras-chave. Falhas esperadas: pergunta sobre um estabelecimento específico, regras aplicáveis a um cliente, pedido de CPF e perguntas ambíguas. São os casos que a Etapa 5 deve resolver.
+- O baseline não tem LLM: o roteamento é por palavras-chave. Falhas esperadas: pergunta sobre um estabelecimento específico, regras aplicáveis a um cliente, pedido de CPF e perguntas ambíguas. A Etapa 5 resolve todos esses casos (seção 2.1).
 - Dados 100% sintéticos: sinalização e alerta não comprovam fraude.

@@ -1,19 +1,19 @@
 {
  "summary": {
-  "perguntas": 23,
-  "acuracia": 0.739,
-  "acuracia_respondiveis": 0.812,
-  "precisao_ids": 0.664,
-  "recall_ids": 0.812,
-  "f1_ids": 0.715,
+  "perguntas": 25,
+  "acuracia": 0.72,
+  "acuracia_respondiveis": 0.778,
+  "precisao_ids": 0.607,
+  "recall_ids": 0.778,
+  "f1_ids": 0.663,
   "topico_hit@3": 1.0,
   "abstencao_correta": 0.571,
-  "abstencao_indevida": 0.062,
+  "abstencao_indevida": 0.056,
   "respostas_com_evidencia": 1.0,
   "respostas_com_id_sem_suporte": 0.0,
   "erros": 0,
-  "latencia_media_ms": 51,
-  "latencia_p95_ms": 77
+  "latencia_media_ms": 59,
+  "latencia_p95_ms": 143
  },
  "scores": [
   {
@@ -21,7 +21,7 @@
    "kind": "answerable",
    "difficulty": "basica",
    "error": null,
-   "latency_ms": 23.216700181365013,
+   "latency_ms": 23.698299999523442,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -39,7 +39,7 @@
    "kind": "answerable",
    "difficulty": "basica",
    "error": null,
-   "latency_ms": 15.450499951839447,
+   "latency_ms": 12.534999999843421,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -57,7 +57,7 @@
    "kind": "answerable",
    "difficulty": "basica",
    "error": null,
-   "latency_ms": 11.985900346189737,
+   "latency_ms": 417.9652000002534,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -75,7 +75,7 @@
    "kind": "answerable",
    "difficulty": "basica",
    "error": null,
-   "latency_ms": 180.9362000785768,
+   "latency_ms": 9.99460000093677,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -93,7 +93,7 @@
    "kind": "answerable",
    "difficulty": "basica",
    "error": null,
-   "latency_ms": 12.803599704056978,
+   "latency_ms": 21.36889999928826,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -111,7 +111,7 @@
    "kind": "answerable",
    "difficulty": "intermediaria",
    "error": null,
-   "latency_ms": 45.728799887001514,
+   "latency_ms": 51.67019999862532,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -129,7 +129,7 @@
    "kind": "answerable",
    "difficulty": "intermediaria",
    "error": null,
-   "latency_ms": 28.529400005936623,
+   "latency_ms": 32.73710000030405,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -147,7 +147,7 @@
    "kind": "answerable",
    "difficulty": "intermediaria",
    "error": null,
-   "latency_ms": 44.00870017707348,
+   "latency_ms": 53.643200000806246,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -171,7 +171,7 @@
    "kind": "answerable",
    "difficulty": "intermediaria",
    "error": null,
-   "latency_ms": 19.604900386184454,
+   "latency_ms": 52.29689999941911,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -194,7 +194,7 @@
    "kind": "answerable",
    "difficulty": "intermediaria",
    "error": null,
-   "latency_ms": 77.26190006360412,
+   "latency_ms": 142.92530000057013,
    "abstained": true,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -228,7 +228,7 @@
    "kind": "answerable",
    "difficulty": "avancada",
    "error": null,
-   "latency_ms": 20.61640005558729,
+   "latency_ms": 15.475400001378148,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -246,7 +246,7 @@
    "kind": "answerable",
    "difficulty": "avancada",
    "error": null,
-   "latency_ms": 26.718500070273876,
+   "latency_ms": 30.183800001395866,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -269,19 +269,17 @@
    "kind": "answerable",
    "difficulty": "avancada",
    "error": null,
-   "latency_ms": 10.785799939185381,
+   "latency_ms": 13.382499999352149,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
    "precision": 0.0,
    "recall": 0.0,
    "f1": 0.0,
-   "n_gold": 3,
+   "n_gold": 1,
    "n_pred": 0,
    "missing": [
-    "R003",
-    "R013",
-    "R023"
+    "emprestimo pessoal"
    ],
    "extra": [],
    "topic_hit@3": null,
@@ -292,19 +290,18 @@
    "kind": "answerable",
    "difficulty": "avancada",
    "error": null,
-   "latency_ms": 73.3434003777802,
+   "latency_ms": 159.80900000067777,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
-   "precision": 0.6,
+   "precision": 0.5,
    "recall": 1.0,
-   "f1": 0.75,
-   "n_gold": 3,
-   "n_pred": 5,
+   "f1": 0.667,
+   "n_gold": 1,
+   "n_pred": 2,
    "missing": [],
    "extra": [
-    "R001",
-    "R011"
+    "limite de transferencia pix"
    ],
    "topic_hit@3": true,
    "correct": true
@@ -314,19 +311,18 @@
    "kind": "answerable",
    "difficulty": "avancada",
    "error": null,
-   "latency_ms": 200.05259988829494,
+   "latency_ms": 50.587499999892316,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
-   "precision": 0.6,
+   "precision": 0.5,
    "recall": 1.0,
-   "f1": 0.75,
-   "n_gold": 3,
-   "n_pred": 5,
+   "f1": 0.667,
+   "n_gold": 1,
+   "n_pred": 2,
    "missing": [],
    "extra": [
-    "R003",
-    "R013"
+    "emprestimo pessoal"
    ],
    "topic_hit@3": true,
    "must_say_ok": true,
@@ -337,22 +333,64 @@
    "kind": "answerable",
    "difficulty": "avancada",
    "error": null,
-   "latency_ms": 50.85409991443157,
+   "latency_ms": 42.95290000118257,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
    "precision": 0.0,
    "recall": 0.0,
    "f1": 0.0,
-   "n_gold": 3,
+   "n_gold": 1,
    "n_pred": 0,
    "missing": [
-    "R007",
-    "R017",
-    "R027"
+    "concentracao de pagamentos"
    ],
    "extra": [],
    "topic_hit@3": null,
+   "correct": false
+  },
+  {
+   "id": "A07",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 12.589199999638367,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.5,
+   "recall": 1.0,
+   "f1": 0.667,
+   "n_gold": 1,
+   "n_pred": 2,
+   "missing": [],
+   "extra": [
+    "A0547"
+   ],
+   "correct": true
+  },
+  {
+   "id": "A08",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 56.02250000083586,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 5,
+   "n_pred": 0,
+   "missing": [
+    "M0001",
+    "M0005",
+    "M0023",
+    "M0037",
+    "M0119"
+   ],
+   "extra": [],
    "correct": false
   },
   {
@@ -360,7 +398,7 @@
    "kind": "unanswerable",
    "difficulty": "avancada",
    "error": null,
-   "latency_ms": 73.3368000946939,
+   "latency_ms": 56.389699999272125,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -373,7 +411,7 @@
    "kind": "unanswerable",
    "difficulty": "basica",
    "error": null,
-   "latency_ms": 5.7089002802968025,
+   "latency_ms": 6.838799999968614,
    "abstained": true,
    "has_evidence": false,
    "unsupported_ids": [],
@@ -385,7 +423,7 @@
    "kind": "unanswerable",
    "difficulty": "basica",
    "error": null,
-   "latency_ms": 11.070200242102146,
+   "latency_ms": 10.368299999754527,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -398,7 +436,7 @@
    "kind": "ambiguous",
    "difficulty": "basica",
    "error": null,
-   "latency_ms": 65.10809995234013,
+   "latency_ms": 48.69179999877815,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -410,7 +448,7 @@
    "kind": "ambiguous",
    "difficulty": "intermediaria",
    "error": null,
-   "latency_ms": 55.55980000644922,
+   "latency_ms": 53.9613000000827,
    "abstained": false,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -422,7 +460,7 @@
    "kind": "out_of_domain",
    "difficulty": "basica",
    "error": null,
-   "latency_ms": 67.84529983997345,
+   "latency_ms": 58.808899999348796,
    "abstained": true,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -434,7 +472,7 @@
    "kind": "out_of_domain",
    "difficulty": "basica",
    "error": null,
-   "latency_ms": 63.2663001306355,
+   "latency_ms": 49.876400000357535,
    "abstained": true,
    "has_evidence": true,
    "unsupported_ids": [],
@@ -464,7 +502,24 @@
    ],
    "error": null,
    "n_nodes": 5,
-   "sources": []
+   "sources": [],
+   "rows_sample": [
+    {
+     "tipo": "CHECKING",
+     "account_id": "A0525",
+     "titularidade": "PRIMARY",
+     "status": "ACTIVE"
+    },
+    {
+     "tipo": "CHECKING",
+     "account_id": "A0689",
+     "titularidade": "PRIMARY",
+     "status": "ACTIVE"
+    }
+   ],
+   "notes": [
+    "Intencao detectada pelo baseline: cliente."
+   ]
   },
   "B02": {
    "question": "Quais empréstimos do cliente C0208 estão ativos?",
@@ -486,7 +541,17 @@
    ],
    "error": null,
    "n_nodes": 5,
-   "sources": []
+   "sources": [],
+   "rows_sample": [
+    {
+     "valor_brl": 52615.89,
+     "loan_id": "L0041",
+     "status": "ACTIVE"
+    }
+   ],
+   "notes": [
+    "Intencao detectada pelo baseline: cliente."
+   ]
   },
   "B03": {
    "question": "Quais contas pertencem ao cliente C0001?",
@@ -508,7 +573,18 @@
    ],
    "error": null,
    "n_nodes": 4,
-   "sources": []
+   "sources": [],
+   "rows_sample": [
+    {
+     "account_id": "A0309",
+     "status": "ACTIVE",
+     "tipo": "PAYMENT",
+     "titularidade": "PRIMARY"
+    }
+   ],
+   "notes": [
+    "Intencao detectada pelo baseline: cliente."
+   ]
   },
   "B04": {
    "question": "Quais cartões o cliente C0352 possui?",
@@ -532,7 +608,27 @@
    ],
    "error": null,
    "n_nodes": 6,
-   "sources": []
+   "sources": [],
+   "rows_sample": [
+    {
+     "bandeira": "MASTERCARD",
+     "card_id": "CC0001",
+     "status": "ACTIVE"
+    },
+    {
+     "bandeira": "ELO",
+     "card_id": "CC0015",
+     "status": "BLOCKED"
+    },
+    {
+     "bandeira": "ELO",
+     "card_id": "CC0234",
+     "status": "ACTIVE"
+    }
+   ],
+   "notes": [
+    "Intencao detectada pelo baseline: cliente."
+   ]
   },
   "B05": {
    "question": "Por quais evidências a transação T0001050 foi sinalizada?",
@@ -554,7 +650,30 @@
    ],
    "error": null,
    "n_nodes": 5,
-   "sources": []
+   "sources": [],
+   "rows_sample": [
+    {
+     "transaction_id": "T0001050",
+     "date": "2025-01-10",
+     "amount_brl": 2110.71,
+     "flagged": true,
+     "scenario": "SIMULATED_ALERT",
+     "channel": "ATM",
+     "transaction_type": "PIX_TRANSFER",
+     "status": "COMPLETED"
+    },
+    {
+     "severity": "HIGH",
+     "note": "Alerta sintético; não comprova fraude.",
+     "alert_date": "2025-01-10",
+     "alert_type": "RISKY_MERCHANT",
+     "alert_id": "AL00001"
+    }
+   ],
+   "notes": [
+    "Dados 100% sintéticos. Alertas e transações sinalizadas são sinais simulados que merecem análise e não comprovam fraude.",
+    "Intencao detectada pelo baseline: transacao."
+   ]
   },
   "I01": {
    "question": "Quais clientes possuem contas conjuntas?",
@@ -618,7 +737,68 @@
    ],
    "error": null,
    "n_nodes": 127,
-   "sources": []
+   "sources": [],
+   "rows_sample": [
+    {
+     "conta": "A0009",
+     "clientes": [
+      "C0436"
+     ],
+     "emprestimos_ativos": []
+    },
+    {
+     "conta": "A0022",
+     "clientes": [
+      "C0438"
+     ],
+     "emprestimos_ativos": []
+    },
+    {
+     "conta": "A0036",
+     "clientes": [
+      "C0260"
+     ],
+     "emprestimos_ativos": []
+    },
+    {
+     "conta": "A0056",
+     "clientes": [
+      "C0422"
+     ],
+     "emprestimos_ativos": []
+    },
+    {
+     "conta": "A0093",
+     "clientes": [
+      "C0266"
+     ],
+     "emprestimos_ativos": []
+    },
+    {
+     "conta": "A0125",
+     "clientes": [
+      "C0402"
+     ],
+     "emprestimos_ativos": []
+    },
+    {
+     "conta": "A0149",
+     "clientes": [
+      "C0253"
+     ],
+     "emprestimos_ativos": []
+    },
+    {
+     "conta": "A0242",
+     "clientes": [
+      "C0442"
+     ],
+     "emprestimos_ativos": []
+    }
+   ],
+   "notes": [
+    "Intencao detectada pelo baseline: conjunta."
+   ]
   },
   "I02": {
    "question": "Quais clientes têm conta conjunta e empréstimo ativo?",
@@ -648,7 +828,84 @@
    ],
    "error": null,
    "n_nodes": 36,
-   "sources": []
+   "sources": [],
+   "rows_sample": [
+    {
+     "conta": "A0022",
+     "clientes": [
+      "C0438"
+     ],
+     "emprestimos_ativos": [
+      "L0034"
+     ]
+    },
+    {
+     "conta": "A0036",
+     "clientes": [
+      "C0260"
+     ],
+     "emprestimos_ativos": [
+      "L0184"
+     ]
+    },
+    {
+     "conta": "A0093",
+     "clientes": [
+      "C0266"
+     ],
+     "emprestimos_ativos": [
+      "L0114"
+     ]
+    },
+    {
+     "conta": "A0243",
+     "clientes": [
+      "C0466"
+     ],
+     "emprestimos_ativos": [
+      "L0060"
+     ]
+    },
+    {
+     "conta": "A0253",
+     "clientes": [
+      "C0018"
+     ],
+     "emprestimos_ativos": [
+      "L0083"
+     ]
+    },
+    {
+     "conta": "A0548",
+     "clientes": [
+      "C0103"
+     ],
+     "emprestimos_ativos": [
+      "L0141"
+     ]
+    },
+    {
+     "conta": "A0621",
+     "clientes": [
+      "C0384"
+     ],
+     "emprestimos_ativos": [
+      "L0168"
+     ]
+    },
+    {
+     "conta": "A0708",
+     "clientes": [
+      "C0169"
+     ],
+     "emprestimos_ativos": [
+      "L0086"
+     ]
+    }
+   ],
+   "notes": [
+    "Intencao detectada pelo baseline: conjunta."
+   ]
   },
   "I03": {
    "question": "Quais estabelecimentos concentram pagamentos de vários clientes?",
@@ -678,7 +935,61 @@
    ],
    "error": null,
    "n_nodes": 44,
-   "sources": []
+   "sources": [],
+   "rows_sample": [
+    {
+     "estabelecimento": "M0001",
+     "nome": "Mercado Nordeste",
+     "categoria": "Combustível",
+     "clientes": 103
+    },
+    {
+     "estabelecimento": "M0037",
+     "nome": "Loja Nordeste",
+     "categoria": "Farmácia",
+     "clientes": 79
+    },
+    {
+     "estabelecimento": "M0045",
+     "nome": "Loja Vida",
+     "categoria": "Transporte",
+     "clientes": 77
+    },
+    {
+     "estabelecimento": "M0023",
+     "nome": "Loja Digital",
+     "categoria": "Transporte",
+     "clientes": 76
+    },
+    {
+     "estabelecimento": "M0048",
+     "nome": "Mercado Vida",
+     "categoria": "Varejo",
+     "clientes": 75
+    },
+    {
+     "estabelecimento": "M0056",
+     "nome": "Central Horizonte",
+     "categoria": "Varejo",
+     "clientes": 75
+    },
+    {
+     "estabelecimento": "M0025",
+     "nome": "Rede Digital",
+     "categoria": "Restaurante",
+     "clientes": 74
+    },
+    {
+     "estabelecimento": "M0043",
+     "nome": "Central Horizonte",
+     "categoria": "Serviços",
+     "clientes": 73
+    }
+   ],
+   "notes": [
+    "O subgrafo mostra so 3 caminhos de exemplo por estabelecimento (top 5).",
+    "Intencao detectada pelo baseline: estabelecimentos."
+   ]
   },
   "I04": {
    "question": "Quais clientes têm empréstimos ativos e alertas simulados nos últimos 30 dias?",
@@ -717,7 +1028,68 @@
    ],
    "error": null,
    "n_nodes": 31,
-   "sources": []
+   "sources": [],
+   "rows_sample": [
+    {
+     "cliente": "C0159",
+     "transacoes": [
+      "T0002991"
+     ],
+     "emprestimos_ativos": []
+    },
+    {
+     "cliente": "C0208",
+     "transacoes": [
+      "T0003863"
+     ],
+     "emprestimos_ativos": [
+      "L0041"
+     ]
+    },
+    {
+     "cliente": "C0234",
+     "transacoes": [
+      "T0004372"
+     ],
+     "emprestimos_ativos": [
+      "L0120"
+     ]
+    },
+    {
+     "cliente": "C0326",
+     "transacoes": [
+      "T0006076"
+     ],
+     "emprestimos_ativos": []
+    },
+    {
+     "cliente": "C0369",
+     "transacoes": [
+      "T0006875"
+     ],
+     "emprestimos_ativos": []
+    },
+    {
+     "cliente": "C0410",
+     "transacoes": [
+      "T0007630"
+     ],
+     "emprestimos_ativos": [
+      "L0157"
+     ]
+    },
+    {
+     "cliente": "C0443",
+     "transacoes": [
+      "T0008254"
+     ],
+     "emprestimos_ativos": []
+    }
+   ],
+   "notes": [
+    "Dados 100% sintéticos. Alertas e transações sinalizadas são sinais simulados que merecem análise e não comprovam fraude.",
+    "Intencao detectada pelo baseline: sinalizadas."
+   ]
   },
   "I05": {
    "question": "Quais clientes pagaram ao estabelecimento M0007?",
@@ -743,6 +1115,10 @@
     "DOC001",
     "DOC027",
     "DOC007"
+   ],
+   "rows_sample": [],
+   "notes": [
+    "Intencao detectada pelo baseline: documentos."
    ]
   },
   "A01": {
@@ -782,7 +1158,68 @@
    ],
    "error": null,
    "n_nodes": 31,
-   "sources": []
+   "sources": [],
+   "rows_sample": [
+    {
+     "cliente": "C0159",
+     "transacoes": [
+      "T0002991"
+     ],
+     "emprestimos_ativos": []
+    },
+    {
+     "cliente": "C0208",
+     "transacoes": [
+      "T0003863"
+     ],
+     "emprestimos_ativos": [
+      "L0041"
+     ]
+    },
+    {
+     "cliente": "C0234",
+     "transacoes": [
+      "T0004372"
+     ],
+     "emprestimos_ativos": [
+      "L0120"
+     ]
+    },
+    {
+     "cliente": "C0326",
+     "transacoes": [
+      "T0006076"
+     ],
+     "emprestimos_ativos": []
+    },
+    {
+     "cliente": "C0369",
+     "transacoes": [
+      "T0006875"
+     ],
+     "emprestimos_ativos": []
+    },
+    {
+     "cliente": "C0410",
+     "transacoes": [
+      "T0007630"
+     ],
+     "emprestimos_ativos": [
+      "L0157"
+     ]
+    },
+    {
+     "cliente": "C0443",
+     "transacoes": [
+      "T0008254"
+     ],
+     "emprestimos_ativos": []
+    }
+   ],
+   "notes": [
+    "Dados 100% sintéticos. Alertas e transações sinalizadas são sinais simulados que merecem análise e não comprovam fraude.",
+    "Intencao detectada pelo baseline: sinalizadas."
+   ]
   },
   "A02": {
    "question": "Quais clientes têm relação indireta, por conta conjunta, com contas que tiveram transações sinalizadas nos últimos 365 dias?",
@@ -812,7 +1249,47 @@
    ],
    "error": null,
    "n_nodes": 22,
-   "sources": []
+   "sources": [],
+   "rows_sample": [
+    {
+     "cliente_indireto": "C0218",
+     "via_cliente": "C0132",
+     "transacoes": [
+      "T0002510"
+     ],
+     "emprestimos_ativos": []
+    },
+    {
+     "cliente_indireto": "C0248",
+     "via_cliente": "C0266",
+     "transacoes": [
+      "T0004970"
+     ],
+     "emprestimos_ativos": []
+    },
+    {
+     "cliente_indireto": "C0382",
+     "via_cliente": "C0422",
+     "transacoes": [
+      "T0007853"
+     ],
+     "emprestimos_ativos": []
+    },
+    {
+     "cliente_indireto": "C0474",
+     "via_cliente": "C0438",
+     "transacoes": [
+      "T0008152",
+      "T0008161"
+     ],
+     "emprestimos_ativos": []
+    }
+   ],
+   "notes": [
+    "Dados 100% sintéticos. Alertas e transações sinalizadas são sinais simulados que merecem análise e não comprovam fraude.",
+    "Relacao indireta nao implica participacao do cliente.",
+    "Intencao detectada pelo baseline: indireta."
+   ]
   },
   "A03": {
    "question": "Quais regras documentadas se aplicam ao empréstimo do cliente C0208?",
@@ -834,7 +1311,17 @@
    ],
    "error": null,
    "n_nodes": 5,
-   "sources": []
+   "sources": [],
+   "rows_sample": [
+    {
+     "loan_id": "L0041",
+     "status": "ACTIVE",
+     "valor_brl": 52615.89
+    }
+   ],
+   "notes": [
+    "Intencao detectada pelo baseline: cliente."
+   ]
   },
   "A04": {
    "question": "Quais regras orientam a revisão de transferências recorrentes?",
@@ -871,6 +1358,36 @@
     "DOC006",
     "DOC001",
     "DOC011"
+   ],
+   "rows_sample": [
+    {
+     "description": "Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.",
+     "rule_id": "R026",
+     "rule_name": "Frequência de Transferências"
+    },
+    {
+     "description": "Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.",
+     "rule_id": "R016",
+     "rule_name": "Frequência de Transferências"
+    },
+    {
+     "description": "Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.",
+     "rule_id": "R006",
+     "rule_name": "Frequência de Transferências"
+    },
+    {
+     "description": "O limite diário padrão simulado para o segmento BASIC é de R$ 2.000. Aumento exige validação cadastral.",
+     "rule_id": "R001",
+     "rule_name": "Limite de Transferência PIX"
+    },
+    {
+     "description": "O limite diário padrão simulado para o segmento BASIC é de R$ 2.000. Aumento exige validação cadastral.",
+     "rule_id": "R011",
+     "rule_name": "Limite de Transferência PIX"
+    }
+   ],
+   "notes": [
+    "Intencao detectada pelo baseline: documentos."
    ]
   },
   "A05": {
@@ -908,6 +1425,36 @@
     "DOC021",
     "DOC013",
     "DOC003"
+   ],
+   "rows_sample": [
+    {
+     "description": "O limite diário padrão simulado para o segmento BASIC é de R$ 2.000. Aumento exige validação cadastral.",
+     "rule_id": "R011",
+     "rule_name": "Limite de Transferência PIX"
+    },
+    {
+     "description": "O limite diário padrão simulado para o segmento BASIC é de R$ 2.000. Aumento exige validação cadastral.",
+     "rule_id": "R001",
+     "rule_name": "Limite de Transferência PIX"
+    },
+    {
+     "description": "O limite diário padrão simulado para o segmento BASIC é de R$ 2.000. Aumento exige validação cadastral.",
+     "rule_id": "R021",
+     "rule_name": "Limite de Transferência PIX"
+    },
+    {
+     "description": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "rule_id": "R013",
+     "rule_name": "Empréstimo Pessoal"
+    },
+    {
+     "description": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "rule_id": "R003",
+     "rule_name": "Empréstimo Pessoal"
+    }
+   ],
+   "notes": [
+    "Intencao detectada pelo baseline: documentos."
    ]
   },
   "A06": {
@@ -938,7 +1485,168 @@
    ],
    "error": null,
    "n_nodes": 44,
-   "sources": []
+   "sources": [],
+   "rows_sample": [
+    {
+     "estabelecimento": "M0001",
+     "nome": "Mercado Nordeste",
+     "categoria": "Combustível",
+     "clientes": 103
+    },
+    {
+     "estabelecimento": "M0037",
+     "nome": "Loja Nordeste",
+     "categoria": "Farmácia",
+     "clientes": 79
+    },
+    {
+     "estabelecimento": "M0045",
+     "nome": "Loja Vida",
+     "categoria": "Transporte",
+     "clientes": 77
+    },
+    {
+     "estabelecimento": "M0023",
+     "nome": "Loja Digital",
+     "categoria": "Transporte",
+     "clientes": 76
+    },
+    {
+     "estabelecimento": "M0048",
+     "nome": "Mercado Vida",
+     "categoria": "Varejo",
+     "clientes": 75
+    },
+    {
+     "estabelecimento": "M0056",
+     "nome": "Central Horizonte",
+     "categoria": "Varejo",
+     "clientes": 75
+    },
+    {
+     "estabelecimento": "M0025",
+     "nome": "Rede Digital",
+     "categoria": "Restaurante",
+     "clientes": 74
+    },
+    {
+     "estabelecimento": "M0043",
+     "nome": "Central Horizonte",
+     "categoria": "Serviços",
+     "clientes": 73
+    }
+   ],
+   "notes": [
+    "O subgrafo mostra so 3 caminhos de exemplo por estabelecimento (top 5).",
+    "Intencao detectada pelo baseline: estabelecimentos."
+   ]
+  },
+  "A07": {
+   "question": "Como o cliente C0249 se conecta ao cliente C0306 no grafo?",
+   "answer": "**C0249** (João Costa, segmento BASIC). 2 conta(s): A0305 (PAYMENT, PRIMARY, ACTIVE), A0547 (PAYMENT, PRIMARY, ACTIVE). Emprestimos: 1 no total, 1 ativo(s): L0037 (R$ 8,188.10). Cartoes: 3: CC0120 (VISA, BLOCKED), CC0259 (VISA, ACTIVE), CC0431 (MASTERCARD, ACTIVE).",
+   "abstained": false,
+   "entity_ids": [
+    "C0249",
+    "A0305",
+    "A0547"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer {customer_id: $cid})\nOPTIONAL MATCH pa = (c)-[:OWNS]->(:Account)\nOPTIONAL MATCH pl = (c)-[:HAS_LOAN]->(:Loan)-[:ON_ACCOUNT]->(:Account)\nOPTIONAL MATCH pk = (c)-[:HAS_CARD]->(:Card)\nWITH c, collect(DISTINCT pa) AS contas, collect(DISTINCT pl) AS emprestimos, collect(DISTINCT pk) AS cartoes\nRETURN c, contas, emprestimos, cartoes,\n       [p IN contas | {account_id: nodes(p)[1].account_id, tipo: nodes(p)[1].account_type,\n                       status: nodes(p)[1].status, titularidade: relationships(p)[0].ownership_type}] AS contas_info,\n       [p IN emprestimos | {loan_id: nodes(p)[1].loan_id, status: nodes(p)[1].status,\n                            valor_brl: nodes(p)[1].principal_brl}] AS emprestimos_info,\n       [p IN cartoes | {card_id: nodes(p)[1].card_id, bandeira: nodes(p)[1].brand,\n                        status: nodes(p)[1].status}] AS cartoes_info",
+     "params": {
+      "cid": "C0249"
+     },
+     "rows": 1,
+     "purpose": "Contas, emprestimos e cartoes do cliente"
+    }
+   ],
+   "error": null,
+   "n_nodes": 7,
+   "sources": [],
+   "rows_sample": [
+    {
+     "account_id": "A0305",
+     "status": "ACTIVE",
+     "tipo": "PAYMENT",
+     "titularidade": "PRIMARY"
+    },
+    {
+     "account_id": "A0547",
+     "status": "ACTIVE",
+     "tipo": "PAYMENT",
+     "titularidade": "PRIMARY"
+    }
+   ],
+   "notes": [
+    "Intencao detectada pelo baseline: cliente."
+   ]
+  },
+  "A08": {
+   "question": "Quais estabelecimentos são mais centrais na rede de pagamentos (PageRank)?",
+   "answer": "Regras documentadas mais relacionadas a pergunta:\n- **Concentração de Pagamentos** (R017, fonte DOC017): Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.\n- **Concentração de Pagamentos** (R027, fonte DOC027): Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.\n- **Concentração de Pagamentos** (R007, fonte DOC007): Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.\n- **Transações Atípicas** (R022, fonte DOC022): Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.\n- **Transações Atípicas** (R012, fonte DOC012): Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.",
+   "abstained": false,
+   "entity_ids": [
+    "DOC017",
+    "DOC027",
+    "DOC007",
+    "DOC022",
+    "DOC012",
+    "R017",
+    "R027",
+    "R007",
+    "R022",
+    "R012"
+   ],
+   "queries": [
+    {
+     "cypher": "CALL db.index.vector.queryNodes('document_embedding', $k, $vec) YIELD node AS d, score\nOPTIONAL MATCH pr = (d)-[:DESCRIBES]->(r:BankingRule)\nOPTIONAL MATCH pk = (r)-[:INSTANCE_OF]->(:RuleTopic)-[]->(:Entity)\nWITH d, score, collect(DISTINCT r {.rule_id, .rule_name, .description}) AS regras,\n     collect(DISTINCT pr) + collect(DISTINCT pk) AS caminhos\nRETURN d.document_id AS document_id, d.title AS title, d.section AS section, d.page AS page,\n       d.version AS version, d.text AS text, score, regras, caminhos\nORDER BY score DESC",
+     "params": {
+      "k": 5,
+      "vec": "<embedding da pergunta, 384 dim>"
+     },
+     "rows": 5,
+     "purpose": "Busca vetorial nos documentos + regras ligadas (KAG)"
+    }
+   ],
+   "error": null,
+   "n_nodes": 14,
+   "sources": [
+    "DOC017",
+    "DOC027",
+    "DOC007",
+    "DOC022",
+    "DOC012"
+   ],
+   "rows_sample": [
+    {
+     "description": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+     "rule_id": "R017",
+     "rule_name": "Concentração de Pagamentos"
+    },
+    {
+     "description": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+     "rule_id": "R027",
+     "rule_name": "Concentração de Pagamentos"
+    },
+    {
+     "description": "Concentração incomum de pagamentos em um estabelecimento pode justificar análise contextual.",
+     "rule_id": "R007",
+     "rule_name": "Concentração de Pagamentos"
+    },
+    {
+     "description": "Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.",
+     "rule_id": "R022",
+     "rule_name": "Transações Atípicas"
+    },
+    {
+     "description": "Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.",
+     "rule_id": "R012",
+     "rule_name": "Transações Atípicas"
+    }
+   ],
+   "notes": [
+    "Intencao detectada pelo baseline: documentos."
+   ]
   },
   "U01": {
    "question": "Um alerta permite afirmar que houve fraude?",
@@ -975,6 +1683,37 @@
     "DOC012",
     "DOC018",
     "DOC028"
+   ],
+   "rows_sample": [
+    {
+     "description": "Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.",
+     "rule_id": "R002",
+     "rule_name": "Transações Atípicas"
+    },
+    {
+     "description": "Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.",
+     "rule_id": "R022",
+     "rule_name": "Transações Atípicas"
+    },
+    {
+     "description": "Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.",
+     "rule_id": "R012",
+     "rule_name": "Transações Atípicas"
+    },
+    {
+     "description": "Bloqueios simulados devem registrar justificativa, data e responsável.",
+     "rule_id": "R018",
+     "rule_name": "Bloqueio Preventivo"
+    },
+    {
+     "description": "Bloqueios simulados devem registrar justificativa, data e responsável.",
+     "rule_id": "R028",
+     "rule_name": "Bloqueio Preventivo"
+    }
+   ],
+   "notes": [
+    "Os dados não permitem afirmar fraude: Dados 100% sintéticos. Alertas e transações sinalizadas são sinais simulados que merecem análise e não comprovam fraude.",
+    "Intencao detectada pelo baseline: documentos."
    ]
   },
   "U02": {
@@ -994,7 +1733,11 @@
    ],
    "error": null,
    "n_nodes": 0,
-   "sources": []
+   "sources": [],
+   "rows_sample": [],
+   "notes": [
+    "Intencao detectada pelo baseline: cliente."
+   ]
   },
   "U03": {
    "question": "Qual é o CPF do cliente C0001?",
@@ -1016,7 +1759,18 @@
    ],
    "error": null,
    "n_nodes": 4,
-   "sources": []
+   "sources": [],
+   "rows_sample": [
+    {
+     "account_id": "A0309",
+     "status": "ACTIVE",
+     "tipo": "PAYMENT",
+     "titularidade": "PRIMARY"
+    }
+   ],
+   "notes": [
+    "Intencao detectada pelo baseline: cliente."
+   ]
   },
   "M01": {
    "question": "Quais contas pertencem ao cliente?",
@@ -1053,6 +1807,36 @@
     "DOC015",
     "DOC005",
     "DOC020"
+   ],
+   "rows_sample": [
+    {
+     "description": "Dados de clientes devem ser acessados apenas por perfis autorizados e finalidade legítima.",
+     "rule_id": "R030",
+     "rule_name": "Privacidade e Acesso"
+    },
+    {
+     "description": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "rule_id": "R025",
+     "rule_name": "Conta Compartilhada"
+    },
+    {
+     "description": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "rule_id": "R015",
+     "rule_name": "Conta Compartilhada"
+    },
+    {
+     "description": "Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.",
+     "rule_id": "R005",
+     "rule_name": "Conta Compartilhada"
+    },
+    {
+     "description": "Dados de clientes devem ser acessados apenas por perfis autorizados e finalidade legítima.",
+     "rule_id": "R020",
+     "rule_name": "Privacidade e Acesso"
+    }
+   ],
+   "notes": [
+    "Intencao detectada pelo baseline: documentos."
    ]
   },
   "M02": {
@@ -1086,6 +1870,26 @@
     "DOC003",
     "DOC027",
     "DOC017"
+   ],
+   "rows_sample": [
+    {
+     "description": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "rule_id": "R023",
+     "rule_name": "Empréstimo Pessoal"
+    },
+    {
+     "description": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "rule_id": "R013",
+     "rule_name": "Empréstimo Pessoal"
+    },
+    {
+     "description": "Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+     "rule_id": "R003",
+     "rule_name": "Empréstimo Pessoal"
+    }
+   ],
+   "notes": [
+    "Intencao detectada pelo baseline: documentos."
    ]
   },
   "O01": {
@@ -1112,6 +1916,10 @@
     "DOC011",
     "DOC018",
     "DOC028"
+   ],
+   "rows_sample": [],
+   "notes": [
+    "Intencao detectada pelo baseline: documentos."
    ]
   },
   "O02": {
@@ -1138,6 +1946,10 @@
     "DOC017",
     "DOC009",
     "DOC024"
+   ],
+   "rows_sample": [],
+   "notes": [
+    "Intencao detectada pelo baseline: documentos."
    ]
   }
  }

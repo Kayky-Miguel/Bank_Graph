@@ -14,7 +14,7 @@ Assistente para análise de relacionamentos e conhecimento bancário com **Graph
 | 4 | Pipeline Text-to-Graph (NER/RE) | Concluída |
 | 5 | Recuperação híbrida GraphRAG/KAG + algoritmos de grafo | Concluída (`graphrag_pipeline.py`, `graph_algorithms.py`) |
 | 6 | Interface Streamlit e visualização do subgrafo | Concluída (usa a Etapa 5 via `retrieval.py`) |
-| 7 | Avaliação e testes | Concluída; falta registrar a rodada final com a Etapa 5 corrigida |
+| 7 | Avaliação e testes | Concluída: Etapa 5 com acurácia 0,88, contra 0,72 do baseline e 0,36 da busca vetorial (`evaluation/README.md`) |
 | 8 | Documentação, artigo e apresentação | Documentação técnica e artigo prontos (artigo fora do repositório); falta a apresentação |
 
 ## Estrutura do repositório
@@ -169,6 +169,17 @@ python -m pytest tests -q                            # testes automatizados (sem
 ```
 São 25 perguntas: básicas, intermediárias e avançadas respondíveis (incluindo multi-hop e algoritmos de grafo), além de perguntas sem resposta, ambíguas e fora do domínio. O gabarito de cada uma é **calculado direto dos CSVs com pandas**, sem passar pelo Neo4j nem pelo código avaliado: um erro de ingestão ou de consulta aparece como erro na avaliação. Métricas: precisão, recall e F1 dos IDs esperados; tema correto nas 3 primeiras fontes; abstenção correta e indevida; respostas com evidência rastreável; IDs citados sem suporte nas evidências (indício de alucinação); erros; latência média e p95. O resultado vai para `evaluation/report.md`.
 
+Resultado final (25 perguntas; detalhes em `evaluation/README.md`):
+
+| | Vetorial isolada | Baseline híbrido | Etapa 5 |
+|---|---|---|---|
+| Acurácia geral | 0,36 | 0,72 | **0,88** |
+| Acurácia nas respondíveis | 0,22 | 0,78 | **0,83** |
+| F1 dos IDs | 0,15 | 0,66 | **0,76** |
+| Abstenção correta | 0,71 | 0,57 | **1,00** |
+| Respostas com ID sem suporte | 0,00 | 0,00 | 0,00 |
+| Latência média | 54 ms | 59 ms | 3,4 s |
+
 ## Etapa 5: recuperação híbrida (GraphRAG/KAG)
 
 Responde perguntas em linguagem natural combinando busca vetorial, consulta Cypher validada e regras explícitas (KAG), e devolve a resposta com evidências.
@@ -238,12 +249,11 @@ Boa parte da diferença vem de convenção de granularidade (enumerações agrup
 
 ## Pendências
 
-1. **Rodada final da avaliação** com a Etapa 5 corrigida e os algoritmos gravados: `python graph_algorithms.py` e `python evaluate_qa.py --backends baseline vector retrieval`; registrar os números em `evaluation/README.md`.
-2. **Artigo técnico** no template da disciplina (método, modelagem, pipeline, avaliação e limitações estão em `docs/` e `evaluation/`).
-3. **Apresentação** com demonstração ao vivo (pergunta central, multi-hop, KAG, algoritmos de grafo, abstenção).
-4. **Script de geração dos dados** (Python/Faker): pedido pelo plano, mas não está no repositório.
-5. Migrar `db.index.vector.queryNodes` (obsoleta) para a sintaxe `SEARCH` do Neo4j novo.
-6. `app_chunks_embeddings.py` é um exercício de aula sem relação com o projeto; pode ser removido.
+1. **Apresentação** com demonstração ao vivo (pergunta central, multi-hop, KAG, algoritmos de grafo, abstenção). O artigo técnico está pronto, fora do repositório.
+2. Etapa 5: quando o LLM recusa escolher consulta duas vezes para uma pergunta com ID (B01 e B02 na avaliação final), usar o template do tipo de ID como alternativa.
+3. **Script de geração dos dados** (Python/Faker): pedido pelo plano, mas não está no repositório.
+4. Migrar `db.index.vector.queryNodes` (obsoleta) para a sintaxe `SEARCH` do Neo4j novo.
+5. `app_chunks_embeddings.py` é um exercício de aula sem relação com o projeto; pode ser removido.
 
 ## Dataset
 

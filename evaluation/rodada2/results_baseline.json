@@ -1,0 +1,1144 @@
+{
+ "summary": {
+  "perguntas": 23,
+  "acuracia": 0.739,
+  "acuracia_respondiveis": 0.812,
+  "precisao_ids": 0.664,
+  "recall_ids": 0.812,
+  "f1_ids": 0.715,
+  "topico_hit@3": 1.0,
+  "abstencao_correta": 0.571,
+  "abstencao_indevida": 0.062,
+  "respostas_com_evidencia": 1.0,
+  "respostas_com_id_sem_suporte": 0.0,
+  "erros": 0,
+  "latencia_media_ms": 51,
+  "latencia_p95_ms": 77
+ },
+ "scores": [
+  {
+   "id": "B01",
+   "kind": "answerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 23.216700181365013,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n_gold": 2,
+   "n_pred": 2,
+   "missing": [],
+   "extra": [],
+   "correct": true
+  },
+  {
+   "id": "B02",
+   "kind": "answerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 15.450499951839447,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n_gold": 1,
+   "n_pred": 1,
+   "missing": [],
+   "extra": [],
+   "correct": true
+  },
+  {
+   "id": "B03",
+   "kind": "answerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 11.985900346189737,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n_gold": 1,
+   "n_pred": 1,
+   "missing": [],
+   "extra": [],
+   "correct": true
+  },
+  {
+   "id": "B04",
+   "kind": "answerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 180.9362000785768,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n_gold": 3,
+   "n_pred": 3,
+   "missing": [],
+   "extra": [],
+   "correct": true
+  },
+  {
+   "id": "B05",
+   "kind": "answerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 12.803599704056978,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n_gold": 1,
+   "n_pred": 1,
+   "missing": [],
+   "extra": [],
+   "correct": true
+  },
+  {
+   "id": "I01",
+   "kind": "answerable",
+   "difficulty": "intermediaria",
+   "error": null,
+   "latency_ms": 45.728799887001514,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n_gold": 43,
+   "n_pred": 43,
+   "missing": [],
+   "extra": [],
+   "correct": true
+  },
+  {
+   "id": "I02",
+   "kind": "answerable",
+   "difficulty": "intermediaria",
+   "error": null,
+   "latency_ms": 28.529400005936623,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n_gold": 9,
+   "n_pred": 9,
+   "missing": [],
+   "extra": [],
+   "correct": true
+  },
+  {
+   "id": "I03",
+   "kind": "answerable",
+   "difficulty": "intermediaria",
+   "error": null,
+   "latency_ms": 44.00870017707348,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.5,
+   "recall": 1.0,
+   "f1": 0.667,
+   "n_gold": 5,
+   "n_pred": 10,
+   "missing": [],
+   "extra": [
+    "M0025",
+    "M0043",
+    "M0056",
+    "M0131",
+    "M0150"
+   ],
+   "correct": true
+  },
+  {
+   "id": "I04",
+   "kind": "answerable",
+   "difficulty": "intermediaria",
+   "error": null,
+   "latency_ms": 19.604900386184454,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.429,
+   "recall": 1.0,
+   "f1": 0.6,
+   "n_gold": 3,
+   "n_pred": 7,
+   "missing": [],
+   "extra": [
+    "C0159",
+    "C0326",
+    "C0369",
+    "C0443"
+   ],
+   "correct": true
+  },
+  {
+   "id": "I05",
+   "kind": "answerable",
+   "difficulty": "intermediaria",
+   "error": null,
+   "latency_ms": 77.26190006360412,
+   "abstained": true,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 63,
+   "n_pred": 0,
+   "missing": [
+    "C0001",
+    "C0007",
+    "C0015",
+    "C0024",
+    "C0041",
+    "C0042",
+    "C0048",
+    "C0051",
+    "C0052",
+    "C0068",
+    "C0081",
+    "C0088",
+    "C0089",
+    "C0097",
+    "C0099"
+   ],
+   "extra": [],
+   "correct": false
+  },
+  {
+   "id": "A01",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 20.61640005558729,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n_gold": 10,
+   "n_pred": 10,
+   "missing": [],
+   "extra": [],
+   "correct": true
+  },
+  {
+   "id": "A02",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 26.718500070273876,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.5,
+   "recall": 1.0,
+   "f1": 0.667,
+   "n_gold": 4,
+   "n_pred": 8,
+   "missing": [],
+   "extra": [
+    "C0132",
+    "C0266",
+    "C0422",
+    "C0438"
+   ],
+   "correct": true
+  },
+  {
+   "id": "A03",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 10.785799939185381,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 3,
+   "n_pred": 0,
+   "missing": [
+    "R003",
+    "R013",
+    "R023"
+   ],
+   "extra": [],
+   "topic_hit@3": null,
+   "correct": false
+  },
+  {
+   "id": "A04",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 73.3434003777802,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.6,
+   "recall": 1.0,
+   "f1": 0.75,
+   "n_gold": 3,
+   "n_pred": 5,
+   "missing": [],
+   "extra": [
+    "R001",
+    "R011"
+   ],
+   "topic_hit@3": true,
+   "correct": true
+  },
+  {
+   "id": "A05",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 200.05259988829494,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.6,
+   "recall": 1.0,
+   "f1": 0.75,
+   "n_gold": 3,
+   "n_pred": 5,
+   "missing": [],
+   "extra": [
+    "R003",
+    "R013"
+   ],
+   "topic_hit@3": true,
+   "must_say_ok": true,
+   "correct": true
+  },
+  {
+   "id": "A06",
+   "kind": "answerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 50.85409991443157,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "n_gold": 3,
+   "n_pred": 0,
+   "missing": [
+    "R007",
+    "R017",
+    "R027"
+   ],
+   "extra": [],
+   "topic_hit@3": null,
+   "correct": false
+  },
+  {
+   "id": "U01",
+   "kind": "unanswerable",
+   "difficulty": "avancada",
+   "error": null,
+   "latency_ms": 73.3368000946939,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "abstention_ok": true,
+   "must_say_ok": true,
+   "correct": true
+  },
+  {
+   "id": "U02",
+   "kind": "unanswerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 5.7089002802968025,
+   "abstained": true,
+   "has_evidence": false,
+   "unsupported_ids": [],
+   "abstention_ok": true,
+   "correct": true
+  },
+  {
+   "id": "U03",
+   "kind": "unanswerable",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 11.070200242102146,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "abstention_ok": false,
+   "must_not_ok": true,
+   "correct": false
+  },
+  {
+   "id": "M01",
+   "kind": "ambiguous",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 65.10809995234013,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "abstention_ok": false,
+   "correct": false
+  },
+  {
+   "id": "M02",
+   "kind": "ambiguous",
+   "difficulty": "intermediaria",
+   "error": null,
+   "latency_ms": 55.55980000644922,
+   "abstained": false,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "abstention_ok": false,
+   "correct": false
+  },
+  {
+   "id": "O01",
+   "kind": "out_of_domain",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 67.84529983997345,
+   "abstained": true,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "abstention_ok": true,
+   "correct": true
+  },
+  {
+   "id": "O02",
+   "kind": "out_of_domain",
+   "difficulty": "basica",
+   "error": null,
+   "latency_ms": 63.2663001306355,
+   "abstained": true,
+   "has_evidence": true,
+   "unsupported_ids": [],
+   "abstention_ok": true,
+   "correct": true
+  }
+ ],
+ "answers": {
+  "B01": {
+   "question": "Quais contas pertencem ao cliente C0208?",
+   "answer": "**C0208** (Isabela Silva, segmento PREMIUM). 2 conta(s): A0525 (CHECKING, PRIMARY, ACTIVE), A0689 (CHECKING, PRIMARY, ACTIVE). Emprestimos: 1 no total, 1 ativo(s): L0041 (R$ 52,615.89). Cartoes: 1: CC0407 (ELO, ACTIVE).",
+   "abstained": false,
+   "entity_ids": [
+    "C0208",
+    "A0525",
+    "A0689"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer {customer_id: $cid})\nOPTIONAL MATCH pa = (c)-[:OWNS]->(:Account)\nOPTIONAL MATCH pl = (c)-[:HAS_LOAN]->(:Loan)-[:ON_ACCOUNT]->(:Account)\nOPTIONAL MATCH pk = (c)-[:HAS_CARD]->(:Card)\nWITH c, collect(DISTINCT pa) AS contas, collect(DISTINCT pl) AS emprestimos, collect(DISTINCT pk) AS cartoes\nRETURN c, contas, emprestimos, cartoes,\n       [p IN contas | {account_id: nodes(p)[1].account_id, tipo: nodes(p)[1].account_type,\n                       status: nodes(p)[1].status, titularidade: relationships(p)[0].ownership_type}] AS contas_info,\n       [p IN emprestimos | {loan_id: nodes(p)[1].loan_id, status: nodes(p)[1].status,\n                            valor_brl: nodes(p)[1].principal_brl}] AS emprestimos_info,\n       [p IN cartoes | {card_id: nodes(p)[1].card_id, bandeira: nodes(p)[1].brand,\n                        status: nodes(p)[1].status}] AS cartoes_info",
+     "params": {
+      "cid": "C0208"
+     },
+     "rows": 1,
+     "purpose": "Contas, emprestimos e cartoes do cliente"
+    }
+   ],
+   "error": null,
+   "n_nodes": 5,
+   "sources": []
+  },
+  "B02": {
+   "question": "Quais empréstimos do cliente C0208 estão ativos?",
+   "answer": "**C0208** (Isabela Silva, segmento PREMIUM). Emprestimos: 1 no total, 1 ativo(s): L0041 (R$ 52,615.89). 2 conta(s): A0525 (CHECKING, PRIMARY, ACTIVE), A0689 (CHECKING, PRIMARY, ACTIVE). Cartoes: 1: CC0407 (ELO, ACTIVE).",
+   "abstained": false,
+   "entity_ids": [
+    "C0208",
+    "L0041"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer {customer_id: $cid})\nOPTIONAL MATCH pa = (c)-[:OWNS]->(:Account)\nOPTIONAL MATCH pl = (c)-[:HAS_LOAN]->(:Loan)-[:ON_ACCOUNT]->(:Account)\nOPTIONAL MATCH pk = (c)-[:HAS_CARD]->(:Card)\nWITH c, collect(DISTINCT pa) AS contas, collect(DISTINCT pl) AS emprestimos, collect(DISTINCT pk) AS cartoes\nRETURN c, contas, emprestimos, cartoes,\n       [p IN contas | {account_id: nodes(p)[1].account_id, tipo: nodes(p)[1].account_type,\n                       status: nodes(p)[1].status, titularidade: relationships(p)[0].ownership_type}] AS contas_info,\n       [p IN emprestimos | {loan_id: nodes(p)[1].loan_id, status: nodes(p)[1].status,\n                            valor_brl: nodes(p)[1].principal_brl}] AS emprestimos_info,\n       [p IN cartoes | {card_id: nodes(p)[1].card_id, bandeira: nodes(p)[1].brand,\n                        status: nodes(p)[1].status}] AS cartoes_info",
+     "params": {
+      "cid": "C0208"
+     },
+     "rows": 1,
+     "purpose": "Contas, emprestimos e cartoes do cliente"
+    }
+   ],
+   "error": null,
+   "n_nodes": 5,
+   "sources": []
+  },
+  "B03": {
+   "question": "Quais contas pertencem ao cliente C0001?",
+   "answer": "**C0001** (Diego Silva, segmento BASIC). 1 conta(s): A0309 (PAYMENT, PRIMARY, ACTIVE). Emprestimos: 1 no total, 0 ativo(s). Cartoes: 1: CC0148 (MASTERCARD, ACTIVE).",
+   "abstained": false,
+   "entity_ids": [
+    "C0001",
+    "A0309"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer {customer_id: $cid})\nOPTIONAL MATCH pa = (c)-[:OWNS]->(:Account)\nOPTIONAL MATCH pl = (c)-[:HAS_LOAN]->(:Loan)-[:ON_ACCOUNT]->(:Account)\nOPTIONAL MATCH pk = (c)-[:HAS_CARD]->(:Card)\nWITH c, collect(DISTINCT pa) AS contas, collect(DISTINCT pl) AS emprestimos, collect(DISTINCT pk) AS cartoes\nRETURN c, contas, emprestimos, cartoes,\n       [p IN contas | {account_id: nodes(p)[1].account_id, tipo: nodes(p)[1].account_type,\n                       status: nodes(p)[1].status, titularidade: relationships(p)[0].ownership_type}] AS contas_info,\n       [p IN emprestimos | {loan_id: nodes(p)[1].loan_id, status: nodes(p)[1].status,\n                            valor_brl: nodes(p)[1].principal_brl}] AS emprestimos_info,\n       [p IN cartoes | {card_id: nodes(p)[1].card_id, bandeira: nodes(p)[1].brand,\n                        status: nodes(p)[1].status}] AS cartoes_info",
+     "params": {
+      "cid": "C0001"
+     },
+     "rows": 1,
+     "purpose": "Contas, emprestimos e cartoes do cliente"
+    }
+   ],
+   "error": null,
+   "n_nodes": 4,
+   "sources": []
+  },
+  "B04": {
+   "question": "Quais cartões o cliente C0352 possui?",
+   "answer": "**C0352** (Rafaela Pereira, segmento BASIC). Cartoes: 3: CC0001 (MASTERCARD, ACTIVE), CC0015 (ELO, BLOCKED), CC0234 (ELO, ACTIVE). 1 conta(s): A0052 (PAYMENT, PRIMARY, ACTIVE). Emprestimos: 1 no total, 1 ativo(s): L0109 (R$ 10,116.45).",
+   "abstained": false,
+   "entity_ids": [
+    "C0352",
+    "CC0001",
+    "CC0015",
+    "CC0234"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer {customer_id: $cid})\nOPTIONAL MATCH pa = (c)-[:OWNS]->(:Account)\nOPTIONAL MATCH pl = (c)-[:HAS_LOAN]->(:Loan)-[:ON_ACCOUNT]->(:Account)\nOPTIONAL MATCH pk = (c)-[:HAS_CARD]->(:Card)\nWITH c, collect(DISTINCT pa) AS contas, collect(DISTINCT pl) AS emprestimos, collect(DISTINCT pk) AS cartoes\nRETURN c, contas, emprestimos, cartoes,\n       [p IN contas | {account_id: nodes(p)[1].account_id, tipo: nodes(p)[1].account_type,\n                       status: nodes(p)[1].status, titularidade: relationships(p)[0].ownership_type}] AS contas_info,\n       [p IN emprestimos | {loan_id: nodes(p)[1].loan_id, status: nodes(p)[1].status,\n                            valor_brl: nodes(p)[1].principal_brl}] AS emprestimos_info,\n       [p IN cartoes | {card_id: nodes(p)[1].card_id, bandeira: nodes(p)[1].brand,\n                        status: nodes(p)[1].status}] AS cartoes_info",
+     "params": {
+      "cid": "C0352"
+     },
+     "rows": 1,
+     "purpose": "Contas, emprestimos e cartoes do cliente"
+    }
+   ],
+   "error": null,
+   "n_nodes": 6,
+   "sources": []
+  },
+  "B05": {
+   "question": "Por quais evidências a transação T0001050 foi sinalizada?",
+   "answer": "Transacao T0001050: R$ 2,110.71, PIX_TRANSFER em 2025-01-10, cenario simulado `SIMULATED_ALERT`, sinalizada = True. Destino: Loja Vida (Combustível, perfil de risco MEDIUM). Alertas: RISKY_MERCHANT (severidade HIGH, 2025-01-10).",
+   "abstained": false,
+   "entity_ids": [
+    "T0001050",
+    "AL00001"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (t:Transaction {transaction_id: $tid})\nOPTIONAL MATCH po = (:Customer)-[:OWNS]->(:Account)-[:SENT]->(t)\nOPTIONAL MATCH pm = (t)-[:PAID_TO]->(m:Merchant)\nOPTIONAL MATCH pa = (al:Alert)-[:RAISED_ON]->(t)\nOPTIONAL MATCH pc = (:Customer)-[:FILED]->(:Complaint)-[:ABOUT]->(t)\nRETURN t {.transaction_id, .amount_brl, .transaction_type, .flagged, .scenario, .channel, .status,\n          date: toString(t.date)} AS transacao,\n       m {.merchant_id, .merchant_name, .category, .risk_profile} AS estabelecimento,\n       collect(DISTINCT al {.alert_id, .alert_type, .severity, .note, alert_date: toString(al.alert_date)}) AS alertas,\n       collect(DISTINCT po) + collect(DISTINCT pm) + collect(DISTINCT pa) + collect(DISTINCT pc) AS caminhos",
+     "params": {
+      "tid": "T0001050"
+     },
+     "rows": 1,
+     "purpose": "Evidencias ligadas a transacao"
+    }
+   ],
+   "error": null,
+   "n_nodes": 5,
+   "sources": []
+  },
+  "I01": {
+   "question": "Quais clientes possuem contas conjuntas?",
+   "answer": "43 cliente(s) com conta conjunta em 45 conta(s): C0002, C0015, C0018, C0027, C0034, C0058, C0070, C0081, C0083, C0103, C0108, C0129, C0142, C0161, C0169, C0172, C0182, C0213, C0218, C0226, C0243, C0253, C0260, C0266, C0306, C0329, C0330, C0334, C0361, C0375, C0384, C0392, C0402, C0422, C0436, C0438, C0442, C0446, C0466, C0479, C0483, C0485, C0500.",
+   "abstained": false,
+   "entity_ids": [
+    "C0002",
+    "C0015",
+    "C0018",
+    "C0027",
+    "C0034",
+    "C0058",
+    "C0070",
+    "C0081",
+    "C0083",
+    "C0103",
+    "C0108",
+    "C0129",
+    "C0142",
+    "C0161",
+    "C0169",
+    "C0172",
+    "C0182",
+    "C0213",
+    "C0218",
+    "C0226",
+    "C0243",
+    "C0253",
+    "C0260",
+    "C0266",
+    "C0306",
+    "C0329",
+    "C0330",
+    "C0334",
+    "C0361",
+    "C0375",
+    "C0384",
+    "C0392",
+    "C0402",
+    "C0422",
+    "C0436",
+    "C0438",
+    "C0442",
+    "C0446",
+    "C0466",
+    "C0479",
+    "C0483",
+    "C0485",
+    "C0500"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer)-[:OWNS {ownership_type: 'JOINT'}]->(a:Account)\nWHERE NOT $com_emprestimo OR EXISTS { (c)-[:HAS_LOAN]->(:Loan {status: 'ACTIVE'}) }\nOPTIONAL MATCH po = (a)<-[:OWNS]-(:Customer)\nOPTIONAL MATCH pl = (c)-[:HAS_LOAN]->(l:Loan {status: 'ACTIVE'})\nWHERE $com_emprestimo\nWITH a, collect(DISTINCT c.customer_id) AS clientes, collect(DISTINCT l.loan_id) AS emprestimos_ativos,\n     collect(DISTINCT po) + collect(DISTINCT pl) AS caminhos\nRETURN a.account_id AS conta, clientes, emprestimos_ativos, caminhos\nORDER BY conta LIMIT $limit",
+     "params": {
+      "com_emprestimo": false,
+      "limit": 100
+     },
+     "rows": 45,
+     "purpose": "Contas conjuntas e seus titulares"
+    }
+   ],
+   "error": null,
+   "n_nodes": 127,
+   "sources": []
+  },
+  "I02": {
+   "question": "Quais clientes têm conta conjunta e empréstimo ativo?",
+   "answer": "9 cliente(s) com conta conjunta e emprestimo ativo em 9 conta(s): C0018, C0103, C0169, C0260, C0266, C0361, C0384, C0438, C0466.",
+   "abstained": false,
+   "entity_ids": [
+    "C0018",
+    "C0103",
+    "C0169",
+    "C0260",
+    "C0266",
+    "C0361",
+    "C0384",
+    "C0438",
+    "C0466"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer)-[:OWNS {ownership_type: 'JOINT'}]->(a:Account)\nWHERE NOT $com_emprestimo OR EXISTS { (c)-[:HAS_LOAN]->(:Loan {status: 'ACTIVE'}) }\nOPTIONAL MATCH po = (a)<-[:OWNS]-(:Customer)\nOPTIONAL MATCH pl = (c)-[:HAS_LOAN]->(l:Loan {status: 'ACTIVE'})\nWHERE $com_emprestimo\nWITH a, collect(DISTINCT c.customer_id) AS clientes, collect(DISTINCT l.loan_id) AS emprestimos_ativos,\n     collect(DISTINCT po) + collect(DISTINCT pl) AS caminhos\nRETURN a.account_id AS conta, clientes, emprestimos_ativos, caminhos\nORDER BY conta LIMIT $limit",
+     "params": {
+      "com_emprestimo": true,
+      "limit": 100
+     },
+     "rows": 9,
+     "purpose": "Contas conjuntas e seus titulares"
+    }
+   ],
+   "error": null,
+   "n_nodes": 36,
+   "sources": []
+  },
+  "I03": {
+   "question": "Quais estabelecimentos concentram pagamentos de vários clientes?",
+   "answer": "O estabelecimento que mais concentra pagamentos e **Mercado Nordeste** (M0001), com 103 clientes distintos. Seguem: Loja Nordeste (79), Loja Vida (77), Loja Digital (76), Mercado Vida (75).",
+   "abstained": false,
+   "entity_ids": [
+    "M0001",
+    "M0037",
+    "M0045",
+    "M0023",
+    "M0048",
+    "M0056",
+    "M0025",
+    "M0043",
+    "M0131",
+    "M0150"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer)-[:OWNS]->(:Account)-[:SENT]->(:Transaction)-[:PAID_TO]->(m:Merchant)\nWITH m, count(DISTINCT c) AS clientes\nORDER BY clientes DESC LIMIT $limit\nRETURN m.merchant_id AS estabelecimento, m.merchant_name AS nome, m.category AS categoria, clientes,\n       COLLECT { MATCH p = (:Customer)-[:OWNS]->(:Account)-[:SENT]->(:Transaction)-[:PAID_TO]->(m)\n                 RETURN p LIMIT 3 } AS amostra",
+     "params": {
+      "limit": 10
+     },
+     "rows": 10,
+     "purpose": "Estabelecimentos por numero de clientes distintos"
+    }
+   ],
+   "error": null,
+   "n_nodes": 44,
+   "sources": []
+  },
+  "I04": {
+   "question": "Quais clientes têm empréstimos ativos e alertas simulados nos últimos 30 dias?",
+   "answer": "7 cliente(s) sao donos de contas com transacao **sinalizada** nos 30 dias ate 2026-11-10: C0159, C0208, C0234, C0326, C0369, C0410, C0443. Desses, 3 tem emprestimo ativo: C0208, C0234, C0410.",
+   "abstained": false,
+   "entity_ids": [
+    "C0159",
+    "C0208",
+    "C0234",
+    "C0326",
+    "C0369",
+    "C0410",
+    "C0443",
+    "T0002991",
+    "T0003863",
+    "T0004372",
+    "T0006076",
+    "T0006875",
+    "T0007630",
+    "T0008254",
+    "L0041",
+    "L0120",
+    "L0157"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH p = (c:Customer)-[:OWNS]->(a:Account)-[:SENT]->(t:Transaction {flagged: true})\nWHERE t.date >= date($ref) - duration({days: $dias})\nOPTIONAL MATCH pa = (t)<-[:RAISED_ON]-(:Alert)\nOPTIONAL MATCH pl = (c)-[:HAS_LOAN]->(l:Loan {status: 'ACTIVE'})\nWITH c, collect(DISTINCT t.transaction_id) AS transacoes, collect(DISTINCT l.loan_id) AS emprestimos_ativos,\n     collect(DISTINCT p) + collect(DISTINCT pa) + collect(DISTINCT pl) AS caminhos\nRETURN c.customer_id AS cliente, transacoes, emprestimos_ativos, caminhos\nORDER BY cliente LIMIT $limit",
+     "params": {
+      "ref": "2026-11-10",
+      "dias": 30,
+      "limit": 100
+     },
+     "rows": 7,
+     "purpose": "Clientes donos de contas com transacao sinalizada na janela"
+    }
+   ],
+   "error": null,
+   "n_nodes": 31,
+   "sources": []
+  },
+  "I05": {
+   "question": "Quais clientes pagaram ao estabelecimento M0007?",
+   "answer": "Nao encontrei documento suficientemente relacionado a pergunta no acervo (fora do dominio ou sem evidencia).",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [
+    {
+     "cypher": "CALL db.index.vector.queryNodes('document_embedding', $k, $vec) YIELD node AS d, score\nOPTIONAL MATCH pr = (d)-[:DESCRIBES]->(r:BankingRule)\nOPTIONAL MATCH pk = (r)-[:INSTANCE_OF]->(:RuleTopic)-[]->(:Entity)\nWITH d, score, collect(DISTINCT r {.rule_id, .rule_name, .description}) AS regras,\n     collect(DISTINCT pr) + collect(DISTINCT pk) AS caminhos\nRETURN d.document_id AS document_id, d.title AS title, d.section AS section, d.page AS page,\n       d.version AS version, d.text AS text, score, regras, caminhos\nORDER BY score DESC",
+     "params": {
+      "k": 5,
+      "vec": "<embedding da pergunta, 384 dim>"
+     },
+     "rows": 5,
+     "purpose": "Busca vetorial nos documentos + regras ligadas (KAG)"
+    }
+   ],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC011",
+    "DOC021",
+    "DOC001",
+    "DOC027",
+    "DOC007"
+   ]
+  },
+  "A01": {
+   "question": "Quais clientes possuem relacionamento com contas que realizaram transações sinalizadas nos últimos 30 dias e, entre eles, quais possuem empréstimos ativos?",
+   "answer": "7 cliente(s) sao donos de contas com transacao **sinalizada** nos 30 dias ate 2026-11-10: C0159, C0208, C0234, C0326, C0369, C0410, C0443. Desses, 3 tem emprestimo ativo: C0208, C0234, C0410.",
+   "abstained": false,
+   "entity_ids": [
+    "C0159",
+    "C0208",
+    "C0234",
+    "C0326",
+    "C0369",
+    "C0410",
+    "C0443",
+    "T0002991",
+    "T0003863",
+    "T0004372",
+    "T0006076",
+    "T0006875",
+    "T0007630",
+    "T0008254",
+    "L0041",
+    "L0120",
+    "L0157"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH p = (c:Customer)-[:OWNS]->(a:Account)-[:SENT]->(t:Transaction {flagged: true})\nWHERE t.date >= date($ref) - duration({days: $dias})\nOPTIONAL MATCH pa = (t)<-[:RAISED_ON]-(:Alert)\nOPTIONAL MATCH pl = (c)-[:HAS_LOAN]->(l:Loan {status: 'ACTIVE'})\nWITH c, collect(DISTINCT t.transaction_id) AS transacoes, collect(DISTINCT l.loan_id) AS emprestimos_ativos,\n     collect(DISTINCT p) + collect(DISTINCT pa) + collect(DISTINCT pl) AS caminhos\nRETURN c.customer_id AS cliente, transacoes, emprestimos_ativos, caminhos\nORDER BY cliente LIMIT $limit",
+     "params": {
+      "ref": "2026-11-10",
+      "dias": 30,
+      "limit": 100
+     },
+     "rows": 7,
+     "purpose": "Clientes donos de contas com transacao sinalizada na janela"
+    }
+   ],
+   "error": null,
+   "n_nodes": 31,
+   "sources": []
+  },
+  "A02": {
+   "question": "Quais clientes têm relação indireta, por conta conjunta, com contas que tiveram transações sinalizadas nos últimos 365 dias?",
+   "answer": "4 cliente(s) dividem conta conjunta com alguem que e dono de conta com transacao sinalizada (janela de 365 dias): C0218 via C0132; C0248 via C0266; C0382 via C0422; C0474 via C0438.",
+   "abstained": false,
+   "entity_ids": [
+    "C0218",
+    "C0248",
+    "C0382",
+    "C0474",
+    "C0132",
+    "C0266",
+    "C0422",
+    "C0438"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH p = (x:Customer)-[:OWNS]->(:Account)<-[:OWNS]-(y:Customer)-[:OWNS]->(:Account)-[:SENT]->(t:Transaction {flagged: true})\nWHERE x <> y AND t.date >= date($ref) - duration({days: $dias})\nOPTIONAL MATCH pl = (x)-[:HAS_LOAN]->(l:Loan {status: 'ACTIVE'})\nWITH x, y, collect(DISTINCT t.transaction_id) AS transacoes, collect(DISTINCT l.loan_id) AS emprestimos_ativos,\n     collect(DISTINCT p) + collect(DISTINCT pl) AS caminhos\nRETURN x.customer_id AS cliente_indireto, y.customer_id AS via_cliente, transacoes, emprestimos_ativos, caminhos\nORDER BY cliente_indireto LIMIT $limit",
+     "params": {
+      "ref": "2026-11-10",
+      "dias": 365,
+      "limit": 100
+     },
+     "rows": 4,
+     "purpose": "Relacao indireta via conta conjunta com dono de conta sinalizada"
+    }
+   ],
+   "error": null,
+   "n_nodes": 22,
+   "sources": []
+  },
+  "A03": {
+   "question": "Quais regras documentadas se aplicam ao empréstimo do cliente C0208?",
+   "answer": "**C0208** (Isabela Silva, segmento PREMIUM). Emprestimos: 1 no total, 1 ativo(s): L0041 (R$ 52,615.89). 2 conta(s): A0525 (CHECKING, PRIMARY, ACTIVE), A0689 (CHECKING, PRIMARY, ACTIVE). Cartoes: 1: CC0407 (ELO, ACTIVE).",
+   "abstained": false,
+   "entity_ids": [
+    "C0208",
+    "L0041"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer {customer_id: $cid})\nOPTIONAL MATCH pa = (c)-[:OWNS]->(:Account)\nOPTIONAL MATCH pl = (c)-[:HAS_LOAN]->(:Loan)-[:ON_ACCOUNT]->(:Account)\nOPTIONAL MATCH pk = (c)-[:HAS_CARD]->(:Card)\nWITH c, collect(DISTINCT pa) AS contas, collect(DISTINCT pl) AS emprestimos, collect(DISTINCT pk) AS cartoes\nRETURN c, contas, emprestimos, cartoes,\n       [p IN contas | {account_id: nodes(p)[1].account_id, tipo: nodes(p)[1].account_type,\n                       status: nodes(p)[1].status, titularidade: relationships(p)[0].ownership_type}] AS contas_info,\n       [p IN emprestimos | {loan_id: nodes(p)[1].loan_id, status: nodes(p)[1].status,\n                            valor_brl: nodes(p)[1].principal_brl}] AS emprestimos_info,\n       [p IN cartoes | {card_id: nodes(p)[1].card_id, bandeira: nodes(p)[1].brand,\n                        status: nodes(p)[1].status}] AS cartoes_info",
+     "params": {
+      "cid": "C0208"
+     },
+     "rows": 1,
+     "purpose": "Contas, emprestimos e cartoes do cliente"
+    }
+   ],
+   "error": null,
+   "n_nodes": 5,
+   "sources": []
+  },
+  "A04": {
+   "question": "Quais regras orientam a revisão de transferências recorrentes?",
+   "answer": "Regras documentadas mais relacionadas a pergunta:\n- **Frequência de Transferências** (R026, fonte DOC026): Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.\n- **Frequência de Transferências** (R016, fonte DOC016): Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.\n- **Frequência de Transferências** (R006, fonte DOC006): Múltiplas transferências em curto intervalo ao mesmo destinatário podem ser encaminhadas para revisão.\n- **Limite de Transferência PIX** (R001, fonte DOC001): O limite diário padrão simulado para o segmento BASIC é de R$ 2.000. Aumento exige validação cadastral.\n- **Limite de Transferência PIX** (R011, fonte DOC011): O limite diário padrão simulado para o segmento BASIC é de R$ 2.000. Aumento exige validação cadastral.",
+   "abstained": false,
+   "entity_ids": [
+    "DOC026",
+    "DOC016",
+    "DOC006",
+    "DOC001",
+    "DOC011",
+    "R026",
+    "R016",
+    "R006",
+    "R001",
+    "R011"
+   ],
+   "queries": [
+    {
+     "cypher": "CALL db.index.vector.queryNodes('document_embedding', $k, $vec) YIELD node AS d, score\nOPTIONAL MATCH pr = (d)-[:DESCRIBES]->(r:BankingRule)\nOPTIONAL MATCH pk = (r)-[:INSTANCE_OF]->(:RuleTopic)-[]->(:Entity)\nWITH d, score, collect(DISTINCT r {.rule_id, .rule_name, .description}) AS regras,\n     collect(DISTINCT pr) + collect(DISTINCT pk) AS caminhos\nRETURN d.document_id AS document_id, d.title AS title, d.section AS section, d.page AS page,\n       d.version AS version, d.text AS text, score, regras, caminhos\nORDER BY score DESC",
+     "params": {
+      "k": 5,
+      "vec": "<embedding da pergunta, 384 dim>"
+     },
+     "rows": 5,
+     "purpose": "Busca vetorial nos documentos + regras ligadas (KAG)"
+    }
+   ],
+   "error": null,
+   "n_nodes": 16,
+   "sources": [
+    "DOC026",
+    "DOC016",
+    "DOC006",
+    "DOC001",
+    "DOC011"
+   ]
+  },
+  "A05": {
+   "question": "Qual é o limite do PIX para o segmento BASIC?",
+   "answer": "Regras documentadas mais relacionadas a pergunta:\n- **Limite de Transferência PIX** (R011, fonte DOC011): O limite diário padrão simulado para o segmento BASIC é de R$ 2.000. Aumento exige validação cadastral.\n- **Limite de Transferência PIX** (R001, fonte DOC001): O limite diário padrão simulado para o segmento BASIC é de R$ 2.000. Aumento exige validação cadastral.\n- **Limite de Transferência PIX** (R021, fonte DOC021): O limite diário padrão simulado para o segmento BASIC é de R$ 2.000. Aumento exige validação cadastral.\n- **Empréstimo Pessoal** (R013, fonte DOC013): Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.\n- **Empréstimo Pessoal** (R003, fonte DOC003): Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+   "abstained": false,
+   "entity_ids": [
+    "DOC011",
+    "DOC001",
+    "DOC021",
+    "DOC013",
+    "DOC003",
+    "R011",
+    "R001",
+    "R021",
+    "R013",
+    "R003"
+   ],
+   "queries": [
+    {
+     "cypher": "CALL db.index.vector.queryNodes('document_embedding', $k, $vec) YIELD node AS d, score\nOPTIONAL MATCH pr = (d)-[:DESCRIBES]->(r:BankingRule)\nOPTIONAL MATCH pk = (r)-[:INSTANCE_OF]->(:RuleTopic)-[]->(:Entity)\nWITH d, score, collect(DISTINCT r {.rule_id, .rule_name, .description}) AS regras,\n     collect(DISTINCT pr) + collect(DISTINCT pk) AS caminhos\nRETURN d.document_id AS document_id, d.title AS title, d.section AS section, d.page AS page,\n       d.version AS version, d.text AS text, score, regras, caminhos\nORDER BY score DESC",
+     "params": {
+      "k": 5,
+      "vec": "<embedding da pergunta, 384 dim>"
+     },
+     "rows": 5,
+     "purpose": "Busca vetorial nos documentos + regras ligadas (KAG)"
+    }
+   ],
+   "error": null,
+   "n_nodes": 16,
+   "sources": [
+    "DOC011",
+    "DOC001",
+    "DOC021",
+    "DOC013",
+    "DOC003"
+   ]
+  },
+  "A06": {
+   "question": "O que acontece quando há concentração de pagamentos em um estabelecimento?",
+   "answer": "O estabelecimento que mais concentra pagamentos e **Mercado Nordeste** (M0001), com 103 clientes distintos. Seguem: Loja Nordeste (79), Loja Vida (77), Loja Digital (76), Mercado Vida (75).",
+   "abstained": false,
+   "entity_ids": [
+    "M0001",
+    "M0037",
+    "M0045",
+    "M0023",
+    "M0048",
+    "M0056",
+    "M0025",
+    "M0043",
+    "M0131",
+    "M0150"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer)-[:OWNS]->(:Account)-[:SENT]->(:Transaction)-[:PAID_TO]->(m:Merchant)\nWITH m, count(DISTINCT c) AS clientes\nORDER BY clientes DESC LIMIT $limit\nRETURN m.merchant_id AS estabelecimento, m.merchant_name AS nome, m.category AS categoria, clientes,\n       COLLECT { MATCH p = (:Customer)-[:OWNS]->(:Account)-[:SENT]->(:Transaction)-[:PAID_TO]->(m)\n                 RETURN p LIMIT 3 } AS amostra",
+     "params": {
+      "limit": 10
+     },
+     "rows": 10,
+     "purpose": "Estabelecimentos por numero de clientes distintos"
+    }
+   ],
+   "error": null,
+   "n_nodes": 44,
+   "sources": []
+  },
+  "U01": {
+   "question": "Um alerta permite afirmar que houve fraude?",
+   "answer": "Regras documentadas mais relacionadas a pergunta:\n- **Transações Atípicas** (R002, fonte DOC002): Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.\n- **Transações Atípicas** (R022, fonte DOC022): Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.\n- **Transações Atípicas** (R012, fonte DOC012): Valores muito superiores ao padrão histórico podem gerar alerta para análise manual. Alerta não comprova fraude.\n- **Bloqueio Preventivo** (R018, fonte DOC018): Bloqueios simulados devem registrar justificativa, data e responsável.\n- **Bloqueio Preventivo** (R028, fonte DOC028): Bloqueios simulados devem registrar justificativa, data e responsável.",
+   "abstained": false,
+   "entity_ids": [
+    "DOC002",
+    "DOC022",
+    "DOC012",
+    "DOC018",
+    "DOC028",
+    "R002",
+    "R022",
+    "R012",
+    "R018",
+    "R028"
+   ],
+   "queries": [
+    {
+     "cypher": "CALL db.index.vector.queryNodes('document_embedding', $k, $vec) YIELD node AS d, score\nOPTIONAL MATCH pr = (d)-[:DESCRIBES]->(r:BankingRule)\nOPTIONAL MATCH pk = (r)-[:INSTANCE_OF]->(:RuleTopic)-[]->(:Entity)\nWITH d, score, collect(DISTINCT r {.rule_id, .rule_name, .description}) AS regras,\n     collect(DISTINCT pr) + collect(DISTINCT pk) AS caminhos\nRETURN d.document_id AS document_id, d.title AS title, d.section AS section, d.page AS page,\n       d.version AS version, d.text AS text, score, regras, caminhos\nORDER BY score DESC",
+     "params": {
+      "k": 5,
+      "vec": "<embedding da pergunta, 384 dim>"
+     },
+     "rows": 5,
+     "purpose": "Busca vetorial nos documentos + regras ligadas (KAG)"
+    }
+   ],
+   "error": null,
+   "n_nodes": 16,
+   "sources": [
+    "DOC002",
+    "DOC022",
+    "DOC012",
+    "DOC018",
+    "DOC028"
+   ]
+  },
+  "U02": {
+   "question": "Quais contas pertencem ao cliente C9999?",
+   "answer": "O cliente C9999 nao existe no grafo.",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer {customer_id: $cid})\nOPTIONAL MATCH pa = (c)-[:OWNS]->(:Account)\nOPTIONAL MATCH pl = (c)-[:HAS_LOAN]->(:Loan)-[:ON_ACCOUNT]->(:Account)\nOPTIONAL MATCH pk = (c)-[:HAS_CARD]->(:Card)\nWITH c, collect(DISTINCT pa) AS contas, collect(DISTINCT pl) AS emprestimos, collect(DISTINCT pk) AS cartoes\nRETURN c, contas, emprestimos, cartoes,\n       [p IN contas | {account_id: nodes(p)[1].account_id, tipo: nodes(p)[1].account_type,\n                       status: nodes(p)[1].status, titularidade: relationships(p)[0].ownership_type}] AS contas_info,\n       [p IN emprestimos | {loan_id: nodes(p)[1].loan_id, status: nodes(p)[1].status,\n                            valor_brl: nodes(p)[1].principal_brl}] AS emprestimos_info,\n       [p IN cartoes | {card_id: nodes(p)[1].card_id, bandeira: nodes(p)[1].brand,\n                        status: nodes(p)[1].status}] AS cartoes_info",
+     "params": {
+      "cid": "C9999"
+     },
+     "rows": 0,
+     "purpose": "Contas, emprestimos e cartoes do cliente"
+    }
+   ],
+   "error": null,
+   "n_nodes": 0,
+   "sources": []
+  },
+  "U03": {
+   "question": "Qual é o CPF do cliente C0001?",
+   "answer": "**C0001** (Diego Silva, segmento BASIC). 1 conta(s): A0309 (PAYMENT, PRIMARY, ACTIVE). Emprestimos: 1 no total, 0 ativo(s). Cartoes: 1: CC0148 (MASTERCARD, ACTIVE).",
+   "abstained": false,
+   "entity_ids": [
+    "C0001",
+    "A0309"
+   ],
+   "queries": [
+    {
+     "cypher": "MATCH (c:Customer {customer_id: $cid})\nOPTIONAL MATCH pa = (c)-[:OWNS]->(:Account)\nOPTIONAL MATCH pl = (c)-[:HAS_LOAN]->(:Loan)-[:ON_ACCOUNT]->(:Account)\nOPTIONAL MATCH pk = (c)-[:HAS_CARD]->(:Card)\nWITH c, collect(DISTINCT pa) AS contas, collect(DISTINCT pl) AS emprestimos, collect(DISTINCT pk) AS cartoes\nRETURN c, contas, emprestimos, cartoes,\n       [p IN contas | {account_id: nodes(p)[1].account_id, tipo: nodes(p)[1].account_type,\n                       status: nodes(p)[1].status, titularidade: relationships(p)[0].ownership_type}] AS contas_info,\n       [p IN emprestimos | {loan_id: nodes(p)[1].loan_id, status: nodes(p)[1].status,\n                            valor_brl: nodes(p)[1].principal_brl}] AS emprestimos_info,\n       [p IN cartoes | {card_id: nodes(p)[1].card_id, bandeira: nodes(p)[1].brand,\n                        status: nodes(p)[1].status}] AS cartoes_info",
+     "params": {
+      "cid": "C0001"
+     },
+     "rows": 1,
+     "purpose": "Contas, emprestimos e cartoes do cliente"
+    }
+   ],
+   "error": null,
+   "n_nodes": 4,
+   "sources": []
+  },
+  "M01": {
+   "question": "Quais contas pertencem ao cliente?",
+   "answer": "Regras documentadas mais relacionadas a pergunta:\n- **Privacidade e Acesso** (R030, fonte DOC030): Dados de clientes devem ser acessados apenas por perfis autorizados e finalidade legítima.\n- **Conta Compartilhada** (R025, fonte DOC025): Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.\n- **Conta Compartilhada** (R015, fonte DOC015): Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.\n- **Conta Compartilhada** (R005, fonte DOC005): Contas conjuntas podem possuir mais de um titular; consultas devem considerar todos os vínculos.\n- **Privacidade e Acesso** (R020, fonte DOC020): Dados de clientes devem ser acessados apenas por perfis autorizados e finalidade legítima.",
+   "abstained": false,
+   "entity_ids": [
+    "DOC030",
+    "DOC025",
+    "DOC015",
+    "DOC005",
+    "DOC020",
+    "R030",
+    "R025",
+    "R015",
+    "R005",
+    "R020"
+   ],
+   "queries": [
+    {
+     "cypher": "CALL db.index.vector.queryNodes('document_embedding', $k, $vec) YIELD node AS d, score\nOPTIONAL MATCH pr = (d)-[:DESCRIBES]->(r:BankingRule)\nOPTIONAL MATCH pk = (r)-[:INSTANCE_OF]->(:RuleTopic)-[]->(:Entity)\nWITH d, score, collect(DISTINCT r {.rule_id, .rule_name, .description}) AS regras,\n     collect(DISTINCT pr) + collect(DISTINCT pk) AS caminhos\nRETURN d.document_id AS document_id, d.title AS title, d.section AS section, d.page AS page,\n       d.version AS version, d.text AS text, score, regras, caminhos\nORDER BY score DESC",
+     "params": {
+      "k": 5,
+      "vec": "<embedding da pergunta, 384 dim>"
+     },
+     "rows": 5,
+     "purpose": "Busca vetorial nos documentos + regras ligadas (KAG)"
+    }
+   ],
+   "error": null,
+   "n_nodes": 16,
+   "sources": [
+    "DOC030",
+    "DOC025",
+    "DOC015",
+    "DOC005",
+    "DOC020"
+   ]
+  },
+  "M02": {
+   "question": "E os empréstimos dele, estão ativos?",
+   "answer": "Regras documentadas mais relacionadas a pergunta:\n- **Empréstimo Pessoal** (R023, fonte DOC023): Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.\n- **Empréstimo Pessoal** (R013, fonte DOC013): Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.\n- **Empréstimo Pessoal** (R003, fonte DOC003): Empréstimos simulados possuem prazo entre 6 e 60 parcelas e critérios internos fictícios.",
+   "abstained": false,
+   "entity_ids": [
+    "DOC023",
+    "DOC013",
+    "DOC003",
+    "R023",
+    "R013",
+    "R003"
+   ],
+   "queries": [
+    {
+     "cypher": "CALL db.index.vector.queryNodes('document_embedding', $k, $vec) YIELD node AS d, score\nOPTIONAL MATCH pr = (d)-[:DESCRIBES]->(r:BankingRule)\nOPTIONAL MATCH pk = (r)-[:INSTANCE_OF]->(:RuleTopic)-[]->(:Entity)\nWITH d, score, collect(DISTINCT r {.rule_id, .rule_name, .description}) AS regras,\n     collect(DISTINCT pr) + collect(DISTINCT pk) AS caminhos\nRETURN d.document_id AS document_id, d.title AS title, d.section AS section, d.page AS page,\n       d.version AS version, d.text AS text, score, regras, caminhos\nORDER BY score DESC",
+     "params": {
+      "k": 5,
+      "vec": "<embedding da pergunta, 384 dim>"
+     },
+     "rows": 5,
+     "purpose": "Busca vetorial nos documentos + regras ligadas (KAG)"
+    }
+   ],
+   "error": null,
+   "n_nodes": 8,
+   "sources": [
+    "DOC023",
+    "DOC013",
+    "DOC003",
+    "DOC027",
+    "DOC017"
+   ]
+  },
+  "O01": {
+   "question": "Qual a previsão do tempo para amanhã em Maceió?",
+   "answer": "Nao encontrei documento suficientemente relacionado a pergunta no acervo (fora do dominio ou sem evidencia).",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [
+    {
+     "cypher": "CALL db.index.vector.queryNodes('document_embedding', $k, $vec) YIELD node AS d, score\nOPTIONAL MATCH pr = (d)-[:DESCRIBES]->(r:BankingRule)\nOPTIONAL MATCH pk = (r)-[:INSTANCE_OF]->(:RuleTopic)-[]->(:Entity)\nWITH d, score, collect(DISTINCT r {.rule_id, .rule_name, .description}) AS regras,\n     collect(DISTINCT pr) + collect(DISTINCT pk) AS caminhos\nRETURN d.document_id AS document_id, d.title AS title, d.section AS section, d.page AS page,\n       d.version AS version, d.text AS text, score, regras, caminhos\nORDER BY score DESC",
+     "params": {
+      "k": 5,
+      "vec": "<embedding da pergunta, 384 dim>"
+     },
+     "rows": 5,
+     "purpose": "Busca vetorial nos documentos + regras ligadas (KAG)"
+    }
+   ],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC001",
+    "DOC021",
+    "DOC011",
+    "DOC018",
+    "DOC028"
+   ]
+  },
+  "O02": {
+   "question": "Qual é a capital da França?",
+   "answer": "Nao encontrei documento suficientemente relacionado a pergunta no acervo (fora do dominio ou sem evidencia).",
+   "abstained": true,
+   "entity_ids": [],
+   "queries": [
+    {
+     "cypher": "CALL db.index.vector.queryNodes('document_embedding', $k, $vec) YIELD node AS d, score\nOPTIONAL MATCH pr = (d)-[:DESCRIBES]->(r:BankingRule)\nOPTIONAL MATCH pk = (r)-[:INSTANCE_OF]->(:RuleTopic)-[]->(:Entity)\nWITH d, score, collect(DISTINCT r {.rule_id, .rule_name, .description}) AS regras,\n     collect(DISTINCT pr) + collect(DISTINCT pk) AS caminhos\nRETURN d.document_id AS document_id, d.title AS title, d.section AS section, d.page AS page,\n       d.version AS version, d.text AS text, score, regras, caminhos\nORDER BY score DESC",
+     "params": {
+      "k": 5,
+      "vec": "<embedding da pergunta, 384 dim>"
+     },
+     "rows": 5,
+     "purpose": "Busca vetorial nos documentos + regras ligadas (KAG)"
+    }
+   ],
+   "error": null,
+   "n_nodes": 0,
+   "sources": [
+    "DOC027",
+    "DOC007",
+    "DOC017",
+    "DOC009",
+    "DOC024"
+   ]
+  }
+ }
+}
