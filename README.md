@@ -12,7 +12,7 @@ Assistente para análise de relacionamentos e conhecimento bancário com **Graph
 | 2 | Dados sintéticos e documentos | Concluída |
 | 3 | Modelagem LPG no Neo4j (schema + ingestão) | Concluída |
 | 4 | Pipeline Text-to-Graph (NER/RE) | Concluída |
-| 5 | Recuperação híbrida GraphRAG/KAG | A fazer |
+| 5 | Recuperação híbrida GraphRAG/KAG | Concluída |
 | 6 | Interface Streamlit e visualização do subgrafo | A fazer |
 | 7 | Avaliação e testes | A fazer |
 | 8 | Documentação, artigo e apresentação | A fazer |
@@ -120,12 +120,34 @@ O repositório inclui o `extraction_cache.json`. Usando **o mesmo provedor e o m
 ```bash
 # Windows: $env:OPENAI_API_KEY="..."      Mac/Linux: export OPENAI_API_KEY="..."
 ```
+> **Atenção:** ao rodar do zero, o `extraction_cache.json` pode não bater com o prompt atual (o script então tenta chamar a API e falha com `401` se não houver chave). Alternativa sem chave e sem LLM: `python load_extraction_results.py` grava o `extraction_results.json` (saída já validada) direto no Neo4j; use `--dry-run` para só conferir as contagens (esperado: 30 documentos, 34 entidades, 23 relações).
+
 Use `--dry-run` para extrair sem gravar no Neo4j e `--limit N` para testar em poucos documentos. Para testar o fluxo sem LLM, use `--provider mock`.
 
 **4. Avaliação da extração.**
 ```bash
 python evaluate_extraction.py
 ```
+
+## Etapa 5: recuperação híbrida (GraphRAG/KAG)
+
+Responde perguntas em linguagem natural combinando busca vetorial, consulta Cypher validada e regras explícitas (KAG), e devolve a resposta com evidências.
+
+Pré-requisitos: etapas 1 a 4 rodadas (ingestão, embeddings e extração gravada no grafo) e `OPENAI_API_KEY` definida (ou `--provider mock` para testar o fluxo sem chave). Opcionais: `LLM_MODEL` (padrão `gpt-4o-mini`) e `OPENAI_BASE_URL` (outros provedores compatíveis).
+
+```bash
+python test_etapa5.py            # testes offline (validador de Cypher, abstenção, IDs sem evidência)
+python graphrag_pipeline.py "Quais clientes têm transação sinalizada nos últimos 30 dias e empréstimo ativo?"
+python graphrag_pipeline.py "Qual a capital da França?"        # deve se abster
+```
+
+Fluxo: embedding da pergunta, busca vetorial, o LLM escolhe uma consulta pronta ou propõe um Cypher, validador (só leitura, labels e relações permitidos, profundidade <= 4, LIMIT <= 100), execução em transação de leitura com timeout, regras do documento de origem (KAG) e resposta somente com o contexto recuperado.
+
+Saída (JSON): resposta, `abstained`, `cypher`, `params`, `graph_rows`, `documents`, `rules`, `entity_ids`, `unsupported_ids` (IDs citados sem evidência), `confidence` (heurística, não probabilidade), `errors` e `latency_s`.
+
+Resultado esperado da pergunta central (ref. 2026-11-10): 7 clientes com transação sinalizada; 3 com empréstimo ativo (C0208, C0234, C0410).
+
+Limitações conhecidas: o LLM não é determinístico e pode omitir itens de uma lista; o limiar de similaridade (`MIN_VECTOR_SCORE = 0.60`) foi calibrado com poucas perguntas e trechos pouco relacionados podem aparecer logo acima dele; a função `db.index.vector.queryNodes` está obsoleta no Neo4j novo (continua funcionando; migrar para `SEARCH` é um próximo passo).
 
 ## Conferindo o resultado
 
@@ -174,9 +196,10 @@ Boa parte da diferença vem de convenção de granularidade (enumerações agrup
 
 ## Próximos passos
 
-1. **Etapa 5:** recuperação híbrida (embedding da pergunta + Cypher parametrizado e limitado + resposta fundamentada com IDs de nós e fontes). A função vetorial `db.index.vector.queryNodes` aparece como obsoleta nas versões novas do Neo4j; confira a sintaxe substituta (`SEARCH`) na documentação antes de usá-la.
-2. **Etapa 6:** interface Streamlit com a pergunta, a resposta, as evidências, a consulta Cypher executada e o subgrafo.
-3. **Etapa 7:** perguntas de teste (respondíveis, não respondíveis e ambíguas), comparação entre busca vetorial isolada e híbrida, e avaliação final nos documentos do split `test`.
+1. **Etapa 6:** interface Streamlit com a pergunta, a resposta, as evidências, a consulta Cypher executada e o subgrafo.
+2. **Etapa 7:** perguntas de teste (respondíveis, não respondíveis e ambíguas), comparação entre busca vetorial isolada e híbrida, e avaliação final nos documentos do split `test`.
+
+Etapa 5 concluída (ver seção acima).
 
 ## Dataset
 
