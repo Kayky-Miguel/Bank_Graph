@@ -350,7 +350,14 @@ def make_backends(names):
     if missing:
         raise SystemExit(f"Variaveis nao definidas neste terminal: {', '.join(missing)}.\n"
                          "Defina-as na MESMA janela (ex.: $env:NEO4J_URI=\"neo4j://127.0.0.1:7687\") e ative o .venv.")
-    ok, problems, counts = base.health()
+    try:
+        ok, problems, counts = base.health()
+    except Exception as e:
+        if type(e).__name__ in ("ServiceUnavailable", "AuthError"):
+            raise SystemExit(f"Nao foi possivel conectar ao Neo4j em {os.environ.get('NEO4J_URI')} ({type(e).__name__}).\n"
+                             "A instancia esta parada? Abra o Neo4j Desktop, clique em Start na instancia com os dados, "
+                             "espere ficar RUNNING e rode de novo. Se for AuthError, confira NEO4J_PASSWORD.")
+        raise
     print(f"Neo4j em {os.environ.get('NEO4J_URI')}: {counts['customers']} clientes, {counts['documents']} documentos "
           f"({counts['embedded']} com embedding), {counts['entities']} entidades extraidas, "
           f"{counts.get('ranked', 0)} clientes com PageRank")
