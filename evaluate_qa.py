@@ -352,7 +352,8 @@ def make_backends(names):
                          "Defina-as na MESMA janela (ex.: $env:NEO4J_URI=\"neo4j://127.0.0.1:7687\") e ative o .venv.")
     ok, problems, counts = base.health()
     print(f"Neo4j em {os.environ.get('NEO4J_URI')}: {counts['customers']} clientes, {counts['documents']} documentos "
-          f"({counts['embedded']} com embedding), {counts['entities']} entidades extraidas")
+          f"({counts['embedded']} com embedding), {counts['entities']} entidades extraidas, "
+          f"{counts.get('ranked', 0)} clientes com PageRank")
     if not ok:
         raise SystemExit("O grafo nao esta pronto para a avaliacao:\n  - " + "\n  - ".join(problems) +
                          "\nConfira se a instancia ligada no Neo4j Desktop e a mesma em que voce carregou os dados.")

@@ -1,6 +1,13 @@
 # Etapa 7 — Avaliação e testes
 
-Situação: **concluída para o baseline** (2 rodadas, 2026-11-12). Falta incluir a Etapa 5 na comparação quando `retrieval.py` existir: `python evaluate_qa.py --backends baseline vector retrieval`.
+Situação: 3 rodadas registradas (2026-11-12). Falta a **rodada final** com a Etapa 5 corrigida e os algoritmos de grafo: `python graph_algorithms.py` e `python evaluate_qa.py --backends baseline vector retrieval`.
+
+| Rodada | O que mediu | Onde |
+|---|---|---|
+| 1 | Baseline × vetorial, corte de similaridade com bug de escala | `rodada1/` |
+| 2 | Baseline × vetorial, corte calibrado (resultados abaixo) | `report.md` desta rodada, resumido na seção 2 |
+| 3 | Primeira com a Etapa 5 (23 perguntas, métrica antiga para regras) | `rodada3/` e seção 2.1 |
+| final | Etapa 5 corrigida + algoritmos de grafo (25 perguntas) | a gerar |
 
 | Arquivo | Conteúdo | Como gerar |
 |---|---|---|
@@ -97,6 +104,21 @@ A rodada 1 (`rodada1/`) teve a mesma acurácia nas respondíveis (0,81 contra 0,
 Calibração com o mesmo modelo de embeddings: perguntas fora do domínio têm cosseno ≈ 0,10 (score 0,55); perguntas reais sobre regras têm cosseno ≥ 0,51 (score ≥ 0,75). O corte passou para cosseno 0,30 (**score 0,65**), no meio do intervalo. Efeito na rodada 2: abstenção correta do baseline de 0,29 para 0,57, sem abstenção indevida nas perguntas sobre regras.
 
 Observação: as latências da rodada 1 (média 281 ms) foram maiores por cache frio do Neo4j logo após a carga. Os valores da rodada 2 são os representativos.
+
+### 2.1 Rodada 3: primeira avaliação da Etapa 5 e causas das falhas
+
+Etapa 5 (gpt-4o-mini) nas 23 perguntas: acurácia geral 0,56 (baseline 0,74), respondíveis 0,44 (baseline 0,81), **abstenção correta 0,86** (baseline 0,57), nenhum ID sem suporte, latência média 3,4 s. A análise de cada falha encontrou estas causas, todas corrigidas depois:
+
+| Falha | Causa | Correção |
+|---|---|---|
+| A04, A05, A06 marcadas como erro com resposta certa | **Métrica**: cada regra tem 3 cópias idênticas e o gabarito exigia as 3 | Perguntas sobre regras comparadas por tema |
+| B04, I02, I05: consulta devolveu linhas, mas a resposta se absteve | `SCHEMA_TEXT` sem as propriedades de `Card` e com `ownership_type 'SOLE'` (não existe; é `PRIMARY`): o LLM adivinhava nomes e recebia só nulos | Schema completo conferido nos CSVs; consulta só com nulos ganha nova tentativa |
+| I01 respondida com a relação indireta | Não havia consulta pronta para listar contas conjuntas | Templates `joint_accounts` e `joint_accounts_active_loan` |
+| B05 "não há evidência" | `flagged_evidence` não filtra a transação pedida | Template `transaction_evidence` |
+| A01 omitiu 4 dos 7 clientes | LLM omite itens de listas longas | Lista completa de IDs anexada pelo código |
+| M02 respondeu sobre um cliente qualquer | O LLM ignorou a instrução de não inventar; além disso, um template sem ID usava o ID de exemplo em silêncio | Proteção sem LLM para "o cliente"/"dele" sem ID; todo ID da consulta precisa estar na pergunta |
+
+Depois das correções, a Etapa 5 ganhou também consultas de **algoritmos de grafo** (caminho mínimo, PageRank, comunidades) e a avaliação, as perguntas A07 e A08. A rodada final mede o efeito de tudo isso.
 
 ## 3. Limitações conhecidas
 

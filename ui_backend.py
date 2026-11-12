@@ -242,7 +242,8 @@ class BaselineRetriever:
         """Confere se o grafo esta carregado. Retorna (ok, lista de problemas, contagens)."""
         counts = self.run("""RETURN COUNT { (:Customer) } AS customers, COUNT { (:Document) } AS documents,
                                     COUNT { (d:Document) WHERE d.embedding IS NOT NULL } AS embedded,
-                                    COUNT { (:Entity) } AS entities""", {})[0]
+                                    COUNT { (:Entity) } AS entities,
+                                    COUNT { (c:Customer) WHERE c.pagerank IS NOT NULL } AS ranked""", {})[0]
         idx = {r["name"] for r in self.run("SHOW INDEXES YIELD name RETURN name", {})}
         counts = dict(counts)
         problems = []
@@ -253,6 +254,8 @@ class BaselineRetriever:
         if counts["entities"] == 0:
             problems.append("faltam as entidades extraidas (KAG): rode `python extract_entities.py "
                             "--data ./BankGraph_AI_Dataset --from-results`")
+        if counts["ranked"] == 0:
+            problems.append("faltam os algoritmos de grafo (PageRank/comunidades): rode `python graph_algorithms.py`")
         return not problems, problems, counts
 
     def embed(self, text):

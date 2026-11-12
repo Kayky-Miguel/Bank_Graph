@@ -8,14 +8,14 @@ Assistente para análise de relacionamentos e conhecimento bancário com **Graph
 
 | Etapa | Descrição | Situação |
 |---|---|---|
-| 1 | Definição do problema e requisitos | Concluída |
-| 2 | Dados sintéticos e documentos | Concluída |
-| 3 | Modelagem LPG no Neo4j (schema + ingestão) | Concluída |
+| 1 | Definição do problema e requisitos | Concluída (`docs/escopo_e_requisitos.md`) |
+| 2 | Dados sintéticos e documentos | Concluída (`docs/dicionario_de_dados.md`); o script de geração não está no repositório |
+| 3 | Modelagem LPG no Neo4j (schema + ingestão) | Concluída (`docs/modelo_do_grafo.md`) |
 | 4 | Pipeline Text-to-Graph (NER/RE) | Concluída |
-| 5 | Recuperação híbrida GraphRAG/KAG | Concluída (`graphrag_pipeline.py`) |
+| 5 | Recuperação híbrida GraphRAG/KAG + algoritmos de grafo | Concluída (`graphrag_pipeline.py`, `graph_algorithms.py`) |
 | 6 | Interface Streamlit e visualização do subgrafo | Concluída (usa a Etapa 5 via `retrieval.py`) |
-| 7 | Avaliação e testes | Concluída para o baseline (resultados em `evaluation/README.md`); falta rodar com a Etapa 5 |
-| 8 | Documentação, artigo e apresentação | A fazer |
+| 7 | Avaliação e testes | Concluída; falta registrar a rodada final com a Etapa 5 corrigida |
+| 8 | Documentação, artigo e apresentação | Documentação técnica pronta; faltam artigo e apresentação |
 
 ## Estrutura do repositório
 
@@ -30,11 +30,17 @@ evaluate_extraction.py    precisão, recall e F1 da extração contra o gabarito
 gold_annotations.json     gabarito anotado à mão (DOC001–DOC010, um por tema)
 extraction_cache.json     respostas do LLM em cache (permite reproduzir sem chave de API)
 extraction_results.json   saída validada da extração
+load_extraction_results.py grava extraction_results.json no Neo4j sem LLM (equivale a extract_entities.py --from-results)
+graph_algorithms.py       algoritmos de grafo: PageRank e comunidades (Louvain); grava pagerank/community no grafo
+graphrag_pipeline.py      Etapa 5: recuperação híbrida GraphRAG/KAG (busca vetorial + Cypher validado + regras + LLM)
+retrieval.py              liga a Etapa 5 à interface e à avaliação
 app.py                    interface Streamlit (Etapa 6)
-ui_backend.py             contrato com a Etapa 5 + baseline (templates Cypher + busca vetorial, sem LLM)
+ui_backend.py             contrato da interface + baseline (templates Cypher + busca vetorial, sem LLM)
 graph_view.py             resultado do Neo4j -> subgrafo -> visualização PyVis
-evaluate_qa.py            avaliação das respostas: 23 perguntas, gabarito calculado dos CSVs, métricas e relatório (Etapa 7)
-evaluation/               saída da avaliação (results_<backend>.json e report.md)
+evaluate_qa.py            avaliação das respostas: 25 perguntas, gabarito calculado dos CSVs, métricas e relatório (Etapa 7)
+evaluation/               resultados e relatório da avaliação (README.md = resumo)
+docs/                     escopo e requisitos, dicionário de dados, modelo do grafo (diagrama)
+test_etapa5.py            testes offline da Etapa 5
 tests/                    testes automatizados sem Neo4j (python -m pytest tests -q)
 requirements.txt          dependências Python
 ```
@@ -56,7 +62,7 @@ Extraídos dos documentos (Etapa 4):
 (BankingRule)-[:INSTANCE_OF]->(RuleTopic)   30 regras do CSV → 10 temas canônicos
 ```
 
-Observações de modelagem:
+Diagrama completo, decisões de modelagem e índices em `docs/modelo_do_grafo.md`. Observações principais:
 - As transações do dataset **não têm conta de destino**, só estabelecimento. Por isso o modelo usa `Account -[:SENT]-> Transaction -[:PAID_TO]-> Merchant`.
 - `Loan -[:FOLLOWS]-> BankingRule` liga todo empréstimo às regras de nome "Empréstimo Pessoal" (heurística de projeto).
 - A ligação indireta entre clientes acontece via **conta conjunta** (`ownership_type = JOINT`).
@@ -66,7 +72,7 @@ Observações de modelagem:
 - **Python** 3.9 ou mais novo
 - **Neo4j** 5.x ou mais novo, com suporte a índice vetorial (testado na versão 2026.10 pelo Neo4j Desktop)
 - **Git**
-- Chave de API de LLM **apenas** se for refazer a extração do zero (veja abaixo)
+- Chave de API de LLM (`OPENAI_API_KEY`) para a Etapa 5 (respostas com LLM) e para refazer a extração do zero. O baseline, a avaliação do baseline, os algoritmos de grafo e os testes não precisam de chave.
 
 ## Instalação
 
@@ -134,12 +140,19 @@ Atenção: o `extraction_cache.json` atual **não corresponde ao prompt atual** 
 
 Use `--dry-run` para extrair sem gravar no Neo4j e `--limit N` para testar em poucos documentos. Para testar o fluxo sem LLM, use `--provider mock`.
 
-**4. Avaliação da extração.**
+**4. Algoritmos de grafo.** PageRank e comunidades (Louvain) na rede cliente-estabelecimento; grava `pagerank` e `community` em `Customer` e `Merchant` (não precisa do plugin GDS).
 ```bash
-python evaluate_extraction.py
+python graph_algorithms.py                       # calcula e grava
+python graph_algorithms.py --from-csv --dry-run  # só calcula, a partir dos CSVs (sem Neo4j)
 ```
 
-**5. Interface (Etapa 6).** Com as variáveis do Neo4j definidas na mesma janela:
+**5. Avaliação da extração.**
+```bash
+python evaluate_extraction.py              # métricas estritas
+python evaluate_extraction.py --analysis   # + classificação dos erros (evaluation/extraction_errors.md)
+```
+
+**6. Interface (Etapa 6).** Defina também `OPENAI_API_KEY` para usar a Etapa 5. Com as variáveis do Neo4j definidas na mesma janela:
 ```bash
 python -m streamlit run app.py
 ```
@@ -147,14 +160,14 @@ Abre no navegador (http://localhost:8501). A tela tem campo de pergunta, pergunt
 
 **Integração com a Etapa 5.** A interface procura a função `answer` em `retrieval.py` (ou no módulo indicado em `BANKGRAPH_RETRIEVER="modulo:funcao"`). Se ela não existir, usa o **baseline** de `ui_backend.py`: templates Cypher fixos (os de `queries.cypher`), somente leitura, com `LIMIT` e timeout, mais busca vetorial nos documentos. O formato de retorno esperado está documentado no topo de `ui_backend.py`. O mínimo é `{"answer": ...}`. Para o subgrafo, basta devolver em `records` os `Path`/`Node` do driver: a interface monta o grafo sozinha.
 
-**6. Avaliação das respostas (Etapa 7).**
+**7. Avaliação das respostas (Etapa 7).**
 ```bash
 python evaluate_qa.py --gold-only                    # mostra o gabarito; não precisa de Neo4j
 python evaluate_qa.py                                # baseline híbrido x busca vetorial isolada
-python evaluate_qa.py --backends baseline vector retrieval   # inclui a Etapa 5, quando existir
+python evaluate_qa.py --backends baseline vector retrieval   # inclui a Etapa 5 (precisa de OPENAI_API_KEY)
 python -m pytest tests -q                            # testes automatizados (sem Neo4j)
 ```
-São 23 perguntas: básicas, intermediárias e avançadas respondíveis, além de perguntas sem resposta, ambíguas e fora do domínio. O gabarito de cada uma é **calculado direto dos CSVs com pandas**, sem passar pelo Neo4j nem pelo código avaliado: um erro de ingestão ou de consulta aparece como erro na avaliação. Métricas: precisão, recall e F1 dos IDs esperados; tema correto nas 3 primeiras fontes; abstenção correta e indevida; respostas com evidência rastreável; IDs citados sem suporte nas evidências (indício de alucinação); erros; latência média e p95. O resultado vai para `evaluation/report.md`.
+São 25 perguntas: básicas, intermediárias e avançadas respondíveis (incluindo multi-hop e algoritmos de grafo), além de perguntas sem resposta, ambíguas e fora do domínio. O gabarito de cada uma é **calculado direto dos CSVs com pandas**, sem passar pelo Neo4j nem pelo código avaliado: um erro de ingestão ou de consulta aparece como erro na avaliação. Métricas: precisão, recall e F1 dos IDs esperados; tema correto nas 3 primeiras fontes; abstenção correta e indevida; respostas com evidência rastreável; IDs citados sem suporte nas evidências (indício de alucinação); erros; latência média e p95. O resultado vai para `evaluation/report.md`.
 
 ## Etapa 5: recuperação híbrida (GraphRAG/KAG)
 
@@ -168,13 +181,15 @@ python graphrag_pipeline.py "Quais clientes têm transação sinalizada nos últ
 python graphrag_pipeline.py "Qual a capital da França?"        # deve se abster
 ```
 
-Fluxo: embedding da pergunta, busca vetorial, o LLM escolhe uma consulta pronta ou propõe um Cypher, validador (só leitura, labels e relações permitidos, profundidade <= 4, LIMIT <= 100), execução em transação de leitura com timeout, regras do documento de origem (KAG) e resposta somente com o contexto recuperado.
+Fluxo: proteções sem LLM (pergunta sobre "o cliente"/"dele" sem ID e pedido de dado sensível são recusados), embedding da pergunta, busca vetorial, o LLM escolhe uma das 15 consultas prontas ou propõe um Cypher, validador (só leitura, labels e relações permitidos, profundidade <= 4, LIMIT <= 100, e todo ID da consulta precisa estar na pergunta), execução em transação de leitura com timeout (consulta rejeitada, com erro ou só com nulos ganha uma nova tentativa), regras do documento de origem (KAG) e resposta somente com o contexto recuperado. A lista completa de IDs do resultado é anexada pelo código, para o LLM não omitir itens.
+
+Consultas prontas de algoritmos de grafo: caminho mínimo entre dois clientes (`shortestPath`), estabelecimentos mais centrais (PageRank), comunidades com mais transações sinalizadas e comunidade de um cliente (Louvain).
 
 Saída (JSON): resposta, `abstained`, `cypher`, `params`, `graph_rows`, `documents`, `rules`, `entity_ids`, `unsupported_ids` (IDs citados sem evidência), `confidence` (heurística, não probabilidade), `errors` e `latency_s`.
 
 Resultado esperado da pergunta central (ref. 2026-11-10): 7 clientes com transação sinalizada; 3 com empréstimo ativo (C0208, C0234, C0410).
 
-Limitações conhecidas: o LLM não é determinístico e pode omitir itens de uma lista; o limiar de similaridade (`MIN_VECTOR_SCORE = 0.60`) foi calibrado com poucas perguntas e trechos pouco relacionados podem aparecer logo acima dele; a função `db.index.vector.queryNodes` está obsoleta no Neo4j novo (continua funcionando; migrar para `SEARCH` é um próximo passo).
+Limitações conhecidas: o LLM não é determinístico (a escolha da consulta e o texto podem variar entre execuções); o limiar de similaridade (`MIN_VECTOR_SCORE = 0.60`) foi calibrado com poucas perguntas e trechos pouco relacionados podem aparecer logo acima dele; a função `db.index.vector.queryNodes` está obsoleta no Neo4j novo (continua funcionando; migrar para `SEARCH` é um próximo passo).
 
 ## Conferindo o resultado
 
@@ -221,10 +236,15 @@ Boa parte da diferença vem de convenção de granularidade (enumerações agrup
 - Se uma chave for exposta, revogue-a no painel do provedor e gere outra.
 - Todos os dados são fictícios. Não inclua CPF, número de conta, cartão ou qualquer informação real.
 
-## Próximos passos
+## Pendências
 
-Lista atualizada do que falta em `evaluation/README.md` e na seção de pendências abaixo.
+1. **Rodada final da avaliação** com a Etapa 5 corrigida e os algoritmos gravados: `python graph_algorithms.py` e `python evaluate_qa.py --backends baseline vector retrieval`; registrar os números em `evaluation/README.md`.
+2. **Artigo técnico** no template da disciplina (método, modelagem, pipeline, avaliação e limitações estão em `docs/` e `evaluation/`).
+3. **Apresentação** com demonstração ao vivo (pergunta central, multi-hop, KAG, algoritmos de grafo, abstenção).
+4. **Script de geração dos dados** (Python/Faker): pedido pelo plano, mas não está no repositório.
+5. Migrar `db.index.vector.queryNodes` (obsoleta) para a sintaxe `SEARCH` do Neo4j novo.
+6. `app_chunks_embeddings.py` é um exercício de aula sem relação com o projeto; pode ser removido.
 
 ## Dataset
 
-Descrição dos arquivos e dos campos em `BankGraph_AI_Dataset/README.txt`. O campo `split` separa `train`/`dev`/`test`: use `train` para desenvolvimento, `dev` para ajustes e `test` apenas na avaliação final.
+Dicionário de dados completo (todos os campos, valores e volumes) em `docs/dicionario_de_dados.md`; resumo em `BankGraph_AI_Dataset/README.txt`. O campo `split` separa `train`/`dev`/`test`: use `train` para desenvolvimento, `dev` para ajustes e `test` apenas na avaliação final.

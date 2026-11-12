@@ -1,6 +1,7 @@
 neo4j
 pandas
 sentence-transformers
+networkx
 # Etapa 6 (interface):
 streamlit
 pyvis
